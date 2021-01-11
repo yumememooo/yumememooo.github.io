@@ -20,21 +20,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="什麼是Go                            Go（又稱Golang）是Google開發的一種靜態強型別、編譯型、並發型，並具有垃圾回收功能且輕巧的程式語言．   透過三步驟設定完開發環境： 安裝官方 Go 配置開發 Go 所需要環境變數  下載IDE「推薦Visual Studio Code加上插件」 開始寫Go">
+  <meta name="description" content="分享自己初學GO時看的教學文章，安裝完GO環境之後，就可以撰寫自己第一支GO的程式了，網路上的系列說明很多很詳細，就不重複撰文了，以下則是自己收藏很有用的網路文章。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Go] 配置GO開發環境">
-<meta property="og:url" content="http://yoursite.com/2020/09/09/01-go-env/index.html">
+<meta property="og:title" content="[Go] 學習 GO 收藏文">
+<meta property="og:url" content="http://yoursite.com/2020/09/09/02-go-start/index.html">
 <meta property="og:site_name" content="Yu&#39;s 程式筆記">
-<meta property="og:description" content="什麼是Go                            Go（又稱Golang）是Google開發的一種靜態強型別、編譯型、並發型，並具有垃圾回收功能且輕巧的程式語言．   透過三步驟設定完開發環境： 安裝官方 Go 配置開發 Go 所需要環境變數  下載IDE「推薦Visual Studio Code加上插件」 開始寫Go">
+<meta property="og:description" content="分享自己初學GO時看的教學文章，安裝完GO環境之後，就可以撰寫自己第一支GO的程式了，網路上的系列說明很多很詳細，就不重複撰文了，以下則是自己收藏很有用的網路文章。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-09T12:23:42.000Z">
-<meta property="article:modified_time" content="2021-01-11T09:11:00.871Z">
+<meta property="article:published_time" content="2020-09-09T13:16:32.000Z">
+<meta property="article:modified_time" content="2021-01-11T09:32:55.077Z">
 <meta property="article:author" content="u">
 <meta property="article:tag" content="golang">
-<meta property="article:tag" content="vscode">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/09/09/01-go-env/">
+<link rel="canonical" href="http://yoursite.com/2020/09/09/02-go-start/">
 
 
 <script id="page-configurations">
@@ -47,7 +46,7 @@
   };
 </script>
 
-  <title>[Go] 配置GO開發環境 | Yu's 程式筆記</title>
+  <title>[Go] 學習 GO 收藏文 | Yu's 程式筆記</title>
   
 
 
@@ -170,7 +169,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/09/01-go-env/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/09/02-go-start/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar_memo.png">
@@ -183,7 +182,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [Go] 配置GO開發環境
+          [Go] 學習 GO 收藏文
         </h1>
 
         <div class="post-meta">
@@ -193,14 +192,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-09-09 20:23:42" itemprop="dateCreated datePublished" datetime="2020-09-09T20:23:42+08:00">2020-09-09</time>
+              <time title="Created: 2020-09-09 21:16:32" itemprop="dateCreated datePublished" datetime="2020-09-09T21:16:32+08:00">2020-09-09</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-11 17:11:00" itemprop="dateModified" datetime="2021-01-11T17:11:00+08:00">2021-01-11</time>
+                <time title="Modified: 2021-01-11 17:32:55" itemprop="dateModified" datetime="2021-01-11T17:32:55+08:00">2021-01-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -238,107 +237,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <blockquote class="blockquote-center">
-            <i class="fa fa-quote-left"></i>
-            <h1 id="什麼是Go"><a href="#什麼是Go" class="headerlink" title="什麼是Go"></a>什麼是Go</h1>
-            <i class="fa fa-quote-right"></i>
-          </blockquote>
- <blockquote class="blockquote-center">
- Go（又稱Golang）是Google開發的一種靜態強型別、編譯型、並發型，並具有垃圾回收功能且輕巧的程式語言．</blockquote>
+         <blockquote class="blockquote-center">
+ 分享自己初學GO時看的教學文章，安裝完GO環境之後，就可以撰寫自己第一支GO的程式了，網路上的系列說明很多很詳細，就不重複撰文了，以下則是自己收藏很有用的網路文章。</blockquote>
 
-
-<h1 id="透過三步驟設定完開發環境："><a href="#透過三步驟設定完開發環境：" class="headerlink" title="透過三步驟設定完開發環境："></a>透過三步驟設定完開發環境：</h1><ol>
-<li>安裝官方 Go</li>
-<li>配置開發 Go 所需要環境變數 </li>
-<li>下載IDE「推薦Visual Studio Code加上插件」 開始寫Go</li>
-</ol>
 <a id="more"></a>
-<hr>
-<h2 id="1-安裝-Go"><a href="#1-安裝-Go" class="headerlink" title="1.安裝 Go"></a>1.安裝 Go</h2><p>go 網站<a target="_blank" rel="noopener" href="https://golang.org/">https://golang.org/</a> 下載直接點擊安裝<br>預設會幫你安裝到/usr/local/go底下，這就是GOROOT位置</p>
-<ul>
-<li><p>開啟終端機下指令確認安裝</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ go version</span><br><span class="line">go version go1.14 darwin&#x2F;amd64</span><br><span class="line">➜  ~ which go  </span><br><span class="line">&#x2F;usr&#x2F;local&#x2F;go&#x2F;bin&#x2F;go</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="2-配置環境變數"><a href="#2-配置環境變數" class="headerlink" title="2.配置環境變數"></a>2.配置環境變數</h2><h3 id="MAC安裝筆記"><a href="#MAC安裝筆記" class="headerlink" title="MAC安裝筆記"></a>MAC安裝筆記</h3><p>選擇的是用在使用者目錄下配置環境變數</p>
-</li>
-<li><p>vi ~/.bash_profile</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;輸入a編輯</span><br><span class="line">export GOROOT&#x3D;&quot;&#x2F;usr&#x2F;local&#x2F;go&quot;</span><br><span class="line">export GOPATH&#x3D;$HOME&#x2F;go</span><br><span class="line">export PATH&#x3D;$PATH:$GOPATH&#x2F;bin </span><br><span class="line">export PATH&#x3D;$PATH:$GOROOT&#x2F;bin</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;GOROOT表示GO安裝的目錄</span><br><span class="line">&#x2F;&#x2F;GOPATH是自訂想要放置程式的地方</span><br><span class="line">&#x2F;&#x2F;打完後esc輸入：wq存擋</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>執行 bash profile<br>  source ~/.bash_profile</p>
-</li>
-</ul>
-<h2 id="3-IDE-安裝"><a href="#3-IDE-安裝" class="headerlink" title="3.IDE 安裝"></a>3.IDE 安裝</h2><p>3-1 下載 Visual Studio Code<br>3-2 打開 VScode 於 Extensions 安裝 Go (微軟官方維護) 外掛</p>
-<ul>
-<li>Go 擴充功能整合了多種 Go 工具，例如 gocode(代碼自動補全), golint(代碼規範檢查)，goreturns(格式工具Format Tool) 等，可以查看<a target="_blank" rel="noopener" href="https://github.com/golang/vscode-go/blob/master/docs/tools.md(%E6%9C%89%E4%BA%9B%E6%9C%89%E4%B8%8D%E5%90%8C%E9%81%B8%E6%93%87%EF%BC%8C%E9%A0%90%E8%A8%AD%E5%B7%A5%E5%85%B7%E5%8F%AF%E4%BB%A5%E5%9C%A8%E8%A8%AD%E5%AE%9A%E8%A3%A1%E6%94%B9)">https://github.com/golang/vscode-go/blob/master/docs/tools.md(有些有不同選擇，預設工具可以在設定裡改)</a></li>
-<li>如果沒有安裝對應的工具，就會在編譯.go文件時跳出提示，Analysis Tools Missing ，此時可以按下 Command + Shift + p 呼叫命令列視窗，輸入 Go: Install/Update tools 安裝/更新所有的工具解決此問題。</li>
-<li>如遇上安裝問題，也有文章推薦可直接進行3-3步驟</li>
-</ul>
-<p>3-3 打開終端機執行下列指令來安裝依賴包以下工具:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">go get -u -v github.com/ramya-rao-a/go-outline</span><br><span class="line">go get -u -v github.com/acroca/go-symbols</span><br><span class="line">go get -u -v github.com/mdempsky/gocode</span><br><span class="line">go get -u -v github.com/rogpeppe/godef</span><br><span class="line">go get -u -v golang.org/x/tools/cmd/godoc</span><br><span class="line">go get -u -v github.com/zmb3/gogetdoc</span><br><span class="line">go get -u -v golang.org/x/lint/golint</span><br><span class="line">go get -u -v github.com/fatih/gomodifytags</span><br><span class="line">go get -u -v golang.org/x/tools/cmd/gorename</span><br><span class="line">go get -u -v sourcegraph.com/sqs/goreturns</span><br><span class="line">go get -u -v golang.org/x/tools/cmd/goimports</span><br><span class="line">go get -u -v github.com/cweill/gotests/...</span><br><span class="line">go get -u -v golang.org/x/tools/cmd/guru</span><br><span class="line">go get -u -v github.com/josharian/impl</span><br><span class="line">go get -u -v github.com/haya14busa/goplay/cmd/goplay</span><br><span class="line">go get -u -v github.com/uudashr/gopkgs/cmd/gopkgs</span><br><span class="line">go get -u -v github.com/davidrjenni/reftools/cmd/fillstruct</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>配置好後在編輯ＧＯ語言就會發現有很多貼心的提示 ，同時也會出現在ＩＤ內的problems清單裡，可以進一步修改程式語法，真的是超級方便的．</p>
-</blockquote>
-<ul>
-<li>補充：以下是相關工具的說明<table>
-<thead>
-<tr>
-<th>工具</th>
-<th>說明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>dlv.exe    go</td>
-<td>語言調適工具</td>
-</tr>
-<tr>
-<td>gocode.exe    go</td>
-<td>語言检查，自动补全</td>
-</tr>
-<tr>
-<td>godef.exe     go</td>
-<td>語言定义和引用的跳转</td>
-</tr>
-<tr>
-<td>golint.exe     go</td>
-<td>語言规范检查</td>
-</tr>
-<tr>
-<td>go-outline.exe</td>
-<td>用于在Go源文件中提取JSON形式声明的简单工具</td>
-</tr>
-<tr>
-<td>gopkgs.exe</td>
-<td>快速列出可用包的工具</td>
-</tr>
-<tr>
-<td>gorename.exe</td>
-<td>在Go源代码中执行标识符的精确类型安全重命名</td>
-</tr>
-<tr>
-<td>goreturns.exe</td>
-<td>类似fmt和import的工具，使用零值填充Go返回语句以匹配func返回类</td>
-</tr>
-<tr>
-<td>go-symbols.exe</td>
-<td>从go源码树中提取JSON形式的包符号的工具</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
+
 <div class="note class_name">
-            <h1 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h1>
+            <p>參考文章 </p>
           </div>
-<p>windows 安裝Go</p>
+
 <ul>
-<li><a target="_blank" rel="noopener" href="https://oranwind.org/go-go-yu-yan-yu-windows-shang-zhi-an-zhuang-yu-huan-jing-she-ding/" title="[Go] Go 語言於 Windows 上之安裝與環境設定">[Go] Go 語言於 Windows 上之安裝與環境設定</a> </li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/v6543210/article/details/84504460">用vscode开发调试golang超简单教程</a></li>
+<li>教你撰寫第一隻 Go<ul>
+<li><a target="_blank" rel="noopener" href="https://kevingo.github.io/the-little-go-book/" title="the-little-go-book">the-little-go-book</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/%E4%BC%81%E9%B5%9D%E4%B9%9F%E6%87%82%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/golang-goroot-gopath-go-modules-%E4%B8%89%E8%80%85%E7%9A%84%E9%97%9C%E4%BF%82%E4%BB%8B%E7%B4%B9-d17481d7a655">Golang — GOROOT、GOPATH、Go-Modules-三者的關係介紹</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.wu-boy.com/2017/01/business-benefits-of-go/">從商業利益看 Go 程式語言</a></li>
 </ul>
-<p>Ｍac 安裝Go</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/391186/">Mac上Go環境和VS Code的正確安裝與配置方法</a> </li>
+</li>
+<li>進階 go 整理教學<ul>
+<li><a target="_blank" rel="noopener" href="https://kennyliblog.nctu.me/2019/08/20/Golang-advanced/#%E7%AD%86%E8%A8%98-Golang-%E9%80%B2%E9%9A%8E" title="[筆記] Golang 進階">[筆記] Golang 進階</a></li>
 </ul>
-<p>IDE : VScode</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://oranwind.org/go-ide-visual-studio-code/" title="[Go] 使用 Visual Studio Code 上建置 Go 開發環境">[Go] 使用 Visual Studio Code 上建置 Go 開發環境</a> </li>
+</li>
 </ul>
 
     </div>
@@ -350,7 +268,6 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/golang/" rel="tag"># golang</a>
-              <a href="/tags/vscode/" rel="tag"># vscode</a>
           </div>
 
         
@@ -358,10 +275,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/09/09/02-go-start/" rel="next" title="[Go] 學習 GO 收藏文">
-      [Go] 學習 GO 收藏文 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/09/09/01-go-env/" rel="prev" title="[Go] 配置GO開發環境">
+      <i class="fa fa-chevron-left"></i> [Go] 配置GO開發環境
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/01/11/hello-world/" rel="next" title="Hello World">
+      Hello World <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -421,7 +341,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AFGo"><span class="nav-number">1.</span> <span class="nav-text">什麼是Go</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%8F%E9%81%8E%E4%B8%89%E6%AD%A5%E9%A9%9F%E8%A8%AD%E5%AE%9A%E5%AE%8C%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">透過三步驟設定完開發環境：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%9D-Go"><span class="nav-number">2.1.</span> <span class="nav-text">1.安裝 Go</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E9%85%8D%E7%BD%AE%E7%92%B0%E5%A2%83%E8%AE%8A%E6%95%B8"><span class="nav-number">2.2.</span> <span class="nav-text">2.配置環境變數</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MAC%E5%AE%89%E8%A3%9D%E7%AD%86%E8%A8%98"><span class="nav-number">2.2.1.</span> <span class="nav-text">MAC安裝筆記</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-IDE-%E5%AE%89%E8%A3%9D"><span class="nav-number">2.3.</span> <span class="nav-text">3.IDE 安裝</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">3.</span> <span class="nav-text">參考文章</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
