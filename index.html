@@ -165,6 +165,95 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/30/react-create-react-app/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar_memo.png">
+      <meta itemprop="name" content="Yuri">
+      <meta itemprop="description" content="後端IT工程師，Go經歷一年 & 正在學習 React。 喜歡貓狗．<br> 持續紀錄自學筆記，如有誤還請您不吝指出與指教＾＾">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yu's 程式筆記">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/30/react-create-react-app/" class="post-title-link" itemprop="url">[React] 初始開發環境設定與名詞介紹</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-01-30 20:06:07 / Modified: 20:10:15" itemprop="dateCreated datePublished" datetime="2021-01-30T20:06:07+08:00">2021-01-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech.</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/Web/front-end/" itemprop="url" rel="index"><span itemprop="name">front-end</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/Web/front-end/react/" itemprop="url" rel="index"><span itemprop="name">react</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <div class="note info">
+            <p>快速安裝 React 專案與建置開發環境 </p>
+          </div>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/30/react-create-react-app/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/30/java-spring-asnc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -190,7 +279,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-01-30 18:00:42 / Modified: 18:04:12" itemprop="dateCreated datePublished" datetime="2021-01-30T18:00:42+08:00">2021-01-30</time>
+              <time title="Created: 2021-01-30 18:00:42 / Modified: 19:57:59" itemprop="dateCreated datePublished" datetime="2021-01-30T18:00:42+08:00">2021-01-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -221,22 +310,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <blockquote class="blockquote-center">
-            <i class="fa fa-quote-left"></i>
-            <h1 id="前文-：引言"><a href="#前文-：引言" class="headerlink" title="前文 ：引言"></a>前文 ：引言</h1>
-            <i class="fa fa-quote-right"></i>
-          </blockquote>
-
-<blockquote>
-<p>spring加上Fire and forget，非同步處理，發出處理後就不用等待回復繼續做其他事情。</p>
-</blockquote>
-<p>1.找到@Configuration的地方加上@EnableAsync</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">@EnableAsync</span><br><span class="line">public class XxxConfig &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>2.找到想要執行非同步的方法上方加上 @Async</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Component</span><br><span class="line">public class MyComponent &#123;</span><br><span class="line">    @Async</span><br><span class="line">    void doSomething() &#123;</span><br><span class="line">        &#x2F;&#x2F; this will be executed asynchronously</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如果想要拿到回傳的地方可以在Future<XXX>拿到結果。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@Component</span><br><span class="line">public class MyComponent &#123;</span><br><span class="line">    @Async</span><br><span class="line">    Future&lt;String&gt; doSomething(String s, int i, long l, Object o) &#123;</span><br><span class="line">        &#x2F;&#x2F; this will be executed asynchronously</span><br><span class="line">        return new AsyncResult&lt;&gt;(&quot;result&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>3.異常處理 TBD<br>這塊自己是用restTamplate發出訊息，但無奈可以catch到錯誤，卻無法做錯誤輸出整理。<br>留下文章待做研究。</p>
+          <div class="note info">
+            <p>spring 加上 Fire and forget，非同步處理，發出處理後就不用等待回復繼續做其他事情 </p>
+          </div>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/01/30/java-spring-asnc/#more" rel="contents">
@@ -540,7 +616,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/11/14/react-recharts/" class="post-title-link" itemprop="url">react-recharts</a>
+            <a href="/2020/11/14/react-recharts/" class="post-title-link" itemprop="url">[✍練習][🚧進行中] [react]使用recharts進行圖表繪製</a>
         </h2>
 
         <div class="post-meta">
@@ -557,7 +633,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-30 11:43:13" itemprop="dateModified" datetime="2021-01-30T11:43:13+08:00">2021-01-30</time>
+                <time title="Modified: 2021-01-30 20:14:21" itemprop="dateModified" datetime="2021-01-30T20:14:21+08:00">2021-01-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -734,7 +810,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/10/02/react-todo/" class="post-title-link" itemprop="url">[✍練習][react]做to-do list頁面</a>
+            <a href="/2020/10/02/react-todo/" class="post-title-link" itemprop="url">[✍練習][🚧進行中][react]做to-do list頁面</a>
         </h2>
 
         <div class="post-meta">
@@ -751,7 +827,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-30 11:43:13" itemprop="dateModified" datetime="2021-01-30T11:43:13+08:00">2021-01-30</time>
+                <time title="Modified: 2021-01-30 20:13:36" itemprop="dateModified" datetime="2021-01-30T20:13:36+08:00">2021-01-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -829,7 +905,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/10/01/react-lamda/" class="post-title-link" itemprop="url">[✍練習][react] 使用ramda整理資料</a>
+            <a href="/2020/10/01/react-lamda/" class="post-title-link" itemprop="url">[✍練習][🚧進行中][react] 使用ramda整理資料</a>
         </h2>
 
         <div class="post-meta">
@@ -846,7 +922,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-30 11:43:13" itemprop="dateModified" datetime="2021-01-30T11:43:13+08:00">2021-01-30</time>
+                <time title="Modified: 2021-01-30 20:13:47" itemprop="dateModified" datetime="2021-01-30T20:13:47+08:00">2021-01-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1002,106 +1078,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/18/react-css/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar_memo.png">
-      <meta itemprop="name" content="Yuri">
-      <meta itemprop="description" content="後端IT工程師，Go經歷一年 & 正在學習 React。 喜歡貓狗．<br> 持續紀錄自學筆記，如有誤還請您不吝指出與指教＾＾">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yu's 程式筆記">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/18/react-css/" class="post-title-link" itemprop="url">[✍練習]在 React 中套用 css-in-js (Emotion 庫)撰寫 CSS</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-09-18 21:21:19" itemprop="dateCreated datePublished" datetime="2020-09-18T21:21:19+08:00">2020-09-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-30 11:43:13" itemprop="dateModified" datetime="2021-01-30T11:43:13+08:00">2021-01-30</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech.</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/Web/front-end/" itemprop="url" rel="index"><span itemprop="name">front-end</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/Web/front-end/react/" itemprop="url" rel="index"><span itemprop="name">react</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>[✍練習ing]</p>
-<blockquote>
-<p>練習React JS寫法與 css-in-js( Emotion 庫) 撰寫 CSS</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/09/18/react-css/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1168,7 +1148,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
