@@ -9,11 +9,10 @@ categories:
 date: 2020-09-14 22:08:34
 ---
 
-> 一般在執行go run main.go後就會馬上回到命令列
-> 這邊實作當接收到ctrl+c或是終止程式才會停止程式
+> 一般在執行go run main.go後就會馬上回到命令列，
+這邊實作當接收到ctrl+c或是終止程式才會停止程式
 
-# 
-本文說明：
+# 本文說明：
 - go實作接收命令而中止程式．
 - 會用到channel管道來進行阻塞，並接收os/signal訊號
 
@@ -44,16 +43,15 @@ func listenForＳignal(errChan chan error) {
 
 ```
 
-說明：
- * 使用"os/signal"包
-用來接收訊號使用，notify方法用来監聽收到的信號（stop方法則取消）
+# 說明：
+使用"os/signal"包，用來接收訊號使用，notify方法用来監聽收到的信號（stop方法則取消）
     * SIGINT	表示用户按下INTR字符(Ctrl+C)觸發
     * SIGTERM	结束程序 kill pid的作用是向進程為pid的程序发送SIGTERM
     * 其他像是SIGKILL   kill -9 pid則是發送立即終止 等等就先不使用
 
 
 
-#### 測試接收SIGINT
+## 測試接收SIGINT
 
 然後執行go run main.go後，會看到服務就一直執行著，再按下ctrl+c
 
@@ -63,7 +61,7 @@ start
 ^Cterminating: interrupt
 ```
 
-#### 測試接收SIGTERM
+## 測試接收SIGTERM
 先將main.go編譯成執行檔 -o代表放在目前目錄下 取名為demo
 "./"執行demo這檔案
 ```
@@ -91,5 +89,8 @@ terminating: terminated
 ------------
 
 
-後記：不太知道到底要怎麼要在vscode debug模式
+# 後記疑問：
+1. 不太知道到底要怎麼要在vscode debug模式
 去模擬ctrl+c時會跑到的地方來看程式，google未有結果，無解
+2. 在linux環境有效，win環境搜尋無解
+

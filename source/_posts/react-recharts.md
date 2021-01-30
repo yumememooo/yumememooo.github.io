@@ -1,5 +1,5 @@
 ---
-title: react-recharts
+title: "[✍練習][🚧進行中] [react]使用recharts進行圖表繪製"
 tags:
   - react
   - recharts

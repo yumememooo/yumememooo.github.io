@@ -10,20 +10,21 @@ categories:
 date: 2021-01-30 18:00:42
 ---
 
-{% cq %} 
-# 前文 ：引言
- {% endcq %}
+{% note info %} spring 加上 Fire and forget，非同步處理，發出處理後就不用等待回復繼續做其他事情 {% endnote %}
 
->spring加上Fire and forget，非同步處理，發出處理後就不用等待回復繼續做其他事情。
+<!--more-->
 
-1.找到@Configuration的地方加上@EnableAsync
+1.找到@Configuration 的地方加上@EnableAsync
+
 ```
 @Configuration
 @EnableAsync
 public class XxxConfig {
 }
 ```
+
 2.找到想要執行非同步的方法上方加上 @Async
+
 ```
 @Component
 public class MyComponent {
@@ -33,7 +34,9 @@ public class MyComponent {
     }
 }
 ```
-如果想要拿到回傳的地方可以在Future<XXX>拿到結果。
+
+如果想要拿到回傳的地方可以在 Future<XXX>拿到結果。
+
 ```
 @Component
 public class MyComponent {
@@ -44,19 +47,16 @@ public class MyComponent {
     }
 }
 ```
+
 3.異常處理 TBD
-這塊自己是用restTamplate發出訊息，但無奈可以catch到錯誤，卻無法做錯誤輸出整理。
+這塊自己是用 restTamplate 發出訊息，但無奈可以 catch 到錯誤，卻無法做錯誤輸出整理。
 留下文章待做研究。
 
+---
 
+{% note class_name %} 網路參考文章 {% endnote %}
 
-
-
-<!--more-->
-
-
-{% note class_name %} ## 網路參考文章 {% endnote %}
 - [spring-background-fire-and-forget-processing](https://stackoverflow.com/questions/33243255/spring-background-fire-and-forget-processing)
-- [Spring Boot(5) @Async非同步執行緒池詳解](https://www.mdeditor.tw/pl/pIYL/zh-tw)
-- Spring中@Async用法與異常處理
-[Spring中@Async用法](https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/312303/)
+- [Spring Boot(5) @Async 非同步執行緒池詳解](https://www.mdeditor.tw/pl/pIYL/zh-tw)
+- Spring 中@Async 用法與異常處理
+  [Spring 中@Async 用法](https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/312303/)

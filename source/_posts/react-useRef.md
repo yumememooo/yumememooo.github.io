@@ -1,5 +1,5 @@
 ---
-title: "[練習]React function comp.中的ref屬性改寫"
+title: "[Note][React] function comp.中的ref屬性改寫"
 tags:
   - react
 categories:

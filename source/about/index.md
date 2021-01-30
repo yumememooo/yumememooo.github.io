@@ -1,11 +1,11 @@
 ---
-title: About Me
+title: "關於我 About Me"
 date: 2020-09-06 13:53:06
 ---
 
 <img src="/images/avatar_memo.png" width="150px" />
 
-<h1 align="center">Hi 👋, I'm Yuri</h1>
+<h1 align="center">Hi 👋, I'm Yuri </h1>
 <h3 align="center">後端IT工程師，Go經歷一年 & 正在學習 React。 喜歡貓狗．
 </h3>
 <h4>> 喜歡透過實作紀錄與搜集整理資料來做比較理解，持續紀錄自學筆記，如有誤還請您不吝指出與指教＾.＾</h4>
@@ -35,9 +35,9 @@ date: 2020-09-06 13:53:06
 
 
 <h3 align="left">Connect with me:</h3>
+
 <p style="display:flex">
 <a href="https://fb.com/yumememooo" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/facebook.svg" alt="yumememooo" height="30" width="40" /></a>
 <a href="https://instagram.com/yumememooo" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/instagram.svg" alt="yumememooo" height="30" width="40" /></a>
 <a href="https://www.youtube.com/c/yumememooo" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/youtube.svg" alt="yumememooo" height="30" width="40" /></a>
 </p>
-
