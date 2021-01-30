@@ -212,7 +212,16 @@ scheme: Pisces 選單在側邊
 ```
 hexo new page tags
 hexo new page categories
+=====
+index.md
+---
+title: categories
+date: 2021-01-11 17:25:08
+type: "categories"
+
 ```
+
+
 
 2. 為文章加上Tag與categories
 在_posts/xxx.md 文章上方新增，差別在於標籤是並行的標示，而分類會有階層式關係．
@@ -432,7 +441,7 @@ tags:
 categories:
 ---
 blabla.....
-<!--more-->
+<!--more-->
 ```
 意外發現的方法，藉由這樣修改hexo new post時就可以把基本的設定加好了
 
