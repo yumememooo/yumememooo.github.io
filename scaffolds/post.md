@@ -19,8 +19,9 @@ categories:
 # 前文 ：引言
  {% endcq %}
  <blockquote class="blockquote-center">
- 內文</blockquote>
+ 長文適用</blockquote>
 
+{% note info %} 藍色簡單區塊 {% endnote %}
 
 
 # 本文將會知道：
@@ -34,4 +35,4 @@ categories:
 
 👇👇👇未完待續 您可以拉到底部先看參考文章👇👇👇
 
-{% note class_name %} ## 網路參考文章 {% endnote %}
+# 網路參考文章
