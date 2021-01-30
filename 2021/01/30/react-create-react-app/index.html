@@ -20,21 +20,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="紀錄有關在 console 中 debug 的指令  [✍ 持續更新]">
+  <meta name="description" content="快速安裝 React 專案與建置開發環境">
 <meta property="og:type" content="article">
-<meta property="og:title" content="紀錄有關在console 中debug的指令">
-<meta property="og:url" content="http://yoursite.com/2020/10/01/console-debug/index.html">
+<meta property="og:title" content="[React] 初始開發環境設定與名詞介紹">
+<meta property="og:url" content="http://yoursite.com/2021/01/30/react-create-react-app/index.html">
 <meta property="og:site_name" content="Yu&#39;s 程式筆記">
-<meta property="og:description" content="紀錄有關在 console 中 debug 的指令  [✍ 持續更新]">
+<meta property="og:description" content="快速安裝 React 專案與建置開發環境">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-01T07:53:50.000Z">
-<meta property="article:modified_time" content="2021-01-30T03:43:12.841Z">
+<meta property="article:published_time" content="2021-01-30T12:06:07.000Z">
+<meta property="article:modified_time" content="2021-01-30T12:10:15.644Z">
 <meta property="article:author" content="Yuri">
-<meta property="article:tag" content="note">
-<meta property="article:tag" content="ing">
+<meta property="article:tag" content="react">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/10/01/console-debug/">
+<link rel="canonical" href="http://yoursite.com/2021/01/30/react-create-react-app/">
 
 
 <script id="page-configurations">
@@ -47,7 +46,7 @@
   };
 </script>
 
-  <title>紀錄有關在console 中debug的指令 | Yu's 程式筆記</title>
+  <title>[React] 初始開發環境設定與名詞介紹 | Yu's 程式筆記</title>
   
 
 
@@ -170,7 +169,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/01/console-debug/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/30/react-create-react-app/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar_memo.png">
@@ -183,7 +182,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          紀錄有關在console 中debug的指令
+          [React] 初始開發環境設定與名詞介紹
         </h1>
 
         <div class="post-meta">
@@ -192,16 +191,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2020-10-01 15:53:50" itemprop="dateCreated datePublished" datetime="2020-10-01T15:53:50+08:00">2020-10-01</time>
+              <time title="Created: 2021-01-30 20:06:07 / Modified: 20:10:15" itemprop="dateCreated datePublished" datetime="2021-01-30T20:06:07+08:00">2021-01-30</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-30 11:43:12" itemprop="dateModified" datetime="2021-01-30T11:43:12+08:00">2021-01-30</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -220,7 +213,7 @@
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/Web/front-end/tool/" itemprop="url" rel="index"><span itemprop="name">tool</span></a>
+                  <a href="/categories/Tech/Web/front-end/react/" itemprop="url" rel="index"><span itemprop="name">react</span></a>
                 </span>
             </span>
 
@@ -242,21 +235,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <blockquote>
-<p>紀錄有關在 console 中 debug 的指令</p>
-</blockquote>
-<p>[✍ 持續更新]</p>
+        <div class="note info">
+            <p>快速安裝 React 專案與建置開發環境 </p>
+          </div>
+
+
+
 <a id="more"></a>
 
-<h4 id="複製內容"><a href="#複製內容" class="headerlink" title="複製內容"></a>複製內容</h4><p>一般來說可以在 console 中印出陣列，但 console 會顯示階層式的物件，如果想要複製單純內物件內容，就要透過下列動作達成：</p>
-<p>Right-click an object in Chrome’s console and select Store as Global Variable from the context menu. It will return something like temp1 as the variable name.</p>
-<p>Chrome also has a copy() method, so copy(temp1) in the console should copy that object to your clipboard.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(9) [&#123;…&#125;, &#123;…&#125;, &#123;…&#125;, &#123;…&#125;, &#123;…&#125;, &#123;…&#125;, &#123;…&#125;, &#123;…&#125;, &#123;…&#125;]</span><br><span class="line">temp1</span><br><span class="line">(9) [&#123;…&#125;, &#123;…&#125;, &#123;…&#125;, &#123;…&#125;, &#123;…&#125;, &#123;…&#125;, &#123;…&#125;, &#123;…&#125;, &#123;…&#125;]</span><br><span class="line">copy(temp1)</span><br><span class="line">JSON.stringify(temp1)</span><br><span class="line">&quot;[&#123;&quot;name&quot;:&quot;Cupcake&quot;,&quot;pri&quot;:1,&quot;status&quot;:&quot;OPEN&quot;,&quot;type&quot;:&quot;blog&quot;,&quot;protein&quot;:4.3&#125;,&#123;&quot;name&quot;:&quot;Donut&quot;,&quot;pri&quot;:2,&quot;status&quot;:&quot;OPEN&quot;,&quot;type&quot;:&quot;go&quot;,&quot;protein&quot;:4.9&#125;]&quot;</span><br></pre></td></tr></table></figure>
-<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/10305365/javascript-chrome-how-to-copy-an-object-from-the-webkit-inspector-as-code">Javascript / Chrome - How to copy an object from the webkit inspector as code
-</a></p>
-<div class="note class_name">
-            <h1 id="網路參考文章"><a href="#網路參考文章" class="headerlink" title="網路參考文章"></a>網路參考文章</h1>
-          </div>
+
+<h4 id="安裝node-js-npm"><a href="#安裝node-js-npm" class="headerlink" title="安裝node.js (npm)"></a>安裝node.js (npm)</h4><ul>
+<li>Node.js是能執行JavaScript 的執行環境，讓JS可以在伺服器(瀏覽器以外)運作</li>
+<li>npm（全稱 Node Package Manager，即「node包管理器」）是Node.js預設的、用JavaScript編寫的軟體套件管理系統</li>
+</ul>
+<h4 id="使用-npm-安裝create-react-app"><a href="#使用-npm-安裝create-react-app" class="headerlink" title="使用 npm 安裝create-react-app"></a>使用 npm 安裝create-react-app</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install -g create-react-app</span><br><span class="line">/usr/<span class="built_in">local</span>/bin/create-react-app -&gt; /usr/<span class="built_in">local</span>/lib/node_modules/create-react-app/index.js</span><br><span class="line">+ create-react-app@3.4.1</span><br><span class="line">~ create-react-app --version</span><br><span class="line">3.4.1</span><br></pre></td></tr></table></figure>
+<ul>
+<li> -g 代表全局安裝</li>
+<li>create-react-app 是適合學習 React 的環境及單頁（single-page）應用程式，不需再安装或配置 Webpack 或 Babel 等工具， 它們是預先配置好並隐藏的</li>
+<li> create-react-app –version 確認版本的指令- </li>
+</ul>
+<h4 id="使用create-react-app-建立專案"><a href="#使用create-react-app-建立專案" class="headerlink" title="使用create-react-app 建立專案"></a>使用create-react-app 建立專案</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">～create-react-app my-react-demo</span><br><span class="line">Creating a new React app <span class="keyword">in</span> /Users/xxx/front/my-react-demo.</span><br></pre></td></tr></table></figure>
+<h4 id="啟動專案"><a href="#啟動專案" class="headerlink" title="啟動專案"></a>啟動專案</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br></pre></td></tr></table></figure>
+
+<p>public/index.html<br>基本的HTML架構，內有</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;root&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>&quot;</span><br></pre></td></tr></table></figure>
+<p>這樣的內容</p>
+<h4 id="vscode-外掛"><a href="#vscode-外掛" class="headerlink" title="vscode 外掛"></a>vscode 外掛</h4><ul>
+<li>ESlint 插件 -&gt;程式碼規範檢查</li>
+<li>JS JSX Snippets  插件  -&gt;程式碼快速鍵</li>
+</ul>
+<hr>
+<h4 id="延伸閱讀-wait"><a href="#延伸閱讀-wait" class="headerlink" title="延伸閱讀 [wait]"></a>延伸閱讀 [wait]</h4><p><a target="_blank" rel="noopener" href="https://www.itread01.com/content/1544755994.html" title="有看沒懂的npx方式">有看沒懂的npx方式</a></p>
 
     </div>
 
@@ -266,8 +275,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/note/" rel="tag"># note</a>
-              <a href="/tags/ing/" rel="tag"># ing</a>
+              <a href="/tags/react/" rel="tag"># react</a>
           </div>
 
         
@@ -276,13 +284,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/09/18/react-css/" rel="prev" title="[✍練習]在 React 中套用 css-in-js (Emotion 庫)撰寫 CSS">
-      <i class="fa fa-chevron-left"></i> [✍練習]在 React 中套用 css-in-js (Emotion 庫)撰寫 CSS
+    <a href="/2021/01/30/java-spring-asnc/" rel="prev" title="java spring 非同步事件">
+      <i class="fa fa-chevron-left"></i> java spring 非同步事件
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/10/01/react-lamda/" rel="next" title="[✍練習][🚧進行中][react] 使用ramda整理資料">
-      [✍練習][🚧進行中][react] 使用ramda整理資料 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -341,7 +346,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A4%87%E8%A3%BD%E5%85%A7%E5%AE%B9"><span class="nav-number">1.</span> <span class="nav-text">複製內容</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B6%B2%E8%B7%AF%E5%8F%83%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number"></span> <span class="nav-text">網路參考文章</span></a></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%9Dnode-js-npm"><span class="nav-number">1.</span> <span class="nav-text">安裝node.js (npm)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-npm-%E5%AE%89%E8%A3%9Dcreate-react-app"><span class="nav-number">2.</span> <span class="nav-text">使用 npm 安裝create-react-app</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8create-react-app-%E5%BB%BA%E7%AB%8B%E5%B0%88%E6%A1%88"><span class="nav-number">3.</span> <span class="nav-text">使用create-react-app 建立專案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%95%9F%E5%8B%95%E5%B0%88%E6%A1%88"><span class="nav-number">4.</span> <span class="nav-text">啟動專案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vscode-%E5%A4%96%E6%8E%9B"><span class="nav-number">5.</span> <span class="nav-text">vscode 外掛</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BB%B6%E4%BC%B8%E9%96%B1%E8%AE%80-wait"><span class="nav-number">6.</span> <span class="nav-text">延伸閱讀 [wait]</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
