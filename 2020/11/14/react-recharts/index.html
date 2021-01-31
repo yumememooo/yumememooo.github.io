@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="前文 ：引言                            內文">
+  <meta name="description" content="練習 Reactc 畫圖套件 recharts">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[✍練習][🚧進行中] [react]使用recharts進行圖表繪製">
 <meta property="og:url" content="http://yoursite.com/2020/11/14/react-recharts/index.html">
 <meta property="og:site_name" content="Yu&#39;s 程式筆記">
-<meta property="og:description" content="前文 ：引言                            內文">
+<meta property="og:description" content="練習 Reactc 畫圖套件 recharts">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-14T14:17:59.000Z">
-<meta property="article:modified_time" content="2021-01-30T12:14:21.315Z">
+<meta property="article:modified_time" content="2021-01-31T03:15:33.354Z">
 <meta property="article:author" content="Yuri">
 <meta property="article:tag" content="react">
 <meta property="article:tag" content="recharts">
@@ -200,7 +200,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-30 20:14:21" itemprop="dateModified" datetime="2021-01-30T20:14:21+08:00">2021-01-30</time>
+                <time title="Modified: 2021-01-31 11:15:33" itemprop="dateModified" datetime="2021-01-31T11:15:33+08:00">2021-01-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,23 +242,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <blockquote class="blockquote-center">
-            <i class="fa fa-quote-left"></i>
-            <h1 id="前文-：引言"><a href="#前文-：引言" class="headerlink" title="前文 ：引言"></a>前文 ：引言</h1>
-            <i class="fa fa-quote-right"></i>
-          </blockquote>
- <blockquote class="blockquote-center">
- 內文</blockquote>
-
-
+        <div class="note info">
+            <p>練習 Reactc 畫圖套件 recharts</p>
+          </div>
 
 <a id="more"></a>
 
-
-
-<h3 id="Reactc畫圖套件recharts"><a href="#Reactc畫圖套件recharts" class="headerlink" title="Reactc畫圖套件recharts"></a>Reactc畫圖套件recharts</h3><h4 id="導入"><a href="#導入" class="headerlink" title="導入"></a>導入</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install recharts</span><br></pre></td></tr></table></figure>
+<h3 id="Reactc-畫圖套件-recharts"><a href="#Reactc-畫圖套件-recharts" class="headerlink" title="Reactc 畫圖套件 recharts"></a>Reactc 畫圖套件 recharts</h3><h4 id="導入"><a href="#導入" class="headerlink" title="導入"></a>導入</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install recharts</span><br></pre></td></tr></table></figure>
 <h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import &#123; LineChart, Line, XAxis, YAxis, Tooltip &#125; from &#39;recharts&#39;;</span><br><span class="line">function RenderLineChart() &#123;</span><br><span class="line">  const data &#x3D; [</span><br><span class="line">    &#123; name: &#39;Page A&#39;, uv: 400, pv: 2400, amt: 2400 &#125;,</span><br><span class="line">    &#123; name: &#39;Page B&#39;, uv: 800, pv: 1200, amt: 2400 &#125;,</span><br><span class="line">    &#123; name: &#39;Page C&#39;, uv: 900, pv: 3000, amt: 2400 &#125;,</span><br><span class="line">  ];</span><br><span class="line">  return (</span><br><span class="line">    &lt;LineChart width&#x3D;&#123;400&#125; height&#x3D;&#123;250&#125; data&#x3D;&#123;data&#125;&gt;</span><br><span class="line">      &lt;XAxis dataKey&#x3D;&quot;name&quot; &#x2F;&gt;</span><br><span class="line">      &lt;YAxis &#x2F;&gt;</span><br><span class="line">      &lt;Tooltip &#x2F;&gt;</span><br><span class="line">      &lt;Line type&#x3D;&quot;monotone&quot; dataKey&#x3D;&quot;uv&quot; stroke&#x3D;&quot;#8884d8&quot; &#x2F;&gt;</span><br><span class="line">      &lt;Line type&#x3D;&quot;monotone&quot; dataKey&#x3D;&quot;pv&quot; stroke&#x3D;&quot;#3f51b5&quot; &#x2F;&gt;</span><br><span class="line">      &lt;Line type&#x3D;&quot;monotone&quot; dataKey&#x3D;&quot;amt&quot; stroke&#x3D;&quot;#666666&quot; &#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;LineChart&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;在對應要放入的位置放入</span><br><span class="line">&lt;RenderLineChart &#x2F;&gt;</span><br></pre></td></tr></table></figure>
-
 <div class="note class_name">
             <h2 id="網路參考文章"><a href="#網路參考文章" class="headerlink" title="網路參考文章"></a>網路參考文章</h2>
           </div>
@@ -287,8 +278,8 @@
       <i class="fa fa-chevron-left"></i> 有關java之OutOfMemory檢測等相關問題文章整理
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/01/11/github-profile-page/" rel="next" title="github-profile-page">
-      github-profile-page <i class="fa fa-chevron-right"></i>
+    <a href="/2020/12/31/Kubernetes/" rel="next" title="[純紀錄]Kubernetes基本操作">
+      [純紀錄]Kubernetes基本操作 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -348,7 +339,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E6%96%87-%EF%BC%9A%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前文 ：引言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Reactc%E7%95%AB%E5%9C%96%E5%A5%97%E4%BB%B6recharts"><span class="nav-number">1.0.1.</span> <span class="nav-text">Reactc畫圖套件recharts</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%8E%E5%85%A5"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">導入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B6%B2%E8%B7%AF%E5%8F%83%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">1.1.</span> <span class="nav-text">網路參考文章</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Reactc-%E7%95%AB%E5%9C%96%E5%A5%97%E4%BB%B6-recharts"><span class="nav-number">1.</span> <span class="nav-text">Reactc 畫圖套件 recharts</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%8E%E5%85%A5"><span class="nav-number">1.1.</span> <span class="nav-text">導入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B6%B2%E8%B7%AF%E5%8F%83%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number"></span> <span class="nav-text">網路參考文章</span></a></div>
       </div>
       <!--/noindex-->
 
@@ -363,20 +354,20 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -393,6 +384,16 @@
 
 
       </div>
+
+<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+<div class="widget-wrap">
+    <div id="myCanvasContainer" class="widget tagcloud">
+    <canvas width="220" height="250" id="resCanvas" style="width=100%">
+        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDE/" rel="tag">IDE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA/" rel="tag">IDEA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kubernetes/" rel="tag">Kubernetes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Material-ui/" rel="tag">Material-ui</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memory/" rel="tag">Memory</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cleanCode/" rel="tag">cleanCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-in-js/" rel="tag">css-in-js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heroku/" rel="tag">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hugo/" rel="tag">hugo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ing/" rel="tag">ing</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongo/" rel="tag">mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/" rel="tag">note</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/" rel="tag">react</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recharts/" rel="tag">recharts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">3</span></li></ul>
+    </canvas>
+    </div>
+</div>
 
     </div>
   </aside>
