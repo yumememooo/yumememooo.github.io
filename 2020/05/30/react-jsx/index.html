@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="一般在執行go run main.go後就會馬上回到命令列，這邊實作當接收到ctrl+c或是終止程式才會停止程式  本文說明： go實作接收命令而中止程式． 會用到channel管道來進行阻塞，並接收os&#x2F;signal訊號">
+  <meta name="description" content="上一篇提到建立一個基本專案，這次來做一些介紹，及對index.js做一些改寫練習">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Go] 信號處理和退出程式">
-<meta property="og:url" content="http://yoursite.com/2020/09/14/03-go-signal/index.html">
+<meta property="og:title" content="[React] react JSX 基本語法">
+<meta property="og:url" content="http://yoursite.com/2020/05/30/react-jsx/index.html">
 <meta property="og:site_name" content="Yu&#39;s 程式筆記">
-<meta property="og:description" content="一般在執行go run main.go後就會馬上回到命令列，這邊實作當接收到ctrl+c或是終止程式才會停止程式  本文說明： go實作接收命令而中止程式． 會用到channel管道來進行阻塞，並接收os&#x2F;signal訊號">
+<meta property="og:description" content="上一篇提到建立一個基本專案，這次來做一些介紹，及對index.js做一些改寫練習">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-14T14:08:34.000Z">
-<meta property="article:modified_time" content="2021-01-30T12:18:44.070Z">
+<meta property="article:published_time" content="2020-05-30T02:32:15.000Z">
+<meta property="article:modified_time" content="2021-01-31T01:56:02.859Z">
 <meta property="article:author" content="Yuri">
-<meta property="article:tag" content="golang">
+<meta property="article:tag" content="react">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/09/14/03-go-signal/">
+<link rel="canonical" href="http://yoursite.com/2020/05/30/react-jsx/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>[Go] 信號處理和退出程式 | Yu's 程式筆記</title>
+  <title>[React] react JSX 基本語法 | Yu's 程式筆記</title>
   
 
 
@@ -169,7 +169,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/14/03-go-signal/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/react-jsx/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar_memo.png">
@@ -182,7 +182,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [Go] 信號處理和退出程式
+          [React] react JSX 基本語法
         </h1>
 
         <div class="post-meta">
@@ -192,14 +192,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-09-14 22:08:34" itemprop="dateCreated datePublished" datetime="2020-09-14T22:08:34+08:00">2020-09-14</time>
+              <time title="Created: 2020-05-30 10:32:15" itemprop="dateCreated datePublished" datetime="2020-05-30T10:32:15+08:00">2020-05-30</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-30 20:18:44" itemprop="dateModified" datetime="2021-01-30T20:18:44+08:00">2021-01-30</time>
+                <time title="Modified: 2021-01-31 09:56:02" itemprop="dateModified" datetime="2021-01-31T09:56:02+08:00">2021-01-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -211,11 +211,15 @@
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/back-end/" itemprop="url" rel="index"><span itemprop="name">back-end</span></a>
+                  <a href="/categories/Tech/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/back-end/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
+                  <a href="/categories/Tech/Web/front-end/" itemprop="url" rel="index"><span itemprop="name">front-end</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/Web/front-end/react/" itemprop="url" rel="index"><span itemprop="name">react</span></a>
                 </span>
             </span>
 
@@ -237,43 +241,48 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <blockquote>
-<p>一般在執行go run main.go後就會馬上回到命令列，<br>這邊實作當接收到ctrl+c或是終止程式才會停止程式</p>
-</blockquote>
-<h1 id="本文說明："><a href="#本文說明：" class="headerlink" title="本文說明："></a>本文說明：</h1><ul>
-<li>go實作接收命令而中止程式．</li>
-<li>會用到channel管道來進行阻塞，並接收os/signal訊號</li>
-</ul>
+        <div class="note info">
+            <p>上一篇提到建立一個基本專案，這次來做一些介紹，及對index.js做一些改寫練習 </p>
+          </div>
+
+
 <a id="more"></a>
 
 
-
-
-<p>程式碼：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">func main() &#123;</span><br><span class="line">	fmt.Println(&quot;start&quot;)</span><br><span class="line">	errs :&#x3D; make(chan error, 1)</span><br><span class="line">	listenForＳignal(errs)</span><br><span class="line">	c :&#x3D; &lt;-errs  &#x2F;&#x2F;阻塞程式</span><br><span class="line">	fmt.Println(&quot;terminating:&quot;, c)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func listenForＳignal(errChan chan error) &#123;</span><br><span class="line">	go func() &#123;</span><br><span class="line">		c :&#x3D; make(chan os.Signal)</span><br><span class="line">		signal.Notify(c, syscall.SIGINT, syscall.SIGTERM)&#x2F;&#x2F;要終止的訊號</span><br><span class="line"></span><br><span class="line">		errChan &lt;- fmt.Errorf(&quot;%s&quot;, &lt;-c)</span><br><span class="line">	&#125;()</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>說明：</p>
+<h1 id="html-區域"><a href="#html-區域" class="headerlink" title="html 區域"></a>html 區域</h1><p>public/index.html<br><br>含有基本HTML範本id=”root”的div區塊<br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;&lt;div id&#x3D;&quot;root&quot;&gt;&lt;&#x2F;div&gt;&quot;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="React-中的-JSX-區域"><a href="#React-中的-JSX-區域" class="headerlink" title="React 中的 JSX 區域"></a>React 中的 JSX 區域</h1><p>src/index.js</p>
+<p>基本範例1: &lt;&gt; html 部分</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">或是</span><br><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span> Hello world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>,</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>));</span><br></pre></td></tr></table></figure>
 <ul>
-<li>使用”os/signal”包<br>用來接收訊號使用，notify方法用来監聽收到的信號（stop方法則取消）<ul>
-<li>SIGINT    表示用户按下INTR字符(Ctrl+C)觸發</li>
-<li>SIGTERM    结束程序 kill pid的作用是向進程為pid的程序发送SIGTERM</li>
-<li>其他像是SIGKILL   kill -9 pid則是發送立即終止 等等就先不使用</li>
+<li>由 React DOM 函式將元素渲染 ROOT 這個DOM 節點中</li>
+<li>而將 html當參數傳遞是使用一種Javascript語法: JSX</li>
+</ul>
+<hr>
+<p>範例2: {JS}</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//js函式宣告或是變數宣告區</span></span><br><span class="line"><span class="keyword">const</span> styleRed = &#123; <span class="attr">color</span>: <span class="string">&#x27;red&#x27;</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> pic=<span class="function">()=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">  &lt;div&gt;<span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://picsum.photos/200/200?image=229&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span> <span class="attr">class</span>=<span class="string">&quot;circle-profile&quot;</span>/&gt;</span></span>&lt;/div&gt;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [</span><br><span class="line">        &lt;h1&gt;REACT學習&lt;/h1&gt;,</span><br><span class="line">        &lt;h2&gt;如何使用JSX！&lt;/h2&gt;,</span><br><span class="line">];</span><br><span class="line">ReactDOM.render(</span><br><span class="line">&lt;React.StrictMode&gt;</span><br><span class="line">   &lt;h1 style = &#123; styleRed &#125; &gt; Hello, world! &lt;/h1&gt;</span><br><span class="line">   &lt;div&gt;&#123; pic(&#125; &lt;<span class="regexp">/div&gt; &#123;/</span>*註解這樣寫*/&#125;</span><br><span class="line">   &lt;div&gt;&#123;arr&#125;&lt;<span class="regexp">/div&gt;,&#123;/</span>*可以放入數組*/&#125;</span><br><span class="line"> &lt;/React.StrictMode&gt;,</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">- 可在 html 標籤中利用 &#123;&#125; 寫 javascript 表示式</span><br><span class="line">- 其中style = &#123;&#123; <span class="attr">color</span>: <span class="string">&#x27;red&#x27;</span> &#125;&#125; 這樣的表示也可以。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>範例3: 屬性類</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getValue=<span class="function">(<span class="params">event</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(event.target.value)</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">&lt;React.StrictMode&gt;</span><br><span class="line">    &lt;h1 className = <span class="string">&quot;title&quot;</span> &gt; Hello, world! &lt;/h1&gt;</span><br><span class="line">	 &lt;button value onClick=&#123;getValue&#125;&gt;按下以取得數值 &lt;/button&gt;</span><br><span class="line">    &lt;button value=&#123;<span class="literal">true</span>&#125; onClick=&#123;getValue&#125;&gt;按下以取得數值 &lt;/button&gt;</span><br><span class="line">&lt;/React.StrictMode&gt;,</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>駱駝式命名<ul>
+<li>class 要用 className 然後可以在 style.css中更改樣式</li>
+<li>onclick 也要改onClick{函數名稱} 駱駝式命名</li>
+<li>實測命名打錯 console 會出現報 Warning: Invalid DOM property <code>class</code>. Did you mean <code>className</code>?</li>
 </ul>
 </li>
+<li>輸入類的元件button/input/textarea互動事件觸發時，函式只會接收到一個event類別的參數，並不能傳遞其他參數</li>
+<li>布林=true 的屬性值可以不寫</li>
 </ul>
-<h4 id="測試接收SIGINT"><a href="#測試接收SIGINT" class="headerlink" title="測試接收SIGINT"></a>測試接收SIGINT</h4><p>然後執行go run main.go後，會看到服務就一直執行著，再按下ctrl+c</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; go run main.go</span><br><span class="line">start</span><br><span class="line">^Cterminating: interrupt</span><br></pre></td></tr></table></figure>
-<h4 id="測試接收SIGTERM"><a href="#測試接收SIGTERM" class="headerlink" title="測試接收SIGTERM"></a>測試接收SIGTERM</h4><p>先將main.go編譯成執行檔 -o代表放在目前目錄下 取名為demo<br>“./“執行demo這檔案</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">go build -o .&#x2F;demo  main.go</span><br><span class="line"> .&#x2F;demo </span><br><span class="line">start</span><br></pre></td></tr></table></figure>
-<p>接下來開另一視窗 找出進程跟demo有關的pid 然後執行kill pid，確認已停止了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">➜  ~ ps -A  | grep demo     </span><br><span class="line">14693 ttys000    0:00.00 .&#x2F;demo</span><br><span class="line">➜  ~ kill 14693</span><br><span class="line">➜  ~ ps -A  | grep demo</span><br></pre></td></tr></table></figure>
-<p>回到程式執行視窗就會看到以下被中止的訊息了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> .&#x2F;demo</span><br><span class="line">start</span><br><span class="line">terminating: terminated</span><br></pre></td></tr></table></figure>
 <hr>
-<p>後記疑問：</p>
-<ol>
-<li>不太知道到底要怎麼要在vscode debug模式<br>去模擬ctrl+c時會跑到的地方來看程式，google未有結果，無解</li>
-<li>在linux環境有效，win環境搜尋無解</li>
-</ol>
+<h1 id="網路參考文章"><a href="#網路參考文章" class="headerlink" title="網路參考文章"></a>網路參考文章</h1><ul>
+<li><p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10216468" title="【React.js入門 - 06】 JSX">【React.js入門 - 06】 JSX</a> @IT邦幫忙鐵人分享</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://eyesofkids.gitbooks.io/react-basic-zh-tw/content/day18_deeper_jsx/" title="React篇: JSX語法撰寫指引">React篇: JSX語法撰寫指引</a></p>
+</li>
+</ul>
 
     </div>
 
@@ -283,7 +292,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/golang/" rel="tag"># golang</a>
+              <a href="/tags/react/" rel="tag"># react</a>
           </div>
 
         
@@ -292,12 +301,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/09/14/react-useRef/" rel="prev" title="[Note][React] function comp.中的ref屬性改寫">
-      <i class="fa fa-chevron-left"></i> [Note][React] function comp.中的ref屬性改寫
+    <a href="/2020/05/16/react-create-react-app/" rel="prev" title="[React] 初始開發環境設定與名詞介紹">
+      <i class="fa fa-chevron-left"></i> [React] 初始開發環境設定與名詞介紹
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/09/14/docker-ubuntu-vnc/" rel="next" title="[Docker]快速啟動可用VNC進去連線之ubuntu">
-      [Docker]快速啟動可用VNC進去連線之ubuntu <i class="fa fa-chevron-right"></i>
+    <a href="/2020/09/01/hugo-blog/" rel="next" title="使用 Hugo 撰寫部落格">
+      使用 Hugo 撰寫部落格 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -357,7 +366,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E8%AA%AA%E6%98%8E%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">本文說明：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6%E6%8E%A5%E6%94%B6SIGINT"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">測試接收SIGINT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B8%AC%E8%A9%A6%E6%8E%A5%E6%94%B6SIGTERM"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">測試接收SIGTERM</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#html-%E5%8D%80%E5%9F%9F"><span class="nav-number">1.</span> <span class="nav-text">html 區域</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React-%E4%B8%AD%E7%9A%84-JSX-%E5%8D%80%E5%9F%9F"><span class="nav-number">2.</span> <span class="nav-text">React 中的 JSX 區域</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B6%B2%E8%B7%AF%E5%8F%83%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">3.</span> <span class="nav-text">網路參考文章</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -372,7 +381,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -385,7 +394,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -402,6 +411,16 @@
 
 
       </div>
+
+<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+<div class="widget-wrap">
+    <div id="myCanvasContainer" class="widget tagcloud">
+    <canvas width="220" height="250" id="resCanvas" style="width=100%">
+        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDE/" rel="tag">IDE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA/" rel="tag">IDEA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memory/" rel="tag">Memory</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cleanCode/" rel="tag">cleanCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-in-js/" rel="tag">css-in-js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heroku/" rel="tag">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hugo/" rel="tag">hugo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ing/" rel="tag">ing</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongo/" rel="tag">mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/" rel="tag">note</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/" rel="tag">react</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recharts/" rel="tag">recharts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">3</span></li></ul>
+    </canvas>
+    </div>
+</div>
 
     </div>
   </aside>
