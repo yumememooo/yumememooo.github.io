@@ -1,6 +1,6 @@
 ---
-title: HEXO BLOG
----
+title:  HEXO BLOG
+
 
 這是一個使用 HEXO 主題架設的部落格，方便快速建立文章及部屬在 github 上。
 
