@@ -5,10 +5,10 @@ date: 2020-09-06 13:53:06
 
 <img src="/images/avatar_memo.png" width="150px" />
 
-<h1 align="center">Hi 👋, I'm Yuri </h1>
+<h1 align="center">Hi 👋👋👋, I'm Yuri </h1>
 <h3 align="center">後端IT工程師，Go經歷一年 & 正在學習 React。 喜歡貓狗．
 </h3>
-<h4>> 喜歡透過實作紀錄與搜集整理資料來做比較理解，持續紀錄自學筆記，如有誤還請您不吝指出與指教＾.＾</h4>
+<h4>> 習慣透過實作紀錄與搜集整理資料來做比較理解，本部落個本部落個持續紀錄自學筆記，如有誤還請您不吝指出與指教＾.＾</h4>
 
 #### 基本資訊：
 
