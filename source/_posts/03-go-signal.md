@@ -1,12 +1,12 @@
 ---
-title: "[Go] 信號處理和退出程式"
+title: "[Go 03] 信號處理和退出程式"
 tags:
   - golang
 categories:
   - Tech.
   - back-end
   - golang
-date: 2020-09-14 22:08:34
+date: 2020-05-01 22:08:34
 ---
 
 > 一般在執行go run main.go後就會馬上回到命令列，

@@ -1,6 +1,6 @@
 ---
-title: "[Go] 配置GO開發環境"
-date: 2020-09-09 20:23:42
+title: "[Go 01] 配置GO開發環境"
+date: 2020-05-01 20:23:42
 tags:
   - golang
   - vscode

@@ -21,7 +21,7 @@ Hexo 是一個快速、簡單且強大的網誌框架。Hexo 使用 Markdown 標
   1. 如何使用 Hexo 產生部落格 （超快速，只要看到這邊就建好囉！）
   2. 如何使用 markdown 撰寫文章 
   3. 如何部署到 github 個人網頁 
-  4. 如何更改主題與內文風格 
+  4. 如何更改主題與內文風格 (本站用到的所有修改介紹)
 
 <!--more-->
 ---
@@ -382,7 +382,7 @@ back2top:
   scrollpercent: true 顯示百分比
 ```
 
-### 外部資源設定
+### 外部資源/插件設定
 
 #### 標籤雲
 
@@ -399,7 +399,7 @@ tag_cloud:
   textColor: '#869ABF' # 字體颜色
   textHeight: 12 # 字體高度
   outlineColor: '#FFCFAB' # 字體背景色
-  maxSpeed: 0.5 # 標籤雲最大移動速度
+  maxSpeed: 0.1 # 標籤雲最大移動速度
   pauseOnSelected: true # true 選中時停止移動
 ```
 

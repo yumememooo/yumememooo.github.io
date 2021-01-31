@@ -2,16 +2,17 @@
 title: "[React] 初始開發環境設定與名詞介紹"
 tags:
   - react
+  - vscode
 categories:
   - Tech.
   - Web
   - front-end
   - react
-date: 2021-01-30 20:06:07
+date: 2020-05-16T15:42:53+08:00
 ---
 
 
-{% note info %} 快速安裝 React 專案與建置開發環境 {% endnote %}
+{% note info %} 快速安裝 React 專案與建置開發環境，創建React App是創建單頁React應用程序的官方支持方式。 它提供了無需配置的現代化構建設置。 {% endnote %}
 
 
 
@@ -55,7 +56,7 @@ public/index.html
 
 
 #### vscode 外掛
-- ESlint 插件 ->程式碼規範檢查
+- ESlint 插件 -> 一個Javascript Linter，是一種靜態代碼分析工具，用於識別在JavaScript代碼中發現的有問題的模式，可以定義和加載自定義規則。ESLint涵蓋了代碼質量和編碼風格問題。
 - JS JSX Snippets  插件  ->程式碼快速鍵
 
 ------------
