@@ -11,26 +11,20 @@ categories:
 date: 2020-11-14 22:17:59
 ---
 
-{% cq %} 
-# 前文 ：引言
- {% endcq %}
- <blockquote class="blockquote-center">
- 內文</blockquote>
-
-
+{% note info %}練習 Reactc 畫圖套件 recharts{% endnote %}
 
 <!--more-->
 
-
-
-### Reactc畫圖套件recharts
-
+### Reactc 畫圖套件 recharts
 
 #### 導入
+
 ```
  $ npm install recharts
 ```
+
 #### 使用
+
 ```
 import { LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts';
 function RenderLineChart() {
@@ -54,7 +48,6 @@ function RenderLineChart() {
 //在對應要放入的位置放入
 <RenderLineChart />
 ```
-
 
 {% note class_name %} ## 網路參考文章 {% endnote %}
 
