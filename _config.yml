@@ -108,3 +108,11 @@ deploy:
   branch: master
   name: yumememooo
   email: yumememooo@gmail.com
+
+tag_cloud:
+  textFont: Trebuchet MS, Helvetica # 字体
+  textColor: '#869ABF' # 字體颜色
+  textHeight: 12 # 字體高度
+  outlineColor: '#FFCFAB' # 字體背景色
+  maxSpeed: 0.05 # 標籤雲最大移動速度
+  pauseOnSelected: true # true 選中時停止移動
