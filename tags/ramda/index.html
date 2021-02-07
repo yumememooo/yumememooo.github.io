@@ -20,21 +20,17 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="spring 加上 Fire and forget，非同步處理，發出處理後就不用等待回復繼續做其他事情">
-<meta property="og:type" content="article">
-<meta property="og:title" content="java spring 非同步事件">
-<meta property="og:url" content="http://yoursite.com/2021/01/30/java-spring-asnc/index.html">
+  <meta name="description" content="後端IT工程師，Go經歷一年 &amp; 正在學習 React。 喜歡貓狗． 持續紀錄自學筆記，如有誤還請您不吝指出與指教＾＾">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yu&#39;s 程式筆記">
+<meta property="og:url" content="http://yoursite.com/tags/ramda/index.html">
 <meta property="og:site_name" content="Yu&#39;s 程式筆記">
-<meta property="og:description" content="spring 加上 Fire and forget，非同步處理，發出處理後就不用等待回復繼續做其他事情">
+<meta property="og:description" content="後端IT工程師，Go經歷一年 &amp; 正在學習 React。 喜歡貓狗． 持續紀錄自學筆記，如有誤還請您不吝指出與指教＾＾">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-01-30T10:00:42.000Z">
-<meta property="article:modified_time" content="2021-01-30T11:57:59.507Z">
 <meta property="article:author" content="Yuri">
-<meta property="article:tag" content="java">
-<meta property="article:tag" content="spring">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2021/01/30/java-spring-asnc/">
+<link rel="canonical" href="http://yoursite.com/tags/ramda/">
 
 
 <script id="page-configurations">
@@ -42,12 +38,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true,
+    isPost : false,
     lang   : 'en'
   };
 </script>
 
-  <title>java spring 非同步事件 | Yu's 程式筆記</title>
+  <title>Tag: ramda | Yu's 程式筆記</title>
   
 
 
@@ -163,130 +159,51 @@
         <div class="content-wrap">
           
 
-          <div class="content post posts-expand">
+          <div class="content tag">
             
 
-    
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/30/java-spring-asnc/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar_memo.png">
-      <meta itemprop="name" content="Yuri">
-      <meta itemprop="description" content="後端IT工程師，Go經歷一年 & 正在學習 React。 喜歡貓狗．<br> 持續紀錄自學筆記，如有誤還請您不吝指出與指教＾＾">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yu's 程式筆記">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          java spring 非同步事件
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-01-30 18:00:42 / Modified: 19:57:59" itemprop="dateCreated datePublished" datetime="2021-01-30T18:00:42+08:00">2021-01-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech.</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/back-end/" itemprop="url" rel="index"><span itemprop="name">back-end</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/back-end/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span id="busuanzi_value_page_pv"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <h2 class="collection-header">ramda
+          <small>Tag</small>
+        </h2>
+      </div>
 
       
-        <div class="note info">
-            <p>spring 加上 Fire and forget，非同步處理，發出處理後就不用等待回復繼續做其他事情 </p>
-          </div>
-
-<a id="more"></a>
-
-<p>1.找到@Configuration 的地方加上@EnableAsync</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">@EnableAsync</span><br><span class="line">public class XxxConfig &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>2.找到想要執行非同步的方法上方加上 @Async</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Component</span><br><span class="line">public class MyComponent &#123;</span><br><span class="line">    @Async</span><br><span class="line">    void doSomething() &#123;</span><br><span class="line">        &#x2F;&#x2F; this will be executed asynchronously</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如果想要拿到回傳的地方可以在 Future<XXX>拿到結果。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@Component</span><br><span class="line">public class MyComponent &#123;</span><br><span class="line">    @Async</span><br><span class="line">    Future&lt;String&gt; doSomething(String s, int i, long l, Object o) &#123;</span><br><span class="line">        &#x2F;&#x2F; this will be executed asynchronously</span><br><span class="line">        return new AsyncResult&lt;&gt;(&quot;result&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>3.異常處理 TBD<br>這塊自己是用 restTamplate 發出訊息，但無奈可以 catch 到錯誤，卻無法做錯誤輸出整理。<br>留下文章待做研究。</p>
-<hr>
-<div class="note class_name">
-            <p>網路參考文章 </p>
-          </div>
-
-<ul>
-<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/33243255/spring-background-fire-and-forget-processing">spring-background-fire-and-forget-processing</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.mdeditor.tw/pl/pIYL/zh-tw">Spring Boot(5) @Async 非同步執行緒池詳解</a></li>
-<li>Spring 中@Async 用法與異常處理<br><a target="_blank" rel="noopener" href="https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/312303/">Spring 中@Async 用法</a></li>
-</ul>
-
+    <div class="collection-year">
+      <span class="collection-header">2020</span>
     </div>
 
-    
-    
-    
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/java/" rel="tag"># java</a>
-              <a href="/tags/spring/" rel="tag"># spring</a>
-          </div>
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2020-10-01T16:20:06+08:00"
+              content="2020-10-01">
+          10-01
+        </time>
+      </div>
 
-        
+      <div class="post-title">
+          <a class="post-title-link" href="/2020/10/01/react-ramda/" itemprop="url">
+            <span itemprop="name">[✍練習][🚧進行中][react] 使用ramda整理資料</span>
+          </a>
+      </div>
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2021/01/30/hexo-hello-world/" rel="prev" title="使用Ｈexo 撰寫部落格">
-      <i class="fa fa-chevron-left"></i> 使用Ｈexo 撰寫部落格
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/01/31/docker-cli/" rel="next" title="[docker]常用docker指令筆記整理">
-      [docker]常用docker指令筆記整理 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
+    </header>
   </article>
+
+    </div>
+  </div>
   
   
+  
+
   
 
 
