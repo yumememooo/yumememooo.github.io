@@ -6,10 +6,7 @@ categories:
   - Tech.
   - Web
   - front-end
-  - react
-  - Tech.
-  - back-end
-  - golang
+  - js
 date: 2021-02-20 11:33:18
 ---
 
