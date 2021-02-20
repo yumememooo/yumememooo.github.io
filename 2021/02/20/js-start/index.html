@@ -20,17 +20,17 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="前文 ：引言                            長文適用               藍色簡單區塊               本文將會知道：">
+  <meta name="description" content="javascript的學習整理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js-start">
+<meta property="og:title" content="[JS] javascript 新手上路與概念筆記">
 <meta property="og:url" content="http://yoursite.com/2021/02/20/js-start/index.html">
 <meta property="og:site_name" content="Yu&#39;s 程式筆記">
-<meta property="og:description" content="前文 ：引言                            長文適用               藍色簡單區塊               本文將會知道：">
+<meta property="og:description" content="javascript的學習整理">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-20T03:33:18.000Z">
-<meta property="article:modified_time" content="2021-02-20T03:38:41.741Z">
+<meta property="article:modified_time" content="2021-02-20T05:38:03.548Z">
 <meta property="article:author" content="Yuri">
-<meta property="article:tag" content="test">
+<meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2021/02/20/js-start/">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>js-start | Yu's 程式筆記</title>
+  <title>[JS] javascript 新手上路與概念筆記 | Yu's 程式筆記</title>
   
 
 
@@ -182,7 +182,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          js-start
+          [JS] javascript 新手上路與概念筆記
         </h1>
 
         <div class="post-meta">
@@ -193,7 +193,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-02-20 11:33:18 / Modified: 11:38:41" itemprop="dateCreated datePublished" datetime="2021-02-20T11:33:18+08:00">2021-02-20</time>
+              <time title="Created: 2021-02-20 11:33:18 / Modified: 13:38:03" itemprop="dateCreated datePublished" datetime="2021-02-20T11:33:18+08:00">2021-02-20</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -235,30 +235,68 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <blockquote class="blockquote-center">
-            <i class="fa fa-quote-left"></i>
-            <h1 id="前文-：引言"><a href="#前文-：引言" class="headerlink" title="前文 ：引言"></a>前文 ：引言</h1>
-            <i class="fa fa-quote-right"></i>
-          </blockquote>
- <blockquote class="blockquote-center">
- 長文適用</blockquote>
-
-<div class="note info">
-            <p>藍色簡單區塊 </p>
+        <div class="note info">
+            <p>javascript的學習整理 </p>
           </div>
 
-
-<h1 id="本文將會知道："><a href="#本文將會知道：" class="headerlink" title="本文將會知道："></a>本文將會知道：</h1><ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
 <a id="more"></a>
 
+<h2 id="開始學習"><a href="#開始學習" class="headerlink" title="開始學習"></a>開始學習</h2><p>本章由<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript">ＭＤＮ-JavaScript</a>開始著手練習 </p>
+<h2 id="個人筆記整理"><a href="#個人筆記整理" class="headerlink" title="個人筆記整理"></a>個人筆記整理</h2><h3 id="變數"><a href="#變數" class="headerlink" title="變數"></a>變數</h3><h4 id="命名規則"><a href="#命名規則" class="headerlink" title="命名規則"></a>命名規則</h4><ul>
+<li>小寫駱駝</li>
+<li>大小寫相異(敏感)</li>
+<li>有意義的名字</li>
+</ul>
+<p>ref:<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Variables#%E5%85%B3%E4%BA%8E%E5%8F%98%E9%87%8F%E5%91%BD%E5%90%8D%E7%9A%84%E8%A7%84%E5%88%99">关于变量命名的规则</a></p>
+<h4 id="宣告"><a href="#宣告" class="headerlink" title="宣告"></a>宣告</h4><ul>
+<li><p>let是區域的，更改內容只會影響到內部，外面的不會。</p>
+</li>
+<li><p>var是全域的，更改內容只會影響到外面的。</p>
+</li>
+<li><p>宣告變數但不賦值=undefined</p>
+</li>
+<li><p>null常見於宣告後面定義成沒有值或找不到</p>
+</li>
+<li><p>全域屬性 NaN 表示「非數值」（Not-A-Number）的數值</p>
+<ul>
+<li>NaN 不等於（==、!=、===、!==）任何值，包括 NaN 本身。請使用 Number.isNaN() 或 isNaN() 來確認某個數值是否為 NaN。<br>ref:</li>
+</ul>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Variables#var_%E4%B8%8E_let_%E7%9A%84%E5%8C%BA%E5%88%AB">var 与 let 的区别</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let">let</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/NaN">NaN</a></p>
+</li>
+</ul>
+<h4 id="JavaScript-Hoisting-提升-顶置"><a href="#JavaScript-Hoisting-提升-顶置" class="headerlink" title="JavaScript Hoisting (提升)顶置"></a>JavaScript Hoisting (提升)顶置</h4><ul>
+<li>變數(var hoisting)與函數都可以先使用再宣告</li>
+<li>但提升操作不再适用于 let 并引起一个错误(Uncaught ReferenceError)<br>ref:<br><a target="_blank" rel="noopener" href="https://shubo.io/javascript-hoisting/#javascript-hoisting-%E6%8F%90%E5%8D%87">JavaScript Hoisting (提升)</a></li>
+</ul>
+<h4 id="字符操作"><a href="#字符操作" class="headerlink" title="字符操作"></a>字符操作</h4><ul>
+<li>一個字符串和一個数字可以直接相加變成字串</li>
+<li>把字串當作對象，或許長度或大小寫轉換去處理字符串<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    let s &#x3D; 19 + &#39;67&#39;;</span><br><span class="line">    console.log(&quot;s:&quot;+s+&quot; type:&quot;+typeof s);</span><br><span class="line">    &#x2F;&#x2F;鍵入s.可以找到很多以字符為對象的操作</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">s:1967 type:string</span><br></pre></td></tr></table></figure>
 
-<p>👇👇👇未完待續 您可以拉到底部先看參考文章👇👇👇</p>
-<h1 id="網路參考文章"><a href="#網路參考文章" class="headerlink" title="網路參考文章"></a>網路參考文章</h1>
+</li>
+</ul>
+<h5 id="Number"><a href="#Number" class="headerlink" title="Number()"></a>Number()</h5><p>对象将把传递给它的任何东西转换成一个数字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let myString &#x3D; &#39;123&#39;;</span><br><span class="line">let myNum &#x3D; Number(myString);</span><br><span class="line">typeof myNum;</span><br></pre></td></tr></table></figure>
+<h5 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a>toString()</h5><p>每个数字都有一个名为 toString() 的方法，它将把它转换成等价的字符串。</p>
+<p>ref:<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Strings">JavaScript中的字符串</a></p>
+<h3 id="事件-Event"><a href="#事件-Event" class="headerlink" title="事件(Event)"></a>事件(Event)</h3><ul>
+<li>好得寫法是找到(select)button並添加事件，避免汙染HTML。</li>
+<li>關於button.onclick vs addEventListener<ul>
+<li>on會覆蓋上一个事件</li>
+<li>addEventListener事件，可以多次绑定同一个事件并且不会覆盖上一个事件</li>
+</ul>
+</li>
+</ul>
+<p>ref:<a target="_blank" rel="noopener" href="https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/42343/">JS裡addEventListener和on的區別</a></p>
+<h3 id="Lint"><a href="#Lint" class="headerlink" title="Lint"></a>Lint</h3><p>在電腦科學中，lint是一種工具程式的名稱，它用來標記原始碼中，某些可疑的、不具結構性（可能造成bug）的段落。它是一種靜態程式分析工具</p>
+<h4 id="JSLint"><a href="#JSLint" class="headerlink" title="JSLint"></a>JSLint</h4><p>JSLint 幫你檢查未定義的變數、函數、陳述式結尾有沒有加分號(;)、變數使用之前要先用 var 宣告、使用非數字的變數要用 === 或 !== 讓比對的時候不要自動進行轉型(Casting)、盡量不要使用 eval 函數、… 好多好多</p>
+<h4 id="ESLint"><a href="#ESLint" class="headerlink" title="ESLint"></a>ESLint</h4><p>包括格式檢驗及質量效驗（未使用變量、三等號、全局變量聲明等問题）<br>自由選擇要使用哪些規則，對 ES6 還有 JSX 的支援度跟其他 linter 相較之下也是最高的</p>
+<p>註： prettier 只是格式的檢驗（空格 格式化），不会對代码质量进行校验。但有些檢驗，ESLint沒有，所以可以ESLint＋prettier一起使用，也可以視使用情況不使用 Prettier。</p>
+
     </div>
 
     
@@ -267,7 +305,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/test/" rel="tag"># test</a>
+              <a href="/tags/javascript/" rel="tag"># javascript</a>
           </div>
 
         
@@ -338,7 +376,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E6%96%87-%EF%BC%9A%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前文 ：引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E5%B0%87%E6%9C%83%E7%9F%A5%E9%81%93%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">本文將會知道：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B6%B2%E8%B7%AF%E5%8F%83%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">3.</span> <span class="nav-text">網路參考文章</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E5%A7%8B%E5%AD%B8%E7%BF%92"><span class="nav-number">1.</span> <span class="nav-text">開始學習</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%8B%E4%BA%BA%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">個人筆記整理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%8A%E6%95%B8"><span class="nav-number">2.1.</span> <span class="nav-text">變數</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E8%A6%8F%E5%89%87"><span class="nav-number">2.1.1.</span> <span class="nav-text">命名規則</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%A3%E5%91%8A"><span class="nav-number">2.1.2.</span> <span class="nav-text">宣告</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-Hoisting-%E6%8F%90%E5%8D%87-%E9%A1%B6%E7%BD%AE"><span class="nav-number">2.1.3.</span> <span class="nav-text">JavaScript Hoisting (提升)顶置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E6%93%8D%E4%BD%9C"><span class="nav-number">2.1.4.</span> <span class="nav-text">字符操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Number"><span class="nav-number">2.1.4.1.</span> <span class="nav-text">Number()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#toString-NaN"><span class="nav-number">2.1.4.2.</span> <span class="nav-text">toString()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6-Event"><span class="nav-number">2.2.</span> <span class="nav-text">事件(Event)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lint"><span class="nav-number">2.3.</span> <span class="nav-text">Lint</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JSLint"><span class="nav-number">2.3.1.</span> <span class="nav-text">JSLint</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ESLint"><span class="nav-number">2.3.2.</span> <span class="nav-text">ESLint</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -366,7 +404,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -389,7 +427,7 @@
 <div class="widget-wrap">
     <div id="myCanvasContainer" class="widget tagcloud">
     <canvas width="220" height="250" id="resCanvas" style="width=100%">
-        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDE/" rel="tag">IDE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA/" rel="tag">IDEA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kubernetes/" rel="tag">Kubernetes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Material-ui/" rel="tag">Material-ui</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memory/" rel="tag">Memory</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call-by-sharing/" rel="tag">call by sharing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cleanCode/" rel="tag">cleanCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-in-js/" rel="tag">css-in-js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heroku/" rel="tag">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hugo/" rel="tag">hugo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ing/" rel="tag">ing</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/" rel="tag">map</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongo/" rel="tag">mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/" rel="tag">note</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ramda/" rel="tag">ramda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/" rel="tag">react</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recharts/" rel="tag">recharts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">3</span></li></ul>
+        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDE/" rel="tag">IDE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA/" rel="tag">IDEA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kubernetes/" rel="tag">Kubernetes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Material-ui/" rel="tag">Material-ui</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memory/" rel="tag">Memory</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call-by-sharing/" rel="tag">call by sharing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cleanCode/" rel="tag">cleanCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-in-js/" rel="tag">css-in-js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heroku/" rel="tag">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hugo/" rel="tag">hugo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ing/" rel="tag">ing</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/" rel="tag">map</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongo/" rel="tag">mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/" rel="tag">note</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ramda/" rel="tag">ramda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/" rel="tag">react</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recharts/" rel="tag">recharts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">3</span></li></ul>
     </canvas>
     </div>
 </div>
