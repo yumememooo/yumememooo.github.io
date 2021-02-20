@@ -139,6 +139,11 @@ INFO  Deploy done: git
 
 其他空間部署說明(ex:heroku) More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
 
+> 註：部署會上傳至剛剛config的位置，測試發現只會上傳web檔案相關如果有上傳source/theme 檔案也會被移除．
+因為在開發環境時可以先開一個src branch 來控管原始檔案．
+<br>branch - src (have all files)
+<br>branch - master (only web files)
+
 ### 個人網站網址
 
 https://yourname.github.io/

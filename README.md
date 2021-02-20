@@ -38,3 +38,13 @@ $ hexo deploy
 
 ## if want upload themes
 git submodule add https://github.com/iissnan/hexo-theme-next themes/next
+
+branch - src (have all files)
+branch - master (only web files)
+
+
+## post
+
+{% note info %}藍色區塊{% endnote %}
+{% note warning %} 黃色 {% endnote %}
+{% note danger %} 紅色 {% endnote %}
