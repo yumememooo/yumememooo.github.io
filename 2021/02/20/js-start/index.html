@@ -27,11 +27,13 @@
 <meta property="og:site_name" content="Yu&#39;s 程式筆記">
 <meta property="og:description" content="javascript的學習整理">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mdn.mozillademos.org/files/224/Canvas_default_grid.png">
 <meta property="article:published_time" content="2021-02-20T03:33:18.000Z">
-<meta property="article:modified_time" content="2021-02-20T05:38:03.548Z">
+<meta property="article:modified_time" content="2021-02-20T10:09:03.905Z">
 <meta property="article:author" content="Yuri">
 <meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mdn.mozillademos.org/files/224/Canvas_default_grid.png">
 
 <link rel="canonical" href="http://yoursite.com/2021/02/20/js-start/">
 
@@ -193,7 +195,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-02-20 11:33:18 / Modified: 13:38:03" itemprop="dateCreated datePublished" datetime="2021-02-20T11:33:18+08:00">2021-02-20</time>
+              <time title="Created: 2021-02-20 11:33:18 / Modified: 18:09:03" itemprop="dateCreated datePublished" datetime="2021-02-20T11:33:18+08:00">2021-02-20</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -249,26 +251,16 @@
 </ul>
 <p>ref:<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Variables#%E5%85%B3%E4%BA%8E%E5%8F%98%E9%87%8F%E5%91%BD%E5%90%8D%E7%9A%84%E8%A7%84%E5%88%99">关于变量命名的规则</a></p>
 <h4 id="宣告"><a href="#宣告" class="headerlink" title="宣告"></a>宣告</h4><ul>
-<li><p>let是區域的，更改內容只會影響到內部，外面的不會。</p>
-</li>
-<li><p>var是全域的，更改內容只會影響到外面的。</p>
-</li>
-<li><p>宣告變數但不賦值=undefined</p>
-</li>
-<li><p>null常見於宣告後面定義成沒有值或找不到</p>
-</li>
-<li><p>全域屬性 NaN 表示「非數值」（Not-A-Number）的數值</p>
-<ul>
-<li>NaN 不等於（==、!=、===、!==）任何值，包括 NaN 本身。請使用 Number.isNaN() 或 isNaN() 來確認某個數值是否為 NaN。<br>ref:</li>
+<li>let是區域的，更改內容只會影響到內部，外面的不會。</li>
+<li>var是全域的，更改內容只會影響到外面的。</li>
+<li>宣告變數但不賦值=undefined</li>
+<li>null常見於宣告後面定義成沒有值或找不到</li>
+<li>全域屬性 NaN 表示「非數值」（Not-A-Number）的數值<ul>
+<li>NaN 不等於（==、!=、===、!==）任何值，包括 NaN 本身。請使用 Number.isNaN() 或 isNaN() 來確認某個數值是否為 NaN。</li>
 </ul>
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Variables#var_%E4%B8%8E_let_%E7%9A%84%E5%8C%BA%E5%88%AB">var 与 let 的区别</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let">let</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/NaN">NaN</a></p>
-</li>
 </ul>
+<p>ref:<br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Variables#var_%E4%B8%8E_let_%E7%9A%84%E5%8C%BA%E5%88%AB">var 与 let 的区别</a><br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let">let</a><br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/NaN">NaN</a></p>
 <h4 id="JavaScript-Hoisting-提升-顶置"><a href="#JavaScript-Hoisting-提升-顶置" class="headerlink" title="JavaScript Hoisting (提升)顶置"></a>JavaScript Hoisting (提升)顶置</h4><ul>
 <li>變數(var hoisting)與函數都可以先使用再宣告</li>
 <li>但提升操作不再适用于 let 并引起一个错误(Uncaught ReferenceError)<br>ref:<br><a target="_blank" rel="noopener" href="https://shubo.io/javascript-hoisting/#javascript-hoisting-%E6%8F%90%E5%8D%87">JavaScript Hoisting (提升)</a></li>
@@ -292,10 +284,66 @@
 </li>
 </ul>
 <p>ref:<a target="_blank" rel="noopener" href="https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/42343/">JS裡addEventListener和on的區別</a></p>
-<h3 id="Lint"><a href="#Lint" class="headerlink" title="Lint"></a>Lint</h3><p>在電腦科學中，lint是一種工具程式的名稱，它用來標記原始碼中，某些可疑的、不具結構性（可能造成bug）的段落。它是一種靜態程式分析工具</p>
+<h3 id="Lint-工具"><a href="#Lint-工具" class="headerlink" title="Lint 工具"></a>Lint 工具</h3><p>在電腦科學中，lint是一種工具程式的名稱，它用來標記原始碼中，某些可疑的、不具結構性（可能造成bug）的段落。它是一種靜態程式分析工具</p>
 <h4 id="JSLint"><a href="#JSLint" class="headerlink" title="JSLint"></a>JSLint</h4><p>JSLint 幫你檢查未定義的變數、函數、陳述式結尾有沒有加分號(;)、變數使用之前要先用 var 宣告、使用非數字的變數要用 === 或 !== 讓比對的時候不要自動進行轉型(Casting)、盡量不要使用 eval 函數、… 好多好多</p>
 <h4 id="ESLint"><a href="#ESLint" class="headerlink" title="ESLint"></a>ESLint</h4><p>包括格式檢驗及質量效驗（未使用變量、三等號、全局變量聲明等問题）<br>自由選擇要使用哪些規則，對 ES6 還有 JSX 的支援度跟其他 linter 相較之下也是最高的</p>
 <p>註： prettier 只是格式的檢驗（空格 格式化），不会對代码质量进行校验。但有些檢驗，ESLint沒有，所以可以ESLint＋prettier一起使用，也可以視使用情況不使用 Prettier。</p>
+<h3 id="JavaScript-OOP"><a href="#JavaScript-OOP" class="headerlink" title="JavaScript OOP"></a>JavaScript OOP</h3><p>OOP （(Object-oriented programming）物件導向/對象編程，在 JavaScript 中，大多数事物都是对象, 从作为核心功能的字符串和数组。你甚至可以自己创建对象，在调用函数前加一个 new ，它就会返回一个这个函数的实例化对象，. 然后，就可以在这个对象上面添加一些属性．<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects">JavaScript 对象入门</a></p>
+<p>舉例：</p>
+<ul>
+<li>用new func()來建構新的物件，func內部this可以指項新屬性</li>
+<li>透過建構子（constructor）所建立出來的物件，我們稱為實例（instance）</li>
+<li>如果忘記打new，變數會出現undifined<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;this 指向了代码所在的对象(其实代码运行时所在的对象)。</span><br><span class="line">function Pet(first,last, age) &#123;</span><br><span class="line">  this.name&#x3D; &#123;</span><br><span class="line">    &#39;first&#39;: first,</span><br><span class="line">    &#39;last&#39;: last</span><br><span class="line">  &#125;;</span><br><span class="line">  this.interests &#x3D; [&#39;food&#39;, &#39;sleep&#39;],</span><br><span class="line">  this.age &#x3D; age;</span><br><span class="line">  this.walk &#x3D; function () &#123;</span><br><span class="line">    console.log(this.name.first + &quot; walk...&quot;);</span><br><span class="line">  &#125; &#x2F;&#x2F;這樣寫會佔用不同的對象空間</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;函数的实例化对象</span><br><span class="line">var cat1 &#x3D; new Pet(&#39;dotdot&#39;,&#39;wu&#39;, 11);</span><br><span class="line">var dog1 &#x3D; new Pet(&#39;lucky&#39;,&#39;wu&#39;, 9);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;通过简单的语法访问他们</span><br><span class="line">console.log(cat1.name.first)&#x2F;&#x2F;点表示法访问</span><br><span class="line">console.log(cat1[&#39;name&#39;][&#39;first&#39;]) &#x2F;&#x2F;括号表示法</span><br><span class="line">console.log(cat1.interests[1])&#x2F;&#x2F;数组属性的一个子元素</span><br><span class="line">console.log(cat1.walk())&#x2F;&#x2F;对象的方法调用</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+ref:<a target="_blank" rel="noopener" href="https://pjchender.blogspot.com/2016/06/javascriptfunction-constructornew.html">[筆記] 談談 JavaScript 中的 function constructor 和關鍵字 new</a></li>
+</ul>
+<h4 id="Prototype-原型鏈的原理"><a href="#Prototype-原型鏈的原理" class="headerlink" title="Prototype 原型鏈的原理"></a>Prototype 原型鏈的原理</h4><p>上述的寫法，cat1.walk()與dog1.walk()是兩個不同對象的方法，為解決這問題．</p>
+<ul>
+<li>walk指定在 Pet.prototype 上面，所有 Pet 的 instance 都可以共享這個方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Pet.prototype.walk &#x3D; function() &#123;</span><br><span class="line">  console.log(this.name.first + &quot; walk...&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>因為 cat1 這個 instance 本身並沒有 walk 這個 function， 找不到，它會試著從Pet.prototype去找，一直往上找，直到找到Object，如果還是沒有，就會回傳undefined</li>
+<li>而這個連接的方式，就是__proto__。</li>
+<li>同时也有一些其他成员—— watch、valueOf 等等——这些成员定义在 Person() 构造器的原型对象、即 Object 。</li>
+</ul>
+<p>ref:<a target="_blank" rel="noopener" href="https://blog.techbridge.cc/2017/04/22/javascript-prototype/">該來理解 JavaScript 的原型鍊了</a><br><br><a target="_blank" rel="noopener" href="https://kknews.cc/code/6agvk2v.html"> <strong>proto</strong> 和 prototype 到底有什麼區別</a></p>
+<h4 id="JavaScript-中的繼承-prototypal-inheritance"><a href="#JavaScript-中的繼承-prototypal-inheritance" class="headerlink" title="JavaScript 中的繼承 (prototypal inheritance)"></a>JavaScript 中的繼承 (prototypal inheritance)</h4><ul>
+<li>call()函数。基本上，这个函数允许您调用一个在这个文件里别处定义的函数。</li>
+<li>设置 Teacher() 的原型和构造器引用<ul>
+<li>create()这意味着Teacher.prototype现在会继承Person.prototype的所有属性和方法</li>
+<li>prototype的constructor属性指向的是Person(),要改指向 Teacher</li>
+</ul>
+</li>
+<li>可重寫Teacher的greeting<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;定义 Teacher() 构造器函数</span><br><span class="line">  function Teacher(first, last, age, gender, interests, subject) &#123;</span><br><span class="line">    Person.call(this, first, last, age, gender, interests);</span><br><span class="line"></span><br><span class="line">    this.subject &#x3D; subject;</span><br><span class="line">  &#125;</span><br><span class="line">  &#x2F;&#x2F;这意味着Teacher.prototype现在会继承Person.prototype的所有属性和方法</span><br><span class="line">  Teacher.prototype &#x3D; Object.create(Person.prototype);</span><br><span class="line">  Teacher.prototype.constructor &#x3D; Teacher;&#x2F;&#x2F;原本的是指向Ｐerson</span><br><span class="line">  Teacher.prototype.greeting &#x3D; function () &#123;&#x2F;&#x2F;重開改寫</span><br><span class="line">    var prefix;</span><br><span class="line"></span><br><span class="line">    if (this.gender &#x3D;&#x3D;&#x3D; &#39;male&#39; || this.gender &#x3D;&#x3D;&#x3D; &#39;Male&#39; || this.gender &#x3D;&#x3D;&#x3D; &#39;m&#39; || this.gender &#x3D;&#x3D;&#x3D; &#39;M&#39;) &#123;</span><br><span class="line">      prefix &#x3D; &#39;Mr.&#39;;</span><br><span class="line">    &#125; else if (this.gender &#x3D;&#x3D;&#x3D; &#39;female&#39; || this.gender &#x3D;&#x3D;&#x3D; &#39;Female&#39; || this.gender &#x3D;&#x3D;&#x3D; &#39;f&#39; || this.gender &#x3D;&#x3D;&#x3D; &#39;F&#39;) &#123;</span><br><span class="line">      prefix &#x3D; &#39;Mrs.&#39;;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      prefix &#x3D; &#39;Mx.&#39;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    alert(&#39;Hello. My name is &#39; + prefix + &#39; &#39; + this.name.last + &#39;, and I teach &#39; + this.subject + &#39;.&#39;);</span><br><span class="line">  &#125;;</span><br><span class="line">  var teacher1 &#x3D; new Teacher(&#39;Dave&#39;, &#39;Griffiths&#39;, 31, &#39;male&#39;, [&#39;football&#39;, &#39;cookery&#39;], &#39;mathematics&#39;);</span><br><span class="line"></span><br><span class="line">  teacher1.greeting()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+ref:<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/Inheritance">JavaScript 中的继承</a> 探討何時使用與參考網站練習</li>
+</ul>
+<h4 id="使用JSON"><a href="#使用JSON" class="headerlink" title="使用JSON"></a>使用JSON</h4><ul>
+<li>JSON要求在字符串和属性用雙引號， 但引號無效。</li>
+<li>我们使用 . 或 [] 訪問对象内的数据</li>
+<li>JSON.parse<br>用於將文字轉成json object<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">request.responseType &#x3D; &#39;text&#39;;</span><br><span class="line">var superHeroes &#x3D; JSON.parse(superHeroesText); </span><br></pre></td></tr></table></figure></li>
+<li>JSON.stringify<br>用於將json object轉成json string<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var myJSON &#x3D; &#123; &quot;name&quot;: &quot;Chris&quot;, &quot;age&quot;: &quot;38&quot; &#125;; console.log(myJSON)</span><br><span class="line">var myString &#x3D; JSON.stringify(myJSON);</span><br><span class="line">console.log(myString)&#x2F;&#x2F;string:&#123;&quot;name&quot;:&quot;Chris&quot;,&quot;age&quot;:&quot;38&quot;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="其他練習"><a href="#其他練習" class="headerlink" title="其他練習"></a>其他練習</h3></li>
+</ul>
+<h4 id="JS-與-canvas-元素"><a href="#JS-與-canvas-元素" class="headerlink" title="JS 與 canvas 元素"></a>JS 與 canvas 元素</h4><ol>
+<li>canvas</li>
+</ol>
+<ul>
+<li><p>元素需要有闭合标签</p>
+</li>
+<li><p>基本上現今所有主流的瀏覽器都有支援</p>
+</li>
+<li><p>所有元素定位皆相對於此左上角原點</p>
+<img src="https://mdn.mozillademos.org/files/224/Canvas_default_grid.png">
+<br>
+
+</li>
+</ul>
+<p>HTML</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;canvas id&#x3D;&quot;canvas&quot; width&#x3D;&quot;300&quot; height&#x3D;&quot;300&quot;&gt;</span><br><span class="line">&lt;&#x2F;canvas&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>ＪＳ</p>
+<ul>
+<li>圓形ctx.arc(x, y, 半徑, 開始弧度, 結束弧度 )<br>0~2 pi =360°<br>更多弧度示意圖：<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%BC%A7%E5%BA%A6">弧度</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var canvas &#x3D; document.getElementById(&#39;canvas&#39;);</span><br><span class="line">var ctx &#x3D; canvas.getContext(&#39;2d&#39;);</span><br><span class="line">ctx.fillStyle &#x3D; &#39;green&#39;;</span><br><span class="line">ctx.fillRect(10, 10, 100, 100);&#x2F;&#x2F;畫矩形 x start,y start,width,height</span><br></pre></td></tr></table></figure>
+<p>利用漸變色及貝斯曲線或是填入圖案，繪製文字，可做出很多豐富的圖案，還有動畫行星/時鐘，滑鼠動畫，像素控制等，詳請見下方文件</p>
+<p>ref:<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/API/Canvas_API/Tutorial">Canvas 教學文件</a></p>
 
     </div>
 
@@ -376,7 +424,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E5%A7%8B%E5%AD%B8%E7%BF%92"><span class="nav-number">1.</span> <span class="nav-text">開始學習</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%8B%E4%BA%BA%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">個人筆記整理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%8A%E6%95%B8"><span class="nav-number">2.1.</span> <span class="nav-text">變數</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E8%A6%8F%E5%89%87"><span class="nav-number">2.1.1.</span> <span class="nav-text">命名規則</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%A3%E5%91%8A"><span class="nav-number">2.1.2.</span> <span class="nav-text">宣告</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-Hoisting-%E6%8F%90%E5%8D%87-%E9%A1%B6%E7%BD%AE"><span class="nav-number">2.1.3.</span> <span class="nav-text">JavaScript Hoisting (提升)顶置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E6%93%8D%E4%BD%9C"><span class="nav-number">2.1.4.</span> <span class="nav-text">字符操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Number"><span class="nav-number">2.1.4.1.</span> <span class="nav-text">Number()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#toString-NaN"><span class="nav-number">2.1.4.2.</span> <span class="nav-text">toString()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6-Event"><span class="nav-number">2.2.</span> <span class="nav-text">事件(Event)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lint"><span class="nav-number">2.3.</span> <span class="nav-text">Lint</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JSLint"><span class="nav-number">2.3.1.</span> <span class="nav-text">JSLint</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ESLint"><span class="nav-number">2.3.2.</span> <span class="nav-text">ESLint</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E5%A7%8B%E5%AD%B8%E7%BF%92"><span class="nav-number">1.</span> <span class="nav-text">開始學習</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%8B%E4%BA%BA%E7%AD%86%E8%A8%98%E6%95%B4%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">個人筆記整理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%8A%E6%95%B8"><span class="nav-number">2.1.</span> <span class="nav-text">變數</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E8%A6%8F%E5%89%87"><span class="nav-number">2.1.1.</span> <span class="nav-text">命名規則</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%A3%E5%91%8A"><span class="nav-number">2.1.2.</span> <span class="nav-text">宣告</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-Hoisting-%E6%8F%90%E5%8D%87-%E9%A1%B6%E7%BD%AE"><span class="nav-number">2.1.3.</span> <span class="nav-text">JavaScript Hoisting (提升)顶置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E6%93%8D%E4%BD%9C"><span class="nav-number">2.1.4.</span> <span class="nav-text">字符操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Number"><span class="nav-number">2.1.4.1.</span> <span class="nav-text">Number()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#toString-NaN"><span class="nav-number">2.1.4.2.</span> <span class="nav-text">toString()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6-Event"><span class="nav-number">2.2.</span> <span class="nav-text">事件(Event)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lint-%E5%B7%A5%E5%85%B7"><span class="nav-number">2.3.</span> <span class="nav-text">Lint 工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JSLint"><span class="nav-number">2.3.1.</span> <span class="nav-text">JSLint</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ESLint"><span class="nav-number">2.3.2.</span> <span class="nav-text">ESLint</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-OOP"><span class="nav-number">2.4.</span> <span class="nav-text">JavaScript OOP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Prototype-%E5%8E%9F%E5%9E%8B%E9%8F%88%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-number">2.4.1.</span> <span class="nav-text">Prototype 原型鏈的原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-%E4%B8%AD%E7%9A%84%E7%B9%BC%E6%89%BF-prototypal-inheritance"><span class="nav-number">2.4.2.</span> <span class="nav-text">JavaScript 中的繼承 (prototypal inheritance)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8JSON"><span class="nav-number">2.4.3.</span> <span class="nav-text">使用JSON</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E7%B7%B4%E7%BF%92"><span class="nav-number">2.5.</span> <span class="nav-text">其他練習</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JS-%E8%88%87-canvas-%E5%85%83%E7%B4%A0"><span class="nav-number">2.5.1.</span> <span class="nav-text">JS 與 canvas 元素</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
