@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
@@ -33,39 +32,6 @@
 <meta property="article:author" content="Yuri">
 <meta property="article:tag" content="ing">
 <meta property="article:tag" content="heroku">
-=======
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.3.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-Memo.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-32x32-Memo.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta name="description" content="Heroku是一個支援多種程式語言的雲平台即服務，免費版提供每個月平台550小時時間，但每 30 分鐘未使用都會休眠一次，需等待他從休眠時間中甦醒，時間大約 30 秒左右．">
-<meta property="og:type" content="article">
-<meta property="og:title" content="將程式部署到heroku運行">
-<meta property="og:url" content="http://yoursite.com/2020/09/18/heroku-deploy/index.html">
-<meta property="og:site_name" content="Yu&#39;s 程式筆記">
-<meta property="og:description" content="Heroku是一個支援多種程式語言的雲平台即服務，免費版提供每個月平台550小時時間，但每 30 分鐘未使用都會休眠一次，需等待他從休眠時間中甦醒，時間大約 30 秒左右．">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-18T02:46:22.000Z">
-<meta property="article:modified_time" content="2021-01-30T03:43:12.929Z">
-<meta property="article:author" content="Yuri">
-<meta property="article:tag" content="ing">
-<meta property="article:tag" content="heroku">
->>>>>>> 2047a790375a9d727a119bcdd0b39700e5ed4c14
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2020/09/18/heroku-deploy/">
@@ -83,7 +49,6 @@
 
   <title>將程式部署到heroku運行 | Yu's 程式筆記</title>
   
-<<<<<<< HEAD
 
 
 
@@ -112,36 +77,6 @@
   .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
-=======
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
->>>>>>> 2047a790375a9d727a119bcdd0b39700e5ed4c14
 
 </head>
 
@@ -150,7 +85,6 @@
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-<<<<<<< HEAD
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
@@ -181,98 +115,40 @@
 
 <nav class="site-nav">
   <ul id="menu" class="main-menu menu">
-=======
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Yu's 程式筆記</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-      <p class="site-subtitle" itemprop="description">小小工程師 Memo </p>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
->>>>>>> 2047a790375a9d727a119bcdd0b39700e5ed4c14
         <li class="menu-item menu-item-home">
 
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
-<<<<<<< HEAD
   </li>
-=======
-  </li>
->>>>>>> 2047a790375a9d727a119bcdd0b39700e5ed4c14
         <li class="menu-item menu-item-posts">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>posts</a>
 
-<<<<<<< HEAD
   </li>
-=======
-  </li>
->>>>>>> 2047a790375a9d727a119bcdd0b39700e5ed4c14
         <li class="menu-item menu-item-categories">
 
     <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
 
-<<<<<<< HEAD
   </li>
-=======
-  </li>
->>>>>>> 2047a790375a9d727a119bcdd0b39700e5ed4c14
         <li class="menu-item menu-item-tags">
 
     <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
 
-<<<<<<< HEAD
   </li>
-=======
-  </li>
->>>>>>> 2047a790375a9d727a119bcdd0b39700e5ed4c14
         <li class="menu-item menu-item-about">
 
     <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
 
-<<<<<<< HEAD
   </li>
   </ul>
 </nav>
 
 
 
-=======
-  </li>
-  </ul>
-</nav>
-
-
-
->>>>>>> 2047a790375a9d727a119bcdd0b39700e5ed4c14
 
 </div>
     </header>
 
-<<<<<<< HEAD
     
   <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
@@ -280,15 +156,6 @@
   </div>
 
   <a href="https://github.com/yumememooo" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
-=======
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-  <a href="https://github.com/yumememooo" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
->>>>>>> 2047a790375a9d727a119bcdd0b39700e5ed4c14
 
 
     <main class="main">
@@ -297,7 +164,6 @@
           
 
           <div class="content post posts-expand">
-<<<<<<< HEAD
             
 
     
@@ -466,176 +332,6 @@ Heroku是一個支援多種程式語言的雲平台即服務，免費版提供�
   
 
 
-=======
-            
-
-    
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/18/heroku-deploy/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar_memo.png">
-      <meta itemprop="name" content="Yuri">
-      <meta itemprop="description" content="後端IT工程師，Go經歷一年 & 正在學習 React。 喜歡貓狗．<br> 持續紀錄自學筆記，如有誤還請您不吝指出與指教＾＾">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yu's 程式筆記">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          將程式部署到heroku運行
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-09-18 10:46:22" itemprop="dateCreated datePublished" datetime="2020-09-18T10:46:22+08:00">2020-09-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-30 11:43:12" itemprop="dateModified" datetime="2021-01-30T11:43:12+08:00">2021-01-30</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech.</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/Web/deploy/" itemprop="url" rel="index"><span itemprop="name">deploy</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span id="busuanzi_value_page_pv"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-         <blockquote class="blockquote-center">
-Heroku是一個支援多種程式語言的雲平台即服務，免費版提供每個月平台550小時時間，但每 30 分鐘未使用都會休眠一次，需等待他從休眠時間中甦醒，時間大約 30 秒左右．</blockquote>
-
-<a id="more"></a>
-
-<h2 id="註冊-heroku"><a href="#註冊-heroku" class="headerlink" title="註冊 heroku"></a>註冊 heroku</h2><ul>
-<li>先上官網註冊一個帳號</li>
-</ul>
-<h2 id="安裝-heroku-CLI"><a href="#安裝-heroku-CLI" class="headerlink" title="安裝 heroku CLI"></a>安裝 heroku CLI</h2><p>參考：<a target="_blank" rel="noopener" href="https://devcenter.heroku.com/articles/heroku-cli#download-and-install">https://devcenter.heroku.com/articles/heroku-cli#download-and-install</a></p>
-<ul>
-<li>安裝</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  ➜  testmemooo git:(master) heroku version</span><br><span class="line"> ›   Warning: heroku update available from 7.40.0 to 7.43.0.</span><br><span class="line">heroku&#x2F;7.40.0 darwin-x64 node-v12.16.2</span><br><span class="line">➜  testmemooo git:(master) npm install -g heroku</span><br><span class="line">&#x2F;usr&#x2F;local&#x2F;bin&#x2F;heroku -&gt; &#x2F;usr&#x2F;local&#x2F;lib&#x2F;node_modules&#x2F;heroku&#x2F;bin&#x2F;run</span><br><span class="line">+ heroku@7.43.0</span><br><span class="line">added 788 packages from 316 contributors in 54.332s</span><br><span class="line">➜  testmemooo git:(master) heroku version</span><br><span class="line">heroku&#x2F;7.43.0 darwin-x64 node-v10.16.3</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>登入<br>heroku login</p>
-</li>
-<li><p>查看每個月使用多少時間</p>
-</li>
-</ul>
-<p>Account Setting-&gt;Billing-&gt; Free Dyno Usage</p>
-<h3 id="部署-React"><a href="#部署-React" class="headerlink" title="部署 React"></a>部署 React</h3><h4 id="方式一：兩分鐘-0-配置快速部署"><a href="#方式一：兩分鐘-0-配置快速部署" class="headerlink" title="方式一：兩分鐘 0 配置快速部署"></a>方式一：兩分鐘 0 配置快速部署</h4><ul>
-<li>官方已先配置好並照說明指令輸入即可<br><a target="_blank" rel="noopener" href="https://blog.heroku.com/deploying-react-with-zero-configuration">Deploying React with Zero Configuration</a></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">npm install -g create-react-app</span><br><span class="line">create-react-app &#39;自命名專案&#39;</span><br><span class="line">cd &#39;自命名專案&#39;</span><br><span class="line">git init</span><br><span class="line">heroku create -b https:&#x2F;&#x2F;github.com&#x2F;mars&#x2F;create-react-app-buildpack.git</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;react-create-app on Heroku&quot;</span><br><span class="line">git push heroku master</span><br><span class="line">heroku open</span><br></pre></td></tr></table></figure>
-<p>其中中間那一句 heroku create 會在剛剛的網站上新增一個 damp-stream-02723 專案<br>最後一句是開啟網站：<br><a target="_blank" rel="noopener" href="https://damp-stream-02723.herokuapp.com/">https://damp-stream-02723.herokuapp.com/</a><br>這樣就看到網站了，命名應該是隨機的，但實際測試可以透過以下方式改名</p>
-<ul>
-<li>更換專案名稱<br>登入該網站後直接在專案上改名字<br>之後要回到專案上改 git 上傳的位置<br><a target="_blank" rel="noopener" href="https://devcenter.heroku.com/articles/renaming-apps#updating-git-remotes">update git remote</a></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">使用指令git remote rm heroku刪除舊有的 remote ‘heroku’</span><br><span class="line">➜  demomemooo git:(master) git remote rm heroku</span><br><span class="line"></span><br><span class="line">使用heroku指令綁定heroku git:remote -a newname</span><br><span class="line"></span><br><span class="line">➜  demomemooo git:(master) heroku git:remote -a demomemooo</span><br><span class="line"> ›   Error: Couldn&#39;t find that app.</span><br><span class="line"> ›   Error ID: not_found</span><br><span class="line">這邊會失敗是因為當時還沒有在網站上更名</span><br><span class="line">➜  demomemooo git:(master) heroku git:remote -a demomemooo</span><br><span class="line">set git remote heroku to https:&#x2F;&#x2F;git.heroku.com&#x2F;demomemooo.git</span><br></pre></td></tr></table></figure>
-<p><a target="_blank" rel="noopener" href="https://demomemooo.herokuapp.com/">https://demomemooo.herokuapp.com/</a></p>
-<p>小提醒：之後如果要更新記得先在本地起看看，並且照一般在 vscode 操作 git 上傳即可．</p>
-<p>部署設定：</p>
-<ul>
-<li>保護源代碼<br>設定GENERATE_SOURCEMAP環境變數可以使得源代碼不會出現在dev tool中顯示<br>add into package.json:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;    </span><br><span class="line">    &quot;start&quot;: &quot;react-scripts start&quot;,</span><br><span class="line">    &quot;build&quot;: &quot;GENERATE_SOURCEMAP&#x3D;false react-scripts build&quot;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="現有專案上傳"><a href="#現有專案上傳" class="headerlink" title="現有專案上傳"></a>現有專案上傳</h2></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd &#39;現有專案&#39;</span><br><span class="line">heroku create -b https:&#x2F;&#x2F;github.com&#x2F;mars&#x2F;create-react-app-buildpack.git</span><br><span class="line">專案內容看不到有什麼變化＠＠ 但本地專案會多連接一個heroku遠端git連結</span><br><span class="line">遠端heroku網站上一樣會多一個隨機命名的專案被建立．</span><br><span class="line">git push heroku master</span><br><span class="line">上傳，會直接執行build&#x2F;deploy，等待它完就可以了．</span><br><span class="line">heroku open</span><br></pre></td></tr></table></figure>
-<h4 id="方法二-自行建立設定"><a href="#方法二-自行建立設定" class="headerlink" title="方法二 自行建立設定"></a>方法二 自行建立設定</h4><ul>
-<li>先建立 React 命名 testdemooo</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create-react-app testdemooo</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>進入後 按 New-&gt;Create New App 輸入命名新增一個專案<br>(ex testdemooo)</p>
-</li>
-<li><p>產生完會有部署指令，照做即可</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">新的 Git repository 需做</span><br><span class="line"></span><br><span class="line">$ cd my-project&#x2F;</span><br><span class="line">$ git init</span><br><span class="line">$ heroku git:remote -a testmemooo</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">針對已存在Git repository，簡單新增“ heroku remote</span><br><span class="line"></span><br><span class="line">$ heroku git:remote -a testmemooo</span><br></pre></td></tr></table></figure>
-<ul>
-<li>但這樣做打開網站會錯誤，以下面文章的最佳解答照做即可<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/questions/10198600">React 專案佈署 heroku 問題</a><br>大致上做法是自行建立 server.js 與產生 build，只需要推 build 檔案上去即可（記得 gitignor 要拿掉 build folder）</li>
-</ul>
-<div class="note class_name">
-            <h2 id="網路參考文章"><a href="#網路參考文章" class="headerlink" title="網路參考文章"></a>網路參考文章</h2>
-          </div>
-
-<ul>
-<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/58359500/deploying-create-react-app-project-isnt-uglifying-my-code">Deploying create-react-app project isn’t uglifying my code</a></li>
-<li><a target="_blank" rel="noopener" href="https://linyencheng.github.io/2019/02/27/react-create-script-2/">React Create Script 2.0 減少維護環境配置</a></li>
-</ul>
-
-    </div>
-
-    
-    
-    
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/ing/" rel="tag"># ing</a>
-              <a href="/tags/heroku/" rel="tag"># heroku</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2020/09/15/note-css/" rel="prev" title="[✍ 筆記] CSS 練習">
-      <i class="fa fa-chevron-left"></i> [✍ 筆記] CSS 練習
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/09/18/13-go-pprof-gosec-gotest/" rel="next" title="[Go] 性能/品質/測試覆蓋率工具檢測">
-      [Go] 性能/品質/測試覆蓋率工具檢測 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
->>>>>>> 2047a790375a9d727a119bcdd0b39700e5ed4c14
 
           </div>
           
@@ -663,11 +359,7 @@ Heroku是一個支援多種程式語言的雲平台即服務，免費版提供�
 </script>
 
         </div>
-<<<<<<< HEAD
           
-=======
-          
->>>>>>> 2047a790375a9d727a119bcdd0b39700e5ed4c14
   
   <div class="toggle sidebar-toggle">
     <span class="toggle-line toggle-line-first"></span>
@@ -694,7 +386,6 @@ Heroku是一個支援多種程式語言的雲平台即服務，免費版提供�
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
-<<<<<<< HEAD
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Yuri"
       src="/images/avatar_memo.png">
@@ -705,53 +396,14 @@ Heroku是一個支援多種程式語言的雲平台即服務，免費版提供�
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">14</span>
-        <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">26</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-        <a href="https://github.com/yumememooo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yumememooo" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:yumememooo@gmail.com" title="E-Mail → mailto:yumememooo@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-  </div>
-
-
-=======
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Yuri"
-      src="/images/avatar_memo.png">
-  <p class="site-author-name" itemprop="name">Yuri</p>
-  <div class="site-description" itemprop="description">後端IT工程師，Go經歷一年 & 正在學習 React。 喜歡貓狗．<br> 持續紀錄自學筆記，如有誤還請您不吝指出與指教＾＾</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives">
-          <span class="site-state-item-count">29</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -772,7 +424,6 @@ Heroku是一個支援多種程式語言的雲平台即服務，免費版提供�
   </div>
 
 
->>>>>>> 2047a790375a9d727a119bcdd0b39700e5ed4c14
 
       </div>
 
@@ -781,11 +432,7 @@ Heroku是一個支援多種程式語言的雲平台即服務，免費版提供�
 <div class="widget-wrap">
     <div id="myCanvasContainer" class="widget tagcloud">
     <canvas width="220" height="250" id="resCanvas" style="width=100%">
-<<<<<<< HEAD
-        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDE/" rel="tag">IDE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA/" rel="tag">IDEA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kubernetes/" rel="tag">Kubernetes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Material-ui/" rel="tag">Material-ui</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memory/" rel="tag">Memory</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cleanCode/" rel="tag">cleanCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-in-js/" rel="tag">css-in-js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heroku/" rel="tag">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hugo/" rel="tag">hugo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ing/" rel="tag">ing</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/" rel="tag">map</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongo/" rel="tag">mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/" rel="tag">note</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ramda/" rel="tag">ramda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/" rel="tag">react</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recharts/" rel="tag">recharts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">3</span></li></ul>
-=======
-        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDE/" rel="tag">IDE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA/" rel="tag">IDEA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kubernetes/" rel="tag">Kubernetes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Material-ui/" rel="tag">Material-ui</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memory/" rel="tag">Memory</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call-by-sharing/" rel="tag">call by sharing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cleanCode/" rel="tag">cleanCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-in-js/" rel="tag">css-in-js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heroku/" rel="tag">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hugo/" rel="tag">hugo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ing/" rel="tag">ing</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/" rel="tag">map</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongo/" rel="tag">mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/" rel="tag">note</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ramda/" rel="tag">ramda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/" rel="tag">react</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recharts/" rel="tag">recharts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">3</span></li></ul>
->>>>>>> 2047a790375a9d727a119bcdd0b39700e5ed4c14
+        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDE/" rel="tag">IDE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA/" rel="tag">IDEA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kubernetes/" rel="tag">Kubernetes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Material-ui/" rel="tag">Material-ui</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memory/" rel="tag">Memory</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call-by-sharing/" rel="tag">call by sharing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cleanCode/" rel="tag">cleanCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-in-js/" rel="tag">css-in-js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heroku/" rel="tag">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hugo/" rel="tag">hugo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ing/" rel="tag">ing</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/" rel="tag">map</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongo/" rel="tag">mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/" rel="tag">note</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ramda/" rel="tag">ramda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/" rel="tag">react</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recharts/" rel="tag">recharts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">3</span></li></ul>
     </canvas>
     </div>
 </div>
@@ -793,11 +440,7 @@ Heroku是一個支援多種程式語言的雲平台即服務，免費版提供�
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
-<<<<<<< HEAD
 
-=======
-
->>>>>>> 2047a790375a9d727a119bcdd0b39700e5ed4c14
 
       </div>
     </main>
@@ -806,7 +449,6 @@ Heroku是一個支援多種程式語言的雲平台即服務，免費版提供�
       <div class="footer-inner">
         
 
-<<<<<<< HEAD
         
 
 <div class="copyright">
@@ -820,21 +462,6 @@ Heroku是一個支援多種程式語言的雲平台即服務，免費版提供�
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
-=======
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Yuri</span>
-</div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
-  </div>
->>>>>>> 2047a790375a9d727a119bcdd0b39700e5ed4c14
 
         
 <div class="busuanzi-count">
@@ -857,7 +484,6 @@ Heroku是一個支援多種程式語言的雲平台即服務，免費版提供�
       </span>
     </span>
 </div>
-<<<<<<< HEAD
 
 
 
@@ -865,15 +491,6 @@ Heroku是一個支援多種程式語言的雲平台即服務，免費版提供�
 
 
 
-=======
-
-
-
-
-
-
-
->>>>>>> 2047a790375a9d727a119bcdd0b39700e5ed4c14
 
       </div>
     </footer>
@@ -883,7 +500,6 @@ Heroku是一個支援多種程式語言的雲平台即服務，免費版提供�
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
-<<<<<<< HEAD
 
 <script src="/js/utils.js"></script>
 
@@ -913,37 +529,6 @@ Heroku是一個支援多種程式語言的雲平台即服務，免費版提供�
 
 
 
-=======
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 2047a790375a9d727a119bcdd0b39700e5ed4c14
 
   
 
