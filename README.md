@@ -35,3 +35,6 @@ $ hexo generate
 ```bash
 $ hexo deploy
 ```
+
+## if want upload themes
+git submodule add https://github.com/iissnan/hexo-theme-next themes/next
