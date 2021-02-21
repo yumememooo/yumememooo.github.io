@@ -80,7 +80,7 @@ ref:[JavaScript中的字符串](https://developer.mozilla.org/zh-CN/docs/Learn/J
 #### 函式宣告
   - 可用函式宣告（Function Declaration）（ES5）
   - 函式運算式（Function Expressions）（ES5）
-  - 箭頭函式運算式（arrow function expression）（ES5）
+  - 箭頭函式運算式（arrow function expression）（ES6）
 
 
 ##### 宣告練習
@@ -124,14 +124,91 @@ ref:[JavaScript中的字符串](https://developer.mozilla.org/zh-CN/docs/Learn/J
     </script>
 ```
 ##### this的問題與箭頭函數的出現
+箭頭函式有兩個重要的特性：更短的函式寫法與 this 變數的非綁定。
+
+- 使用及細節可以看下方：(js_func_this.html)
+```
+    <script>
+        //ES5 函示內this會指向windows而非Person，因此要像PersonSolve寫法
+        function Person() {
+            // Person() 建構式將 this 定義為它自己的一個實體
+            this.age = 0;
+            console.log("Person():" + this.constructor.name);
+            setTimeout(function growUp() {
+                // 在非嚴格模式下, growUp() 函式把 this 定義為全域物件
+                // (因為那是 growUp()執行的所在)，
+                // 與 Person() 建構式所定義的 this 有所不同
+                this.age++;
+                console.log("Person.setTimeout():" + this.constructor.name);
+                console.log("Person.setTimeout():" + this.age)
+            }, 1000);
+        }
+        function PersonSolve() {
+            var self = this; // 有些人喜歡 `that` 而不是 `self`.
+            // 選好一種取法後始終如一
+            self.age = 0;
+            console.log("PersonSolve():" + this.constructor.name);
+            setTimeout(function growUp() {
+                // 這個 callback 參考 `self` 變數，為預期中的物件。
+                self.age++;
+                console.log("PersonSolve.setTimeout():" + self.constructor.name);
+                console.log("PersonSolve.setTimeout():" + self.age)
+
+            }, 1000);
+        }
+        var p1 = new Person();
+        var p2 = new PersonSolve();
+        //---------
+
+        //ES6 箭頭函示------------------------------
+        function Person_Arr() {
+            this.age = 0;
+            console.log("Person_Arr():" + this.constructor.name);
+            setTimeout(() => {
+                this.age++; // |this| 適切的參考了Person建構式所建立的物件
+                console.log("Person_Arr.setTimeout():" + this.constructor.name);
+                console.log("Person_Arr.setTimeout():" + this.age)
+            }, 1000);
+        }
+
+        var p3 = new Person_Arr();
+        //ES6 箭頭函示------------------------------
+
+       // OUTPUT
+        // js_func_this.html: 17 Person(): Person
+        // js_func_this.html: 31 PersonSolve(): PersonSolve
+        // js_func_this.html: 47 Person_Arr(): Person_Arr
+
+        // js_func_this.html: 23 Person.setTimeout(): Window -->發現竟然指向Window
+        // js_func_this.html: 24 Person.setTimeout(): NaN  -->內容不見！！
+        // js_func_this.html: 35 PersonSolve.setTimeout(): PersonSolve  -->workaround解法
+        // js_func_this.html: 36 PersonSolve.setTimeout(): 1
+        // js_func_this.html: 50 Person_Arr.setTimeout(): Person_Arr -->ES6 arrow解法
+        // js_func_this.html: 51 Person_Arr.setTimeout(): 1
+    </script>
+```
 
 
+ref: [this不分家](https://developer.cdn.mozilla.net/zh-TW/docs/Web/JavaScript/Reference/Functions/Arrow_functions#this_%E4%B8%8D%E5%88%86%E5%AE%B6)
+
+ＴＢＤ
+no this new
+https://developer.cdn.mozilla.net/zh-TW/docs/Web/JavaScript/Reference/Functions/Arrow_functions#this_%E4%B8%8D%E5%88%86%E5%AE%B6
+
+##### ES6 - spread operator
+展開運算子(...) 允許可迭代的陣列或字串展開成０到多個參數
+
+
+##### ES6 - 解構賦值 Destructuring assignment
+可以把陣列或物件中的資料解開擷取成為獨立變數
+ref:[解構賦值](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+
+#### ES6 - 使用module分檔 (import & export)
 
 #### JS的 Hoisting (提升)顶置特性
 - 變數(var hoisting)與函數都可以先使用再宣告
 - 但提升操作不再适用于 let 并引起一个错误(Uncaught ReferenceError)
- ref:
- [JavaScript Hoisting (提升)](https://shubo.io/javascript-hoisting/#javascript-hoisting-%E6%8F%90%E5%8D%87)
+ ref:[JavaScript Hoisting (提升)](https://shubo.io/javascript-hoisting/#javascript-hoisting-%E6%8F%90%E5%8D%87)
 
 
 
@@ -143,7 +220,7 @@ ref:[JavaScript中的字符串](https://developer.mozilla.org/zh-CN/docs/Learn/J
 
 ref:[JS裡addEventListener和on的區別](https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/42343/)
 
-### Lint 工具
+### 延伸：Lint 工具
 在電腦科學中，lint是一種工具程式的名稱，它用來標記原始碼中，某些可疑的、不具結構性（可能造成bug）的段落。它是一種靜態程式分析工具
 
 #### JSLint
@@ -155,7 +232,7 @@ JSLint 幫你檢查未定義的變數、函數、陳述式結尾有沒有加分�
 
 註： prettier 只是格式的檢驗（空格 格式化），不会對代码质量进行校验。但有些檢驗，ESLint沒有，所以可以ESLint＋prettier一起使用，也可以視使用情況不使用 Prettier。
 
-### JavaScript OOP
+### 探討：JavaScript OOP
 OOP （(Object-oriented programming）物件導向/對象編程，在 JavaScript 中，大多数事物都是对象, 从作为核心功能的字符串和数组。你甚至可以自己创建对象，在调用函数前加一个 new ，它就会返回一个这个函数的实例化对象，. 然后，就可以在这个对象上面添加一些属性．[JavaScript 对象入门](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects)
 
 舉例：
@@ -208,7 +285,8 @@ ref:[該來理解 JavaScript 的原型鍊了](https://blog.techbridge.cc/2017/04
 <br>[ __proto__ 和 prototype 到底有什麼區別](https://kknews.cc/code/6agvk2v.html)
 
 
-#### JavaScript 中的繼承 (prototypal inheritance)
+
+##### JavaScript 中的繼承 (prototypal inheritance)
 
 - call()函数。基本上，这个函数允许您调用一个在这个文件里别处定义的函数。
 - 设置 Teacher() 的原型和构造器引用
@@ -250,6 +328,48 @@ ref:[JavaScript 中的继承](https://developer.mozilla.org/zh-CN/docs/Learn/Jav
 TBD:
 https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
 
+
+#### ES6 類別 (class) 
+ECMAScript 6 中引入了類別 (class) 作為 JavaScript 現有原型程式(prototype-based)繼承的語法糖。類別語法並不是要引入新的物件導向繼承模型到 JavaScript 中，而是提供一個更簡潔的語法來建立物件和處理繼承。
+
+ref:[Classes](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Classes)
+
+##### 類別宣告 (class declaration)
+- 使用關鍵字 class
+```
+class Polygon {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+}
+ var p = new Polygon(); 
+```
+- 相較函數宣告有Hoisting，類別宣告則否。 你需要先宣告類別，然後存取它，否則就會丟出 ReferenceError:
+{% note danger %}  var p = new Polygon(); // ReferenceError
+class Polygon {} {% endnote %}
+
+##### 類別敘述(class expressions)
+- 類別敘述是定義類別的另一種方法。類別敘述可以有名稱或是無名稱。賦予一個有名稱類別敘述的名稱只在類別主體(class's body)中有作用。（✍ 其實跟之前提到的Function Expressions一樣概念）
+```
+// unnamed
+var Polygon = class {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+};
+
+// named
+var Polygon = class Polygon {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+};
+```
+
+---
 #### 使用JSON
 - JSON要求在字符串和属性用雙引號， 但引號無效。
 - 我们使用 . 或 [] 訪問对象内的数据
@@ -300,3 +420,9 @@ ctx.fillRect(10, 10, 100, 100);//畫矩形 x start,y start,width,height
 利用漸變色及貝斯曲線或是填入圖案，繪製文字，可做出很多豐富的圖案，還有動畫行星/時鐘，滑鼠動畫，像素控制等，詳請見下方文件
 
 ref:[Canvas 教學文件](https://developer.mozilla.org/zh-TW/docs/Web/API/Canvas_API/Tutorial)
+
+
+
+
+TBD
+ES6 - 解決非同步問題:Promise
