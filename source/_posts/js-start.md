@@ -18,10 +18,14 @@ date: 2021-02-20 11:33:18
 
 本章由[ＭＤＮ-JavaScript](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript)開始著手練習 
 
+### JS歷史
+ECMAScript是一種由國際標準，ES6為ECMAScript2015，是大幅度的更新，討論度較高，
+
+
 ## 個人筆記整理
 
 
-### 變數
+### 宣告
 
 #### 命名規則
 - 小寫駱駝
@@ -30,9 +34,10 @@ date: 2021-02-20 11:33:18
 
 ref:[关于变量命名的规则](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Variables#%E5%85%B3%E4%BA%8E%E5%8F%98%E9%87%8F%E5%91%BD%E5%90%8D%E7%9A%84%E8%A7%84%E5%88%99)
 
-#### 宣告
-- let是區域的，更改內容只會影響到內部，外面的不會。
-- var是全域的，更改內容只會影響到外面的。
+#### 變數
+- var是全域的，更改內容會影響到外面的。
+- let是區域的，更改內容只會影響到內部，外面的不會。（ES6)
+- const 宣告後不改值。（ES6)
 - 宣告變數但不賦值=undefined
 - null常見於宣告後面定義成沒有值或找不到
 - 全域屬性 NaN 表示「非數值」（Not-A-Number）的數值
@@ -43,15 +48,10 @@ ref:
 [let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
 [NaN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/NaN)
 
+#### 比對
+ＴＢＤ
 
-#### JavaScript Hoisting (提升)顶置
-- 變數(var hoisting)與函數都可以先使用再宣告
-- 但提升操作不再适用于 let 并引起一个错误(Uncaught ReferenceError)
- ref:
- [JavaScript Hoisting (提升)](https://shubo.io/javascript-hoisting/#javascript-hoisting-%E6%8F%90%E5%8D%87)
-
-
-#### 字符操作
+##### 字符操作
 - 一個字符串和一個数字可以直接相加變成字串
 - 把字串當作對象，或許長度或大小寫轉換去處理字符串
 ```
@@ -64,17 +64,76 @@ s:1967 type:string
 ```
 
 
-##### Number()
+###### Number()
 对象将把传递给它的任何东西转换成一个数字
 ```
 let myString = '123';
 let myNum = Number(myString);
 typeof myNum;
 ```
-##### toString()
+###### toString()
 每个数字都有一个名为 toString() 的方法，它将把它转换成等价的字符串。
 
 ref:[JavaScript中的字符串](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Strings)
+
+
+#### 函式宣告
+  - 可用函式宣告（Function Declaration）（ES5）
+  - 函式運算式（Function Expressions）（ES5）
+  - 箭頭函式運算式（arrow function expression）（ES5）
+
+
+##### 宣告練習
+使用及細節可以看下方：(js_func.html)
+```
+    <script>
+        // ES5 函式宣告（Function Declaration）
+        //function 函式名稱(參數) {
+        function Add(A, B) {
+            return A + B;
+        }
+        /* 或 */
+        // ES5  函式運算式（Function Expressions）
+        // var 函式名稱 = function (參數) {
+        var Add2 = function (A, B) {//匿名函式
+            return A + B;
+        }
+        var Add3 = function add3(A, B) {//#1 非匿名函式
+            console.log(typeof add3);//#1 但只在自身有效
+            return A + B;
+        }
+        console.log(Add(1, 2))//3
+        console.log(Add2(1, 2))//3
+        console.log(Add3(1, 2))//3
+        //console.log(add3(1, 2))//#1 ReferenceError: add3 is not defined
+
+
+        //ES6 宣告型態 函式名稱 = (參數) => {
+        var Add4 = (A, B) => {
+            return A + B;
+        }
+        //縮寫 如果只有return 可以去掉{}與return
+        var Add5 = (A, B) => A + B;
+
+         //縮寫 如果只有一個參數 可以去掉（）
+        var AddS1 = (A) => A;
+        var AddS2 = A => A;
+
+        console.log("ES6:" + Add4(1, 2))//3
+        console.log("ES6:" + Add5(1, 2))//3
+    </script>
+```
+##### this的問題與箭頭函數的出現
+
+
+
+#### JS的 Hoisting (提升)顶置特性
+- 變數(var hoisting)與函數都可以先使用再宣告
+- 但提升操作不再适用于 let 并引起一个错误(Uncaught ReferenceError)
+ ref:
+ [JavaScript Hoisting (提升)](https://shubo.io/javascript-hoisting/#javascript-hoisting-%E6%8F%90%E5%8D%87)
+
+
 
 ### 事件(Event)
 - 好得寫法是找到(select)button並添加事件，避免汙染HTML。
@@ -186,6 +245,10 @@ ref:[該來理解 JavaScript 的原型鍊了](https://blog.techbridge.cc/2017/04
 ```
 
 ref:[JavaScript 中的继承](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/Inheritance) 探討何時使用與參考網站練習
+
+
+TBD:
+https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
 
 #### 使用JSON
 - JSON要求在字符串和属性用雙引號， 但引號無效。
