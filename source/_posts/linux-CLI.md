@@ -25,7 +25,7 @@ mkdir folder 創建資料夾
 mkdir -p folder 如果目錄已存在則不會報錯
 mkdir -p Project/a/src  创建多级目录 mkdir -p
 touch  檔名.txt 新增空白檔案
-ls 列出
+ls 列出 -a 含隱藏檔案
 cd 進入
 cat filename 直接檢視檔案內容
 ```

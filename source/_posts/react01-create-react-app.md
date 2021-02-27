@@ -1,8 +1,9 @@
 ---
-title: "[React] 初始開發環境設定與名詞介紹"
+title: "[React 01] 初始開發環境設定"
 tags:
   - react
   - vscode
+  - lint
 categories:
   - Tech.
   - Web
@@ -45,15 +46,42 @@ Creating a new React app in /Users/xxx/front/my-react-demo.
 ```bash
 npm start
 ```
+就會看到一個網頁介面啟動囉！！！！！！
 
+#### create-react-app 內容
+架構
+```
+README.md               
+package.json
+node_modules            
+public
+package-lock.json       
+src
+```
 
-public/index.html
+- public/index.html
 基本的HTML架構，內有
 ```html
 "<div id="root"></div>"
 ```
-這樣的內容
 
+- 而在/src/index.js 則有渲染DOM的程式碼
+```
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+```
+
+#### 完成開發生成靜態與部署
+```
+npm run build
+```
+當編譯結束時，專案目錄底下會出現build資料夾，裡面的檔案就是所需要的靜態檔案(可以點開index.html試試看)，其他檔案在部署時不用上傳。
+
+* 實作直接打開ＨＴＭＬ或是用live server都會一片空白？？ 但實際起python web server可以看到
 
 #### vscode 外掛
 - ESlint 插件 -> 一個Javascript Linter，是一種靜態代碼分析工具，用於識別在JavaScript代碼中發現的有問題的模式，可以定義和加載自定義規則。ESLint涵蓋了代碼質量和編碼風格問題。
