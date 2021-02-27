@@ -38,8 +38,8 @@ npm install -g create-react-app
 
 #### 使用create-react-app 建立專案
 ```bash
-～create-react-app my-react-demo
-Creating a new React app in /Users/xxx/front/my-react-demo.
+～create-react-app 01-create-react-app
+Creating a new React app in /Users/xxx/front/01-create-react-app.
 ```
 
 #### 啟動專案
@@ -52,7 +52,7 @@ npm start
 架構
 ```
 README.md               
-package.json
+package.json //和設定打包工具(webpack)有關
 node_modules            
 public
 package-lock.json       
@@ -81,7 +81,7 @@ npm run build
 ```
 當編譯結束時，專案目錄底下會出現build資料夾，裡面的檔案就是所需要的靜態檔案(可以點開index.html試試看)，其他檔案在部署時不用上傳。
 
-* 實作直接打開ＨＴＭＬ或是用live server都會一片空白？？ 但實際起python web server可以看到
+* 實作直接打開ＨＴＭＬ或是用live server都會一片空白？？ 但實際起python web server可以看到 (待釐清)
 
 #### vscode 外掛
 - ESlint 插件 -> 一個Javascript Linter，是一種靜態代碼分析工具，用於識別在JavaScript代碼中發現的有問題的模式，可以定義和加載自定義規則。ESLint涵蓋了代碼質量和編碼風格問題。

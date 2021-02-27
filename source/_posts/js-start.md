@@ -214,26 +214,6 @@ ref:[解構賦值](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Refer
 
 
 
-### 事件(Event)
-- 好得寫法是找到(select)button並添加事件，避免汙染HTML。
-- 關於button.onclick vs addEventListener
-  - on會覆蓋上一个事件
-  - addEventListener事件，可以多次绑定同一个事件并且不会覆盖上一个事件
-
-ref:[JS裡addEventListener和on的區別](https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/42343/)
-
-### 延伸：Lint 工具
-在電腦科學中，lint是一種工具程式的名稱，它用來標記原始碼中，某些可疑的、不具結構性（可能造成bug）的段落。它是一種靜態程式分析工具
-
-#### JSLint
-JSLint 幫你檢查未定義的變數、函數、陳述式結尾有沒有加分號(;)、變數使用之前要先用 var 宣告、使用非數字的變數要用 === 或 !== 讓比對的時候不要自動進行轉型(Casting)、盡量不要使用 eval 函數、... 好多好多
-
-#### ESLint
-包括格式檢驗及質量效驗（未使用變量、三等號、全局變量聲明等問题）
-自由選擇要使用哪些規則，對 ES6 還有 JSX 的支援度跟其他 linter 相較之下也是最高的
-
-註： prettier 只是格式的檢驗（空格 格式化），不会對代码质量进行校验。但有些檢驗，ESLint沒有，所以可以ESLint＋prettier一起使用，也可以視使用情況不使用 Prettier。
-
 ### 探討：JavaScript OOP
 OOP （(Object-oriented programming）物件導向/對象編程，在 JavaScript 中，大多数事物都是对象, 从作为核心功能的字符串和数组。你甚至可以自己创建对象，在调用函数前加一个 new ，它就会返回一个这个函数的实例化对象，. 然后，就可以在这个对象上面添加一些属性．[JavaScript 对象入门](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects)
 
@@ -388,6 +368,30 @@ var myJSON = { "name": "Chris", "age": "38" }; console.log(myJSON)
 var myString = JSON.stringify(myJSON);
 console.log(myString)//string:{"name":"Chris","age":"38"}
 ```
+
+
+
+### 事件(Event)
+- 好得寫法是找到(select)button並添加事件，避免汙染HTML。
+- 關於button.onclick vs addEventListener
+  - on會覆蓋上一个事件
+  - addEventListener事件，可以多次绑定同一个事件并且不会覆盖上一个事件
+
+ref:[JS裡addEventListener和on的區別](https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/42343/)
+
+
+
+### 延伸：Lint 工具
+在電腦科學中，lint是一種工具程式的名稱，它用來標記原始碼中，某些可疑的、不具結構性（可能造成bug）的段落。它是一種靜態程式分析工具
+
+#### JSLint
+JSLint 幫你檢查未定義的變數、函數、陳述式結尾有沒有加分號(;)、變數使用之前要先用 var 宣告、使用非數字的變數要用 === 或 !== 讓比對的時候不要自動進行轉型(Casting)、盡量不要使用 eval 函數、... 好多好多
+
+#### ESLint
+包括格式檢驗及質量效驗（未使用變量、三等號、全局變量聲明等問题）
+自由選擇要使用哪些規則，對 ES6 還有 JSX 的支援度跟其他 linter 相較之下也是最高的
+
+註： prettier 只是格式的檢驗（空格 格式化），不会對代码质量进行校验。但有些檢驗，ESLint沒有，所以可以ESLint＋prettier一起使用，也可以視使用情況不使用 Prettier。
 
 ### 其他練習
 
