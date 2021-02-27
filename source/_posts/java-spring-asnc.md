@@ -1,5 +1,5 @@
 ---
-title: "java spring 非同步事件"
+title: "[JAVA] spring 非同步事件"
 tags:
   - java
   - spring

@@ -2,6 +2,7 @@
 title: "[純紀錄]Kubernetes基本操作"
 tags:
   - Kubernetes
+  - CLI
 categories:
   - Tech.
   - Kubernetes

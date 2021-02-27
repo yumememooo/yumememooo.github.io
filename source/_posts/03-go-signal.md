@@ -1,5 +1,5 @@
 ---
-title: "[Go 03] 信號處理和退出程式"
+title: "[Go 04] 信號處理和退出程式"
 tags:
   - golang
 categories:

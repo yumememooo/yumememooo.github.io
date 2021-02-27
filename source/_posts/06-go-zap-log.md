@@ -1,5 +1,5 @@
 ---
-title: "[Go 06] 使用 zap 框架印出 log"
+title: "[Go 07] 使用 zap 框架印出 log"
 tags:
   - golang
 categories:

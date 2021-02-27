@@ -1,5 +1,5 @@
 ---
-title: "初學 python 筆記"
+title: "[python]初學 python 筆記"
 tags:
   - python
   - call by sharing

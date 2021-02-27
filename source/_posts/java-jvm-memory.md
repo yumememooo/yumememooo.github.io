@@ -1,5 +1,5 @@
 ---
-title: "有關java之OutOfMemory檢測等相關問題文章整理"
+title: "[JAVA]有關java之OutOfMemory檢測等相關問題文章整理"
 tags:
   - java
   - Memory

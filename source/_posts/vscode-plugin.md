@@ -1,5 +1,5 @@
 ---
-title: '[✍] vscode 使用與插件分享'
+title: '[✍進行中] [vscode] 使用與插件分享'
 tags:
   - vscode
   - IDE

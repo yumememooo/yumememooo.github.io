@@ -2,6 +2,7 @@
 title: "[docker]常用docker指令筆記整理"
 tags:
   - docker
+  - CLI
 categories:
   - Tech.
   - docker

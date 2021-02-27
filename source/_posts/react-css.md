@@ -1,5 +1,5 @@
 ---
-title: "[✍練習]在 React 中套用 css-in-js (Emotion 庫)撰寫 CSS"
+title: "[React][✍練習]套用 css-in-js (Emotion 庫)撰寫 CSS"
 tags:
   - react
   - css

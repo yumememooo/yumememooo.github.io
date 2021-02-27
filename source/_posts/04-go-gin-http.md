@@ -1,5 +1,5 @@
 ---
-title: "[Go 04] 使用 Gin 框架快速建立 http 服務"
+title: "[Go 05] 使用 Gin 框架快速建立 http 服務"
 tags:
   - golang
 categories:

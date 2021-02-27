@@ -1,5 +1,5 @@
 ---
-title: 使用Ｈexo 撰寫部落格
+title: "[BLOG]使用Ｈexo 撰寫部落格"
 tags:
   - hexo
   - blog
