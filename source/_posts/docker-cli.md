@@ -14,7 +14,6 @@ date: 2020-10-31 10:41:31
 
 <!--more-->
 
-
 ## 啟動image
 
 ### docker run
@@ -59,7 +58,7 @@ date: 2020-10-31 10:41:31
 |  docker search 'ubuntu' |  docker search 'xxx' 查詢可下載 image  |
 | docker pull 'ubuntu'   |  docker pull 'xxx' 下載 image  |
 | docker images  | 查看下載image與ID   |
-| docker system df  | 查看使用的磁盘空间 |
+| docker system df  | 查看使用的磁盘空间 -v more detail 查看個別container |
 | docker stats  | 查看容器使用的系统资源 每隔 1 秒刷新 |
 | docker stats --no-stream  | 查看容器當前的系統資源 |
 | docker stats 'CONTAINER ID or name'... | 指定查看特定容器 |

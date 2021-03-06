@@ -57,6 +57,14 @@ https://www.opencli.com/linux/rm-delete-files-directory-command
 
 ```
 
+#### 查詢記憶體大小
+```
+可以用下述指令:
+free  
+free -m  //單位
+cat /proc/meminfo
+```
+
 
 #### 查看檔案大小
 ```
