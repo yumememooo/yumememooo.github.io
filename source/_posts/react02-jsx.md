@@ -1,5 +1,5 @@
 ---
-title: "[React] react JSX 基本語法"
+title: "[React 02] react JSX 基本語法"
 tags:
   - react
 categories:
@@ -33,20 +33,46 @@ src/index.js
 ```javascript
 ReactDOM.render(<App />, document.getElementById('root'));
 或是
-ReactDOM.render(<h1> Hello world!</h1>,
+ReactDOM.render(
+  <h1> Hello world!</h1>,
 document.getElementById('root'));
 ```
 - 由 React DOM 函式將元素渲染 ROOT 這個DOM 節點中
 - 而將 html當參數傳遞是使用一種Javascript語法: JSX
+```
+const name = 'Josh Perez'; //一般ＪＳˊ
+const element = <h1>Hello, {name}</h1>;//混和的html與字串 特殊JSX語法
 
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
 
+```
+
+- 關於Babel
+```
+const element = (
+  <h1 className="greeting">
+    Hello, World!
+  </h1>
+);
+```
+Babel 將 JSX 編譯為呼叫 React.createElement() 的程式。
+```
+const element = React.createElement(
+  'h1',
+  {className: 'greeting'},
+  'Hello, World!'
+);
+```
 ------------
-範例2: {JS}
+範例2: 在html中可以用{JS} 崁入變數
 
 ```javascript
 //js函式宣告或是變數宣告區
 const styleRed = { color: 'red' };
-const pic=()=>{
+const pic=()=>{ //html語法可以當作參數傳遞
   return (
   <div><img src="https://picsum.photos/200/200?image=229" alt="" class="circle-profile"/></div>);
 }
@@ -54,10 +80,11 @@ var arr = [
         <h1>REACT學習</h1>,
         <h2>如何使用JSX！</h2>,
 ];
+
 ReactDOM.render(
 <React.StrictMode>
    <h1 style = { styleRed } > Hello, world! </h1>
-   <div>{ pic(} </div> {/*註解這樣寫*/}
+   <div>{ pic()} </div> {/*註解這樣寫*/}
    <div>{arr}</div>,{/*可以放入數組*/}
  </React.StrictMode>,
     document.getElementById('root')
@@ -97,6 +124,6 @@ ReactDOM.render(
 
 
 # 網路參考文章
-- [【React.js入門 - 06】 JSX](https://ithelp.ithome.com.tw/articles/10216468 "【React.js入門 - 06】 JSX") @IT邦幫忙鐵人分享
-
+- (https://zh-hant.reactjs.org/docs/introducing-jsx.html)
+- [【React.js入門 - 06】 JSX](https://ithelp.ithome.com.tw/articles/10216468)
 - [React篇: JSX語法撰寫指引](https://eyesofkids.gitbooks.io/react-basic-zh-tw/content/day18_deeper_jsx/ "React篇: JSX語法撰寫指引")

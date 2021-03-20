@@ -81,9 +81,46 @@ ref:[JavaScript中的字符串](https://developer.mozilla.org/zh-CN/docs/Learn/J
 
 #### 函式宣告
   - 可用函式宣告（Function Declaration）（ES5）
-  - 函式運算式（Function Expressions）（ES5）
+  - 函式運算式(表達式)（Function Expressions）（ES5）
+    - 宣告一個函數，或匿名函數 (anonymous function / function literal) 當作值指定給一個變數
   - 箭頭函式運算式（arrow function expression）（ES6）
+    - 它沒有自己的 this、arguments、super、new.target 等語法。
 
+function 建構子說明
+- JavaScript 使用稱為建構子函式（constructor function）的特殊函式，定義物件與功能。
+```
+// 自己的一些東西
+function Person(first, last, age, gender, interests) {
+  this.name = {
+    first,
+    last
+  };
+  this.age = age;
+  this.gender = gender;
+  this.interests = interests;
+  this.bio = function() {
+    alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+  };
+  this.greeting = function() {
+    alert('Hi! I\'m ' + this.name.first + '.');
+  };
+};
+var person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing']);
+
+```
+Ref:[初學者應知道的物件導向 JavaScript](https://developer.mozilla.org/zh-TW/docs/Learn/JavaScript/Objects/Object-oriented_JS)
+- 箭頭函式不可作為建構式使用；若使用於建構式，會在使用 new 時候拋出錯誤。
+```
+
+  //箭頭
+  const Pet_Arr = (color) => {
+    this.color = color;
+  }
+  // ini_constructor_proto.html:99 Uncaught TypeError: Pet_Arr is not a constructor
+  //箭頭函式不可作為建構式使用；若使用於建構式，會在使用 new 時候拋出錯誤。
+  const PetA = new Pet_Arr('yellow'); //
+```
+Ref: [箭頭函式 MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
 ##### 宣告練習
 使用及細節可以看下方：(js_func.html)
@@ -95,7 +132,7 @@ ref:[JavaScript中的字符串](https://developer.mozilla.org/zh-CN/docs/Learn/J
             return A + B;
         }
         /* 或 */
-        // ES5  函式運算式（Function Expressions）
+        // ES5  函式運算式(表達式)（Function Expressions）
         // var 函式名稱 = function (參數) {
         var Add2 = function (A, B) {//匿名函式
             return A + B;
@@ -190,8 +227,9 @@ ref:[JavaScript中的字符串](https://developer.mozilla.org/zh-CN/docs/Learn/J
     </script>
 ```
 
-
-ref: [this不分家](https://developer.cdn.mozilla.net/zh-TW/docs/Web/JavaScript/Reference/Functions/Arrow_functions#this_%E4%B8%8D%E5%88%86%E5%AE%B6)
+- 箭頭函式不可作為建構式使用；若使用於建構式，會在使用 new 時候拋出錯誤。
+- 箭頭函式並沒有原型（prototype）屬性。
+more ref: [this不分家](https://developer.cdn.mozilla.net/zh-TW/docs/Web/JavaScript/Reference/Functions/Arrow_functions#this_%E4%B8%8D%E5%88%86%E5%AE%B6)
 
 ＴＢＤ
 no this new

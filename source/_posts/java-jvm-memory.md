@@ -19,16 +19,34 @@ date: 2020-11-14 19:31:51
 
 
 #### 關於JVM
-[一图解千愁，jvm内存从来没有这么简单过！](https://juejin.im/post/5ed49e7c51882543012f9e6c "一图解千愁，jvm内存从来没有这么简单过！")
+```
+-Xms = 初始值，預設是實體記憶體的1/64
+-Xmx = 最大值，預設是實體記憶體的1/4
+-Xmn = 最小值
+預設空餘堆記憶體小於40%時，JVM 就會增大堆直到-Xmx 的最大限制。
+```
+
+- [一图解千愁，jvm内存从来没有这么简单过！](https://juejin.im/post/5ed49e7c51882543012f9e6c "一图解千愁，jvm内存从来没有这么简单过！")
 - 該文建議使用操作系统的2/3作为堆空间，是比较合理的。这是一个经验值。比如6GB的内存，你分配给JVM的，最好不要超过4GB。
+- [淺談 JVM PermGen space 的解決方法](https://ithelp.ithome.com.tw/articles/10211000)
 
 #### 調整JVM
+可以透過以下的參數來修改它，不過應該不要刻意去加大給它的分配記憶體，因為遇到需要大量的請求不多，
+怕造成記憶體的浪費，應該是從程式面下手修正程式效能(又是一課題了Orz)。
+- 開發時 IDE 設定
+
+```
+IDE JAVA_OPTS="-Xmx900m -Xms900m"
+
+```
 - 修改jvm.cfg
 [調整JVM虛擬機器記憶體大小](https://www.itread01.com/content/1546694105.html "調整JVM虛擬機器記憶體大小")
-- 執行jar包的時候參數調整?
+- 執行jar包的時候參數調整
 ```bash
-java -Xms1024m -Xmx1024m -XX:ThreadStackSize=512 -XX:MaxPermSize=256 - jar XX.jar
+java -Xmx900m -Xms900m jar app.jar
 ```
+
+
 - tomcat/Resin/weblogic 等設定
 [完美解決java.lang.OutOfMemoryError處理錯誤的問題](https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/313033/ "完美解決java.lang.OutOfMemoryError處理錯誤的問題")
 
