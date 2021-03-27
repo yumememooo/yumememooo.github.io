@@ -2,6 +2,9 @@
 title: "[JS] javascript 新手上路與概念筆記"
 tags:
   - javascript
+  - ES6
+  - 閉包
+  - 解構賦值
 categories:
   - Tech.
   - Web
@@ -27,7 +30,7 @@ ECMAScript是一種由國際標準，ES6為ECMAScript2015，是大幅度的更�
 ## 個人筆記整理
 
 
-### 宣告
+### 宣告與各用法概念
 
 #### 命名規則
 - 小寫駱駝
@@ -46,11 +49,9 @@ ref:[关于变量命名的规则](https://developer.mozilla.org/zh-CN/docs/Learn
   - NaN 不等於（==、!=、===、!==）任何值，包括 NaN 本身。請使用 Number.isNaN() 或 isNaN() 來確認某個數值是否為 NaN。
 
 ref:
-[var 与 let 的区别](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Variables#var_%E4%B8%8E_let_%E7%9A%84%E5%8C%BA%E5%88%AB)
-[let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
-[NaN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/NaN)
+[var 与 let 的区别](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Variables#var_%E4%B8%8E_let_%E7%9A%84%E5%8C%BA%E5%88%AB) | [let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let) | [NaN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/NaN)
 
-#### 比對
+##### 比對
 ＴＢＤ
 
 ##### 字符操作
@@ -235,20 +236,64 @@ more ref: [this不分家](https://developer.cdn.mozilla.net/zh-TW/docs/Web/JavaS
 no this new
 https://developer.cdn.mozilla.net/zh-TW/docs/Web/JavaScript/Reference/Functions/Arrow_functions#this_%E4%B8%8D%E5%88%86%E5%AE%B6
 
-##### ES6 - spread operator
-展開運算子(...) 允許可迭代的陣列或字串展開成０到多個參數
+#### JS的 Hoisting (提升)顶置特性
+- 變數(var hoisting)與函數都可以<span style="background-color:yellow;">先使用再宣告</span>
+- 但提升操作不再适用于 let 并引起一个错误(Uncaught ReferenceError)
+ ref:[JavaScript Hoisting (提升)](https://shubo.io/javascript-hoisting/#javascript-hoisting-%E6%8F%90%E5%8D%87)
 
-
-##### ES6 - 解構賦值 Destructuring assignment
-可以把陣列或物件中的資料解開擷取成為獨立變數
-ref:[解構賦值](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
 #### ES6 - 使用module分檔 (import & export)
 
-#### JS的 Hoisting (提升)顶置特性
-- 變數(var hoisting)與函數都可以先使用再宣告
-- 但提升操作不再适用于 let 并引起一个错误(Uncaught ReferenceError)
- ref:[JavaScript Hoisting (提升)](https://shubo.io/javascript-hoisting/#javascript-hoisting-%E6%8F%90%E5%8D%87)
+#### 閉包（Closure）
+閉包是函式以及該函式被宣告時所在的作用域環境的組合。
+- 閉包的好處能把變數隱藏在裡面讓外部存取不到
+- 閉包在 callback 上的應用尤其常見
+- 在迴圈建立閉包：一個常見錯誤
+在 ECMAScript 2015 (ES6)導入 let 前，迴圈內建立的閉包，常會發生問題。
+範例請見： [simple_js_demo-closure](https://github.com/yumememooo/simple_js_demo/blob/master/04_js_closure/closure.html)
+
+Ref:
+- [MDN-閉包](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Closures)
+- [你懂 JavaScript 嗎？#15 閉包（Closure）]（https://cythilya.github.io/2018/10/22/closure/）
+
+
+#### ES6 - spread operator
+展開運算子(...) 允許可迭代的陣列或字串展開成０到多個參數
+
+
+#### ES6 - 解構賦值 Destructuring assignment
+可以把陣列或物件中的資料解開擷取成為獨立變數
+詳細請見:[MDN-解構賦值](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+
+
+- 陣列解構
+  - 變數交換
+  - 解析自函式回傳的陣列
+- 物件解構
+```
+const o = {p: 42, q: true};
+const {p, q} = o;
+
+console.log(p); // 42
+console.log(q); // true
+```
+  - 預設值
+當解構物件中對應的值是 undefined 時，變數可以設定預設值。
+  - 指派到新的變數名稱
+  ```
+const o = {p: 42, q: true};
+const {p: foo, q: bar} = o;
+
+console.log(foo); // 42
+console.log(bar); // true
+  ```
+  - 從作為函式參數的物件中提出某屬性的值
+     userId({id}) ,userId(user)
+  - 巢狀物件或陣列的解構
+  - 循環取出的解構
+  - 以物件演算屬性名稱解構
+  - 在物件解構時使用其餘變數
+  - 混合使用矩陣及物件解構
 
 
 
@@ -407,6 +452,91 @@ var myString = JSON.stringify(myJSON);
 console.log(myString)//string:{"name":"Chris","age":"38"}
 ```
 
+
+
+### 異步 (非同步) 用法
+- 一个线程是一个基本的处理过程，程序用它来完成任务。每个线程一次只能执行一个任务
+- JavaScript 是一种同步的、阻塞的、单线程的语言。即使有多个内核，也只能在单一线程上运行多个任务，此线程称为主线程
+- 很多网页API特性使用异步代码，特别是从外部的设备上获取资源，譬如，从网络获取文件，访问数据库，获得视频流等等
+
+#### 異步 callbacks
+异步callbacks 其实就是函数，只不过是作为参数传递给那些在后台执行的其他函数. 当那些后台运行的代码结束，就调用callbacks函数，通知你工作已经完成，
+- callback-function
+  - callback 將函數作為參數作為傳遞
+  - 讓函式控制參數函式的執行時機 ex 有的情境是當A作完再作B
+  - 使用上會有問題在於callback hell回呼地獄，不易閱讀 -->老派callbacks(會有回呼地獄)，新派promise
+- Promises
+  - Promises 是新派的异步代码
+  - 具有fetch(來源黨或url)
+  - 可以有多個then(func 回乎，當前一個成功後呼叫) 
+  - 其中任何一个then()块失败，则在末尾运行catch() -->避免callback hell，錯誤不是在“金字塔”的每一层单独处理。
+  - 還有其他.all()...func 請見：[MDN-Promise](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- await/aync 
+  - ECMAScript 2017 JavaScript版
+  - 基于promises的语法糖，使异步代码更易于编写和阅读，讓非同步的程式碼讀起來更像在寫「同步程式碼」
+  - async function 回傳的一樣是 Promise 物件，可以混合使用.then 語法
+  - await 關鍵字 等待這個非同步的作業完成
+
+
+
+<table><tr><td valign="top" width="100px">
+
+Promises寫法
+```
+
+    fetch('test.json')
+        .then(response => response.json())
+        .then(myData => {
+            console.log(myData.name);
+        })
+        .catch(e => {
+            console.log('catch a problem: ' + e.message);
+        });
+```
+
+<!-- recent_releases starts -->
+</td><td valign="top" width="50%">
+
+await/aync 寫法
+    
+```
+async function myFetch() {
+        let response = await fetch('test.json');
+        let myData = await response.json();
+        console.log(myData.name);
+
+    }
+
+    myFetch()
+        .catch(e => {
+            console.log('catch a problem: ' + e.message);
+        });
+```
+</td></tr></table>
+
+
+- Promises & await/aync混合用法
+```
+    async function myFetch2() {
+        let response = await fetch('test.json');
+        return await response.json();
+    }
+
+    myFetch2().then((myData) => {
+        console.log(myData.name);
+    }).catch(e => {
+        console.log('catch a problem: ' + e.message);
+    });;
+```
+
+
+
+
+  Ref: 
+  - [MDN-异步JavaScript简介](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Asynchronous/Introducing)
+  - [你懂 JavaScript 嗎？#23 Callback](https://cythilya.github.io/2018/10/30/callback/)
+  - [MDN-async和await:让异步编程更简单](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Asynchronous/Async_await)
+  - [MDN-response](https://developer.mozilla.org/zh-CN/docs/Web/API/Response)
 
 
 ### 事件(Event)

@@ -12,19 +12,21 @@ date: 2021-02-27 20:40:59
 
 {% note info %} 藍色簡單區塊 {% endnote %}
 
+### React component (組件)語法
+- component 就像是 JavaScript 的 function
+- ReactDOM.render 中{函式名稱}變成了<函式名稱/>
+- Component 命名首字必須大寫
 
-### React component 與 props
-component 就像是 JavaScript 的 function，它接收任意的參數（稱之為「props」）並且回傳描述畫面的 React element。
+### props 是什麼
+- component 就像是 JavaScript 的 function，它接收任意的參數（稱之為「props」）並且回傳描述畫面的 React element。
+- props 通常是不可變的(唯獨Immutable)，不能修改自己的
 
 Ref:[Components 與 Props] (https://zh-hant.reactjs.org/docs/components-and-props.html)
 <!--more-->
 
-### React component (組件)語法
-- ReactDOM.render 中{函式名稱}變成了<函式名稱/>
-- Component 命名首字必須大寫
-- props 通常是不可變的(唯獨Immutable)，不能修改自己的
 
 
+#### function component vs class component
 - 轉換 Function 成 Class ：
 <table><tr><td valign="top" width="50%">
 
@@ -86,17 +88,18 @@ ReactDOM.render(
 
 
 
-### 改變State的用法
+### State的用法
 Props 是唯讀的(Immutable)，State 類似於 prop，但它是私有且由 component 完全控制的。當state被改變時，會進入re-render的update程序，更新畫面
 
-
-<table><tr><td valign="top" width="50%">
+#### class(setState) vs function(useState)
+<table><tr><td valign="top" width="100px">
 
 #### 使用class來做state
 - 使用 ES6 class來 來定義 
 - 繼承React.Component且在用render(){}包一層
 - props 要改用 this.props
 - 如果想要更改props ，要改用setState
+- [根據React 與 bind this](https://medium.com/reactmaker/react-%E8%88%87-bind-this-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BF%83%E5%BE%97-323c8d3d395d)
 - 範例練習:透過一個新的按鈕去改變時間 [Refresh Time](https://codesandbox.io/s/refreshtime-ju4pv?file=/src/index.js "Refresh Time")
 
 
@@ -120,7 +123,6 @@ class Clock extends React.Component {
 
   // }
   //根據React 與 bind this
-  //https://medium.com/reactmaker/react-%E8%88%87-bind-this-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BF%83%E5%BE%97-323c8d3d395d
 
   //以上可以簡化 改箭頭含式寫法
   changeTime = () => {
@@ -210,7 +212,7 @@ ReactDOM.render(
 [使用 State Hook](https://zh-hant.reactjs.org/docs/hooks-state.html "使用 State Hook") @React 中文解說State Hook中寫法對比
 
 
-#### （延伸）hooks 與 Function Component
+#### （延伸說明）hooks 與 Function Component
 
 [使用 State Hook](https://zh-hant.reactjs.org/docs/hooks-state.html)
 
@@ -219,3 +221,9 @@ ReactDOM.render(
 - 從[精读《Function VS Class 组件》](https://zhuanlan.zhihu.com/p/59558396)
 中可以看的使用class component,會因為使用this問題而需要修復，要follow class結構與巢狀太過雜亂，再者，而function component沒有this,如果希望拿到稳定的 props，使用 Function Component 是更好的選擇。而
 - Function Component + Hooks 可以实现 Class Component 做不到的 capture props、capture value，而且 React 官方也推荐 新的代码使用 Hooks 编写。
+
+### 生命週期
+元件被安裝時(Mount)、元件被更新時(Update)、元件被移除時(Unmount)
+*註：原本想要一樣比較一下class 原本的用法，但還是直接介紹function component(useEffect)更簡潔～～
+
+#### 

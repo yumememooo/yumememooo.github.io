@@ -1,8 +1,9 @@
 ---
-title: "[React][✍練習][🚧進行中]做to-do list頁面"
+title: "[React][✍作品集範例][🚧進行中]做to-do list頁面"
 tags:
   - react
   - Material-ui
+  - 作品集範例
 categories:
   - Tech.
   - Web
@@ -12,7 +13,14 @@ date: 2020-10-02 23:26:02
 ---
 
 > 練習用 React 做 to-do list 頁面
-> [✍ 練習 ing]
+
+- 功能：
+  - 可自由新增代辦任務/選擇優先度/預設類型/日期
+  - 新增列表後預設為OPEN，可更改為進行中（inprogress）->完成（Done)
+  - 列表可以依Tab顯示不同狀態
+  - 選取後可以刪除，或是右上角有全部清空按鈕
+
+[✍ 修改 ing]
 
 <!--more-->
 

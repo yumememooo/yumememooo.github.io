@@ -30,6 +30,46 @@ cd 進入
 cat filename 直接檢視檔案內容
 ```
 
+#### 檔案文件權限查看
+- ls -l 
+```
+-l 參數可以顯示檔案與目錄的詳細資訊。
+-h 參數可以讓輸出的資訊以比較容易閱讀的格式呈現。
+
+```
+- -rwxr-xr-x 意思
+```
+第一位表示文件的類型，-爲文件，d爲目錄
+之後每三位代表即用戶、組用戶、其他用戶
+其中r表示讀、w表示寫、x表示可執行-表示沒有權限
+
+```
+- Linux 系统中采用三位十进制数表示权限，如0755， 0644.
+- 一般赋予目录0755权限，文件0644权限。
+```
+0755
+ABCD
+A- 0， 表示十进制
+B－用户
+C－组用户
+D－其他用户
+ 
+---  -> 0   (no excute , no write ,no read)
+--x  -> 1   excute, (no write, no read)
+-w-  -> 2   write 
+-wx  -> 3   write, excute
+r--  -> 4   read
+r-x  -> 5   read, excute
+rw-  -> 6   read, write , 
+rwx  -> 7   read, write , excute
+ 
+0755->即用户具有读/写/执行权限，组用户和其它用户具有读写权限；
+0644->即用户具有读写权限，组用户和其它用户具有只读权限；
+
+```
+ Ref: [ls 參數說明](https://blog.gtwang.org/linux/linux-ls-command-tutorial/)
+
+
 #### vi 文書處理軟體
 ```
 vi test.txt
@@ -40,7 +80,7 @@ vi test.txt
 :q!
 不存檔離開
 ```
-Ref:
+
 http://linux.vbird.org/linux_basic/0310vi/0310vi.php
 
 #### 刪除
@@ -88,6 +128,11 @@ tar zcvf FileName.tar.gz
 tar zxvf FileName.tar.gz -C /xxx/xxx
 -x  ：解打包或解壓縮的功能，可以搭配 -C (大寫) 在特定目錄解開
 ```
+
+
+
+
+
 -------
 #### wget
 wget 是 linux 中除了 curl 外另一個檔案下載的好用工具。
