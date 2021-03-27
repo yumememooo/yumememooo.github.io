@@ -24,7 +24,9 @@ date: 2021-02-20 11:33:18
 本章由[ＭＤＮ-JavaScript](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript)開始著手練習 
 
 ### JS歷史
-ECMAScript是一種由國際標準，ES6為ECMAScript2015，是大幅度的更新，討論度較高，
+ECMAScript是一種由Ecma國際定義的手稿語言規範，它往往被稱為JavaScript或JScript (維基)
+- ES6為ECMAScript2015，是大幅度的更新，討論度較高，
+
 
 
 ## 個人筆記整理
