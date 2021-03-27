@@ -5,6 +5,9 @@ tags:
   - ES6
   - 閉包
   - 解構賦值
+  - callback
+  - Promises
+  - aync/await
 categories:
   - Tech.
   - Web
@@ -29,7 +32,7 @@ ECMAScript是一種由Ecma國際定義的手稿語言規範，它往往被稱為
 
 
 
-## 個人筆記整理
+## 個人概念筆記整理
 
 
 ### 宣告與各用法概念
@@ -459,10 +462,13 @@ console.log(myString)//string:{"name":"Chris","age":"38"}
 ### 異步 (非同步) 用法
 - 一个线程是一个基本的处理过程，程序用它来完成任务。每个线程一次只能执行一个任务
 - JavaScript 是一种同步的、阻塞的、单线程的语言。即使有多个内核，也只能在单一线程上运行多个任务，此线程称为主线程
-- 很多网页API特性使用异步代码，特别是从外部的设备上获取资源，譬如，从网络获取文件，访问数据库，获得视频流等等
+- 很多网页API特性使用异步代码，特别是从外部的设备上获取资源，譬如，从网络获取文件，访问数据库，获得视频流等等，在瀏覽器端只有一個使用者，但事件或網路要求(AJAX)要求不能阻塞其他程式的進行
+- JS有分為同步及異步callback，setTimeout是一種異步函數。
+- 所有的同步回調函式都執行完成了，才會開始依順序執行異步的回調函式。
 
 #### 異步 callbacks
-异步callbacks 其实就是函数，只不过是作为参数传递给那些在后台执行的其他函数. 当那些后台运行的代码结束，就调用callbacks函数，通知你工作已经完成，
+異步callback(回調)其实就是函数，只不過是作為參數傳遞给那些後台执行的其他函数. 讓會造成阻塞的程式組成一個異步回調函式，先丟往一個任務佇列(task queue)先丟，當某個時間後台運行的代碼结束，就调用callbacks函数，通知你工作已经完成，
+
 - callback-function
   - callback 將函數作為參數作為傳遞
   - 讓函式控制參數函式的執行時機 ex 有的情境是當A作完再作B
@@ -473,7 +479,7 @@ console.log(myString)//string:{"name":"Chris","age":"38"}
   - 可以有多個then(func 回乎，當前一個成功後呼叫) 
   - 其中任何一个then()块失败，则在末尾运行catch() -->避免callback hell，錯誤不是在“金字塔”的每一层单独处理。
   - 還有其他.all()...func 請見：[MDN-Promise](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-- await/aync 
+- aync/await
   - ECMAScript 2017 JavaScript版
   - 基于promises的语法糖，使异步代码更易于编写和阅读，讓非同步的程式碼讀起來更像在寫「同步程式碼」
   - async function 回傳的一樣是 Promise 物件，可以混合使用.then 語法
@@ -563,26 +569,29 @@ JSLint 幫你檢查未定義的變數、函數、陳述式結尾有沒有加分�
 
 註： prettier 只是格式的檢驗（空格 格式化），不会對代码质量进行校验。但有些檢驗，ESLint沒有，所以可以ESLint＋prettier一起使用，也可以視使用情況不使用 Prettier。
 
-### 其他練習
+## 其他練習
 
-#### JS 與 canvas 元素
+### 上述概念練習
+[simple_js_demo](https://github.com/yumememooo/simple_js_demo)
 
-1. canvas
+
+### JS 與 canvas 元素 
+
+
+#### 基礎繪製說明
+Canvas 是H5新出來的標籤
 - 元素需要有闭合标签
 - 基本上現今所有主流的瀏覽器都有支援
-
 - 所有元素定位皆相對於此左上角原點
-
-  <img src="https://mdn.mozillademos.org/files/224/Canvas_default_grid.png">
 <br>
 
-HTML
+- HTML
 ```
 <canvas id="canvas" width="300" height="300">
 </canvas>
 
 ```
-ＪＳ
+- JS
 - 圓形ctx.arc(x, y, 半徑, 開始弧度, 結束弧度 )
 0~2 pi =360°
 更多弧度示意圖：[弧度](https://zh.wikipedia.org/wiki/%E5%BC%A7%E5%BA%A6)
@@ -597,8 +606,50 @@ ctx.fillRect(10, 10, 100, 100);//畫矩形 x start,y start,width,height
 
 ref:[Canvas 教學文件](https://developer.mozilla.org/zh-TW/docs/Web/API/Canvas_API/Tutorial)
 
+#### 彈跳彩球範例
+Ｒef: [物件建構實作](https://developer.mozilla.org/zh-TW/docs/Learn/JavaScript/Objects/Object_building_practice)
 
 
+#### 破撞說明
+```
+https://developer.mozilla.org/zh-CN/docs/Games/Techniques/2D_collision_detection
+var circle1 = {radius: 20, x: 5, y: 5};//radius半徑及座標
+var circle2 = {radius: 12, x: 10, y: 5};
 
-TBD
-ES6 - 解決非同步問題:Promise
+var dx = circle1.x - circle2.x;
+var dy = circle1.y - circle2.y;
+var distance = Math.sqrt(dx * dx + dy * dy);//平面兩點之間距離公式
+
+if (distance < circle1.radius + circle2.radius) { //原形半徑相加=兩圓碰撞時的距離
+    // collision detected!
+}
+```
+
+#### 動畫操控範例說明
+https://developer.mozilla.org/zh-TW/docs/Web/API/Canvas_API/Tutorial/Basic_animations
+#### 排程更新
+第一種作法是利用window.setInterval()與window.setTimeout()方法。
+
+Note: 針對新版瀏覽器建議採用window.requestAnimationFrame()方法。方法為動畫提供更順暢更有效率的方式來執行,當系統準備好繪製畫面時,藉由呼叫動畫andmation frame()的callback函數。
+
+[requestanimationframe-with-react](
+https://www.pluralsight.com/guides/how-to-use-requestanimationframe-with-react)
+[深入理解requestAnimationFrame的動畫迴圈](
+https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/260087/)
+[Web 計時與動畫 ](https://www.dazhuanlan.com/2019/12/25/5e024ca3eeb4d/)
+[[javascript] requestAnimationFrame 優化動畫效率與資源](https://blog.camel2243.com/2017/01/31/javascript-requestanimationframe-%E5%84%AA%E5%8C%96%E5%8B%95%E7%95%AB%E6%95%88%E7%8E%87%E8%88%87%E8%B3%87%E6%BA%90/)
+
+
+#### Event操控範例說明
+https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Advanced_animations
+這邊的話可以看到，Event滑鼠控制只能針對整個畫布做操作，每次更新都是更新畫布，內容物件是不存在的。
+
+延伸:[Canvas和SVG](https://www.itread01.com/content/1544856246.html)
+Canvas是點陣圖，受解析度影響，SVG是向量圖。
+使用svg有好有壞:
+好處是方便操作dom元素, 可操作元素。
+壞處是渲染效率不高, 在數據量較大時頁面易掉幀, 卡頓，不適合遊戲。
+
+#### D3 操控SVG或是Canvas
+http://blog.infographics.tw/2015/07/optimize-d3-with-canvas/
+
