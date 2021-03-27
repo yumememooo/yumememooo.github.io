@@ -20,20 +20,17 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="本章內容：  實作使用高性能 zap log 框架 擁有 log level 配置 (常用 debug&#x2F;warn&#x2F;info&#x2F;error)與程式碼位置 可以選擇印出在 console 或是文件（要外掛 lumberjack 去分割） zap 有 suger 函式可以增加易用性，但犧牲效能">
-<meta property="og:type" content="article">
-<meta property="og:title" content="[Go 07] 使用 zap 框架印出 log">
-<meta property="og:url" content="http://yoursite.com/2020/05/18/06-go-zap-log/index.html">
+  <meta name="description" content="後端IT工程師，Go經歷一年 &amp; 正在學習 React。 喜歡貓狗． 持續紀錄自學筆記，如有誤還請您不吝指出與指教＾＾">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yu&#39;s 程式筆記">
+<meta property="og:url" content="http://yoursite.com/tags/ES6/index.html">
 <meta property="og:site_name" content="Yu&#39;s 程式筆記">
-<meta property="og:description" content="本章內容：  實作使用高性能 zap log 框架 擁有 log level 配置 (常用 debug&#x2F;warn&#x2F;info&#x2F;error)與程式碼位置 可以選擇印出在 console 或是文件（要外掛 lumberjack 去分割） zap 有 suger 函式可以增加易用性，但犧牲效能">
+<meta property="og:description" content="後端IT工程師，Go經歷一年 &amp; 正在學習 React。 喜歡貓狗． 持續紀錄自學筆記，如有誤還請您不吝指出與指教＾＾">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-18T07:51:23.000Z">
-<meta property="article:modified_time" content="2021-02-27T03:25:35.872Z">
 <meta property="article:author" content="Yuri">
-<meta property="article:tag" content="golang">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/05/18/06-go-zap-log/">
+<link rel="canonical" href="http://yoursite.com/tags/ES6/">
 
 
 <script id="page-configurations">
@@ -41,12 +38,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true,
+    isPost : false,
     lang   : 'en'
   };
 </script>
 
-  <title>[Go 07] 使用 zap 框架印出 log | Yu's 程式筆記</title>
+  <title>Tag: ES6 | Yu's 程式筆記</title>
   
 
 
@@ -162,131 +159,51 @@
         <div class="content-wrap">
           
 
-          <div class="content post posts-expand">
+          <div class="content tag">
             
 
-    
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/18/06-go-zap-log/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar_memo.png">
-      <meta itemprop="name" content="Yuri">
-      <meta itemprop="description" content="後端IT工程師，Go經歷一年 & 正在學習 React。 喜歡貓狗．<br> 持續紀錄自學筆記，如有誤還請您不吝指出與指教＾＾">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yu's 程式筆記">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          [Go 07] 使用 zap 框架印出 log
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-05-18 15:51:23" itemprop="dateCreated datePublished" datetime="2020-05-18T15:51:23+08:00">2020-05-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-02-27 11:25:35" itemprop="dateModified" datetime="2021-02-27T11:25:35+08:00">2021-02-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech.</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/back-end/" itemprop="url" rel="index"><span itemprop="name">back-end</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/back-end/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">Views: </span>
-              <span id="busuanzi_value_page_pv"></span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <h2 class="collection-header">ES6
+          <small>Tag</small>
+        </h2>
+      </div>
 
       
-        <p>本章內容：</p>
-<ul>
-<li>實作使用高性能 zap log 框架</li>
-<li>擁有 log level 配置 (常用 debug/warn/info/error)與程式碼位置</li>
-<li>可以選擇印出在 console 或是文件（要外掛 lumberjack 去分割）</li>
-<li>zap 有 suger 函式可以增加易用性，但犧牲效能</li>
-</ul>
-<a id="more"></a>
-
-<blockquote>
-<p>雖然目前還未有高性能之需求，網路上也有很多不同的ＬＯＧ框架可以選擇，有興趣可以看這篇<a target="_blank" rel="noopener" href="https://my.oschina.net/u/168737/blog/1536117" title="在Github中stars数最多的Go日志库集合">在 Github 中 stars 数最多的 Go 日志库集合</a>，看了各框架說明介紹，這個框架實作上看來蠻容易的，今天就還試試看．</p>
-</blockquote>
-<p>直接上實作完之程式碼</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">package logger</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;mywork&#x2F;demo&#x2F;internal&#x2F;config&quot;</span><br><span class="line">	&quot;os&quot;</span><br><span class="line">	&quot;strings&quot;</span><br><span class="line">	&quot;time&quot;</span><br><span class="line">	&quot;go.uber.org&#x2F;zap&quot;</span><br><span class="line">	&quot;go.uber.org&#x2F;zap&#x2F;zapcore&quot;</span><br><span class="line">	&quot;gopkg.in&#x2F;natefinch&#x2F;lumberjack.v2&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var ZapLogger *zap.Logger</span><br><span class="line">var SugarLogger *zap.SugaredLogger</span><br><span class="line"></span><br><span class="line">func InitLogger() &#123;</span><br><span class="line"></span><br><span class="line">	logWriter :&#x3D; []zapcore.WriteSyncer&#123;zapcore.AddSync(os.Stdout)&#125;</span><br><span class="line"></span><br><span class="line">	if config.Configuration.Logger.File !&#x3D; &quot;&quot; &#123;</span><br><span class="line">		hook :&#x3D; setFileWriter(config.Configuration.Logger.File)</span><br><span class="line">		logWriter &#x3D; append(logWriter, hook)</span><br><span class="line">	&#125;</span><br><span class="line">	encoderConfig :&#x3D; setEncoder()</span><br><span class="line"></span><br><span class="line">	level :&#x3D; getLogLevel(config.Configuration.Logger.Level)</span><br><span class="line"></span><br><span class="line">	core :&#x3D; zapcore.NewCore(encoderConfig,</span><br><span class="line">		zapcore.NewMultiWriteSyncer(logWriter...),</span><br><span class="line">		level)</span><br><span class="line"></span><br><span class="line">	ZapLogger &#x3D; zap.New(core, zap.AddCaller()) &#x2F;&#x2F;印出log的位置</span><br><span class="line">	&#x2F;&#x2F; ZapLogger.Debug(&quot;POK&quot;)                     &#x2F;&#x2F; ZapLogger sample</span><br><span class="line">	ZapLogger.Info(&quot;ZapLogger&quot;,</span><br><span class="line">		zap.String(&quot;String&quot;, &quot;ohoh&quot;),</span><br><span class="line">		zap.Int(&quot;Int&quot;, 3),</span><br><span class="line">		zap.Duration(&quot;backoff&quot;, time.Second),</span><br><span class="line">	)</span><br><span class="line">	SugarLogger &#x3D; ZapLogger.Sugar()</span><br><span class="line">	&#x2F;&#x2F;SugarLogger.Infof(&quot;Success! statusCode &#x3D; %s for URL %s&quot;, &quot;OK&quot;, &quot;OK&quot;)  &#x2F;&#x2F; SugarLogger sample</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func setEncoder() zapcore.Encoder &#123;</span><br><span class="line">	encoderConfig :&#x3D; zap.NewProductionEncoderConfig()</span><br><span class="line">	encoderConfig.EncodeTime &#x3D; zapcore.ISO8601TimeEncoder</span><br><span class="line">	encoderConfig.EncodeLevel &#x3D; zapcore.CapitalLevelEncoder</span><br><span class="line">	return zapcore.NewConsoleEncoder(encoderConfig)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func setFileWriter(filePath string) zapcore.WriteSyncer &#123;</span><br><span class="line">	lumberJackLogger :&#x3D; &amp;lumberjack.Logger&#123;</span><br><span class="line">		Filename:   filePath,</span><br><span class="line">		MaxSize:    1,</span><br><span class="line">		MaxBackups: 5,</span><br><span class="line">		MaxAge:     30,</span><br><span class="line">		Compress:   false,</span><br><span class="line">	&#125;</span><br><span class="line">	return zapcore.AddSync(lumberJackLogger)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func getLogLevel(lv string) zapcore.Level &#123;</span><br><span class="line">	lv &#x3D; strings.ToLower(lv)</span><br><span class="line">	if level, ok :&#x3D; levelMap[lv]; ok &#123;</span><br><span class="line">		return level</span><br><span class="line">	&#125;</span><br><span class="line">	return zapcore.InfoLevel</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var levelMap &#x3D; map[string]zapcore.Level&#123;</span><br><span class="line">	&quot;debug&quot;:  zapcore.DebugLevel,</span><br><span class="line">	&quot;info&quot;:   zapcore.InfoLevel,</span><br><span class="line">	&quot;warn&quot;:   zapcore.WarnLevel,</span><br><span class="line">	&quot;error&quot;:  zapcore.ErrorLevel,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>LOG 輸出範例</p>
-<ul>
-<li>zap.Logger 輸出需針對 Type 去輸入，使用跟印出看起來都比較麻煩一點</li>
-<li>zap.SugaredLogger 就像是語法糖</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2021-01-31T11:46:00.954+0800    INFO    log&#x2F;log.go:27   ZapLogger       &#123;&quot;String&quot;: &quot;ohoh&quot;, &quot;Int&quot;: 3, &quot;backoff&quot;: 1&#125;</span><br><span class="line">2021-01-31T11:46:01.012+0800    INFO    http_server&#x2F;httpserver.go:35    Listening on port: 56888</span><br></pre></td></tr></table></figure>
+    <div class="collection-year">
+      <span class="collection-header">2021</span>
     </div>
 
-    
-    
-    
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/golang/" rel="tag"># golang</a>
-          </div>
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2021-02-20T11:33:18+08:00"
+              content="2021-02-20">
+          02-20
+        </time>
+      </div>
 
-        
+      <div class="post-title">
+          <a class="post-title-link" href="/2021/02/20/js-start/" itemprop="url">
+            <span itemprop="name">[JS] javascript 新手上路與概念筆記</span>
+          </a>
+      </div>
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2020/05/16/react01-create-react-app/" rel="prev" title="[React 01] 初始開發環境設定">
-      <i class="fa fa-chevron-left"></i> [React 01] 初始開發環境設定
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/05/30/react02-jsx/" rel="next" title="[React 02] react JSX 基本語法">
-      [React 02] react JSX 基本語法 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
+    </header>
   </article>
+
+    </div>
+  </div>
   
   
+  
+
   
 
 
