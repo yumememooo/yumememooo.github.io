@@ -88,7 +88,10 @@ tz: 2019a
 
 ```bash
 $ hexo new "My New Post"
-會在source/posts 底下新增一個 .md 檔案
+(預設)會在source/＿posts 底下新增一個 .md 檔案
+
+$ hexo new draft "My New Post" //指定生成草稿
+會在source/＿draft 底下新增一個 .md 檔案
 ```
 
 More info: [Writing](https://hexo.io/docs/writing.html)
@@ -100,8 +103,10 @@ More info: [Writing](https://hexo.io/docs/writing.html)
 - 可以找線上編輯器工具幫助撰寫及預覽，「自己習慣用這一個https://markdown-editor.github.io/」 ，編輯完再貼過來內文．
 - 如對語法有一點熟悉，就直接用 vscode 打開檔案開始撰寫內文，並可以安裝 vscode markdown preview 插件，邊改邊預覽．
 
-- 編寫完再啟動部落格並在瀏覽器查看效果．
-
+- 編寫完再啟動部落格並在瀏覽器查看效果． （可帶--draft 顯示草稿）
+```
+hexo s --draft
+```
 ---
 
 ## 部署網站
