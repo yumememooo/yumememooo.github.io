@@ -64,6 +64,8 @@ https://ithelp.ithome.com.tw/articles/10223594
 https://reactjs.org/docs/hooks-faq.html#should-i-use-one-or-many-state-variables
 
 https://ithelp.ithome.com.tw/articles/10224031
+
+```
 const weatherElements = locationData.weatherElement.reduce(
   (neededElements, item) => {
     if (['WDSD', 'TEMP', 'HUMD'].includes(item.elementName)) {
@@ -73,7 +75,7 @@ const weatherElements = locationData.weatherElement.reduce(
   },
   {}
 );
-
+```
 
 
 https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce

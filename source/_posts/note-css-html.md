@@ -145,17 +145,33 @@ https://km.nicetypo.com/doc/ead903b94bb8bf01974d3ccdb91a117b)
 #### css reset
 撰寫時會發現元素與視窗有空隙，css reset可以清楚，還有其他一些效果
 
+- React + @emotion/css 套用範例
+```
+import reset from 'react-style-reset';
+import { injectGlobal } from '@emotion/css';
+injectGlobal(reset, {
+});
+```
+
+
 #### 排版
 
 ##### float
 
 
 ##### Flex
+- 父層設定可以控制子層的排列方式
+<iframe src="https://codesandbox.io/embed/flex-base1-xhwn8?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="flex-base1"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
 
-<iframe height="265" style="width: 100%;" scrolling="no" title="CSS_flex(Flexible Box)" src="https://codepen.io/yumememooo/embed/OJVGppz?height=265&theme-id=dark&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/yumememooo/pen/OJVGppz'>CSS_flex(Flexible Box)</a> by yumememooo
-  (<a href='https://codepen.io/yumememooo'>@yumememooo</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
+ＴＢＤ
+1.align-content
+2.延伸設定
+3. default: align-items: stretch; 上下高度自動滿版時有出現空白問題
 
 #### Modal Box
 

@@ -1,5 +1,5 @@
 ---
-title: "[React 03] component語法props/state (function vs class)"
+title: "[React 03] component語法-props/state (function vs class)與生命週期"
 tags:
   - react
 categories:
@@ -10,12 +10,17 @@ categories:
 date: 2021-02-27 20:40:59
 ---
 
-{% note info %} 藍色簡單區塊 {% endnote %}
+{% note info %} 整理react學習筆記 {% endnote %}
+
+本文內容：
+- props/state (function vs class)
+- 生命週期
+
 
 ### React component (組件)語法
 - component 就像是 JavaScript 的 function
 - ReactDOM.render 中{函式名稱}變成了<函式名稱/>
-- Component 命名首字必須大寫
+- Component 命名首字必須大寫，大寫駝峰的方式
 
 ### props 是什麼
 - component 就像是 JavaScript 的 function，它接收任意的參數（稱之為「props」）並且回傳描述畫面的 React element。
@@ -224,6 +229,23 @@ ReactDOM.render(
 
 ### 生命週期
 元件被安裝時(Mount)、元件被更新時(Update)、元件被移除時(Unmount)
-*註：原本想要一樣比較一下class 原本的用法，但還是直接介紹function component(useEffect)更簡潔～～
+*註：原本想要一樣比較一下class 原本的用法，但還是直接介紹function component(useEffect)更簡潔．
 
-#### 
+#### useEffect hook
+
+```
+useEffect(() => {
+    /*  componentDidMount 和  componentDidUpdate */
+    return () => {
+      /* componentWillUnmount */   //在 component unmount 時，React 會執行清除。
+    };
+    
+}, [dependencies參數]); /* 是用來限定當哪些變數被改變時useEffect要觸發 */
+
+```
+
+Ref:
+- [官方-hooks-effect](https://zh-hant.reactjs.org/docs/hooks-effect.html) 重點：
+  - 內有使用class與hook 的範例對比說明
+  - 很多待細讀 ＴＢＤ
+  - 我們建議使用 exhaustive-deps 規則作為我們 eslint-plugin-react-hooks package 的一部分。當不正確地指定依賴時，它會發出警告，並提出修改建議。
