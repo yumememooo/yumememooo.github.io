@@ -4,6 +4,7 @@ tags:
   - react
   - vscode
   - lint
+  - npm
 categories:
   - Tech.
   - Web
@@ -36,6 +37,7 @@ npm install -g create-react-app
 - create-react-app 是適合學習 React 的環境及單頁（single-page）應用程式，不需再安装或配置 Webpack 或 Babel 等工具， 它們是預先配置好並隐藏的
 -  create-react-app --version 確認版本的指令- 
 
+
 #### 使用create-react-app 建立專案
 ```bash
 ～create-react-app 01-create-react-app
@@ -47,6 +49,9 @@ Creating a new React app in /Users/xxx/front/01-create-react-app.
 npm start
 ```
 就會看到一個網頁介面啟動囉！！！！！！
+
+*註：當重新下載專案時需要先下npm install後才能npm start
+*在本地可以看到node_modules的資料夾
 
 #### create-react-app 內容
 架構
