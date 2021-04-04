@@ -2,6 +2,8 @@
 title: "[React 02] react JSX 基本語法"
 tags:
   - react
+  - JSX
+  - Babel
 categories:
   - Tech.
   - Web
@@ -10,37 +12,40 @@ categories:
 date: 2020-05-30T18:32:15+08:00
 ---
 
-{% note info %} 上一篇提到建立一個基本專案，這次來做一些介紹，及對index.js做一些改寫練習 {% endnote %}
+{% note info %} 上一篇已建立一個基本專案，開始可以對index.js做一些改寫練習，並使用JSX語法 {% endnote %}
 
 
 <!--more-->
 
+# JSX 
+看起來是html與ＪＳ混合使用，比較接近 JavaScript 而不是 HTML，ＪＳＸ允許你使用 JavaScript 所有的功能。
+- Ref :https://zh-hant.reactjs.org/docs/introducing-jsx.html
 
-# html 區域
-public/index.html<br>
-含有基本HTML範本id="root"的div區塊<br>
+## html 區域
+剛剛產生的public/index.html，含有基本HTML範本id="root"的div區塊<br>
 ```
 "<div id="root"></div>"
 ```
 ------------
 
 
-# React 中的 JSX 區域
-src/index.js
+## React 中的 JSX 區域
+接著看一下src/index.js裡的程式碼
 
-
-基本範例1: <> html 部分
+### 基本範例: 直接撰寫html
 ```javascript
 ReactDOM.render(<App />, document.getElementById('root'));
-或是
+
+或是改成
 ReactDOM.render(
   <h1> Hello world!</h1>,
 document.getElementById('root'));
 ```
+解說：
 - 由 React DOM 函式將元素渲染 ROOT 這個DOM 節點中
 - 而將 html當參數傳遞是使用一種Javascript語法: JSX
 ```
-const name = 'Josh Perez'; //一般ＪＳˊ
+const name = 'Josh Perez'; //一般javascript
 const element = <h1>Hello, {name}</h1>;//混和的html與字串 特殊JSX語法
 
 ReactDOM.render(
@@ -50,10 +55,11 @@ ReactDOM.render(
 
 ```
 
-- 關於Babel
+#### 關於Babel
+ 是JavaScript 前處理器，編譯器，主要能轉換JSX與ES6成各瀏覽器支持的ＪＳ
 ```
 const element = (
-  <h1 className="greeting">
+  <h1 className="text">
     Hello, World!
   </h1>
 );
@@ -62,12 +68,12 @@ Babel 將 JSX 編譯為呼叫 React.createElement() 的程式。
 ```
 const element = React.createElement(
   'h1',
-  {className: 'greeting'},
+  {className: 'text'},
   'Hello, World!'
 );
 ```
 ------------
-範例2: 在html中可以用{JS} 崁入變數
+### 範例: 在html中可以用{JS} 表達式崁入變數
 
 ```javascript
 //js函式宣告或是變數宣告區
@@ -95,8 +101,7 @@ ReactDOM.render(
 ```
 
 
-------------
-範例3: 屬性類
+### 範例: 帶入屬性命名與Event
 ```javascript
 const getValue=(event)=>{
   console.log(event.target.value)
@@ -124,6 +129,8 @@ ReactDOM.render(
 
 
 # 網路參考文章
-- (https://zh-hant.reactjs.org/docs/introducing-jsx.html)
+<div>＊本文依照網路文章學習並整理為個人筆記，如有錯誤，歡迎寄信糾正，會馬上更新．<p>
+感謝網路大神們，如果你發現了我，請看參考文章了解更多⇩</div>
+
 - [【React.js入門 - 06】 JSX](https://ithelp.ithome.com.tw/articles/10216468)
 - [React篇: JSX語法撰寫指引](https://eyesofkids.gitbooks.io/react-basic-zh-tw/content/day18_deeper_jsx/ "React篇: JSX語法撰寫指引")

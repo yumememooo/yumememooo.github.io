@@ -1,5 +1,5 @@
 ---
-title: "學習筆記 react 從 Hooks 開始，讓你的網頁 React 起來"
+title: "學習筆記 react "
 tags:
   - react
   - hook
@@ -10,12 +10,17 @@ categories:
 date: 2021-03-28 09:33:18
 ---
 
-{% note info %} 本文依照網路文章學習並標注內文重點，個人筆記，不公開． {% endnote %}
+{% note info %} 本文依照網路文章學習並標注內文重點，個人筆記，不公開至blog． {% endnote %}
 
-pjchender-從 Hooks 開始，讓你的網頁 React 起來
+
+<div>＊本文依照網路文章學習並整理為個人筆記，如有錯誤，歡迎寄信糾正，會馬上更新．<p>
+感謝網路大神們，如果你發現了我，請看參考文章了解更多⇩</div>
+
 
 <!--more-->
 
+### hooks 個人筆記
+pjchender-從 Hooks 開始，讓你的網頁 React 起來
 
 - 判斷隱藏元素的寫法
 [[Day 07 - 計數器] 幫計數器設個最大最小值吧 - JSX 中條件渲染的使用](https://ithelp.ithome.com.tw/articles/10219716)
