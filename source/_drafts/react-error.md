@@ -1,32 +1,18 @@
 ---
 title: react-error
 tags:
-  - test
+  - error
 categories:
   - Tech.
   - Web
   - front-end
   - react
-  - Tech.
-  - back-end
-  - golang
 date: 2021-04-01 20:19:29
 ---
 
-{% cq %} 
-# 前文 ：引言
- {% endcq %}
- <blockquote class="blockquote-center">
- 長文適用</blockquote>
 
-{% note info %} 藍色簡單區塊 {% endnote %}
+{% note info %} 紀錄前端開發時會遇到的錯誤狀況 {% endnote %}
 
-
-# 本文將會知道：
-  1. 
-  2. 
-  3. 
-  4. 
 
 <!--more-->
 

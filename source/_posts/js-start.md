@@ -59,6 +59,25 @@ ref:
 ##### 比對
 ＴＢＤ
 
+##### 邏輯運算
+JavaScript 中的真假值在判斷會自動作轉型，像是 null、NaN、0、空字串（""、''）、undefined 都會被轉型並判斷為「false」。
+- &&
+a= 條件式 ＆＆“”
+```
+
+a5 = 'Cat' && 'Dog'      // t && t returns "Dog"
+a6 = false && 'Cat'      // f && t returns false
+```
+- ||
+```
+const a = 0 || 'hidden';           
+// 因為 0 被轉型後為 false，所以 a 會是 'hidden'
+
+const b = 26900 || 24900;          
+// 因為 26900 會轉型為 true，所以 b 會是 26900
+
+```
+
 ##### 字符操作
 - 一個字符串和一個数字可以直接相加變成字串
 - 把字串當作對象，或許長度或大小寫轉換去處理字符串
@@ -91,6 +110,7 @@ ref:[JavaScript中的字符串](https://developer.mozilla.org/zh-CN/docs/Learn/J
     - 宣告一個函數，或匿名函數 (anonymous function / function literal) 當作值指定給一個變數
   - 箭頭函式運算式（arrow function expression）（ES6）
     - 它沒有自己的 this、arguments、super、new.target 等語法。
+
 
 function 建構子說明
 - JavaScript 使用稱為建構子函式（constructor function）的特殊函式，定義物件與功能。

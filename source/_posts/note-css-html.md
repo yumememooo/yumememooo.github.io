@@ -96,7 +96,11 @@ s 原文是 strikethrough(刪除線)，del 這個標籤一看就會明白：dele
 - [[HTML5]b,i,s 跟 strong,em,del 這些看起來一樣，但意義不同的標籤們](
 https://km.nicetypo.com/doc/ead903b94bb8bf01974d3ccdb91a117b)
 
-#### 區塊計算
+
+
+### CSS
+
+#### 區塊計算 Box Model
 - Box Model 預設 box-sizing: content-box
   - content 內容 
   ```
@@ -140,8 +144,6 @@ https://km.nicetypo.com/doc/ead903b94bb8bf01974d3ccdb91a117b)
    ></iframe>
 
 
-### CSS
-
 #### css reset
 撰寫時會發現元素與視窗有空隙，css reset可以清楚，還有其他一些效果
 
@@ -155,6 +157,14 @@ injectGlobal(reset, {
 
 
 #### 排版
+
+##### 隱藏元素
+ [w3schools Hide an Element](https://www.w3schools.com/css/css_display_visibility.asp)
+```
+ display: none; //空間消失
+ visibility:hidden //空間仍存在
+
+```
 
 ##### float
 
@@ -173,7 +183,8 @@ injectGlobal(reset, {
 2.延伸設定
 3. default: align-items: stretch; 上下高度自動滿版時有出現空白問題
 
-#### Modal Box
-
-- margin: 15% auto; /_ 15% from the top and centered _/
+### 範例 layout
+####  互動式視窗 Modal window 
   [How TO - CSS/JS Modal](https://www.w3schools.com/howto/howto_css_modals.asp)
+
+- margin: 15% auto; / 15% from the top and centered /

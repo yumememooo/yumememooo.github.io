@@ -20,7 +20,8 @@ date: 2021-02-27 20:40:59
 ### React component (組件)語法
 - component 就像是 JavaScript 的 function
 - ReactDOM.render 中{函式名稱}變成了<函式名稱/>
-- Component 命名首字必須大寫，大寫駝峰的方式
+- Component 命名首字必須大寫，大寫駝峰的方式，否則 React 會把它當作一般的 HTML 元素處理，並跳出Warning提示，看到大寫駝峰命名變數時，可以知道是 React 組件而非一般函式。
+- 其他 HTML 屬性、CSS 樣式屬性或一般的函式來說，則會遵行 JavaScript 以小寫駝峰來命名變數的慣例，例如在 className、maxLength、backgroundColor 等等。
 
 ### props 是什麼
 - component 就像是 JavaScript 的 function，它接收任意的參數（稱之為「props」）並且回傳描述畫面的 React element。
@@ -88,6 +89,16 @@ ReactDOM.render(
 範例練習: [USER info](https://codesandbox.io/s/usercard-vh0e4 "USER info")
 
 
+#### React組件 箭頭函式組件 寫法
+- const App: () => JSX.Element //大寫駱駝命名
+- 縮寫：如果裡面只有return 可以去掉{}與return，但通常會有一些變數存在，個人習慣保留．
+- 快速鍵 rafc - ReactArrowFunctionComponent
+- [紀錄](https://github.com/yumememooo/counter-water/commit/aea85efa5f2e4a1f073cd7c89f96a458b00ab24c)
+```
+const Hello = () => {
+  return ( <div>hello</div> )
+}
+```
 
 
 
@@ -155,7 +166,9 @@ ReactDOM.render(
 
 ````
 <!-- recent_releases starts -->
+
 </td><td valign="top" width="50%">
+
 
 #### 使用function component更改state
 - 沒有內部狀態（State），是 Stateless Components。
@@ -196,7 +209,7 @@ ReactDOM.render(
   rootElement
 );
 
-````
+```
 
 </td></tr></table>
 

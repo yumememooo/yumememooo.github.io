@@ -19,16 +19,30 @@ date: 2021-03-28 09:33:18
 
 <!--more-->
 
-### hooks 個人筆記
-pjchender-從 Hooks 開始，讓你的網頁 React 起來
+### react hooks 個人筆記
+pjchender-[從 Hooks 開始，讓你的網頁 React 起來](https://ithelp.ithome.com.tw/users/20103315/ironman/2668)  推薦購書 [天瓏](https://www.tenlong.com.tw/products/9789864345083)
 
-- 判斷隱藏元素的寫法
+紀錄：
+- day6 useState的出現
+一般加法可以在console看到變化，但是畫面還是不會變，透過 useState 讓 React 知道有東西變了．
+- useState 其實是React 物件中的一個方法，用法的兩個參數其實是解構賦植的用法
+```
+const [count, setCount] = useState(<資料預設值>);
+```
+文章中有細節流程：
+https://ithelp.ithome.com.tw/articles/10219287
+
+
+- 判斷隱藏元素的寫法- ＪＳ的邏輯運算子
+- css 隱藏時有display:none （空間會消失）or visibility:hidden（空間會存在）
+- 有兩種兩種 用css隱藏或是把ＤＯＭ整個都隱藏，後者的好處是不能讓使用者自行修改ＣＳＳ
+>如果你需要比較嚴格的去控制使用者的行為，不想要使用者透過 CSS 就能簡單修改的話，那麼就把 DOM 整個移除；但如果這個功能被使用者手動打開也不會有太大影響的話，那就使用 CSS 樣式來控制畫面就好，如此會有比較好的效能和體驗。
 [[Day 07 - 計數器] 幫計數器設個最大最小值吧 - JSX 中條件渲染的使用](https://ithelp.ithome.com.tw/articles/10219716)
 
 - 程式碼簡潔與onclick
 - 程式碼簡潔與onclick奇怪的地方，()->參數用法的問題可以改成用箭頭函式解決
 - 重複渲染物件
-https://ithelp.ithome.com.tw/articles/10220209
+[[Day 08 - 計數器] 一個不夠，給我一次來十個 - JSX 中迴圈的使用](https://ithelp.ithome.com.tw/articles/10220209)
 
 - <React.Fragment>竟然還可以縮寫成 <>
 https://ithelp.ithome.com.tw/articles/10220688
@@ -46,7 +60,7 @@ https://ithelp.ithome.com.tw/articles/10221577
 
 - props 就是指由外部傳入該組件內的資料，以上圖為例，就是因為在使用該組件時是透過 <Counter maxNumber="30" minNumber="21" startingValue="25" /> 這種方式把資料帶入該組件內的。
 
-hooks 裡面的 State 表示的是該組件自身內部的資料，也就是使用 useState 產生的資料。
+>hooks 裡面的 State 表示的是該組件自身內部的資料，也就是使用 useState 產生的資料。
 不論是 props 或 state 的值都可以直接在 React 開發者工具內進行修改，這在檢查程式邏輯的時候非常方便，例如我們可以直接透過修改 state 或 maxNumber 等欄位看看畫面是不是如我們預期的，在特定條件下「向上／下箭頭」就會消失：
 
 - React 開發者工具

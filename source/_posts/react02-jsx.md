@@ -122,7 +122,21 @@ ReactDOM.render(
 - 輸入類的元件button/input/textarea互動事件觸發時，函式只會接收到一個event類別的參數，並不能傳遞其他參數
 - 布林=true 的屬性值可以不寫
 
-------------
+### 範例 JSX引入Inline-style
+```
+export default function App() {
+  return (
+    <div className="App" style={{
+      color: 'blue',fontSize:'19px'
+    }}>
+    </div>
+  );
+}
+
+```
+- 在style內的是ＪＳ物件也可以把他們只給一個const變數
+- 內容與css不同的是必須是小寫駱駝且去除'-'
+- 這種寫法的缺點是不行用hover等特殊效果，需利用其他模組化stylr寫法
 
 
 
