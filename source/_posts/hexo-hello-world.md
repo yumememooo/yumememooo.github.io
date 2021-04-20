@@ -26,7 +26,7 @@ Hexo 是一個快速、簡單且強大的網誌框架。Hexo 使用 Markdown 標
 3. 如何部署到 github 個人網頁
 4. 如何更改主題與內文風格 (本站用到的所有修改介紹)
 
-## <!--more-->
+<!--more-->
 
 ## 安裝 hexo 與初始化部落格
 
@@ -321,7 +321,7 @@ menu:
   about: /about/ || fa fa-user
 ```
 
-#### 文章中顯示引言
+#### 文章中顯示引言 (標籤外掛（Tag Plugins）)
 
 ```
 有分號的上下引言，兩種皆可
@@ -338,6 +338,53 @@ menu:
 顯示效果在本文開頭喔
 
 ```
+
+#### 文章中程式碼區塊
+
+##### 更改主題 
+/themes/next-reloaded/_config.yml
+
+```
+  highlight_theme: night
+  # Add copy button on codeblock
+  copy_button:
+    enable: true
+    # Show text copy result.
+    show_result: true
+    # Available values: default | flat | mac
+    style: default
+```
+
+##### 標籤外掛（Tag Plugins）
+```go
+依序為 語言 左上標題 右上網址 網址名稱
+{% codeblock lang:go terminal https://yumememooo.github.io/ 完整程式碼 %}
+go xxx
+{% endcodeblock %}
+
+\\ Backtick Code Block
+```go  terminal https://yumememooo.github.io/ 完整程式碼
+```diff
+- 
++ 
+```
+- codeblock效果
+{% codeblock lang:go terminal https://yumememooo.github.io/ 完整程式碼 %}
+go xxx
+{% endcodeblock %}
+
+- Backtick Code Block效果
+```golang terminal https://yumememooo.github.io/ 完整程式碼
+go xxx
+```
+- diff效果
+```diff
+- go xxx
++ go xxx
+```
+
+
+
 
 #### 文章開頭標記
 
