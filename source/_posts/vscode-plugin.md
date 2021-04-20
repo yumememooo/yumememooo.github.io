@@ -46,6 +46,10 @@ F1 或 Ctrl+Shift+P 開啟命令面板，再輸入想使用什麼內容，結合
 - 刪除分支
   Ctrl+shift+p->git delete branch->選擇分支
 
+## gitmoji
+在git提交上加入表情符號
+[gitmoji](https://marketplace.visualstudio.com/items?itemName=Vtrois.gitmoji-vscode)
+
 ## Code Snippet
 
 這個是 vscode 內建就有的程式碼內建設定，

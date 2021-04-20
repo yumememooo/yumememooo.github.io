@@ -21,8 +21,6 @@ date: 2021-04-04 11:31:01
 
 ### ES7 React/Redux/React-Native/JS Snippets
 
-#### nfn named function
-
 
 
 #### rafc - ReactArrowFunctionComponent
@@ -42,8 +40,17 @@ export const App = () => {
 }
 ```
 
+#### nfn named function
+在commponent(大寫)中如果要加入函式用named function
+- params可以視情況移除
+```
+  const name = (params) => {
 
-👇👇👇未完待續 您可以拉到底部先看參考文章👇👇👇
+  }
+```
+
+
+
 
 # 網路參考文章
 - [VS Code ES7 React/Redux/React-Native/JS snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)

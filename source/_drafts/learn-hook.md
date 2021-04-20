@@ -1,5 +1,5 @@
 ---
-title: "學習筆記 react "
+title: "網路文章學習筆記 react "
 tags:
   - react
   - hook
@@ -19,13 +19,14 @@ date: 2021-03-28 09:33:18
 
 <!--more-->
 
-### react hooks 個人筆記
-pjchender-[從 Hooks 開始，讓你的網頁 React 起來](https://ithelp.ithome.com.tw/users/20103315/ironman/2668)  推薦購書 [天瓏](https://www.tenlong.com.tw/products/9789864345083)
+### 1.react hooks 筆記
+pjchender-[從 Hooks 開始，讓你的網頁 React 起來](https://ithelp.ithome.com.tw/users/20103315/ironman/2668)  
+- 超級推薦購書 [天瓏](https://www.tenlong.com.tw/products/9789864345083)
 
 紀錄：
 - day6 useState的出現
 一般加法可以在console看到變化，但是畫面還是不會變，透過 useState 讓 React 知道有東西變了．
-- useState 其實是React 物件中的一個方法，用法的兩個參數其實是解構賦植的用法
+  - useState 其實是React 物件中的一個方法，用法的兩個參數其實是解構賦植的用法
 ```
 const [count, setCount] = useState(<資料預設值>);
 ```
@@ -34,18 +35,27 @@ https://ithelp.ithome.com.tw/articles/10219287
 
 
 - 判斷隱藏元素的寫法- ＪＳ的邏輯運算子
-- css 隱藏時有display:none （空間會消失）or visibility:hidden（空間會存在）
-- 有兩種兩種 用css隱藏或是把ＤＯＭ整個都隱藏，後者的好處是不能讓使用者自行修改ＣＳＳ
->如果你需要比較嚴格的去控制使用者的行為，不想要使用者透過 CSS 就能簡單修改的話，那麼就把 DOM 整個移除；但如果這個功能被使用者手動打開也不會有太大影響的話，那就使用 CSS 樣式來控制畫面就好，如此會有比較好的效能和體驗。
+  - css 隱藏時有display:none （空間會消失）or visibility:hidden（空間會存在）
+  - 有兩種兩種 用css隱藏或是把ＤＯＭ整個都隱藏，後者的好處是不能讓使用者自行修改ＣＳＳ
+>如果你需要比較嚴格的去控制使用者的行為，不想要使用者透過 CSS 就能簡單修改的話，那麼就把 DOM 整個移除；但如果這個功能被使用者手動打開也不會有太大影響的話，那就使用 CSS 樣式來控制畫面就好，如此會有比較好的效能和體驗(不會讓畫面排版有抖動的情況)。
 [[Day 07 - 計數器] 幫計數器設個最大最小值吧 - JSX 中條件渲染的使用](https://ithelp.ithome.com.tw/articles/10219716)
 
-- 程式碼簡潔與onclick
-- 程式碼簡潔與onclick奇怪的地方，()->參數用法的問題可以改成用箭頭函式解決
-- 重複渲染物件
-[[Day 08 - 計數器] 一個不夠，給我一次來十個 - JSX 中迴圈的使用](https://ithelp.ithome.com.tw/articles/10220209)
+----
+- day 8 [[Day 08 - 計數器] 一個不夠，給我一次來十個 - JSX 中迴圈的使用](https://ithelp.ithome.com.tw/articles/10220209)
+- 程式碼簡潔onclick & onclick奇怪的地方，()->參數用法的問題可以改成用箭頭函式解決
+  - 將onclick中的函數抽出來，並去除掉（）=>，直接撰寫函數，不會執行而會設定
+  [練習](https://github.com/yumememooo/counter-water/commit/a084004203346ad204d5d53ff7fe4868a7d452c6)
+  - 如果該函式有參數，不能直接撰寫要加上（）＝>，不能會被當做要馬上執行而壞掉進入無限迴圈（函式後加上小括號會直接呼叫該函式）
+  [練習](https://github.com/yumememooo/counter-water/commit/71b627e3eefdf7b7aa97b35f44588cb6437a6135)
+    - 還有兩種更精簡的寫法，不需加（）＝> （需拿掉 不然會沒反應）
+    - 要return function(){}中 [範例](https://github.com/yumememooo/counter-water/commit/c1fd638c3238a484f8f4fc723a1c7e8f4289231b)
+    - 箭頭函式更精簡 ，最外圈{}拿掉，後面加上（）=> [範例](https://github.com/yumememooo/counter-water/commit/1ebfae46ef066765ba7145e57dd22b79a0f53cac)
 
-- <React.Fragment>竟然還可以縮寫成 <>
-https://ithelp.ithome.com.tw/articles/10220688
+- 重複渲染物件Render 多個 Component
+  - 可以參考react的array Map用法說明 [列表與 Key](https://zh-hant.reactjs.org/docs/lists-and-keys.html) ->[練習](https://github.com/yumememooo/counter-water/commit/90adbbdec4100f4f49010bce5305446e1780b3e6)
+
+-----
+- day 9 <React.Fragment>竟然還可以縮寫成 <>
 
 - 拆分組建
 https://ithelp.ithome.com.tw/articles/10221113

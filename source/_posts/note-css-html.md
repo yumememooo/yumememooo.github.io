@@ -188,3 +188,13 @@ injectGlobal(reset, {
   [How TO - CSS/JS Modal](https://www.w3schools.com/howto/howto_css_modals.asp)
 
 - margin: 15% auto; / 15% from the top and centered /
+
+#### input 欄位
+- 一般的輸入數字框，可以看到預設會有上下箭頭出現
+```
+<input type="number" value="5">
+```
+<input type="number" value="5">
+
+  - 如果要隱藏上下箭頭可以這樣寫：[howto_css_hide_arrow_number](https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp)
+  - css-in-js 版- [Hiding input spinner using styled-component](https://stackoverflow.com/questions/56352294/hiding-input-spinner-using-styled-component)

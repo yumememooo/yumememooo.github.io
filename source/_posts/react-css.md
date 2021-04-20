@@ -59,6 +59,22 @@ const myStyle = css`
 更多範例可以看NPM上的emotion庫介紹[emotion](https://www.npmjs.com/package/emotion)
 
 
+#### 套用@emotion/styled
+基礎使用方法：
+1. 引入npm i @emotion/styled
+2. 撰寫標籤tag
+```
+const Container = styled.div` //外面
+  background-color: skyblue;
+`;
+...
+return (
+    <Container  >
+     </Container >
+  );
+    
+```
+
 #### 套用@emotion/core庫撰寫
 官方推薦＠＠ 但使用上有一些限制
 
