@@ -36,10 +36,11 @@ $ hexo generate
 $ hexo deploy
 ```
 
-## if want upload themes
-git submodule add https://github.com/iissnan/hexo-theme-next themes/next
+## upload
 
 branch - src (have all files)
+themes/next-reloaded will not upload
+themes-bk/_config.yml will backup to upload
 branch - master (only web files)
 
 
