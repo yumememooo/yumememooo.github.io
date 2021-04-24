@@ -143,8 +143,7 @@ export default function App() {
 
 
 # 網路參考文章
-<div>＊本文依照網路文章學習並整理為個人筆記，如有錯誤，歡迎寄信糾正，會馬上更新．<p>
-感謝網路大神們，如果你發現了我，請看參考文章了解更多⇩</div>
-
+{% note info %} 本文依照網路文章學習並整理為個人筆記，如有錯誤，歡迎寄信糾正，會再修正更新．
+學習路上感謝網路大神們，如果你發現了我，可以查看以下參考文章了解更多概念👇👇👇</div>{% endnote %}
 - [【React.js入門 - 06】 JSX](https://ithelp.ithome.com.tw/articles/10216468)
 - [React篇: JSX語法撰寫指引](https://eyesofkids.gitbooks.io/react-basic-zh-tw/content/day18_deeper_jsx/ "React篇: JSX語法撰寫指引")

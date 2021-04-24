@@ -45,7 +45,10 @@ branch - master (only web files)
 
 
 ## post
-
-{% note info %}藍色區塊{% endnote %}
-{% note warning %} 黃色 {% endnote %}
-{% note danger %} 紅色 {% endnote %}
+{% note class_name %} Content (不設定) 淡灰色 {% endnote %}
+{% note default %} 灰色 default {% endnote %}
+{% note primary %} 紫色 primary {% endnote %}
+{% note success %} 綠色 success {% endnote %}
+{% note info %} 藍色 info {% endnote %}
+{% note warning %} 黃色 warning {% endnote %}
+{% note danger %} 紅色 danger {% endnote %}

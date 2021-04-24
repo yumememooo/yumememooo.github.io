@@ -390,19 +390,19 @@ go xxx
 其中class_name可不設或是改成下方關鍵字
 ```
 
-{% note class_name %} Content (不設定) {% endnote %}
+{% note class_name %} Content (不設定) 淡灰色 {% endnote %}
 
-{% note default %} default {% endnote %}
+{% note default %} 灰色 default {% endnote %}
 
-{% note primary %} primary {% endnote %}
+{% note primary %} 紫色 primary {% endnote %}
 
-{% note success %} success {% endnote %}
+{% note success %} 綠色 success {% endnote %}
 
-{% note info %} info {% endnote %}
+{% note info %} 藍色 info {% endnote %}
 
-{% note warning %} warning {% endnote %}
+{% note warning %} 黃色 warning {% endnote %}
 
-{% note danger %} danger {% endnote %}
+{% note danger %} 紅色 danger {% endnote %}
 
 主題\_config 文件配置关键字：note，可修改成想要的風格
 
