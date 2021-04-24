@@ -20,22 +20,21 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="上一篇已建立一個基本專案，開始可以對index.js做一些改寫練習，並使用JSX語法">
+  <meta name="description" content="hexo 是什麼？                             Hexo 是一個快速、簡單且強大的網誌框架。Hexo 使用 Markdown 標記語言解析您的文章，並在幾秒鐘內，透過漂亮的主題產生靜態檔案。（來自 https:&#x2F;&#x2F;hexo.io&#x2F;zh-tw&#x2F;docs&#x2F; 說明） 本文將會知道 如何使用 Hexo 產生部落格 （超快速，只">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[React 02] react JSX 基本語法">
-<meta property="og:url" content="http://yoursite.com/2020/05/30/react02-jsx/index.html">
+<meta property="og:title" content="[BLOG] 使用 Hexo 撰寫部落格 01">
+<meta property="og:url" content="http://yoursite.com/2021/01/31/hexo-01-hello-world/index.html">
 <meta property="og:site_name" content="Yu&#39;s 程式筆記">
-<meta property="og:description" content="上一篇已建立一個基本專案，開始可以對index.js做一些改寫練習，並使用JSX語法">
+<meta property="og:description" content="hexo 是什麼？                             Hexo 是一個快速、簡單且強大的網誌框架。Hexo 使用 Markdown 標記語言解析您的文章，並在幾秒鐘內，透過漂亮的主題產生靜態檔案。（來自 https:&#x2F;&#x2F;hexo.io&#x2F;zh-tw&#x2F;docs&#x2F; 說明） 本文將會知道 如何使用 Hexo 產生部落格 （超快速，只">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-30T02:32:15.000Z">
-<meta property="article:modified_time" content="2021-04-24T02:44:23.448Z">
+<meta property="article:published_time" content="2021-01-31T02:06:20.000Z">
+<meta property="article:modified_time" content="2021-04-24T03:17:04.506Z">
 <meta property="article:author" content="Yuri">
-<meta property="article:tag" content="react">
-<meta property="article:tag" content="JSX">
-<meta property="article:tag" content="Babel">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/05/30/react02-jsx/">
+<link rel="canonical" href="http://yoursite.com/2021/01/31/hexo-01-hello-world/">
 
 
 <script id="page-configurations">
@@ -48,7 +47,7 @@
   };
 </script>
 
-  <title>[React 02] react JSX 基本語法 | Yu's 程式筆記</title>
+  <title>[BLOG] 使用 Hexo 撰寫部落格 01 | Yu's 程式筆記</title>
   
 
 
@@ -171,7 +170,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/react02-jsx/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/31/hexo-01-hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar_memo.png">
@@ -184,7 +183,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [React 02] react JSX 基本語法
+          [BLOG] 使用 Hexo 撰寫部落格 01
         </h1>
 
         <div class="post-meta">
@@ -194,14 +193,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-05-30 10:32:15" itemprop="dateCreated datePublished" datetime="2020-05-30T10:32:15+08:00">2020-05-30</time>
+              <time title="Created: 2021-01-31 10:06:20" itemprop="dateCreated datePublished" datetime="2021-01-31T10:06:20+08:00">2021-01-31</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-24 10:44:23" itemprop="dateModified" datetime="2021-04-24T10:44:23+08:00">2021-04-24</time>
+                <time title="Modified: 2021-04-24 11:17:04" itemprop="dateModified" datetime="2021-04-24T11:17:04+08:00">2021-04-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -217,11 +216,7 @@
                 </span>
                   , 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/Web/front-end/" itemprop="url" rel="index"><span itemprop="name">front-end</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/Web/front-end/react/" itemprop="url" rel="index"><span itemprop="name">react</span></a>
+                  <a href="/categories/Tech/Web/blog/" itemprop="url" rel="index"><span itemprop="name">blog</span></a>
                 </span>
             </span>
 
@@ -243,56 +238,79 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <div class="note info">
-            <p>上一篇已建立一個基本專案，開始可以對index.js做一些改寫練習，並使用JSX語法 </p>
-          </div>
+        <blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <h1 id="hexo-是什麼？"><a href="#hexo-是什麼？" class="headerlink" title="hexo 是什麼？"></a>hexo 是什麼？</h1>
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
 
+ <blockquote class="blockquote-center">
 
+<p>Hexo 是一個快速、簡單且強大的網誌框架。Hexo 使用 Markdown 標記語言解析您的文章，並在幾秒鐘內，透過漂亮的主題產生靜態檔案。（來自 <a target="_blank" rel="noopener" href="https://hexo.io/zh-tw/docs/">https://hexo.io/zh-tw/docs/</a> 說明）</blockquote></p>
+<h1 id="本文將會知道"><a href="#本文將會知道" class="headerlink" title="本文將會知道"></a>本文將會知道</h1><ol>
+<li>如何使用 Hexo 產生部落格 （超快速，只要看到這邊就建好囉！）</li>
+<li>如何使用 markdown 撰寫文章</li>
+<li>如何部署到 github 個人網頁</li>
+<li>如何更改主題與內文風格 (本站用到的所有修改介紹，移到下一篇)</li>
+</ol>
 <a id="more"></a>
 
-<h1 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h1><p>看起來是html與ＪＳ混合使用，比較接近 JavaScript 而不是 HTML，ＪＳＸ允許你使用 JavaScript 所有的功能。</p>
-<ul>
-<li>Ref :<a target="_blank" rel="noopener" href="https://zh-hant.reactjs.org/docs/introducing-jsx.html">https://zh-hant.reactjs.org/docs/introducing-jsx.html</a></li>
-</ul>
-<h2 id="html-區域"><a href="#html-區域" class="headerlink" title="html 區域"></a>html 區域</h2><p>剛剛產生的public/index.html，含有基本HTML範本id=”root”的div區塊<br></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;&lt;div id&#x3D;&quot;root&quot;&gt;&lt;&#x2F;div&gt;&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="安裝-hexo-與初始化部落格"><a href="#安裝-hexo-與初始化部落格" class="headerlink" title="安裝 hexo 與初始化部落格"></a>安裝 hexo 與初始化部落格</h2><h3 id="產生基本部落格結構"><a href="#產生基本部落格結構" class="headerlink" title="產生基本部落格結構"></a>產生基本部落格結構</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">安裝工具 （使用npm安裝 可先安裝Node：https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;）</span><br><span class="line">$ npm install -g hexo-cli</span><br><span class="line">初始資料夾</span><br><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">進入資料夾及安裝相依</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br><span class="line">這邊就已經做好初始化了</span><br></pre></td></tr></table></figure>
+<h3 id="啟動部落格-Run-server"><a href="#啟動部落格-Run-server" class="headerlink" title="啟動部落格 Run server"></a>啟動部落格 Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">開啟瀏覽器 http://localhost:4000 就可以看到部落格了💕💕💕</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="（紀錄）顯示版本資訊"><a href="#（紀錄）顯示版本資訊" class="headerlink" title="（紀錄）顯示版本資訊"></a>（紀錄）顯示版本資訊</h3><p>（有需要的話，可以查詢對應安裝版本）知道自己安裝的版本，對於之後查詢問題是很有幫助的喔！</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ hexo version</span><br><span class="line">(node:5190) ExperimentalWarning: The fs.promises API is experimental</span><br><span class="line">INFO  Validating config</span><br><span class="line">hexo: 5.1.1</span><br><span class="line">hexo-cli: 4.2.0</span><br><span class="line">os: Darwin 19.0.0 darwin x64</span><br><span class="line">http_parser: 2.8.0</span><br><span class="line">node: 10.16.3</span><br><span class="line">v8: 6.8.275.32-node.54</span><br><span class="line">uv: 1.28.0</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">brotli: 1.0.7</span><br><span class="line">ares: 1.15.0</span><br><span class="line">modules: 64</span><br><span class="line">nghttp2: 1.39.2</span><br><span class="line">napi: 4</span><br><span class="line">openssl: 1.1.1c</span><br><span class="line">icu: 64.2</span><br><span class="line">unicode: 12.1</span><br><span class="line">cldr: 35.1</span><br><span class="line">tz: 2019a</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="React-中的-JSX-區域"><a href="#React-中的-JSX-區域" class="headerlink" title="React 中的 JSX 區域"></a>React 中的 JSX 區域</h2><p>接著看一下src/index.js裡的程式碼</p>
-<h3 id="基本範例-直接撰寫html"><a href="#基本範例-直接撰寫html" class="headerlink" title="基本範例: 直接撰寫html"></a>基本範例: 直接撰寫html</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line"></span><br><span class="line">或是改成</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;h1&gt; Hello world!&lt;/h1&gt;,</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>));</span><br></pre></td></tr></table></figure>
-<p>解說：</p>
+<h2 id="開始撰寫文章"><a href="#開始撰寫文章" class="headerlink" title="開始撰寫文章"></a>開始撰寫文章</h2><h3 id="新增文章"><a href="#新增文章" class="headerlink" title="新增文章"></a>新增文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br><span class="line">(預設)會在<span class="built_in">source</span>/＿posts 底下新增一個 .md 檔案</span><br><span class="line"></span><br><span class="line">$ hexo new draft <span class="string">&quot;My New Post&quot;</span> //指定生成草稿</span><br><span class="line">會在<span class="built_in">source</span>/＿draft 底下新增一個 .md 檔案</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="撰寫文章"><a href="#撰寫文章" class="headerlink" title="撰寫文章"></a>撰寫文章</h3><p>在剛剛新增的檔案開始採用 markdown 語法開始撰寫文章．</p>
 <ul>
-<li>由 React DOM 函式將元素渲染 ROOT 這個DOM 節點中</li>
-<li>而將 html當參數傳遞是使用一種Javascript語法: JSX<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const name &#x3D; &#39;Josh Perez&#39;; &#x2F;&#x2F;一般javascript</span><br><span class="line">const element &#x3D; &lt;h1&gt;Hello, &#123;name&#125;&lt;&#x2F;h1&gt;;&#x2F;&#x2F;混和的html與字串 特殊JSX語法</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  element,</span><br><span class="line">  document.getElementById(&#39;root&#39;)</span><br><span class="line">);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="關於Babel"><a href="#關於Babel" class="headerlink" title="關於Babel"></a>關於Babel</h4>是JavaScript 前處理器，編譯器，主要能轉換JSX與ES6成各瀏覽器支持的ＪＳ<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const element &#x3D; (</span><br><span class="line">  &lt;h1 className&#x3D;&quot;text&quot;&gt;</span><br><span class="line">    Hello, World!</span><br><span class="line">  &lt;&#x2F;h1&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-Babel 將 JSX 編譯為呼叫 React.createElement() 的程式。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const element &#x3D; React.createElement(</span><br><span class="line">  &#39;h1&#39;,</span><br><span class="line">  &#123;className: &#39;text&#39;&#125;,</span><br><span class="line">  &#39;Hello, World!&#39;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<li><p>可以找線上編輯器工具幫助撰寫及預覽，「自己習慣用這一個<a target="_blank" rel="noopener" href="https://markdown-editor.github.io/%E3%80%8D">https://markdown-editor.github.io/」</a> ，編輯完再貼過來內文．</p>
+</li>
+<li><p>如對語法有一點熟悉，就直接用 vscode 打開檔案開始撰寫內文，並可以安裝 vscode markdown preview 插件，邊改邊預覽．</p>
+</li>
+<li><p>編寫完再啟動部落格並在瀏覽器查看效果． （可帶–draft 顯示草稿）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s --draft</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
-<h3 id="範例-在html中可以用-JS-表達式崁入變數"><a href="#範例-在html中可以用-JS-表達式崁入變數" class="headerlink" title="範例: 在html中可以用{JS} 表達式崁入變數"></a>範例: 在html中可以用{JS} 表達式崁入變數</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//js函式宣告或是變數宣告區</span></span><br><span class="line"><span class="keyword">const</span> styleRed = &#123; <span class="attr">color</span>: <span class="string">&#x27;red&#x27;</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> pic=<span class="function">()=&gt;</span>&#123; <span class="comment">//html語法可以當作參數傳遞</span></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">  &lt;div&gt;<span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://picsum.photos/200/200?image=229&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span> <span class="attr">class</span>=<span class="string">&quot;circle-profile&quot;</span>/&gt;</span></span>&lt;/div&gt;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [</span><br><span class="line">        &lt;h1&gt;REACT學習&lt;/h1&gt;,</span><br><span class="line">        &lt;h2&gt;如何使用JSX！&lt;/h2&gt;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">&lt;React.StrictMode&gt;</span><br><span class="line">   &lt;h1 style = &#123; styleRed &#125; &gt; Hello, world! &lt;/h1&gt;</span><br><span class="line">   &lt;div&gt;&#123; pic()&#125; &lt;<span class="regexp">/div&gt; &#123;/</span>*註解這樣寫*/&#125;</span><br><span class="line">   &lt;div&gt;&#123;arr&#125;&lt;<span class="regexp">/div&gt;,&#123;/</span>*可以放入數組*/&#125;</span><br><span class="line"> &lt;/React.StrictMode&gt;,</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">- 可在 html 標籤中利用 &#123;&#125; 寫 javascript 表示式</span><br><span class="line">- 其中style = &#123;&#123; <span class="attr">color</span>: <span class="string">&#x27;red&#x27;</span> &#125;&#125; 這樣的表示也可以。</span><br></pre></td></tr></table></figure>
-
-<h3 id="範例-帶入屬性命名與Event"><a href="#範例-帶入屬性命名與Event" class="headerlink" title="範例: 帶入屬性命名與Event"></a>範例: 帶入屬性命名與Event</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getValue=<span class="function">(<span class="params">event</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(event.target.value)</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">&lt;React.StrictMode&gt;</span><br><span class="line">    &lt;h1 className = <span class="string">&quot;title&quot;</span> &gt; Hello, world! &lt;/h1&gt;</span><br><span class="line">	 &lt;button value onClick=&#123;getValue&#125;&gt;按下以取得數值 &lt;/button&gt;</span><br><span class="line">    &lt;button value=&#123;<span class="literal">true</span>&#125; onClick=&#123;getValue&#125;&gt;按下以取得數值 &lt;/button&gt;</span><br><span class="line">&lt;/React.StrictMode&gt;,</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>駱駝式命名<ul>
-<li>class 要用 className 然後可以在 style.css中更改樣式</li>
-<li>onclick 也要改onClick{函數名稱} 駱駝式命名</li>
-<li>實測命名打錯 console 會出現報 Warning: Invalid DOM property <code>class</code>. Did you mean <code>className</code>?</li>
+<h2 id="部署網站"><a href="#部署網站" class="headerlink" title="部署網站"></a>部署網站</h2><h3 id="建立與設定-Git-空間"><a href="#建立與設定-Git-空間" class="headerlink" title="建立與設定 Git 空間"></a>建立與設定 Git 空間</h3><ul>
+<li>先在 github 上新增一個專案叫與帳號一樣命名叫做“[yourname].github.io”</li>
+<li>配置 _config.yml</li>
 </ul>
-</li>
-<li>輸入類的元件button/input/textarea互動事件觸發時，函式只會接收到一個event類別的參數，並不能傳遞其他參數</li>
-<li>布林=true 的屬性值可以不寫</li>
-</ul>
-<h3 id="範例-JSX引入Inline-style"><a href="#範例-JSX引入Inline-style" class="headerlink" title="範例 JSX引入Inline-style"></a>範例 JSX引入Inline-style</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">export default function App() &#123;</span><br><span class="line">  return (</span><br><span class="line">    &lt;div className&#x3D;&quot;App&quot; style&#x3D;&#123;&#123;</span><br><span class="line">      color: &#39;blue&#39;,fontSize:&#39;19px&#39;</span><br><span class="line">    &#125;&#125;&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<ul>
-<li>在style內的是ＪＳ物件也可以把他們只給一個const變數</li>
-<li>內容與css不同的是必須是小寫駱駝且去除’-‘</li>
-<li>這種寫法的缺點是不行用hover等特殊效果，需利用其他模組化stylr寫法</li>
-</ul>
-<h1 id="網路參考文章"><a href="#網路參考文章" class="headerlink" title="網路參考文章"></a>網路參考文章</h1><div class="note info">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;yourname&#x2F;yourname.github.io</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<h3 id="產生靜態文件-Generate-static-files"><a href="#產生靜態文件-Generate-static-files" class="headerlink" title="產生靜態文件 Generate static files"></a>產生靜態文件 Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate 或是hexo g</span><br><span class="line">會在public資料夾產生網站靜態檔案</span><br><span class="line">這是用來部署到網站的檔案，記得每次部署前都要更新喔</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="一鍵部署"><a href="#一鍵部署" class="headerlink" title="一鍵部署"></a>一鍵部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">（略）</span><br><span class="line">Branch <span class="string">&#x27;master&#x27;</span> <span class="built_in">set</span> up to track remote branch <span class="string">&#x27;master&#x27;</span> from <span class="string">&#x27;https://github.com/yumememooo/yumememooo.github.io&#x27;</span>.</span><br><span class="line">INFO  Deploy <span class="keyword">done</span>: git</span><br></pre></td></tr></table></figure>
+<p>其他空間部署說明(ex:heroku) More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<blockquote>
+<p>註：部署會上傳至剛剛config的位置，測試發現只會上傳web檔案相關如果有上傳source/theme 檔案也會被移除．<br>因為在開發環境時可以先開一個src branch 來控管原始檔案．<br><br>branch - src (have all files)<br><br>branch - master (only web files)</p>
+</blockquote>
+<h3 id="個人網站網址"><a href="#個人網站網址" class="headerlink" title="個人網站網址"></a>個人網站網址</h3><p><a target="_blank" rel="noopener" href="https://yourname.github.io/">https://yourname.github.io/</a></p>
+<p>這樣就大功告成啦！🎉🎉🎉（註：有時要稍等一下才會看到更新）</p>
+<h3 id="清理靜態文件-Clean-static-files"><a href="#清理靜態文件-Clean-static-files" class="headerlink" title="清理靜態文件 Clean static files"></a>清理靜態文件 Clean static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">清除快取檔案 (db.json) 和已產生的靜態檔案 (public)</span><br></pre></td></tr></table></figure>
+<p><span style="background-color:yellow;">下一篇會介紹如何更換主題及內文撰寫</span></p>
+<hr>
+<h2 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h2><div class="note info">
             <p> 本文依照網路文章學習並整理為個人筆記，如有錯誤，歡迎寄信糾正，會再修正更新．<br>學習路上感謝網路大神們，如果你發現了我，可以查看以下參考文章了解更多概念👇👇👇</div></p>
           </div>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10216468">【React.js入門 - 06】 JSX</a></li>
-<li><a target="_blank" rel="noopener" href="https://eyesofkids.gitbooks.io/react-basic-zh-tw/content/day18_deeper_jsx/" title="React篇: JSX語法撰寫指引">React篇: JSX語法撰寫指引</a></li>
+<li><p>Quick Start<br>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-tw/docs/commands.html">HEXO 指令</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://theme-next.iissnan.com/getting-started.html">NextT 開始使用</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://theme-next.iissnan.com/theme-settings.html">NextT 主题配置</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://theme-next.iissnan.com/tag-plugins.html">NextT 內置標籤</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/mqdxiaoxiao/article/details/92843057?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.channel_param">Hexo 个人博客 NexT 主题设置 Scheme 外观</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://chrischen0405.github.io/2018/09/11/post20180911/">hexo 页脚添加访客人数和总访问量</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2bb36378045d">Hexo 添加标签云</a></p>
+</li>
 </ul>
 
     </div>
@@ -303,9 +321,8 @@ Babel 將 JSX 編譯為呼叫 React.createElement() 的程式。<figure class="h
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/react/" rel="tag"># react</a>
-              <a href="/tags/JSX/" rel="tag"># JSX</a>
-              <a href="/tags/Babel/" rel="tag"># Babel</a>
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/blog/" rel="tag"># blog</a>
           </div>
 
         
@@ -314,12 +331,12 @@ Babel 將 JSX 編譯為呼叫 React.createElement() 的程式。<figure class="h
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/18/06-go-zap-log/" rel="prev" title="[Go 07] 使用 zap 框架印出 log">
-      <i class="fa fa-chevron-left"></i> [Go 07] 使用 zap 框架印出 log
+    <a href="/2021/01/30/java-spring-asnc/" rel="prev" title="[JAVA] spring 非同步事件">
+      <i class="fa fa-chevron-left"></i> [JAVA] spring 非同步事件
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/09/01/hugo-blog/" rel="next" title="[BLOG] 使用 Hugo 撰寫部落格">
-      [BLOG] 使用 Hugo 撰寫部落格 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/01/31/hexo-02-themes/" rel="next" title="[BLOG] 使用 Hexo 撰寫部落格 02- 更換主題與個人化設定">
+      [BLOG] 使用 Hexo 撰寫部落格 02- 更換主題與個人化設定 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -379,7 +396,7 @@ Babel 將 JSX 編譯為呼叫 React.createElement() 的程式。<figure class="h
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JSX"><span class="nav-number">1.</span> <span class="nav-text">JSX</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#html-%E5%8D%80%E5%9F%9F"><span class="nav-number">1.1.</span> <span class="nav-text">html 區域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-%E4%B8%AD%E7%9A%84-JSX-%E5%8D%80%E5%9F%9F"><span class="nav-number">1.2.</span> <span class="nav-text">React 中的 JSX 區域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%AF%84%E4%BE%8B-%E7%9B%B4%E6%8E%A5%E6%92%B0%E5%AF%ABhtml"><span class="nav-number">1.2.1.</span> <span class="nav-text">基本範例: 直接撰寫html</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%9C%E6%96%BCBabel"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">關於Babel</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B-%E5%9C%A8html%E4%B8%AD%E5%8F%AF%E4%BB%A5%E7%94%A8-JS-%E8%A1%A8%E9%81%94%E5%BC%8F%E5%B4%81%E5%85%A5%E8%AE%8A%E6%95%B8"><span class="nav-number">1.2.2.</span> <span class="nav-text">範例: 在html中可以用{JS} 表達式崁入變數</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B-%E5%B8%B6%E5%85%A5%E5%B1%AC%E6%80%A7%E5%91%BD%E5%90%8D%E8%88%87Event"><span class="nav-number">1.2.3.</span> <span class="nav-text">範例: 帶入屬性命名與Event</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B-JSX%E5%BC%95%E5%85%A5Inline-style"><span class="nav-number">1.2.4.</span> <span class="nav-text">範例 JSX引入Inline-style</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B6%B2%E8%B7%AF%E5%8F%83%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">2.</span> <span class="nav-text">網路參考文章</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo-%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">hexo 是什麼？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E5%B0%87%E6%9C%83%E7%9F%A5%E9%81%93"><span class="nav-number">2.</span> <span class="nav-text">本文將會知道</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9D-hexo-%E8%88%87%E5%88%9D%E5%A7%8B%E5%8C%96%E9%83%A8%E8%90%BD%E6%A0%BC"><span class="nav-number">2.1.</span> <span class="nav-text">安裝 hexo 與初始化部落格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A2%E7%94%9F%E5%9F%BA%E6%9C%AC%E9%83%A8%E8%90%BD%E6%A0%BC%E7%B5%90%E6%A7%8B"><span class="nav-number">2.1.1.</span> <span class="nav-text">產生基本部落格結構</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%95%9F%E5%8B%95%E9%83%A8%E8%90%BD%E6%A0%BC-Run-server"><span class="nav-number">2.1.2.</span> <span class="nav-text">啟動部落格 Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%88%E7%B4%80%E9%8C%84%EF%BC%89%E9%A1%AF%E7%A4%BA%E7%89%88%E6%9C%AC%E8%B3%87%E8%A8%8A"><span class="nav-number">2.1.3.</span> <span class="nav-text">（紀錄）顯示版本資訊</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E5%A7%8B%E6%92%B0%E5%AF%AB%E6%96%87%E7%AB%A0"><span class="nav-number">2.2.</span> <span class="nav-text">開始撰寫文章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E%E6%96%87%E7%AB%A0"><span class="nav-number">2.2.1.</span> <span class="nav-text">新增文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%92%B0%E5%AF%AB%E6%96%87%E7%AB%A0"><span class="nav-number">2.2.2.</span> <span class="nav-text">撰寫文章</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E7%B6%B2%E7%AB%99"><span class="nav-number">2.3.</span> <span class="nav-text">部署網站</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E8%88%87%E8%A8%AD%E5%AE%9A-Git-%E7%A9%BA%E9%96%93"><span class="nav-number">2.3.1.</span> <span class="nav-text">建立與設定 Git 空間</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A2%E7%94%9F%E9%9D%9C%E6%85%8B%E6%96%87%E4%BB%B6-Generate-static-files"><span class="nav-number">2.3.2.</span> <span class="nav-text">產生靜態文件 Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E9%8D%B5%E9%83%A8%E7%BD%B2"><span class="nav-number">2.3.3.</span> <span class="nav-text">一鍵部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%80%8B%E4%BA%BA%E7%B6%B2%E7%AB%99%E7%B6%B2%E5%9D%80"><span class="nav-number">2.3.4.</span> <span class="nav-text">個人網站網址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%85%E7%90%86%E9%9D%9C%E6%85%8B%E6%96%87%E4%BB%B6-Clean-static-files"><span class="nav-number">2.3.5.</span> <span class="nav-text">清理靜態文件 Clean static files</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">2.4.</span> <span class="nav-text">參考文章</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
