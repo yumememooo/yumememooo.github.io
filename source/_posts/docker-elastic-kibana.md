@@ -13,10 +13,10 @@ date: 2021-04-24 10:06:20
 {% note info %} 本章介紹使用elasticSearch儲存資料與kibana呈現使用 {% endnote %}
 
 
-# 本文將會知道：
-- 建立elasticSearch/kibana [docker]
-- 建立index與傳送資料
-- 查詢資料
+# 本文內容：
+- 自行建立elasticSearch/kibana [docker]
+- 建立elasticSearch index與傳送資料
+- 使用kibana查詢資料
 
 
 <!--more-->

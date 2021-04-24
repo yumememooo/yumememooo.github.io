@@ -48,6 +48,9 @@ categories:
 -
 ```
 
+
+<span style="background-color:yellow;">先使用再宣告</span>
+
 # 網路參考文章
 {% note info %} 本文依照網路文章學習並整理為個人筆記，如有錯誤，歡迎寄信糾正，會馬上更新．
 感謝網路大神們，如果你發現了我，請看參考文章了解更多👇👇👇{% endnote %}
