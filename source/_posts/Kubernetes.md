@@ -5,6 +5,7 @@ tags:
   - CLI
 categories:
   - Tech.
+  - deploy
   - Kubernetes
 
 date: 2020-12-31 11:53:14

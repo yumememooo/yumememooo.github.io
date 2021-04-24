@@ -4,6 +4,7 @@ tags:
   - docker
 categories:
   - Tech.
+  - deploy
   - docker
 date: 2020-09-14 22:22:35
 ---

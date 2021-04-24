@@ -3,6 +3,10 @@ title: "GitHub 個人頁面修改"
 date: 2021-01-11 17:10:07
 tags:
   - GitHub
+categories:
+  - Tech.
+  - GitHub
+
 ---
 
 > 如何修改自己的 GitHub 個人頁面，一般都是只有 repo，可以加上簡介喔!

@@ -10,7 +10,7 @@ categories:
 date: 2021-02-27 20:40:59
 ---
 
-{% note info %} 整理react學習筆記 {% endnote %}
+{% note info %} 整理react學習“個人筆記” {% endnote %}
 
 本文內容：
 - props/state (function vs class)
@@ -33,41 +33,33 @@ Ref:[Components 與 Props] (https://zh-hant.reactjs.org/docs/components-and-prop
 
 
 #### function component vs class component
-- 轉換 Function 成 Class ：
-<table><tr><td valign="top" width="50%">
+轉換 Function 成 Class ：
 
-#### 使用function 來做 component
+##### 使用function 來做 component
 - 如果需要向component傳参数，可以使用 props 對象，
 - 用return (html)
 
 
-````javascript
-//function component
-function HelloWorld() {
-	return <h1>Hello World!</h1>;
-}
+````javascript function component
+
 function HelloName(props) {
 	return <h1>Hello {props.name}!</h1>;
 }
 ReactDOM.render(
  <React.StrictMode>
-	 <HelloWorld/>
 	 <HelloName name="May"/>
 	</React.StrictMode>,
 	document.getElementById('example')
 );
 ````
-<!-- recent_releases starts -->
-</td><td valign="top" width="50%">
 
-#### 使用class來做 component
+##### 使用class來做 component
 - 也可以使用 ES6 class來 來定義 
 - 繼承React.Component且在用render(){}包一層
 - props 要改用 this.props
 - 用render(){return html}
 
-````javascript
-//class來 component
+````javascript class來 component
 class HelloName extends React.Component {
   render() {
     return <h1>Hello, {this.props.name}</h1>;
@@ -82,7 +74,6 @@ ReactDOM.render(
 );
 ````
 
-</td></tr></table>
 
 
 組件裡面可以再包組件，透過這樣可以重新利用
@@ -92,8 +83,8 @@ ReactDOM.render(
 #### React組件 箭頭函式組件 寫法
 - const App: () => JSX.Element //大寫駱駝命名
 - 縮寫：如果裡面只有return 可以去掉{}與return，但通常會有一些變數存在，個人習慣保留．
-- 快速鍵 rafc - ReactArrowFunctionComponent
-- [紀錄](https://github.com/yumememooo/counter-water/commit/aea85efa5f2e4a1f073cd7c89f96a458b00ab24c)
+- 使用插件快速鍵 rafc - ReactArrowFunctionComponent
+[紀錄](https://github.com/yumememooo/counter-water/commit/aea85efa5f2e4a1f073cd7c89f96a458b00ab24c)
 ```
 const Hello = () => {
   return ( <div>hello</div> )
@@ -108,9 +99,8 @@ const Hello = () => {
 Props 是唯讀的(Immutable)，State 類似於 prop，但它是私有且由 component 完全控制的。當state被改變時，會進入re-render的update程序，更新畫面
 
 #### class(setState) vs function(useState)
-<table><tr><td valign="top" width="100px">
 
-#### 使用class來做state
+##### 1. 使用class來改state（setState）
 - 使用 ES6 class來 來定義 
 - 繼承React.Component且在用render(){}包一層
 - props 要改用 this.props
@@ -165,17 +155,11 @@ ReactDOM.render(
 
 
 ````
-<!-- recent_releases starts -->
 
-</td><td valign="top" width="50%">
-
-
-#### 使用function component更改state
+#### 2.使用function component更改state（用useState）
 - 沒有內部狀態（State），是 Stateless Components。
 - 沒有 Lifecycle Hooks 和 refs。
-- 如果想要更改props 要改用useState
-#### 使用 useState 更改 State:
-- useState-是一個基礎的Hook，是可以在function component中使用設定state，而不需要轉換成class。
+- 如果想要更改props 要改用useState，useState-是一個基礎的Hook，是可以在function component中使用設定state，而不需要轉換成class。
 > hook意思是“鈎子”，在音樂上，指的是一首歌曲中最能鈎人的部分。Hook 是 React 16.8 增加的新功能。讓你不必寫 class 就能使用 state 以及其他 React 的功能。使用hook可以更簡化且被推崇使用。
 
 - useState它回傳了一對值：目前的 state 跟一個可以更新 state 的 function。
@@ -211,23 +195,7 @@ ReactDOM.render(
 
 ```
 
-</td></tr></table>
 
-
-
-
-
-
-#### 網路參考範例:
-
-[React State(状态)](https://www.runoob.com/react/react-state.html "React State(状态)") @runoob基礎與線上範例
-**[State 和生命週期](https://zh-hant.reactjs.org/docs/state-and-lifecycle.html "State 和生命週期") @React中文React解說
-[【React.js入門 - 11】 開始進入class component](https://ithelp.ithome.com.tw/articles/10219057 "【React.js入門 - 11】 開始進入class component") @IT邦幫忙的系列文
-[React 與 bind this ](https://medium.com/reactmaker/react-%E8%88%87-bind-this-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BF%83%E5%BE%97-323c8d3d395d "React 與 bind this ") @medium
-
-
-[React hook](https://zh-hant.reactjs.org/docs/hooks-intro.html) @React 中文解說Hook系列
-[使用 State Hook](https://zh-hant.reactjs.org/docs/hooks-state.html "使用 State Hook") @React 中文解說State Hook中寫法對比
 
 
 #### （延伸說明）hooks 與 Function Component
@@ -262,3 +230,15 @@ Ref:
   - 內有使用class與hook 的範例對比說明
   - 很多待細讀 ＴＢＤ
   - 我們建議使用 exhaustive-deps 規則作為我們 eslint-plugin-react-hooks package 的一部分。當不正確地指定依賴時，它會發出警告，並提出修改建議。
+
+
+### 網路參考範例:
+
+[React State(状态)](https://www.runoob.com/react/react-state.html "React State(状态)") @runoob基礎與線上範例
+**[State 和生命週期](https://zh-hant.reactjs.org/docs/state-and-lifecycle.html "State 和生命週期") @React中文React解說
+[【React.js入門 - 11】 開始進入class component](https://ithelp.ithome.com.tw/articles/10219057 "【React.js入門 - 11】 開始進入class component") @IT邦幫忙的系列文
+[React 與 bind this ](https://medium.com/reactmaker/react-%E8%88%87-bind-this-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BF%83%E5%BE%97-323c8d3d395d "React 與 bind this ") @medium
+
+
+[React hook](https://zh-hant.reactjs.org/docs/hooks-intro.html) @React 中文解說Hook系列
+[使用 State Hook](https://zh-hant.reactjs.org/docs/hooks-state.html "使用 State Hook") @React 中文解說State Hook中寫法對比

@@ -1,13 +1,14 @@
 ---
-title: '將程式部署到heroku運行'
+title: '[deploy]將網頁程式部署到heroku運行'
 tags:
   - heroku
-  - ing
+  - deploy
+  - GUI
 
 categories:
   - Tech.
-  - Web
   - deploy
+  - heroku
 date: 2020-09-18 10:46:22
 ---
 

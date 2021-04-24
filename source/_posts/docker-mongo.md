@@ -1,11 +1,11 @@
 ---
-title: "使用docker啟動mongo與操作"
+title: "[docker/mongo]使用docker啟動mongo與操作"
 tags:
   - docker
   - mongo
 categories:
-  - Tech.
-  - docker
+  - [Tech.,deploy, docker]
+  - [Tech., back-end,db]
 date: 2020-09-12 10:46:53
 ---
 
