@@ -10,12 +10,13 @@ categories:
 date: 2021-03-28 09:33:18
 ---
 
-{% note info %} 本文依照網路文章學習並標注內文重點，個人筆記，不公開至blog． {% endnote %}
+{% note warning %} 本文依照網路文章學習並標注內文重點，個人筆記，不公開至blog． {% endnote %}
 
 
-
-{% note info %} 本文依照網路文章學習並整理為個人筆記，如有錯誤，歡迎寄信糾正，會再修正更新．
-學習路上感謝網路大神們，如果你發現了我，可以查看以下參考文章了解更多概念👇👇👇</div>{% endnote %}
+# 網路參考文章
+{% note warning %} <span style="font-size: 9px;">
+學習路上感謝網路大神們，如果你發現了我，可以查看參考文章了解更多概念👇👇👇
+</span>{% endnote %}
 
 <!--more-->
 
@@ -24,7 +25,7 @@ pjchender-[從 Hooks 開始，讓你的網頁 React 起來](https://ithelp.ithom
 - 超級推薦購書 [天瓏](https://www.tenlong.com.tw/products/9789864345083)
 
 紀錄：
-- day6 useState的出現
+#### day6 useState的出現
 一般加法可以在console看到變化，但是畫面還是不會變，透過 useState 讓 React 知道有東西變了．
   - useState 其實是React 物件中的一個方法，用法的兩個參數其實是解構賦植的用法
 ```

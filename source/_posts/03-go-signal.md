@@ -23,7 +23,7 @@ date: 2020-05-01 22:08:34
 
 程式碼：
 
-```
+```go
 func main() {
 	fmt.Println("start")
 	errs := make(chan error, 1)
@@ -34,7 +34,7 @@ func main() {
 
 func listenForＳignal(errChan chan error) {
 	go func() {
-		c := make(chan os.Signal)
+		c := make(chan os.Signal,1)
 		signal.Notify(c, syscall.SIGINT, syscall.SIGTERM)//要終止的訊號
 
 		errChan <- fmt.Errorf("%s", <-c)

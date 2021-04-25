@@ -40,7 +40,7 @@ complex64 complex128
 https://tour.go-zh.org/basics/11
 
 ### 匿名欄位
-```
+```go
 type User struct {
 	Name string
 }
@@ -67,9 +67,7 @@ pass by pointer (或稱 called by reference，但其實不是)
 出自以下參考文章:
 
 - [golang-pass-by-pointer-vs-pass-by-value](https://goinbigdata.com/golang-pass-by-pointer-vs-pass-by-value/)
-
 - [there-is-no-pass-by-reference-in-go](https://dave.cheney.net/2017/04/29/there-is-no-pass-by-reference-in-go)
-
 - [《Golang 入門系列七》Go語言引數傳遞是傳值還是傳引用](https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/74367/)
 Go語言中所有的傳參都是值傳遞（傳值），都是一個副本，一個拷貝。因為拷貝的內容有時候是非引用型別（int、string、struct等這些），這樣就在函式中就無法修改原內容資料；有的是引用型別（指標、map、slice、chan等這些），這樣就可以修改原內容資料。"
 

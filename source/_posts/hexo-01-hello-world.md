@@ -169,8 +169,9 @@ $ hexo clean
 ---
 
 ## 參考文章
-{% note info %} 本文依照網路文章學習並整理為個人筆記，如有錯誤，歡迎寄信糾正，會再修正更新．
-學習路上感謝網路大神們，如果你發現了我，可以查看以下參考文章了解更多概念👇👇👇</div>{% endnote %}
+{% note warning %} <span style="font-size: 9px;">
+學習路上感謝網路大神們，如果你發現了我，可以查看參考文章了解更多概念👇👇👇
+</span>{% endnote %}
 - Quick Start
   Welcome to [Hexo](https://hexo.io/)! Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues)
 
