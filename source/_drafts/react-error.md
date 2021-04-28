@@ -80,3 +80,6 @@ See https://reactjs.org/link/invalid-hook-call for tips about how to debug and f
 Error: Too many re-renders. React limits the number of renders to prevent an infinite loop.
  {% endnote %}
 
+
+#### ReferenceError: dis is not defined
+設定一個不存在的變數

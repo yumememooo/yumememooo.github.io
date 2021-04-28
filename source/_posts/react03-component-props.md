@@ -1,5 +1,5 @@
 ---
-title: "[React 03] component語法-props/state (function vs class)與生命週期"
+title: "[React 03] 組件語法-props/state (function vs class)與生命週期"
 tags:
   - react
 categories:

@@ -88,8 +88,11 @@ Quokka.js 会在你输入时自动计算结果，并在 IDE 中打印结果。
 
 
 ### Css-in-js
-
 可以透過指令將 CSS 選取後切換 css & css-in-js 寫法，不用再自己改半天啦！！
+
+### vscode-styled-components
+可以自動完成在css-in-js區塊裡面的css補全提示．
+
 
 ### Git Graph
 

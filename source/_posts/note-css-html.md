@@ -18,9 +18,9 @@ date: 2020-09-15 20:27:29
 
 <!--more-->
 
-### HTML
+## HTML
 
-#### Html 基礎
+### Html 基礎
 - HTML 文件 (HTML document) 
 - 標籤 (tag)<tagname>...</tagname>包圍著語意 (semantic) 內容(Content)區塊稱作 HTML 元素 (HTML element)，不同標籤表達不同語意
 - 空元素 (Empty Element / Void Element)
@@ -31,36 +31,8 @@ date: 2020-09-15 20:27:29
 ```
 - HTML 標籤中還有屬性 (Attribute)，來提供該標籤的額外資訊
 
-##### 區塊元素 
-- display預設為block，區塊元素排列都會另起一行，除非被改變
-- 可設置寬高 width hight
-- 默認情况下，其寬度自動填满其父元素寬度，即寬度100%
-- 高度，行高以及頂和底邊距都可控制；
 
-```
-常見包括 div、p、h1~h6、
-ul、ol、li、
-dl、dt、dd、
-form、table、hr、
-blockquote 、
-address、menu、pre.....等等
-```
-##### 行內元素
-- display預設inline，除非被改變
-- 設置寬高無效，只能由内容撑起来
-- 行内元素会排列在同一行，直到一行排不下，才會換行，其寬度隨元素的内容而變化。
-- 設置上下margin、padding无效，左右padding 、margin有效
-```
-常見包括
-span、em、i、b、strong、
-a、img、input、br、select、textarea、q、bdo、
-sub、sup...等等
-```
-- 行內不能包含區塊元素
-*可變元素 依上下文決定
-
-Ref:https://www.jianshu.com/p/9fa96ece88f1
-#### 撰寫規則
+### 撰寫規則
 - 屬性值用單引號雙引號都可以
 - 標籤與屬性大小寫都可以，常見且建議是固定使用小寫 (lowercase)。
 - 雙引號間的屬性值不能空白
@@ -68,7 +40,7 @@ Ref:https://www.jianshu.com/p/9fa96ece88f1
 https://www.fooish.com/html/tag.html
 
 
-#### 語意標籤
+### 語意標籤
 HTML5中新增了語意化標籤(Semantic Elements)，目的是為了讓標籤(Tag)更具意義，以加強文件的結構化，讓搜尋引擎更清楚了解
 ```
 Header 可於body內或是article或是section代表頁首或是首要區塊
@@ -98,9 +70,9 @@ https://km.nicetypo.com/doc/ead903b94bb8bf01974d3ccdb91a117b)
 
 
 
-### CSS
+## CSS
 
-#### 區塊計算 Box Model
+### 區塊計算 Box Model
 - Box Model 預設 box-sizing: content-box
   - content 內容 
   ```
@@ -144,7 +116,7 @@ https://km.nicetypo.com/doc/ead903b94bb8bf01974d3ccdb91a117b)
    ></iframe>
 
 
-#### css reset
+### css reset
 撰寫時會發現元素與視窗有空隙，css reset可以清楚，還有其他一些效果
 
 - React + @emotion/css 套用範例
@@ -156,20 +128,89 @@ injectGlobal(reset, {
 ```
 
 
-#### 排版
+### 排版
+
+
+#### display
 
 ##### 隱藏元素
- [w3schools Hide an Element](https://www.w3schools.com/css/css_display_visibility.asp)
+- display預設為none
+
 ```
  display: none; //空間消失
  visibility:hidden //空間仍存在
 
 ```
+ [w3schools Hide an Element](https://www.w3schools.com/css/css_display_visibility.asp)
 
-##### float
+##### 區塊元素 
+- display預設為block，區塊元素排列都會另起一行，除非被改變
+- 可設置寬高 width hight
+- 默認情况下，其寬度自動填满其父元素寬度，即寬度100%
+- 高度，行高以及頂和底邊距都可控制；
+
+```
+常見包括 div、p、h1~h6、
+ul、ol、li、
+dl、dt、dd、
+form、table、hr、
+blockquote 、
+address、menu、pre.....等等
+```
+##### 行內元素
+- display預設inline，除非被改變
+- 設置寬高無效，只能由内容撑起来，行內元素會依照物件內容的大小決定占用的版面
+- 行内元素会排列在同一行，直到一行排不下，才會換行，其寬度隨元素的内容而變化。
+- 設置上下margin、padding无效，左右padding 、margin有效
+```
+常見包括
+span、em、i、b、strong、
+a、img、input、br、select、textarea、q、bdo、
+sub、sup...等等
+```
+- 行內不能包含區塊元素
+*可變元素 依上下文決定
+
+Ref:https://www.jianshu.com/p/9fa96ece88f1
+
+##### 行內區塊
+- display：inline-block
+- 以inline的方式呈現，但同時擁有block的屬性
 
 
-##### Flex
+------
+#### Position
+Static：默認值，沒有定位。
+##### 固定定位fixed
+- 不管滾軸移動，依然在一樣位置
+- 空間不佔據，會蓋住別人
+- 固定他在原本寫的位置上
+- 有寫上右下左就會定位在視窗頂端的相對位置（非自身）
+- 應用：
+   - 蓋版廣告（左右上下置中 設立五個 為什麼）
+   - 頂置導覽列top0
+   - 回到上面 bottom 0
+
+##### relative
+- 空間會佔據，也會蓋住沒有設定定位的物件
+- 相對於原本的位置上
+- 兩個都有定位物件，後面蓋前面
+- 可以設定z-index 設定優先，預設0
+
+##### absolute
+- 空間不佔據，資料會在原本資料的位置
+- 設定完上下左右它會往有定位的父層找
+- 如果找不到會定位在視窗上，不是body(如果想要定在body上，body需要設定定位，往上還有html,有一點差別 )
+- 應用在不想與人排列的情況，通常父層會用relative,父層想要有排列
+- 應用：
+    - 特賣標籤absolute,父層項目relative
+    - 改版廣告的(X)
+
+----
+#### float
+
+----
+#### Flex
 - 父層設定可以控制子層的排列方式
 <iframe src="https://codesandbox.io/embed/flex-base1-xhwn8?fontsize=14&hidenavigation=1&theme=dark&view=preview"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
@@ -178,18 +219,31 @@ injectGlobal(reset, {
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
+----
+#### 關於置中
+##### margin
+“margin:0 atuo;”所代表的的意思是水平居中，區塊元素的容器水平置中。
+關於
+[margin:0 atuo;”是什么意思？](https://www.html.cn/qa/css3/19856.html)
+[不要告訴我你懂margin](https://fredevangigi.pixnet.net/blog/post/57202532)
+
 ＴＢＤ
 1.align-content
 2.延伸設定
 3. default: align-items: stretch; 上下高度自動滿版時有出現空白問題
 
-### 範例 layout
-####  互動式視窗 Modal window 
-  [How TO - CSS/JS Modal](https://www.w3schools.com/howto/howto_css_modals.asp)
+-----
 
+## 範例版面與物件
+###  互動式視窗 Modal window 
+原理：製作一置中視窗，然後先隱藏起來，該位置距離上方可以百分比設定．
 - margin: 15% auto; / 15% from the top and centered /
+  [w3schools=How TO CSS/JS Modal](https://www.w3schools.com/howto/howto_css_modals.asp)
 
-#### input 欄位
+*My React版練習[Add: Model](https://github.com/yumememooo/counter-water/commit/fd3a285c515fa8cdea8e94a965c6bcd95eff4996)
+
+-----
+### input 欄位
 - 一般的輸入數字框，可以看到預設會有上下箭頭出現
 ```
 <input type="number" value="5">

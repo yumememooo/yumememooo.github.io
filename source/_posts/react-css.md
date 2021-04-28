@@ -11,7 +11,7 @@ categories:
   - Web
   - front-end
   - react
-date: 2020-09-18 21:21:19
+date: 2021-04-18 21:21:19
 ---
 [✍練習ing]
 
@@ -22,33 +22,35 @@ date: 2020-09-18 21:21:19
 # 一般要在 React 中撰寫 CSS 有幾種做法
 
 ## 1.撰寫在.CSS 檔案,再 import 套用。
-```
+- 把css寫在不同檔案中
+```jsx
 import "./styles.css";
 <div className="App">   可定義 className
 ```
-
+不便性：會需要考慮CSS優先度問題
 ## 2.直接在對應地方用style={JS寫法} 撰寫
 - 直接用 Inline-style 在屬性中加入style
-```
+```jsx
 <h2 style ={{color:'red', backgroundColor: "#3f51b5"}}>JS寫法</h2>
 裡面是 JS 寫法，值需加''，且-需改成駱駝式寫法(不能含-字元)
 ```
+不便性：會需要轉成ＪＳ寫法，有插件工具可以幫忙轉
 
 ## 3.套用css-in-js 庫 直接撰寫 CSS，不用再改 JS 寫法啦
   而 css-in-js 庫的主要有: styled-components, emotion, glamorous。
 
 
-### 練習用emotion庫撰寫CSS
+# 練習用emotion庫撰寫CSS
   - Emotion 是一個旨在使用 JavaScript 編寫 CSS 樣式的庫 - 加上兩個反引號，之間就可以直接撰寫 CSS ，有styled 寫法，本篇主要用這個練習看看。 
   - styled 寫法
     要建立 < div> 標籤樣式時，使用 styled.div；如果要建立的是 < button> 則是使用 styled.button 以此類推。
 
-#### 套用emotion庫撰寫
+## 套用emotion庫撰寫
 
 基礎使用方法：
 1. 安裝 npm install --save emotion
 2. 引入用className屬性套用
-```
+```jsx
 import { css } from "emotion";
 const myStyle = css`
   color: rebeccapurple;
@@ -59,11 +61,11 @@ const myStyle = css`
 更多範例可以看NPM上的emotion庫介紹[emotion](https://www.npmjs.com/package/emotion)
 
 
-#### 套用@emotion/styled
+### 套用@emotion/styled
 基礎使用方法：
 1. 引入npm i @emotion/styled
 2. 撰寫標籤tag
-```
+```jsx
 const Container = styled.div` //外面
   background-color: skyblue;
 `;
@@ -74,14 +76,22 @@ return (
   );
     
 ```
+- 變數修改方法
+``` jsx
+let displayNone = "block"
 
-#### 套用@emotion/core庫撰寫
+const Modal = styled.div`
+display: ${displayNone}; 
+  `;
+```
+
+### 套用@emotion/core庫撰寫
 官方推薦＠＠ 但使用上有一些限制
 
 基礎使用方法：
 1. 引入npm i @emotion/core
 2. 引入後用css屬性套用
-  ```
+  ```jsx
 /** @jsx jsx */ import { css, jsx } from "@emotion/core"; 
 //在無法配置babel配置（create-react-app，codesandbox等）的項目中
 一定要加前述/** @jsx jsx */ 才有效果喔！！！ 之前漏了查好久＠＠
@@ -115,10 +125,18 @@ return (
    ></iframe>
 
 
+# 開發插件 in vscode
+vscode中有一些針對css-in-js的插件可以幫助開發效率．
+## Css-in-js
+可以透過指令將 CSS 選取後切換 css & css-in-js 寫法，不用再自己改半天啦！！
+
+## vscode-styled-components
+可以自動完成在css-in-js區塊裡面的css補全提示．
+
 
 ----
 
-{% note class_name %} # 網路參考文章 {% endnote %}
+# 網路參考文章
 
 | 連結  | 摘要與大致內容 |
 | ----- | ----------|
