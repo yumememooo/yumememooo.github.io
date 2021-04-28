@@ -24,13 +24,13 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="[HTML &amp; CSS][✍ 筆記] 初學 HTML &amp; CSS 與練習">
 <meta property="og:url" content="http://yoursite.com/2020/09/15/note-css-html/index.html">
-<meta property="og:site_name" content="Yu&#39;s 程式筆記">
+<meta property="og:site_name" content="Yume × 程式 Memo">
 <meta property="og:description" content="[✍ 持續更新]  練習CSS &amp; HTML 操作相關筆記．">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/images/post/content-box.png">
 <meta property="og:image" content="http://yoursite.com/images/post/border-box.png">
 <meta property="article:published_time" content="2020-09-15T12:27:29.000Z">
-<meta property="article:modified_time" content="2021-04-05T05:50:16.881Z">
+<meta property="article:modified_time" content="2021-04-25T05:11:06.316Z">
 <meta property="article:author" content="Yuri">
 <meta property="article:tag" content="ing">
 <meta property="article:tag" content="note">
@@ -52,7 +52,7 @@
   };
 </script>
 
-  <title>[HTML & CSS][✍ 筆記] 初學 HTML & CSS 與練習 | Yu's 程式筆記</title>
+  <title>[HTML & CSS][✍ 筆記] 初學 HTML & CSS 與練習 | Yume × 程式 Memo</title>
   
 
 
@@ -103,10 +103,10 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Yu's 程式筆記</h1>
+      <h1 class="site-title">Yume × 程式 Memo</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">個人學習筆記 Memo，藉由紀錄一步步成長</p>
+      <p class="site-subtitle" itemprop="description">個人前後端學習備忘錄</p>
   </div>
 
   <div class="site-nav-right">
@@ -184,7 +184,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yu's 程式筆記">
+      <meta itemprop="name" content="Yume × 程式 Memo">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -205,7 +205,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-05 13:50:16" itemprop="dateModified" datetime="2021-04-05T13:50:16+08:00">2021-04-05</time>
+                <time title="Modified: 2021-04-25 13:11:06" itemprop="dateModified" datetime="2021-04-25T13:11:06+08:00">2021-04-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -257,34 +257,18 @@
 </blockquote>
 <a id="more"></a>
 
-<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><h4 id="Html-基礎"><a href="#Html-基礎" class="headerlink" title="Html 基礎"></a>Html 基礎</h4><ul>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="Html-基礎"><a href="#Html-基礎" class="headerlink" title="Html 基礎"></a>Html 基礎</h3><ul>
 <li>HTML 文件 (HTML document) </li>
 <li>標籤 (tag)<tagname>…</tagname>包圍著語意 (semantic) 內容(Content)區塊稱作 HTML 元素 (HTML element)，不同標籤表達不同語意</li>
 <li>空元素 (Empty Element / Void Element)<br>有些 HTML 元素是不允許有內容的，稱之為空元素。沒有結束標籤<br>常見包括<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;br&gt;換行 &lt;hr&gt; &lt;img&gt;圖片 &lt;input&gt;輸入 &lt;link&gt; &lt;meta&gt;</span><br></pre></td></tr></table></figure></li>
 <li>HTML 標籤中還有屬性 (Attribute)，來提供該標籤的額外資訊</li>
 </ul>
-<h5 id="區塊元素"><a href="#區塊元素" class="headerlink" title="區塊元素"></a>區塊元素</h5><ul>
-<li>display預設為block，區塊元素排列都會另起一行，除非被改變</li>
-<li>可設置寬高 width hight</li>
-<li>默認情况下，其寬度自動填满其父元素寬度，即寬度100%</li>
-<li>高度，行高以及頂和底邊距都可控制；</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">常見包括 div、p、h1~h6、</span><br><span class="line">ul、ol、li、</span><br><span class="line">dl、dt、dd、</span><br><span class="line">form、table、hr、</span><br><span class="line">blockquote 、</span><br><span class="line">address、menu、pre.....等等</span><br></pre></td></tr></table></figure>
-<h5 id="行內元素"><a href="#行內元素" class="headerlink" title="行內元素"></a>行內元素</h5><ul>
-<li>display預設inline，除非被改變</li>
-<li>設置寬高無效，只能由内容撑起来</li>
-<li>行内元素会排列在同一行，直到一行排不下，才會換行，其寬度隨元素的内容而變化。</li>
-<li>設置上下margin、padding无效，左右padding 、margin有效<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">常見包括</span><br><span class="line">span、em、i、b、strong、</span><br><span class="line">a、img、input、br、select、textarea、q、bdo、</span><br><span class="line">sub、sup...等等</span><br></pre></td></tr></table></figure></li>
-<li>行內不能包含區塊元素</li>
-</ul>
-<p>*可變元素 依上下文決定</p>
-<p>Ref:<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/9fa96ece88f1">https://www.jianshu.com/p/9fa96ece88f1</a></p>
-<h4 id="撰寫規則"><a href="#撰寫規則" class="headerlink" title="撰寫規則"></a>撰寫規則</h4><ul>
+<h3 id="撰寫規則"><a href="#撰寫規則" class="headerlink" title="撰寫規則"></a>撰寫規則</h3><ul>
 <li>屬性值用單引號雙引號都可以</li>
 <li>標籤與屬性大小寫都可以，常見且建議是固定使用小寫 (lowercase)。</li>
 <li>雙引號間的屬性值不能空白<br>什麼是HTML 標籤Tag - HTML 語法教學Tutorial - Fooish 程式技術<br><a target="_blank" rel="noopener" href="https://www.fooish.com/html/tag.html">https://www.fooish.com/html/tag.html</a></li>
 </ul>
-<h4 id="語意標籤"><a href="#語意標籤" class="headerlink" title="語意標籤"></a>語意標籤</h4><p>HTML5中新增了語意化標籤(Semantic Elements)，目的是為了讓標籤(Tag)更具意義，以加強文件的結構化，讓搜尋引擎更清楚了解</p>
+<h3 id="語意標籤"><a href="#語意標籤" class="headerlink" title="語意標籤"></a>語意標籤</h3><p>HTML5中新增了語意化標籤(Semantic Elements)，目的是為了讓標籤(Tag)更具意義，以加強文件的結構化，讓搜尋引擎更清楚了解</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Header 可於body內或是article或是section代表頁首或是首要區塊</span><br><span class="line">Nav 導覽區塊</span><br><span class="line">Main 主要區塊，整頁只有一個</span><br><span class="line">Article 包覆文章</span><br><span class="line">Section 區塊</span><br><span class="line">Div 無意義為包裹區塊排版用</span><br><span class="line">Aside 用來代表主內容的附加內容，未必是側邊欄，廣告等等都可以用</span><br><span class="line">Footer 頁尾</span><br><span class="line">Time 時間</span><br><span class="line">Mark 似螢光筆重點</span><br><span class="line">details 文章的細節</span><br><span class="line">Figure &#x2F;figcaption區塊 引用與標題</span><br><span class="line">&lt;hgroup&gt; 當內容有主標題及次標題等多個標題的狀況下使用。</span><br><span class="line">&lt;cite&gt; 引用其他文獻或作品(例如書籍、歌曲、電影、繪畫、雕塑等）的標題</span><br><span class="line"></span><br><span class="line">&lt;String&gt;  粗體相對於&lt;b&gt;&lt;&#x2F;b&gt;更有強烈意思</span><br><span class="line">&lt;i&gt;&lt;&#x2F;i&gt;italic(斜體)的字首。em 的完整名稱則是 emphasized(強調&#x2F;注重)</span><br><span class="line">s 原文是 strikethrough(刪除線)，del 這個標籤一看就會明白：delete(刪除)。</span><br></pre></td></tr></table></figure>
 <p>好文參考：</p>
 <ul>
@@ -293,7 +277,7 @@
 <li><p><a target="_blank" rel="noopener" href="https://km.nicetypo.com/doc/ead903b94bb8bf01974d3ccdb91a117b">[HTML5]b,i,s 跟 strong,em,del 這些看起來一樣，但意義不同的標籤們</a></p>
 </li>
 </ul>
-<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><h4 id="區塊計算-Box-Model"><a href="#區塊計算-Box-Model" class="headerlink" title="區塊計算 Box Model"></a>區塊計算 Box Model</h4><ul>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="區塊計算-Box-Model"><a href="#區塊計算-Box-Model" class="headerlink" title="區塊計算 Box Model"></a>區塊計算 Box Model</h3><ul>
 <li>Box Model 預設 box-sizing: content-box<ul>
 <li>content 內容 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">width: 寬度值;height: 高度值;</span><br></pre></td></tr></table></figure></li>
 <li>padding 內距<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">padding:上 右 下 左;　padding:上下 左右;　</span><br><span class="line">padding:上 左右 下;　padding:四邊同値;</span><br></pre></td></tr></table></figure></li>
@@ -325,15 +309,71 @@
    ></iframe>
 
 
-<h4 id="css-reset"><a href="#css-reset" class="headerlink" title="css reset"></a>css reset</h4><p>撰寫時會發現元素與視窗有空隙，css reset可以清楚，還有其他一些效果</p>
+<h3 id="css-reset"><a href="#css-reset" class="headerlink" title="css reset"></a>css reset</h3><p>撰寫時會發現元素與視窗有空隙，css reset可以清楚，還有其他一些效果</p>
 <ul>
 <li>React + @emotion/css 套用範例<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import reset from &#39;react-style-reset&#39;;</span><br><span class="line">import &#123; injectGlobal &#125; from &#39;@emotion&#x2F;css&#39;;</span><br><span class="line">injectGlobal(reset, &#123;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h4 id="排版"><a href="#排版" class="headerlink" title="排版"></a>排版</h4><h5 id="隱藏元素"><a href="#隱藏元素" class="headerlink" title="隱藏元素"></a>隱藏元素</h5><p> <a target="_blank" rel="noopener" href="https://www.w3schools.com/css/css_display_visibility.asp">w3schools Hide an Element</a></p>
+<h3 id="排版"><a href="#排版" class="headerlink" title="排版"></a>排版</h3><h4 id="display"><a href="#display" class="headerlink" title="display"></a>display</h4><h5 id="隱藏元素"><a href="#隱藏元素" class="headerlink" title="隱藏元素"></a>隱藏元素</h5><ul>
+<li>display預設為none</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">display: none; &#x2F;&#x2F;空間消失</span><br><span class="line">visibility:hidden &#x2F;&#x2F;空間仍存在</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h5 id="float"><a href="#float" class="headerlink" title="float"></a>float</h5><h5 id="Flex"><a href="#Flex" class="headerlink" title="Flex"></a>Flex</h5><ul>
+<p> <a target="_blank" rel="noopener" href="https://www.w3schools.com/css/css_display_visibility.asp">w3schools Hide an Element</a></p>
+<h5 id="區塊元素"><a href="#區塊元素" class="headerlink" title="區塊元素"></a>區塊元素</h5><ul>
+<li>display預設為block，區塊元素排列都會另起一行，除非被改變</li>
+<li>可設置寬高 width hight</li>
+<li>默認情况下，其寬度自動填满其父元素寬度，即寬度100%</li>
+<li>高度，行高以及頂和底邊距都可控制；</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">常見包括 div、p、h1~h6、</span><br><span class="line">ul、ol、li、</span><br><span class="line">dl、dt、dd、</span><br><span class="line">form、table、hr、</span><br><span class="line">blockquote 、</span><br><span class="line">address、menu、pre.....等等</span><br></pre></td></tr></table></figure>
+<h5 id="行內元素"><a href="#行內元素" class="headerlink" title="行內元素"></a>行內元素</h5><ul>
+<li>display預設inline，除非被改變</li>
+<li>設置寬高無效，只能由内容撑起来，行內元素會依照物件內容的大小決定占用的版面</li>
+<li>行内元素会排列在同一行，直到一行排不下，才會換行，其寬度隨元素的内容而變化。</li>
+<li>設置上下margin、padding无效，左右padding 、margin有效<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">常見包括</span><br><span class="line">span、em、i、b、strong、</span><br><span class="line">a、img、input、br、select、textarea、q、bdo、</span><br><span class="line">sub、sup...等等</span><br></pre></td></tr></table></figure></li>
+<li>行內不能包含區塊元素</li>
+</ul>
+<p>*可變元素 依上下文決定</p>
+<p>Ref:<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/9fa96ece88f1">https://www.jianshu.com/p/9fa96ece88f1</a></p>
+<h5 id="行內區塊"><a href="#行內區塊" class="headerlink" title="行內區塊"></a>行內區塊</h5><ul>
+<li>display：inline-block</li>
+<li>以inline的方式呈現，但同時擁有block的屬性</li>
+</ul>
+<hr>
+<h4 id="Position"><a href="#Position" class="headerlink" title="Position"></a>Position</h4><p>Static：默認值，沒有定位。</p>
+<h5 id="固定定位fixed"><a href="#固定定位fixed" class="headerlink" title="固定定位fixed"></a>固定定位fixed</h5><ul>
+<li>不管滾軸移動，依然在一樣位置</li>
+<li>空間不佔據，會蓋住別人</li>
+<li>固定他在原本寫的位置上</li>
+<li>有寫上右下左就會定位在視窗頂端的相對位置（非自身）</li>
+<li>應用：<ul>
+<li>蓋版廣告（左右上下置中 設立五個 為什麼）</li>
+<li>頂置導覽列top0</li>
+<li>回到上面 bottom 0</li>
+</ul>
+</li>
+</ul>
+<h5 id="relative"><a href="#relative" class="headerlink" title="relative"></a>relative</h5><ul>
+<li>空間會佔據，也會蓋住沒有設定定位的物件</li>
+<li>相對於原本的位置上</li>
+<li>兩個都有定位物件，後面蓋前面</li>
+<li>可以設定z-index 設定優先，預設0</li>
+</ul>
+<h5 id="absolute"><a href="#absolute" class="headerlink" title="absolute"></a>absolute</h5><ul>
+<li>空間不佔據，資料會在原本資料的位置</li>
+<li>設定完上下左右它會往有定位的父層找</li>
+<li>如果找不到會定位在視窗上，不是body(如果想要定在body上，body需要設定定位，往上還有html,有一點差別 )</li>
+<li>應用在不想與人排列的情況，通常父層會用relative,父層想要有排列</li>
+<li>應用：<ul>
+<li>特賣標籤absolute,父層項目relative</li>
+<li>改版廣告的(X)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="float"><a href="#float" class="headerlink" title="float"></a>float</h4><hr>
+<h4 id="Flex"><a href="#Flex" class="headerlink" title="Flex"></a>Flex</h4><ul>
 <li>父層設定可以控制子層的排列方式<iframe src="https://codesandbox.io/embed/flex-base1-xhwn8?fontsize=14&hidenavigation=1&theme=dark&view=preview"
    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
    title="flex-base1"
@@ -343,12 +383,17 @@
 
 </li>
 </ul>
+<hr>
+<h4 id="關於置中"><a href="#關於置中" class="headerlink" title="關於置中"></a>關於置中</h4><h5 id="margin"><a href="#margin" class="headerlink" title="margin"></a>margin</h5><p>“margin:0 atuo;”所代表的的意思是水平居中，區塊元素的容器水平置中。<br>關於<br><a target="_blank" rel="noopener" href="https://www.html.cn/qa/css3/19856.html">margin:0 atuo;”是什么意思？</a><br><a target="_blank" rel="noopener" href="https://fredevangigi.pixnet.net/blog/post/57202532">不要告訴我你懂margin</a></p>
 <p>ＴＢＤ<br>1.align-content<br>2.延伸設定<br>3. default: align-items: stretch; 上下高度自動滿版時有出現空白問題</p>
-<h3 id="範例-layout"><a href="#範例-layout" class="headerlink" title="範例 layout"></a>範例 layout</h3><h4 id="互動式視窗-Modal-window"><a href="#互動式視窗-Modal-window" class="headerlink" title="互動式視窗 Modal window"></a>互動式視窗 Modal window</h4><p>  <a target="_blank" rel="noopener" href="https://www.w3schools.com/howto/howto_css_modals.asp">How TO - CSS/JS Modal</a></p>
+<hr>
+<h2 id="範例版面與物件"><a href="#範例版面與物件" class="headerlink" title="範例版面與物件"></a>範例版面與物件</h2><h3 id="互動式視窗-Modal-window"><a href="#互動式視窗-Modal-window" class="headerlink" title="互動式視窗 Modal window"></a>互動式視窗 Modal window</h3><p>原理：製作一置中視窗，然後先隱藏起來，該位置距離上方可以百分比設定．</p>
 <ul>
-<li>margin: 15% auto; / 15% from the top and centered /</li>
+<li>margin: 15% auto; / 15% from the top and centered /<br><a target="_blank" rel="noopener" href="https://www.w3schools.com/howto/howto_css_modals.asp">w3schools=How TO CSS/JS Modal</a></li>
 </ul>
-<h4 id="input-欄位"><a href="#input-欄位" class="headerlink" title="input 欄位"></a>input 欄位</h4><ul>
+<p>*My React版練習<a target="_blank" rel="noopener" href="https://github.com/yumememooo/counter-water/commit/fd3a285c515fa8cdea8e94a965c6bcd95eff4996">Add: Model</a></p>
+<hr>
+<h3 id="input-欄位"><a href="#input-欄位" class="headerlink" title="input 欄位"></a>input 欄位</h3><ul>
 <li><p>一般的輸入數字框，可以看到預設會有上下箭頭出現</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type&#x3D;&quot;number&quot; value&#x3D;&quot;5&quot;&gt;</span><br></pre></td></tr></table></figure>
 <input type="number" value="5">
@@ -445,7 +490,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML"><span class="nav-number">1.</span> <span class="nav-text">HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Html-%E5%9F%BA%E7%A4%8E"><span class="nav-number">1.1.</span> <span class="nav-text">Html 基礎</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%80%E5%A1%8A%E5%85%83%E7%B4%A0"><span class="nav-number">1.1.1.</span> <span class="nav-text">區塊元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A1%8C%E5%85%A7%E5%85%83%E7%B4%A0"><span class="nav-number">1.1.2.</span> <span class="nav-text">行內元素</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%92%B0%E5%AF%AB%E8%A6%8F%E5%89%87"><span class="nav-number">1.2.</span> <span class="nav-text">撰寫規則</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4"><span class="nav-number">1.3.</span> <span class="nav-text">語意標籤</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS"><span class="nav-number">2.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%80%E5%A1%8A%E8%A8%88%E7%AE%97-Box-Model"><span class="nav-number">2.1.</span> <span class="nav-text">區塊計算 Box Model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css-reset"><span class="nav-number">2.2.</span> <span class="nav-text">css reset</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%92%E7%89%88"><span class="nav-number">2.3.</span> <span class="nav-text">排版</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%9A%B1%E8%97%8F%E5%85%83%E7%B4%A0"><span class="nav-number">2.3.1.</span> <span class="nav-text">隱藏元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#float"><span class="nav-number">2.3.2.</span> <span class="nav-text">float</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Flex"><span class="nav-number">2.3.3.</span> <span class="nav-text">Flex</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B-layout"><span class="nav-number">3.</span> <span class="nav-text">範例 layout</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%92%E5%8B%95%E5%BC%8F%E8%A6%96%E7%AA%97-Modal-window"><span class="nav-number">3.1.</span> <span class="nav-text">互動式視窗 Modal window</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#input-%E6%AC%84%E4%BD%8D"><span class="nav-number">3.2.</span> <span class="nav-text">input 欄位</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML"><span class="nav-number">1.</span> <span class="nav-text">HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Html-%E5%9F%BA%E7%A4%8E"><span class="nav-number">1.1.</span> <span class="nav-text">Html 基礎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%92%B0%E5%AF%AB%E8%A6%8F%E5%89%87"><span class="nav-number">1.2.</span> <span class="nav-text">撰寫規則</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AA%9E%E6%84%8F%E6%A8%99%E7%B1%A4"><span class="nav-number">1.3.</span> <span class="nav-text">語意標籤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS"><span class="nav-number">2.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%80%E5%A1%8A%E8%A8%88%E7%AE%97-Box-Model"><span class="nav-number">2.1.</span> <span class="nav-text">區塊計算 Box Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css-reset"><span class="nav-number">2.2.</span> <span class="nav-text">css reset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%92%E7%89%88"><span class="nav-number">2.3.</span> <span class="nav-text">排版</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#display"><span class="nav-number">2.3.1.</span> <span class="nav-text">display</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%9A%B1%E8%97%8F%E5%85%83%E7%B4%A0"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">隱藏元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8D%80%E5%A1%8A%E5%85%83%E7%B4%A0"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">區塊元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A1%8C%E5%85%A7%E5%85%83%E7%B4%A0"><span class="nav-number">2.3.1.3.</span> <span class="nav-text">行內元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A1%8C%E5%85%A7%E5%8D%80%E5%A1%8A"><span class="nav-number">2.3.1.4.</span> <span class="nav-text">行內區塊</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Position"><span class="nav-number">2.3.2.</span> <span class="nav-text">Position</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9B%BA%E5%AE%9A%E5%AE%9A%E4%BD%8Dfixed"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">固定定位fixed</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#relative"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">relative</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#absolute"><span class="nav-number">2.3.2.3.</span> <span class="nav-text">absolute</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#float"><span class="nav-number">2.3.3.</span> <span class="nav-text">float</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Flex"><span class="nav-number">2.3.4.</span> <span class="nav-text">Flex</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%9C%E6%96%BC%E7%BD%AE%E4%B8%AD"><span class="nav-number">2.3.5.</span> <span class="nav-text">關於置中</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#margin"><span class="nav-number">2.3.5.1.</span> <span class="nav-text">margin</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E7%89%88%E9%9D%A2%E8%88%87%E7%89%A9%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">範例版面與物件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%92%E5%8B%95%E5%BC%8F%E8%A6%96%E7%AA%97-Modal-window"><span class="nav-number">3.1.</span> <span class="nav-text">互動式視窗 Modal window</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#input-%E6%AC%84%E4%BD%8D"><span class="nav-number">3.2.</span> <span class="nav-text">input 欄位</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -460,20 +505,20 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-count">59</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -496,7 +541,7 @@
 <div class="widget-wrap">
     <div id="myCanvasContainer" class="widget tagcloud">
     <canvas width="220" height="250" id="resCanvas" style="width=100%">
-        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Babel/" rel="tag">Babel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CLI/" rel="tag">CLI</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDE/" rel="tag">IDE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA/" rel="tag">IDEA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSX/" rel="tag">JSX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kubernetes/" rel="tag">Kubernetes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Material-ui/" rel="tag">Material-ui</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memory/" rel="tag">Memory</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Promises/" rel="tag">Promises</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aync-await/" rel="tag">aync/await</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browser/" rel="tag">browser</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call-by-sharing/" rel="tag">call by sharing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/callback/" rel="tag">callback</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cleanCode/" rel="tag">cleanCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cors/" rel="tag">cors</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-in-js/" rel="tag">css-in-js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/" rel="tag">debug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deploy/" rel="tag">deploy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticSearch/" rel="tag">elasticSearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/file/" rel="tag">file</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heroku/" rel="tag">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/" rel="tag">http</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hugo/" rel="tag">hugo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ing/" rel="tag">ing</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/" rel="tag">kibana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lint/" rel="tag">lint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/" rel="tag">map</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongo/" rel="tag">mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/" rel="tag">note</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ramda/" rel="tag">ramda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/" rel="tag">react</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recharts/" rel="tag">recharts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86%E7%AF%84%E4%BE%8B/" rel="tag">作品集範例</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E6%A7%8B%E8%B3%A6%E5%80%BC/" rel="tag">解構賦值</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%96%89%E5%8C%85/" rel="tag">閉包</a><span class="tag-list-count">1</span></li></ul>
+        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Babel/" rel="tag">Babel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CLI/" rel="tag">CLI</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Grafana/" rel="tag">Grafana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDE/" rel="tag">IDE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA/" rel="tag">IDEA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSX/" rel="tag">JSX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kubernetes/" rel="tag">Kubernetes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Material-ui/" rel="tag">Material-ui</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memory/" rel="tag">Memory</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MinIO/" rel="tag">MinIO</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Prometheus/" rel="tag">Prometheus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Promises/" rel="tag">Promises</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aws-s3/" rel="tag">aws-s3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aync-await/" rel="tag">aync/await</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browser/" rel="tag">browser</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call-by-sharing/" rel="tag">call by sharing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/callback/" rel="tag">callback</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cleanCode/" rel="tag">cleanCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloud/" rel="tag">cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cors/" rel="tag">cors</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-in-js/" rel="tag">css-in-js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/" rel="tag">debug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deploy/" rel="tag">deploy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticSearch/" rel="tag">elasticSearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/file/" rel="tag">file</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heroku/" rel="tag">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/" rel="tag">http</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hugo/" rel="tag">hugo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ing/" rel="tag">ing</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/" rel="tag">kibana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lint/" rel="tag">lint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/" rel="tag">map</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongo/" rel="tag">mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/monitor/" rel="tag">monitor</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/" rel="tag">note</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ramda/" rel="tag">ramda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/" rel="tag">react</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recharts/" rel="tag">recharts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/storage/" rel="tag">storage</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86%E7%AF%84%E4%BE%8B/" rel="tag">作品集範例</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E6%A7%8B%E8%B3%A6%E5%80%BC/" rel="tag">解構賦值</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%96%89%E5%8C%85/" rel="tag">閉包</a><span class="tag-list-count">1</span></li></ul>
     </canvas>
     </div>
 </div>
