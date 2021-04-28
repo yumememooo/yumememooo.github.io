@@ -48,6 +48,10 @@ categories:
 -
 ```
 
+# 貼上圖片
+/yumememooo.github.io/themes/next-reloaded/source/images/post
+<img src="/images/post/grafanaWin.png" width="300px"/>
+
 
 <span style="background-color:yellow;">先使用再宣告</span>
 
