@@ -62,10 +62,9 @@ date: 2021-02-20 11:33:18
 
 
 
-<table><tr><td valign="top" width="100px">
 
-Promises寫法
-```
+
+``` js Promises寫法
 
     fetch('test.json')
         .then(response => response.json())
@@ -77,12 +76,10 @@ Promises寫法
         });
 ```
 
-<!-- recent_releases starts -->
-</td><td valign="top" width="50%">
 
-await/aync 寫法
+
     
-```
+```js await/aync 寫法
 async function myFetch() {
         let response = await fetch('test.json');
         let myData = await response.json();
@@ -95,11 +92,10 @@ async function myFetch() {
             console.log('catch a problem: ' + e.message);
         });
 ```
-</td></tr></table>
 
 
-- Promises & await/aync混合用法
-```
+
+```js Promises & await/aync混合用法
     async function myFetch2() {
         let response = await fetch('test.json');
         return await response.json();
