@@ -270,6 +270,11 @@ note:
   light_bg_offset: 0
 ```
 
+#### 標籤標注
+{% label info@標示藍色底色 %}
+{% label warning@標示黃色底色 %}
+{% label danger@標示danger底色 %}
+
 #### 文章中貼上圖片
 
 ```
@@ -402,3 +407,12 @@ blabla.....
 ```
 
 意外發現的方法，藉由這樣修改 hexo new post 時就可以把基本的設定加好了
+
+## 參考文章
+- [NextT 開始使用](https://theme-next.iissnan.com/getting-started.html)
+- [NextT 主题配置](https://theme-next.iissnan.com/theme-settings.html)
+- [NextT 內置標籤](https://theme-next.iissnan.com/tag-plugins.html)
+- [Hexo 个人博客 NexT 主题设置 Scheme 外观](https://blog.csdn.net/mqdxiaoxiao/article/details/92843057?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.channel_param)
+- [hexo 页脚添加访客人数和总访问量](https://chrischen0405.github.io/2018/09/11/post20180911/)
+- [Hexo 添加标签云](https://www.jianshu.com/p/2bb36378045d)
+- [【Hexo插件系列】 常用tag](https://blog.eson.org/pub/fc959554/)

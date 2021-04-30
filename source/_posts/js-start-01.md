@@ -250,7 +250,7 @@ no this new
 https://developer.cdn.mozilla.net/zh-TW/docs/Web/JavaScript/Reference/Functions/Arrow_functions#this_%E4%B8%8D%E5%88%86%E5%AE%B6
 
 #### JS的 Hoisting (提升)顶置特性
-- 變數(var hoisting)與函數都可以<span style="background-color:yellow;">先使用再宣告</span>
+- 變數(var hoisting)與函數都可以先使用再宣告
 - 但提升操作不再适用于 let 并引起一个错误(Uncaught ReferenceError)
  ref:[JavaScript Hoisting (提升)](https://shubo.io/javascript-hoisting/#javascript-hoisting-%E6%8F%90%E5%8D%87)
 

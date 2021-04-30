@@ -34,14 +34,6 @@ categories:
 
 <!--more-->
 
-{% note class_name %} Content (不設定) 淡灰色 {% endnote %}
-{% note default %} 灰色 default {% endnote %}
-{% note primary %} 紫色 primary {% endnote %}
-{% note success %} 綠色 success {% endnote %}
-{% note info %} 藍色 info {% endnote %}
-{% note warning %} 黃色 warning {% endnote %}
-{% note danger %} 紅色 danger {% endnote %}
-
 ```go  terminal https://yumememooo.github.io/ 完整程式碼
 ```diff
 +
@@ -52,8 +44,6 @@ categories:
 /yumememooo.github.io/themes/next-reloaded/source/images/post
 <img src="/images/post/grafanaWin.png" width="300px"/>
 
-
-<span style="background-color:yellow;">先使用再宣告</span>
 
 # 網路參考文章
 {% note info %} 本文依照網路文章學習並整理為個人筆記，如有錯誤，歡迎寄信糾正，會馬上更新．

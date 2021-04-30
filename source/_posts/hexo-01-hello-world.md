@@ -163,7 +163,7 @@ $ hexo clean
 清除快取檔案 (db.json) 和已產生的靜態檔案 (public)
 ```
 
-<span style="background-color:yellow;">下一篇會介紹如何更換主題及內文撰寫</span>
+{% label warning@下一篇會介紹如何更換主題及內文撰寫%}
 
 
 ---
@@ -176,9 +176,3 @@ $ hexo clean
   Welcome to [Hexo](https://hexo.io/)! Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues)
 
 - [HEXO 指令](https://hexo.io/zh-tw/docs/commands.html)
-- [NextT 開始使用](https://theme-next.iissnan.com/getting-started.html)
-- [NextT 主题配置](https://theme-next.iissnan.com/theme-settings.html)
-- [NextT 內置標籤](https://theme-next.iissnan.com/tag-plugins.html)
-- [Hexo 个人博客 NexT 主题设置 Scheme 外观](https://blog.csdn.net/mqdxiaoxiao/article/details/92843057?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.channel_param)
-- [hexo 页脚添加访客人数和总访问量](https://chrischen0405.github.io/2018/09/11/post20180911/)
-- [Hexo 添加标签云](https://www.jianshu.com/p/2bb36378045d)
