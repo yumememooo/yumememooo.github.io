@@ -17,13 +17,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"yumememooo.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="上一篇已經建立好基本網站架構了，這篇收集本站所有更改主題及更換的個人化設定．">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[BLOG] 使用 Hexo 撰寫部落格 02- 更換主題與個人化設定">
-<meta property="og:url" content="http://yoursite.com/2021/01/31/hexo-02-themes/index.html">
+<meta property="og:url" content="https://yumememooo.github.io/2021/01/31/hexo-02-themes/index.html">
 <meta property="og:site_name" content="Yume × 程式 Memo">
 <meta property="og:description" content="上一篇已經建立好基本網站架構了，這篇收集本站所有更改主題及更換的個人化設定．">
 <meta property="og:locale" content="en_US">
@@ -34,7 +34,7 @@
 <meta property="article:tag" content="blog">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2021/01/31/hexo-02-themes/">
+<link rel="canonical" href="https://yumememooo.github.io/2021/01/31/hexo-02-themes/">
 
 
 <script id="page-configurations">
@@ -49,21 +49,14 @@
 
   <title>[BLOG] 使用 Hexo 撰寫部落格 02- 更換主題與個人化設定 | Yume × 程式 Memo</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EP12LQLXN4"></script>
     <script>
-      function sendPageView() {
-        if (CONFIG.hostname !== location.hostname) return;
-        var uid = localStorage.getItem('uid') || (Math.random() + '.' + Math.random());
-        localStorage.setItem('uid', uid);
-        navigator.sendBeacon('https://www.google-analytics.com/collect', new URLSearchParams({
-          v  : 1,
-          tid: 'G-EP12LQLXN4',
-          cid: uid,
-          t  : 'pageview',
-          dp : encodeURIComponent(location.pathname)
-        }));
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-EP12LQLXN4');
       }
-      document.addEventListener('pjax:complete', sendPageView);
-      sendPageView();
     </script>
 
 
@@ -186,7 +179,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/31/hexo-02-themes/">
+    <link itemprop="mainEntityOfPage" href="https://yumememooo.github.io/2021/01/31/hexo-02-themes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar_memo.png">
@@ -330,10 +323,10 @@
 <h5 id="標籤外掛（Tag-Plugins）"><a href="#標籤外掛（Tag-Plugins）" class="headerlink" title="標籤外掛（Tag Plugins）"></a>標籤外掛（Tag Plugins）</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">依序為 語言 左上標題 右上網址 網址名稱</span><br><span class="line">&#123;% codeblock lang:<span class="keyword">go</span> terminal https:<span class="comment">//yumememooo.github.io/ 完整程式碼 %&#125;</span></span><br><span class="line"><span class="keyword">go</span> xxx</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br><span class="line"></span><br><span class="line">\\ Backtick Code Block</span><br><span class="line"><span class="string">``</span><span class="string">`go  terminal https://yumememooo.github.io/ 完整程式碼</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>diff</span><br><span class="line">- </span><br><span class="line">+ </span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>codeblock效果</p>
-<figure class="highlight go"><figcaption><span>terminal</span><a target="_blank" rel="noopener" href="https://yumememooo.github.io/">完整程式碼</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> xxx</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><figcaption><span>terminal</span><a href="https://yumememooo.github.io/">完整程式碼</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> xxx</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Backtick Code Block效果</p>
-<figure class="highlight golang"><figcaption><span>terminal</span><a target="_blank" rel="noopener" href="https://yumememooo.github.io/">完整程式碼</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> xxx</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight golang"><figcaption><span>terminal</span><a href="https://yumememooo.github.io/">完整程式碼</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> xxx</span><br></pre></td></tr></table></figure></li>
 <li><p>diff效果</p>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">- go xxx</span></span><br><span class="line"><span class="addition">+ go xxx</span></span><br></pre></td></tr></table></figure>
 <h4 id="文章開頭標記"><a href="#文章開頭標記" class="headerlink" title="文章開頭標記"></a>文章開頭標記</h4></li>
