@@ -38,12 +38,16 @@ fsutil file createnew large_500m.txt 524288000   //500*1024*1024
 fsutil file createnew large_1g.txt 1073741824  //1*1024*1024*1024
 ```
 
+---
+
 ### Mac 環境
-使用 Mac 內建的 mkfile 指令
+在Ｍac環境使用更方便，不需計算大小，使用內建的 mkfile 指令就可以輕鬆建立了：
 - mkfile -n size[b|k|m|g] filename
 ```
 mkfile -n 20m 20mb.txt
 ```
+
+---
 
 ## 網路參考文章
 {% note warning %} <span style="font-size: 9px;">

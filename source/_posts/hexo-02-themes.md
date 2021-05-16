@@ -12,7 +12,7 @@ date: 2021-01-31 10:06:30
 
 > 上一篇已經建立好基本網站架構了，這篇收集本站所有更改主題及更換的個人化設定．
 <!--more-->
-## 更換主題及個人化設定
+## 更換主題設定
 
 ### 更換主網站設定檔
 
@@ -339,59 +339,10 @@ back2top:
   scrollpercent: true 顯示百分比
 ```
 
-### 外部資源/插件設定
 
-#### 標籤雲
+## 個人化設定
 
-1.安裝插件
-
-```
-npm i hexo-tag-cloud --save
-```
-
-2.配置主網站\_config.yml
-要注意不要改錯檔案，不然可以看到標籤雲卻改不了樣式
-
-```
-# hexo-tag-cloud 標籤雲：see https://github.com/MikeCoder/hexo-tag-cloud
-tag_cloud:
-  textFont: Trebuchet MS, Helvetica # 字体
-  textColor: '#869ABF' # 字體颜色
-  textHeight: 12 # 字體高度
-  outlineColor: '#FFCFAB' # 字體背景色
-  maxSpeed: 0.1 # 標籤雲最大移動速度
-  pauseOnSelected: true # true 選中時停止移動
-```
-
-3. 修改主題側邊欄的語言內容
-   以 NexT 主题為例修改 layout/\_macro/sidevar.swig 文件中在 sidebar-inner 新增
-
-```
-{% if site.tags.length > 1 %}
-<script type="text/javascript" charset="utf-8" src="{{ url_for('/js/tagcloud.js') }}"></script>
-<script type="text/javascript" charset="utf-8" src="{{ url_for('/js/tagcanvas.js') }}"></script>
-<div class="widget-wrap">
-    <div id="myCanvasContainer" class="widget tagcloud">
-    <canvas width="220" height="250" id="resCanvas" style="width=100%">
-        {{ list_tags() }}
-    </canvas>
-    </div>
-</div>
-{% endif %}
-
-```
-
-4. 作者 git 上的 Readme 說明 [by version 2.1.2]
-   建議可以關注 https://github.com/MikeCoder/ 說明動作操作
-
-```
-完成安装和显示，可以通过 hexo clean && hexo g && hexo s 来进行本地预览, hexo clean 为必须选项。
-**PS:不要使用 hexo g -d 或者 hexo d -g 这类组合命令。**详情见: Issue 7
-```
-
-### 個人化設定
-
-#### 預設新增文章模板
+### 預設新增文章模板
 
 修改 /scaffolds/post.md 新增自己預設內容
 
@@ -414,5 +365,4 @@ blabla.....
 - [NextT 內置標籤](https://theme-next.iissnan.com/tag-plugins.html)
 - [Hexo 个人博客 NexT 主题设置 Scheme 外观](https://blog.csdn.net/mqdxiaoxiao/article/details/92843057?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.channel_param)
 - [hexo 页脚添加访客人数和总访问量](https://chrischen0405.github.io/2018/09/11/post20180911/)
-- [Hexo 添加标签云](https://www.jianshu.com/p/2bb36378045d)
 - [【Hexo插件系列】 常用tag](https://blog.eson.org/pub/fc959554/)
