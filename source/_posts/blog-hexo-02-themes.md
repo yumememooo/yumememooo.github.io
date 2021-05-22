@@ -124,10 +124,9 @@ categories:
 ---
 ```
 
-3. 開啟頁面
+3. 開啟menu頁面(側邊欄)
 
-```
-_config.yml
+```yaml _config.yml
 # Usage: `Key: /link/ || icon`
 # icon 也可以自由置換 https://fontawesome.com/v4.7.0/icons/
 menu:
