@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="https://yumememooo.github.io/index.html">
 <meta property="og:site_name" content="Yume × 程式 Memo">
 <meta property="og:description" content="後端IT工程師，Go經歷一年 &amp; 正在學習 React。 喜歡貓狗． 持續紀錄自學筆記，如有誤還請您不吝指出與指教＾＾">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_TW">
 <meta property="article:author" content="Yuri">
 <meta name="twitter:card" content="summary">
 
@@ -39,7 +39,7 @@
     sidebar: "",
     isHome : true,
     isPost : false,
-    lang   : 'en'
+    lang   : 'zh-TW'
   };
 </script>
 
@@ -92,7 +92,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切換導航欄">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -122,7 +122,7 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
 
   </li>
         <li class="menu-item menu-item-posts">
@@ -132,17 +132,17 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>categories (分類)</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>tags (標籤)</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>about (關於)</a>
 
   </li>
         <li class="menu-item menu-item-my-note">
@@ -178,7 +178,92 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://yumememooo.github.io/2021/05/30/07-go-time/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar_memo.png">
+      <meta itemprop="name" content="Yuri">
+      <meta itemprop="description" content="後端IT工程師，Go經歷一年 & 正在學習 React。 喜歡貓狗．<br> 持續紀錄自學筆記，如有誤還請您不吝指出與指教＾＾">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yume × 程式 Memo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/30/07-go-time/" class="post-title-link" itemprop="url">[Go 08] 認識時間格式與golang的時間轉換寫法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2021-05-30 10:22:20 / 修改時間：10:26:06" itemprop="dateCreated datePublished" datetime="2021-05-30T10:22:20+08:00">2021-05-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech.</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/back-end/" itemprop="url" rel="index"><span itemprop="name">back-end</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/back-end/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <div class="note info">
+            <p>認識時間格式與golang的時間轉換寫法</p>
+          </div>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/05/30/07-go-time/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://yumememooo.github.io/2021/05/21/blog-docusaurus-01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -201,30 +286,30 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">發表於</span>
 
-              <time title="Created: 2021-05-21 18:39:33" itemprop="dateCreated datePublished" datetime="2021-05-21T18:39:33+08:00">2021-05-21</time>
+              <time title="創建時間：2021-05-21 18:39:33" itemprop="dateCreated datePublished" datetime="2021-05-21T18:39:33+08:00">2021-05-21</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-22 21:31:05" itemprop="dateModified" datetime="2021-05-22T21:31:05+08:00">2021-05-22</time>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-23 19:47:17" itemprop="dateModified" datetime="2021-05-23T19:47:17+08:00">2021-05-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech.</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/Web/blog/" itemprop="url" rel="index"><span itemprop="name">blog</span></a>
                 </span>
@@ -251,15 +336,15 @@
 <hr>
 <p>個人選擇的優點：</p>
 <ol>
-<li>左側有可以闓盒的側欄，且進入文章後不會不見，可以快速瀏覽，且有搜尋文章的功能．</li>
-<li>作為文檔保存筆記</li>
+<li>左側有可以開闔的側欄，且進入文章後不會不見，可以快速瀏覽．</li>
+<li>單純作為文檔保存筆記而建立</li>
 <li>玩玩Docusaurus ！！</li>
 </ol>
-<p>（第一點雖然hexo我有試圖找過有沒有不同主題可以符合這樣的需求，但就當作為了切開而架架另一種風格的部落格，而且也很快速）</p>
+<p>（第一點雖然hexo我有試圖找過有沒有不同主題可以符合這樣的需求，但搜尋上有點困難，就當作為了切開風格而另架一種風格的網站，而且也很快速．）</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/05/21/blog-docusaurus-01/#more" rel="contents">
-                Read more &raquo;
+                閱讀全文 &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -281,7 +366,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://yumememooo.github.io/2021/04/28/monitor-promethus-grafana/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -304,30 +389,30 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">發表於</span>
 
-              <time title="Created: 2021-04-28 20:20:29" itemprop="dateCreated datePublished" datetime="2021-04-28T20:20:29+08:00">2021-04-28</time>
+              <time title="創建時間：2021-04-28 20:20:29" itemprop="dateCreated datePublished" datetime="2021-04-28T20:20:29+08:00">2021-04-28</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-22 21:31:05" itemprop="dateModified" datetime="2021-05-22T21:31:05+08:00">2021-05-22</time>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-23 10:57:29" itemprop="dateModified" datetime="2021-05-23T10:57:29+08:00">2021-05-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech.</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/back-end/" itemprop="url" rel="index"><span itemprop="name">back-end</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/back-end/monitor/" itemprop="url" rel="index"><span itemprop="name">monitor</span></a>
                 </span>
@@ -347,10 +432,20 @@
           <div class="note info">
             <p>使用Prometheus+Grafana監控效能 </p>
           </div>
+
+
+
+
+<h2 id="介紹"><a href="#介紹" class="headerlink" title="介紹"></a>介紹</h2><h3 id="Prometheus"><a href="#Prometheus" class="headerlink" title="Prometheus"></a>Prometheus</h3><blockquote>
+<p>普羅米修斯是開源的免費應用程序。可以很容易建立不同維度的 metrics及資訊視覺化圖表的監控與查詢，也有告警設定，Kubernetes的核心組件也可以找到它的身影，許多知名公司如：Uber也有導入。</p>
+</blockquote>
+<h3 id="Grafana"><a href="#Grafana" class="headerlink" title="Grafana"></a>Grafana</h3><blockquote>
+<p>Grafana是一個跨平台、開源的資料視覺化網路應用程式平台。使用者組態連接的資料來源之後，Grafana可以在網路瀏覽器里顯示資料圖表和警告。該軟體的企業版本提供更多的擴充功能。擴充功能通過外掛程式的形式提供，終端使用者可以自訂自己的資料面板介面以及資料請求方式。Grafana被廣泛使用，包括維基百科專案。</p>
+</blockquote>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/04/28/monitor-promethus-grafana/#more" rel="contents">
-                Read more &raquo;
+                閱讀全文 &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -372,7 +467,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://yumememooo.github.io/2021/04/28/aws-s3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -395,30 +490,30 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">發表於</span>
 
-              <time title="Created: 2021-04-28 19:26:23" itemprop="dateCreated datePublished" datetime="2021-04-28T19:26:23+08:00">2021-04-28</time>
+              <time title="創建時間：2021-04-28 19:26:23" itemprop="dateCreated datePublished" datetime="2021-04-28T19:26:23+08:00">2021-04-28</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-22 21:31:05" itemprop="dateModified" datetime="2021-05-22T21:31:05+08:00">2021-05-22</time>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-22 21:31:05" itemprop="dateModified" datetime="2021-05-22T21:31:05+08:00">2021-05-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech.</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/cloud/" itemprop="url" rel="index"><span itemprop="name">cloud</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/cloud/storage/" itemprop="url" rel="index"><span itemprop="name">storage</span></a>
                 </span>
@@ -441,7 +536,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/04/28/aws-s3/#more" rel="contents">
-                Read more &raquo;
+                閱讀全文 &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -463,7 +558,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://yumememooo.github.io/2021/04/24/docker-elastic-kibana/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -486,38 +581,38 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">發表於</span>
 
-              <time title="Created: 2021-04-24 10:06:20" itemprop="dateCreated datePublished" datetime="2021-04-24T10:06:20+08:00">2021-04-24</time>
+              <time title="創建時間：2021-04-24 10:06:20" itemprop="dateCreated datePublished" datetime="2021-04-24T10:06:20+08:00">2021-04-24</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-22 21:31:05" itemprop="dateModified" datetime="2021-05-22T21:31:05+08:00">2021-05-22</time>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-22 21:31:05" itemprop="dateModified" datetime="2021-05-22T21:31:05+08:00">2021-05-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech.</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/back-end/" itemprop="url" rel="index"><span itemprop="name">back-end</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/deploy/" itemprop="url" rel="index"><span itemprop="name">deploy</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/deploy/docker/" itemprop="url" rel="index"><span itemprop="name">docker</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/back-end/elasticSearch/" itemprop="url" rel="index"><span itemprop="name">elasticSearch</span></a>
                 </span>
@@ -547,7 +642,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/04/24/docker-elastic-kibana/#more" rel="contents">
-                Read more &raquo;
+                閱讀全文 &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -569,7 +664,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://yumememooo.github.io/2021/04/20/fake-file/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -592,30 +687,30 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">發表於</span>
 
-              <time title="Created: 2021-04-20 18:33:30" itemprop="dateCreated datePublished" datetime="2021-04-20T18:33:30+08:00">2021-04-20</time>
+              <time title="創建時間：2021-04-20 18:33:30" itemprop="dateCreated datePublished" datetime="2021-04-20T18:33:30+08:00">2021-04-20</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-22 21:31:05" itemprop="dateModified" datetime="2021-05-22T21:31:05+08:00">2021-05-22</time>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-22 21:31:05" itemprop="dateModified" datetime="2021-05-22T21:31:05+08:00">2021-05-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech.</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/Mac/" itemprop="url" rel="index"><span itemprop="name">Mac</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
                 </span>
@@ -638,7 +733,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/04/20/fake-file/#more" rel="contents">
-                Read more &raquo;
+                閱讀全文 &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -660,7 +755,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://yumememooo.github.io/2021/04/20/http-cors/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -683,30 +778,30 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">發表於</span>
 
-              <time title="Created: 2021-04-20 18:24:51" itemprop="dateCreated datePublished" datetime="2021-04-20T18:24:51+08:00">2021-04-20</time>
+              <time title="創建時間：2021-04-20 18:24:51" itemprop="dateCreated datePublished" datetime="2021-04-20T18:24:51+08:00">2021-04-20</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-22 21:31:05" itemprop="dateModified" datetime="2021-05-22T21:31:05+08:00">2021-05-22</time>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-22 21:31:05" itemprop="dateModified" datetime="2021-05-22T21:31:05+08:00">2021-05-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech.</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/web/browser/" itemprop="url" rel="index"><span itemprop="name">browser</span></a>
                 </span>
@@ -729,7 +824,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/04/20/http-cors/#more" rel="contents">
-                Read more &raquo;
+                閱讀全文 &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -751,7 +846,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://yumememooo.github.io/2021/04/18/react-css/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -774,34 +869,34 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">發表於</span>
 
-              <time title="Created: 2021-04-18 21:21:19" itemprop="dateCreated datePublished" datetime="2021-04-18T21:21:19+08:00">2021-04-18</time>
+              <time title="創建時間：2021-04-18 21:21:19" itemprop="dateCreated datePublished" datetime="2021-04-18T21:21:19+08:00">2021-04-18</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-22 21:31:05" itemprop="dateModified" datetime="2021-05-22T21:31:05+08:00">2021-05-22</time>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-22 21:31:05" itemprop="dateModified" datetime="2021-05-22T21:31:05+08:00">2021-05-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech.</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/Web/front-end/" itemprop="url" rel="index"><span itemprop="name">front-end</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/Web/front-end/react/" itemprop="url" rel="index"><span itemprop="name">react</span></a>
                 </span>
@@ -825,7 +920,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/04/18/react-css/#more" rel="contents">
-                Read more &raquo;
+                閱讀全文 &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -847,7 +942,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://yumememooo.github.io/2021/03/01/ui-figma/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -870,34 +965,34 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">發表於</span>
 
-              <time title="Created: 2021-03-01 16:37:38" itemprop="dateCreated datePublished" datetime="2021-03-01T16:37:38+08:00">2021-03-01</time>
+              <time title="創建時間：2021-03-01 16:37:38" itemprop="dateCreated datePublished" datetime="2021-03-01T16:37:38+08:00">2021-03-01</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-22 21:31:05" itemprop="dateModified" datetime="2021-05-22T21:31:05+08:00">2021-05-22</time>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-22 21:31:05" itemprop="dateModified" datetime="2021-05-22T21:31:05+08:00">2021-05-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech.</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/Web/front-end/" itemprop="url" rel="index"><span itemprop="name">front-end</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/Web/front-end/figma/" itemprop="url" rel="index"><span itemprop="name">figma</span></a>
                 </span>
@@ -925,7 +1020,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/03/01/ui-figma/#more" rel="contents">
-                Read more &raquo;
+                閱讀全文 &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -947,7 +1042,7 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://yumememooo.github.io/2021/02/27/react03-component-props/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -970,34 +1065,34 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">發表於</span>
 
-              <time title="Created: 2021-02-27 20:40:59" itemprop="dateCreated datePublished" datetime="2021-02-27T20:40:59+08:00">2021-02-27</time>
+              <time title="創建時間：2021-02-27 20:40:59" itemprop="dateCreated datePublished" datetime="2021-02-27T20:40:59+08:00">2021-02-27</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-22 21:31:05" itemprop="dateModified" datetime="2021-05-22T21:31:05+08:00">2021-05-22</time>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-22 21:31:05" itemprop="dateModified" datetime="2021-05-22T21:31:05+08:00">2021-05-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech.</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/Web/front-end/" itemprop="url" rel="index"><span itemprop="name">front-end</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/Web/front-end/react/" itemprop="url" rel="index"><span itemprop="name">react</span></a>
                 </span>
@@ -1037,104 +1132,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/02/27/react03-component-props/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://yumememooo.github.io/2021/02/20/js-start-02/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar_memo.png">
-      <meta itemprop="name" content="Yuri">
-      <meta itemprop="description" content="後端IT工程師，Go經歷一年 & 正在學習 React。 喜歡貓狗．<br> 持續紀錄自學筆記，如有誤還請您不吝指出與指教＾＾">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yume × 程式 Memo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/20/js-start-02/" class="post-title-link" itemprop="url">[JS 02] 同步與非同步</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-02-20 11:33:18" itemprop="dateCreated datePublished" datetime="2021-02-20T11:33:18+08:00">2021-02-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-22 21:31:05" itemprop="dateModified" datetime="2021-05-22T21:31:05+08:00">2021-05-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech.</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/Web/front-end/" itemprop="url" rel="index"><span itemprop="name">front-end</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/Web/front-end/js/" itemprop="url" rel="index"><span itemprop="name">js</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <div class="note info">
-            <p>延續學習ＪＳ的同步與非同步概念 </p>
-          </div>
-
-<p>☝☝本記錄為個人學習整理，如有誤還請您不吝指教，也有引用文章位置，如有問題也請告知．</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/02/20/js-start-02/#more" rel="contents">
-                Read more &raquo;
+                閱讀全文 &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -1156,7 +1154,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
   </nav>
 
 
@@ -1200,10 +1198,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目錄
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          本站概要
         </li>
       </ul>
 
@@ -1223,21 +1221,21 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">43</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-count">44</span>
+          <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
         <span class="site-state-item-count">31</span>
-        <span class="site-state-item-name">categories</span></a>
+        <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
         <span class="site-state-item-count">61</span>
-        <span class="site-state-item-name">tags</span></a>
+        <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
 </div>
@@ -1259,7 +1257,7 @@
 <div class="widget-wrap">
     <div id="myCanvasContainer" class="widget tagcloud">
     <canvas width="220" height="250" id="resCanvas" style="width=100%">
-        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Babel/" rel="tag">Babel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CLI/" rel="tag">CLI</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Grafana/" rel="tag">Grafana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDE/" rel="tag">IDE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA/" rel="tag">IDEA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSX/" rel="tag">JSX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kubernetes/" rel="tag">Kubernetes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Material-ui/" rel="tag">Material-ui</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memory/" rel="tag">Memory</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MinIO/" rel="tag">MinIO</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Prometheus/" rel="tag">Prometheus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Promises/" rel="tag">Promises</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aws-s3/" rel="tag">aws-s3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aync-await/" rel="tag">aync/await</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browser/" rel="tag">browser</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call-by-sharing/" rel="tag">call by sharing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/callback/" rel="tag">callback</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cleanCode/" rel="tag">cleanCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloud/" rel="tag">cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cors/" rel="tag">cors</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-in-js/" rel="tag">css-in-js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/" rel="tag">debug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deploy/" rel="tag">deploy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docusaurus/" rel="tag">docusaurus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticSearch/" rel="tag">elasticSearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/file/" rel="tag">file</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google-analytics/" rel="tag">google_analytics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heroku/" rel="tag">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/" rel="tag">http</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hugo/" rel="tag">hugo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ing/" rel="tag">ing</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/" rel="tag">kibana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lint/" rel="tag">lint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/" rel="tag">map</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongo/" rel="tag">mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/monitor/" rel="tag">monitor</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/" rel="tag">note</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ramda/" rel="tag">ramda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/" rel="tag">react</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recharts/" rel="tag">recharts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/storage/" rel="tag">storage</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86%E7%AF%84%E4%BE%8B/" rel="tag">作品集範例</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E6%A7%8B%E8%B3%A6%E5%80%BC/" rel="tag">解構賦值</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%96%89%E5%8C%85/" rel="tag">閉包</a><span class="tag-list-count">1</span></li></ul>
+        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Babel/" rel="tag">Babel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CLI/" rel="tag">CLI</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Grafana/" rel="tag">Grafana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDE/" rel="tag">IDE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA/" rel="tag">IDEA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSX/" rel="tag">JSX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kubernetes/" rel="tag">Kubernetes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Material-ui/" rel="tag">Material-ui</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memory/" rel="tag">Memory</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MinIO/" rel="tag">MinIO</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Prometheus/" rel="tag">Prometheus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Promises/" rel="tag">Promises</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aws-s3/" rel="tag">aws-s3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aync-await/" rel="tag">aync/await</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browser/" rel="tag">browser</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call-by-sharing/" rel="tag">call by sharing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/callback/" rel="tag">callback</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cleanCode/" rel="tag">cleanCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloud/" rel="tag">cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cors/" rel="tag">cors</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-in-js/" rel="tag">css-in-js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/" rel="tag">debug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deploy/" rel="tag">deploy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docusaurus/" rel="tag">docusaurus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticSearch/" rel="tag">elasticSearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/file/" rel="tag">file</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google-analytics/" rel="tag">google_analytics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heroku/" rel="tag">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/" rel="tag">http</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hugo/" rel="tag">hugo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ing/" rel="tag">ing</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/" rel="tag">kibana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lint/" rel="tag">lint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/" rel="tag">map</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongo/" rel="tag">mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/monitor/" rel="tag">monitor</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/" rel="tag">note</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ramda/" rel="tag">ramda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/" rel="tag">react</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recharts/" rel="tag">recharts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/storage/" rel="tag">storage</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86%E7%AF%84%E4%BE%8B/" rel="tag">作品集範例</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E6%A7%8B%E8%B3%A6%E5%80%BC/" rel="tag">解構賦值</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%96%89%E5%8C%85/" rel="tag">閉包</a><span class="tag-list-count">1</span></li></ul>
     </canvas>
     </div>
 </div>
@@ -1287,7 +1285,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Yuri</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
   </div>
 
         
@@ -1297,7 +1295,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
       </span>
-      <span class="site-uv" title="Total Visitors">
+      <span class="site-uv" title="訪客總數">
         <span id="busuanzi_value_site_uv"></span>
       </span>
     </span>
@@ -1306,7 +1304,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-eye"></i>
       </span>
-      <span class="site-pv" title="Total Views">
+      <span class="site-pv" title="總瀏覽次數">
         <span id="busuanzi_value_site_pv"></span>
       </span>
     </span>

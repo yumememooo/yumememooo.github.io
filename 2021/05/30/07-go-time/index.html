@@ -20,17 +20,20 @@
     var CONFIG = {"hostname":"yumememooo.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="後端IT工程師，Go經歷一年 &amp; 正在學習 React。 喜歡貓狗． 持續紀錄自學筆記，如有誤還請您不吝指出與指教＾＾">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yume × 程式 Memo">
-<meta property="og:url" content="https://yumememooo.github.io/categories/Tech/back-end/monitor/index.html">
+  <meta name="description" content="認識時間格式與golang的時間轉換寫法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Go 08] 認識時間格式與golang的時間轉換寫法">
+<meta property="og:url" content="https://yumememooo.github.io/2021/05/30/07-go-time/index.html">
 <meta property="og:site_name" content="Yume × 程式 Memo">
-<meta property="og:description" content="後端IT工程師，Go經歷一年 &amp; 正在學習 React。 喜歡貓狗． 持續紀錄自學筆記，如有誤還請您不吝指出與指教＾＾">
+<meta property="og:description" content="認識時間格式與golang的時間轉換寫法">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2021-05-30T02:22:20.000Z">
+<meta property="article:modified_time" content="2021-05-30T02:26:06.451Z">
 <meta property="article:author" content="Yuri">
+<meta property="article:tag" content="golang">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://yumememooo.github.io/categories/Tech/back-end/monitor/">
+<link rel="canonical" href="https://yumememooo.github.io/2021/05/30/07-go-time/">
 
 
 <script id="page-configurations">
@@ -38,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>分類: monitor | Yume × 程式 Memo</title>
+  <title>[Go 08] 認識時間格式與golang的時間轉換寫法 | Yume × 程式 Memo</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EP12LQLXN4"></script>
     <script>
@@ -173,51 +176,169 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">monitor
-          <small>分類</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://yumememooo.github.io/2021/05/30/07-go-time/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar_memo.png">
+      <meta itemprop="name" content="Yuri">
+      <meta itemprop="description" content="後端IT工程師，Go經歷一年 & 正在學習 React。 喜歡貓狗．<br> 持續紀錄自學筆記，如有誤還請您不吝指出與指教＾＾">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yume × 程式 Memo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Go 08] 認識時間格式與golang的時間轉換寫法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2021-05-30 10:22:20 / 修改時間：10:26:06" itemprop="dateCreated datePublished" datetime="2021-05-30T10:22:20+08:00">2021-05-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech.</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/back-end/" itemprop="url" rel="index"><span itemprop="name">back-end</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/back-end/golang/" itemprop="url" rel="index"><span itemprop="name">golang</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <div class="note info">
+            <p>認識時間格式與golang的時間轉換寫法</p>
+          </div>
+
+<a id="more"></a>
+
+
+
+<h2 id="時間的各種顯示格式"><a href="#時間的各種顯示格式" class="headerlink" title="時間的各種顯示格式"></a>時間的各種顯示格式</h2><p>時間可以以很多格式化的方式做顯示。例如最常看到的2021-04-22 17:27:44</p>
+<h3 id="標準時間格式"><a href="#標準時間格式" class="headerlink" title="標準時間格式"></a>標準時間格式</h3><p>國際標準格式，像是 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/ISO_8601">ISO_8601</a></p>
+<ul>
+<li>合併表示時，要在時間前面加一大寫字母T</li>
+<li>如果時間在零時區，並恰好與協調世界時相同，那麼（不加空格）在時間最後加一個大寫字母Z<br>例如以下這樣的顯示方式:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2021-04-28T01:51:35Z</span><br><span class="line">2004-05-03T17:30:08+08:00  &#x2F;&#x2F;+08:00代表比世界協調時間快8小時的時區</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="UNIX時間與時間戳"><a href="#UNIX時間與時間戳" class="headerlink" title="UNIX時間與時間戳"></a>UNIX時間與時間戳</h3><p>UNIX時間代表從UTC1970年1月1日0時0分0秒起至現在的總秒數</p>
+<ul>
+<li>而UTC為世界協調時間（英語：Coordinated Universal Time，法語：Temps Universel Coordonné，簡稱UTC）是最主要的世界時間標準。</li>
+</ul>
+<ul>
+<li>這種你會看到可能是十位數的數字(s:1621999487)或是十三位數的數字(ms:1621999487377)，可以透過<a target="_blank" rel="noopener" href="https://tool.lu/timestamp/">線上時間戳轉換器</a>得出代表的時間。</li>
+</ul>
+<h3 id="時區的轉換"><a href="#時區的轉換" class="headerlink" title="時區的轉換"></a>時區的轉換</h3><p>世界各國位於地球不同位置上，，不同地區的人會有不同的地方時間，可以看<a target="_blank" rel="noopener" href="https://tw.piliapp.com/time-now/converter/">時區轉換器</a></p>
+<h2 id="golang-時間轉換"><a href="#golang-時間轉換" class="headerlink" title="golang 時間轉換"></a>golang 時間轉換</h2><p>接著說明使用golang實現以上幾種常見的轉換。</p>
+<p>四種轉換:</p>
+<ol>
+<li><p>將時間戳轉換為時間</p>
+</li>
+<li><p>將時間做格式化輸出，golang語法的時間輸出跟java比較不一樣。<br>2-1 2006-01-02 15:04:05-0700 對應到    yyyy-MM-dd HH:mm:ss Z，請見<a target="_blank" rel="noopener" href="https://programming.guide/go/format-parse-string-time-date-example.html">golang 與java time的對照表</a><br>2-2 記憶順序有點像是06代表年，後面則是1,2,3,4,5,7</p>
+</li>
+<li><p>時區轉換: FixedZone 可以自訂時區信息，(name,位移的秒數)，loc := time.FixedZone(“UTC-8”, -8<em>60</em>60)第二個參數轉移多少秒，可以改+8時區等等</p>
+</li>
+<li><p>時區轉換by LoadLocation，可以輸入空值，”UTC”，”Local”，或是時區的資料庫EX:Asia/Taipei”，使用的資料庫為<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">IANA Time Zone database</a>，<br>會依下列順序去找尋：</p>
+<ul>
+<li>ZONEINFO 環境變數所指定的zip文件</li>
+<li>Unix系统中已经安装的</li>
+<li>$GOROOT/lib/time/zoneinfo.zip，</li>
+</ul>
+</li>
+</ol>
+<p>因此如果在windows系统上，没有安装go語言環境，time.LoadLocation會失敗，建議用time.FixedZone。<br>另外在docker環境裡也要注意使用的image是否已經有包含這些資料，否則會出現unknown time zone XXXX的錯誤。<br>解決方法需要加入以下兩句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FROM alpine</span><br><span class="line">...</span><br><span class="line">COPY --from&#x3D;0 &#x2F;usr&#x2F;local&#x2F;go&#x2F;lib&#x2F;time&#x2F;zoneinfo.zip &#x2F;opt&#x2F;zoneinfo.zip</span><br><span class="line">ENV ZONEINFO &#x2F;opt&#x2F;zoneinfo.zip</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+
+<p>範例程式:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;time&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	var Time int64</span><br><span class="line">	Time &#x3D; 1619083664867 &#x2F;&#x2F;ms-&gt;2021-04-22 17:27:44</span><br><span class="line"></span><br><span class="line">	t :&#x3D; time.Unix(0, Time*int64(time.Millisecond))</span><br><span class="line">	fmt.Println(&quot;case1: timestamp to time:&quot;, t)</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	layout1 :&#x3D; &quot;2006-01-02T15:04:05&quot;</span><br><span class="line">	fmt.Println(&quot;case2: Formatlayout1:&quot;, t.Format(layout1))</span><br><span class="line">	</span><br><span class="line">	zone :&#x3D; time.FixedZone(&quot;&quot;, +0*60*60)</span><br><span class="line">	newTimezone0 :&#x3D; t.In(zone)</span><br><span class="line">	fmt.Println(&quot;case3: Timezone at +0:&quot;, newTimezone0.Format(layout1))</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; name :&#x3D; &quot;America&#x2F;New_York&quot;</span><br><span class="line">	name :&#x3D; &quot;Asia&#x2F;Taipei&quot;</span><br><span class="line">	t, err :&#x3D; TimeIn(t, name)</span><br><span class="line">	if err !&#x3D; nil &#123;</span><br><span class="line">		fmt.Println(&quot;err:&quot;, err)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(&quot;case3: Timezone at Taipei:&quot;, t.Format(layout1))</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">func TimeIn(t time.Time, name string) (time.Time, error) &#123;</span><br><span class="line">	loc, err :&#x3D; time.LoadLocation(name)</span><br><span class="line">	if err &#x3D;&#x3D; nil &#123;</span><br><span class="line">		t &#x3D; t.In(loc)</span><br><span class="line">	&#125;</span><br><span class="line">	return t, err</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>轉換結果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">timestamp: 1619083664867</span><br><span class="line">case1: timestamp to time: 2021-04-22 09:27:44.867 +0000 UTC</span><br><span class="line">case2: Formatlayout1: 2021-04-22T09:27:44</span><br><span class="line">case3: Timezone at +0: 2021-04-22T09:27:44</span><br><span class="line">case3: Timezone at Taipei: 2021-04-22T17:27:44</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="網路參考文章"><a href="#網路參考文章" class="headerlink" title="網路參考文章"></a>網路參考文章</h2><div class="note warning">
+             <span style="font-size: 9px;">學習路上感謝網路大神們，如果你發現了我，可以查看以下參考文章了解更多概念👇👇👇</span>
+          </div>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34908844/article/details/78817420">数据库存时间戳的好处</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/time-unix-function-in-golang-with-examples/">time-unix examples</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.translatorscafe.com/unit-converter/zh-CN/time/2-4/millisecond-nanosecond/">1milli-&gt;1000000 nano sec</a></li>
+<li><a target="_blank" rel="noopener" href="https://jasonlee.xyz/golang-timezone/">Golang 時區 golang-timezone</a></li>
+<li><a target="_blank" rel="noopener" href="https://pansci.asia/archives/84978">到底是 GMT+8 還是 UTC+8 ?</a></li>
+<li><a target="_blank" rel="noopener" href="https://yourbasic.org/golang/time-change-convert-location-timezone/">golang-TimeIn example</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/c7f7fbb16932">Golang神奇的2006-01-02 15:04:05</a></li>
+<li><a target="_blank" rel="noopener" href="https://syaning.github.io/go-pkgs/time/#location">Go语言标准包解析Location</a></li>
+<li><a target="_blank" rel="noopener" href="https://studygolang.com/articles/13018">Golang时区设置</a></li>
+<li><a target="_blank" rel="noopener" href="https://liqiang.io/post/unknonw-time-zone-solution-with-running-go-in-docker-6d0edc5d">解决容器运行 Go 代码 unknown time zone 的正确姿势</a></li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-04-28T20:20:29+08:00"
-              content="2021-04-28">
-          04-28
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/golang/" rel="tag"># golang</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/04/28/monitor-promethus-grafana/" itemprop="url">
-            <span itemprop="name">使用Prometheus+Grafana監控效能</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/05/21/blog-docusaurus-01/" rel="prev" title="[BLOG] 五分鐘教你使用 docusaurus 建立筆記部落格">
+      <i class="fa fa-chevron-left"></i> [BLOG] 五分鐘教你使用 docusaurus 建立筆記部落格
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -270,6 +391,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%99%82%E9%96%93%E7%9A%84%E5%90%84%E7%A8%AE%E9%A1%AF%E7%A4%BA%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">時間的各種顯示格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%99%E6%BA%96%E6%99%82%E9%96%93%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">標準時間格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UNIX%E6%99%82%E9%96%93%E8%88%87%E6%99%82%E9%96%93%E6%88%B3"><span class="nav-number">1.2.</span> <span class="nav-text">UNIX時間與時間戳</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%82%E5%8D%80%E7%9A%84%E8%BD%89%E6%8F%9B"><span class="nav-number">1.3.</span> <span class="nav-text">時區的轉換</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#golang-%E6%99%82%E9%96%93%E8%BD%89%E6%8F%9B"><span class="nav-number">2.</span> <span class="nav-text">golang 時間轉換</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B6%B2%E8%B7%AF%E5%8F%83%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">3.</span> <span class="nav-text">網路參考文章</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

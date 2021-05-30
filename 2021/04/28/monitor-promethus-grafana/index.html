@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -20,16 +20,16 @@
     var CONFIG = {"hostname":"yumememooo.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="使用Prometheus+Grafana監控效能">
+  <meta name="description" content="使用Prometheus+Grafana監控效能                 介紹Prometheus 普羅米修斯是開源的免費應用程序。可以很容易建立不同維度的 metrics及資訊視覺化圖表的監控與查詢，也有告警設定，Kubernetes的核心組件也可以找到它的身影，許多知名公司如：Uber也有導入。  Grafana Grafana是一個跨平台、開源的資料視覺化網">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Prometheus+Grafana監控效能">
 <meta property="og:url" content="https://yumememooo.github.io/2021/04/28/monitor-promethus-grafana/index.html">
 <meta property="og:site_name" content="Yume × 程式 Memo">
-<meta property="og:description" content="使用Prometheus+Grafana監控效能">
-<meta property="og:locale" content="en_US">
+<meta property="og:description" content="使用Prometheus+Grafana監控效能                 介紹Prometheus 普羅米修斯是開源的免費應用程序。可以很容易建立不同維度的 metrics及資訊視覺化圖表的監控與查詢，也有告警設定，Kubernetes的核心組件也可以找到它的身影，許多知名公司如：Uber也有導入。  Grafana Grafana是一個跨平台、開源的資料視覺化網">
+<meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://yumememooo.github.io/images/post/grafanaWin.png">
 <meta property="article:published_time" content="2021-04-28T12:20:29.000Z">
-<meta property="article:modified_time" content="2021-05-22T13:31:05.713Z">
+<meta property="article:modified_time" content="2021-05-23T02:57:29.411Z">
 <meta property="article:author" content="Yuri">
 <meta property="article:tag" content="Prometheus">
 <meta property="article:tag" content="Grafana">
@@ -46,7 +46,7 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'en'
+    lang   : 'zh-TW'
   };
 </script>
 
@@ -99,7 +99,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切換導航欄">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -129,7 +129,7 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
 
   </li>
         <li class="menu-item menu-item-posts">
@@ -139,17 +139,17 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>categories (分類)</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>tags (標籤)</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>about (關於)</a>
 
   </li>
         <li class="menu-item menu-item-my-note">
@@ -186,7 +186,7 @@
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://yumememooo.github.io/2021/04/28/monitor-promethus-grafana/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -208,41 +208,41 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">發表於</span>
 
-              <time title="Created: 2021-04-28 20:20:29" itemprop="dateCreated datePublished" datetime="2021-04-28T20:20:29+08:00">2021-04-28</time>
+              <time title="創建時間：2021-04-28 20:20:29" itemprop="dateCreated datePublished" datetime="2021-04-28T20:20:29+08:00">2021-04-28</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-22 21:31:05" itemprop="dateModified" datetime="2021-05-22T21:31:05+08:00">2021-05-22</time>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-23 10:57:29" itemprop="dateModified" datetime="2021-05-23T10:57:29+08:00">2021-05-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech.</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/back-end/" itemprop="url" rel="index"><span itemprop="name">back-end</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Tech/back-end/monitor/" itemprop="url" rel="index"><span itemprop="name">monitor</span></a>
                 </span>
             </span>
 
           
-            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+            <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv" style="display: none;">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
-              <span class="post-meta-item-text">Views: </span>
+              <span class="post-meta-item-text">閱讀次數：</span>
               <span id="busuanzi_value_page_pv"></span>
             </span>
 
@@ -261,7 +261,6 @@
 
 
 
-<a id="more"></a>
 
 <h2 id="介紹"><a href="#介紹" class="headerlink" title="介紹"></a>介紹</h2><h3 id="Prometheus"><a href="#Prometheus" class="headerlink" title="Prometheus"></a>Prometheus</h3><blockquote>
 <p>普羅米修斯是開源的免費應用程序。可以很容易建立不同維度的 metrics及資訊視覺化圖表的監控與查詢，也有告警設定，Kubernetes的核心組件也可以找到它的身影，許多知名公司如：Uber也有導入。</p>
@@ -269,6 +268,8 @@
 <h3 id="Grafana"><a href="#Grafana" class="headerlink" title="Grafana"></a>Grafana</h3><blockquote>
 <p>Grafana是一個跨平台、開源的資料視覺化網路應用程式平台。使用者組態連接的資料來源之後，Grafana可以在網路瀏覽器里顯示資料圖表和警告。該軟體的企業版本提供更多的擴充功能。擴充功能通過外掛程式的形式提供，終端使用者可以自訂自己的資料面板介面以及資料請求方式。Grafana被廣泛使用，包括維基百科專案。</p>
 </blockquote>
+<a id="more"></a>
+
 <h2 id="必備安裝與設定"><a href="#必備安裝與設定" class="headerlink" title="必備安裝與設定"></a>必備安裝與設定</h2><h3 id="下載Prometheus"><a href="#下載Prometheus" class="headerlink" title="下載Prometheus"></a>下載Prometheus</h3><p>下載網址<a target="_blank" rel="noopener" href="https://prometheus.io/download/">https://prometheus.io/download/</a></p>
 <p>個人是用windows 所以下載的是zip檔，<br>內含prometheus.exe執行程式與prometheus.yml設定檔。<br>點擊prometheus.exe 啟動預設9090port，即可查看<a target="_blank" rel="noopener" href="http://localhost:9090/%E5%B7%B2%E9%81%8B%E4%BD%9C%E3%80%82">http://localhost:9090/已運作。</a><br>如欲更改port</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;start.bat </span><br><span class="line">prometheus.exe  --web.listen-address&#x3D;:9999</span><br><span class="line">cmd</span><br></pre></td></tr></table></figure>
@@ -277,22 +278,29 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name&#x3D;grafana -p 3000:3000 grafana&#x2F;grafana</span><br></pre></td></tr></table></figure>
 <p>即可開啟<a target="_blank" rel="noopener" href="http://localhost:3000/">http://localhost:3000/</a> 預設帳號密碼：admin</p>
 <h4 id="設定-grafana連結prometheus"><a href="#設定-grafana連結prometheus" class="headerlink" title="設定 grafana連結prometheus"></a>設定 grafana連結prometheus</h4><p>進入後尋找data sources-&gt;設定連接prometheus<br>新增Url:<a target="_blank" rel="noopener" href="http://localhost:9999/">http://localhost:9999</a> Access:Browser，Save &amp; Test確認連接<br>目前還沒有設定圖表，僅先設定待用。</p>
+<hr>
 <h2 id="監控windows電腦CPU-Network-Memory"><a href="#監控windows電腦CPU-Network-Memory" class="headerlink" title="監控windows電腦CPU/Network/Memory"></a>監控windows電腦CPU/Network/Memory</h2><h3 id="1-windows-exporter-用來監控windows"><a href="#1-windows-exporter-用來監控windows" class="headerlink" title="1.windows_exporter 用來監控windows"></a>1.windows_exporter 用來監控windows</h3><p>下載地址： <a target="_blank" rel="noopener" href="https://github.com/martinlindhe/wmi_exporter/releases">https://github.com/martinlindhe/wmi_exporter/releases</a><br>下載MSI，下載後在需要監控的目標主機上雙擊執行安裝，安裝完成後會以服務的形式自動執行，預設監聽9182埠。</p>
 <p>如須關閉可以在電腦中服務找到windows_exporter關閉之。</p>
 <p>其他<a target="_blank" rel="noopener" href="https://grafana.com/grafana/dashboards/10204">Node Exporter Full by Instance ID</a></p>
 <h3 id="2-修改prometheus-yml"><a href="#2-修改prometheus-yml" class="headerlink" title="2.修改prometheus.yml"></a>2.修改prometheus.yml</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- job_name: &#39;windows_exporter&#39;</span><br><span class="line">  static_configs:</span><br><span class="line">  - targets: [&#39;localhost:9182&#39;]</span><br><span class="line">    labels:</span><br><span class="line">      instance: Windows</span><br></pre></td></tr></table></figure>
-<h3 id="3-於grafana-新增圖表"><a href="#3-於grafana-新增圖表" class="headerlink" title="3.於grafana 新增圖表"></a>3.於grafana 新增圖表</h3><ul>
-<li>[windows_exporter for Prometheus Dashboard]<a target="_blank" rel="noopener" href="https://grafana.com/grafana/dashboards/13466/">https://grafana.com/grafana/dashboards/13466/</a></li>
-<li>[Windows Node (fixed for v0.13.0+)][<a target="_blank" rel="noopener" href="https://grafana.com/grafana/dashboards/12422]">https://grafana.com/grafana/dashboards/12422]</a><br>就可以監控了</li>
+<h3 id="3-於grafana-新增圖表"><a href="#3-於grafana-新增圖表" class="headerlink" title="3.於grafana 新增圖表"></a>3.於grafana 新增圖表</h3><p>於<a target="_blank" rel="noopener" href="https://grafana.com/grafana/dashboards">grafana的網站上搜尋做好的圖表</a>，這邊有找到兩種：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://grafana.com/grafana/dashboards/13466/">windows_exporter for Prometheus Dashboard</a></li>
+<li><a target="_blank" rel="noopener" href="https://grafana.com/grafana/dashboards/12422">Windows Node (fixed for v0.13.0+)</a><br>就可以監控了</li>
 </ul>
-<img src="/images/post/grafanaWin.png" width="300px"/>
+<img src="/images/post/grafanaWin.png" width="500px"/>
 
-<h2 id="監控Go程式效能"><a href="#監控Go程式效能" class="headerlink" title="監控Go程式效能"></a>監控Go程式效能</h2><h3 id="1-在Go程式代碼中加入"><a href="#1-在Go程式代碼中加入" class="headerlink" title="1.在Go程式代碼中加入"></a>1.在Go程式代碼中加入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import (</span><br><span class="line">	&quot;log&quot;</span><br><span class="line">	&quot;net&#x2F;http&quot;</span><br><span class="line">	&quot;github.com&#x2F;gin-gonic&#x2F;gin&quot;</span><br><span class="line">	&quot;github.com&#x2F;prometheus&#x2F;client_golang&#x2F;prometheus&#x2F;promhttp&quot;</span><br><span class="line">)</span><br><span class="line">func main() &#123;</span><br><span class="line">	StartMonitoring(&quot;0.0.0.0:8000&quot;)</span><br><span class="line">	select &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">func StartMonitoring(port string) &#123;</span><br><span class="line">	var p string</span><br><span class="line">	if port &#x3D;&#x3D; &quot;&quot; &#123;</span><br><span class="line">		p &#x3D; &quot;:8080&quot;</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		p &#x3D; port</span><br><span class="line">	&#125;</span><br><span class="line">	go func() &#123;</span><br><span class="line">		log.Println(&quot;Listening on&quot;, p)</span><br><span class="line">		http.Handle(&quot;&#x2F;metrics&quot;, promhttp.Handler())</span><br><span class="line"></span><br><span class="line">		&#x2F;&#x2F;engine.GET(&quot;&#x2F;metrics&quot;, prometheusHandler())  in GIN https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;65608610&#x2F;how-to-use-gin-as-a-server-to-write-prometheus-exporter-metrics</span><br><span class="line">		log.Fatal(http.ListenAndServe(p, nil))</span><br><span class="line">	&#125;()</span><br><span class="line">&#125;</span><br><span class="line">func prometheusHandler() gin.HandlerFunc &#123;</span><br><span class="line">	h :&#x3D; promhttp.Handler()</span><br><span class="line"></span><br><span class="line">	return func(c *gin.Context) &#123;</span><br><span class="line">		h.ServeHTTP(c.Writer, c.Request)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="監控Go程式效能"><a href="#監控Go程式效能" class="headerlink" title="監控Go程式效能"></a>監控Go程式效能</h2><h3 id="1-在Go程式代碼中加入監控代碼"><a href="#1-在Go程式代碼中加入監控代碼" class="headerlink" title="1.在Go程式代碼中加入監控代碼"></a>1.在Go程式代碼中加入監控代碼</h3><p>ex: <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/65608610/how-to-use-gin-as-a-server-to-write-prometheus-exporter-metrics">GIN的prometheus用法</a></p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">import (</span><br><span class="line">	&quot;log&quot;</span><br><span class="line">	&quot;net/http&quot;</span><br><span class="line">	&quot;github.com/gin-gonic/gin&quot;</span><br><span class="line"><span class="addition">+	&quot;github.com/prometheus/client_golang/prometheus/promhttp&quot;</span></span><br><span class="line">)</span><br><span class="line">func main() &#123;</span><br><span class="line"><span class="addition">+	StartMonitoring(&quot;0.0.0.0:8000&quot;)</span></span><br><span class="line">	select &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">func StartMonitoring(port string) &#123;</span><br><span class="line">	var p string</span><br><span class="line">	if port == &quot;&quot; &#123;</span><br><span class="line">		p = &quot;:8080&quot;</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		p = port</span><br><span class="line">	&#125;</span><br><span class="line">	go func() &#123;</span><br><span class="line">		log.Println(&quot;Listening on&quot;, p)</span><br><span class="line"><span class="addition">+	http.Handle(&quot;/metrics&quot;, promhttp.Handler())</span></span><br><span class="line">		log.Fatal(http.ListenAndServe(p, nil))</span><br><span class="line">	&#125;()</span><br><span class="line">&#125;</span><br><span class="line"><span class="addition">+ func prometheusHandler() gin.HandlerFunc &#123;</span></span><br><span class="line">	h := promhttp.Handler()</span><br><span class="line"></span><br><span class="line">	return func(c *gin.Context) &#123;</span><br><span class="line">		h.ServeHTTP(c.Writer, c.Request)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>已開啟一個listen 8000的程式</p>
 <h3 id="2-編輯prometheus-yml，"><a href="#2-編輯prometheus-yml，" class="headerlink" title="2. 編輯prometheus.yml，"></a>2. 編輯prometheus.yml，</h3><p>把監控的web服務localhost:8000加入，這邊可以編輯多組。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- job_name: &#39;prometheus&#39;</span><br><span class="line"></span><br><span class="line">  # metrics_path defaults to &#39;&#x2F;metrics&#39;</span><br><span class="line">  # scheme defaults to &#39;http&#39;.</span><br><span class="line"></span><br><span class="line">  static_configs:</span><br><span class="line">  - targets: [&#39;localhost:8000&#39;,&#39;localhost:8011&#39;]</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">job_name:</span> <span class="string">&#x27;prometheus&#x27;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># metrics_path defaults to &#x27;/metrics&#x27;</span></span><br><span class="line">  <span class="comment"># scheme defaults to &#x27;http&#x27;.</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">static_configs:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">targets:</span> [<span class="string">&#x27;localhost:8000&#x27;</span>,<span class="string">&#x27;localhost:8011&#x27;</span>]</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
 <h3 id="3-啟動"><a href="#3-啟動" class="headerlink" title="3. 啟動"></a>3. 啟動</h3><p>這時可以打開localhost:9999就可以看到Prometheus的簡易歷史圖表記錄了。<br>metrics available for this monitor <a target="_blank" rel="noopener" href="https://docs.signalfx.com/en/latest/integrations/agent/monitors/prometheus-go.html">prometheus-go</a></p>
-<h3 id="4-import-Go-Metrics-圖表"><a href="#4-import-Go-Metrics-圖表" class="headerlink" title="4. import Go Metrics 圖表"></a>4. import Go Metrics 圖表</h3><p>可以於grafana得網站上搜尋做好的圖表<br><a target="_blank" rel="noopener" href="https://grafana.com/grafana/dashboards">搜尋圖表</a><br>[Go Metrics]<a target="_blank" rel="noopener" href="https://grafana.com/grafana/dashboards/10826">https://grafana.com/grafana/dashboards/10826</a></p>
+<h3 id="4-import-Go-Metrics-圖表"><a href="#4-import-Go-Metrics-圖表" class="headerlink" title="4. import Go Metrics 圖表"></a>4. import Go Metrics 圖表</h3><p>於<a target="_blank" rel="noopener" href="https://grafana.com/grafana/dashboards">grafana的網站上搜尋做好的圖表</a></p>
+<ul>
+<li>例如可以套入這個<a target="_blank" rel="noopener" href="https://grafana.com/grafana/dashboards/10826">Go Metrics</a> 範例</li>
+</ul>
 <hr>
 <h2 id="網路參考文章"><a href="#網路參考文章" class="headerlink" title="網路參考文章"></a>網路參考文章</h2><div class="note warning">
              <span style="font-size: 9px;">學習路上感謝網路大神們，如果你發現了我，可以查看以下參考文章了解更多概念👇👇👇</span>
@@ -379,16 +387,16 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目錄
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          本站概要
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%B4%B9"><span class="nav-number">1.</span> <span class="nav-text">介紹</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Prometheus"><span class="nav-number">1.1.</span> <span class="nav-text">Prometheus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Grafana"><span class="nav-number">1.2.</span> <span class="nav-text">Grafana</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%85%E5%82%99%E5%AE%89%E8%A3%9D%E8%88%87%E8%A8%AD%E5%AE%9A"><span class="nav-number">2.</span> <span class="nav-text">必備安裝與設定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BC%89Prometheus"><span class="nav-number">2.1.</span> <span class="nav-text">下載Prometheus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BC%89grafana"><span class="nav-number">2.2.</span> <span class="nav-text">下載grafana</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9A-grafana%E9%80%A3%E7%B5%90prometheus"><span class="nav-number">2.2.1.</span> <span class="nav-text">設定 grafana連結prometheus</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%A3%E6%8E%A7windows%E9%9B%BB%E8%85%A6CPU-Network-Memory"><span class="nav-number">3.</span> <span class="nav-text">監控windows電腦CPU&#x2F;Network&#x2F;Memory</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-windows-exporter-%E7%94%A8%E4%BE%86%E7%9B%A3%E6%8E%A7windows"><span class="nav-number">3.1.</span> <span class="nav-text">1.windows_exporter 用來監控windows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BF%AE%E6%94%B9prometheus-yml"><span class="nav-number">3.2.</span> <span class="nav-text">2.修改prometheus.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%96%BCgrafana-%E6%96%B0%E5%A2%9E%E5%9C%96%E8%A1%A8"><span class="nav-number">3.3.</span> <span class="nav-text">3.於grafana 新增圖表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%A3%E6%8E%A7Go%E7%A8%8B%E5%BC%8F%E6%95%88%E8%83%BD"><span class="nav-number">4.</span> <span class="nav-text">監控Go程式效能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9C%A8Go%E7%A8%8B%E5%BC%8F%E4%BB%A3%E7%A2%BC%E4%B8%AD%E5%8A%A0%E5%85%A5"><span class="nav-number">4.1.</span> <span class="nav-text">1.在Go程式代碼中加入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%B7%A8%E8%BC%AFprometheus-yml%EF%BC%8C"><span class="nav-number">4.2.</span> <span class="nav-text">2. 編輯prometheus.yml，</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%95%9F%E5%8B%95"><span class="nav-number">4.3.</span> <span class="nav-text">3. 啟動</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-import-Go-Metrics-%E5%9C%96%E8%A1%A8"><span class="nav-number">4.4.</span> <span class="nav-text">4. import Go Metrics 圖表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B6%B2%E8%B7%AF%E5%8F%83%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">5.</span> <span class="nav-text">網路參考文章</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%B4%B9"><span class="nav-number">1.</span> <span class="nav-text">介紹</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Prometheus"><span class="nav-number">1.1.</span> <span class="nav-text">Prometheus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Grafana"><span class="nav-number">1.2.</span> <span class="nav-text">Grafana</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%85%E5%82%99%E5%AE%89%E8%A3%9D%E8%88%87%E8%A8%AD%E5%AE%9A"><span class="nav-number">2.</span> <span class="nav-text">必備安裝與設定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BC%89Prometheus"><span class="nav-number">2.1.</span> <span class="nav-text">下載Prometheus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BC%89grafana"><span class="nav-number">2.2.</span> <span class="nav-text">下載grafana</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9A-grafana%E9%80%A3%E7%B5%90prometheus"><span class="nav-number">2.2.1.</span> <span class="nav-text">設定 grafana連結prometheus</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%A3%E6%8E%A7windows%E9%9B%BB%E8%85%A6CPU-Network-Memory"><span class="nav-number">3.</span> <span class="nav-text">監控windows電腦CPU&#x2F;Network&#x2F;Memory</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-windows-exporter-%E7%94%A8%E4%BE%86%E7%9B%A3%E6%8E%A7windows"><span class="nav-number">3.1.</span> <span class="nav-text">1.windows_exporter 用來監控windows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BF%AE%E6%94%B9prometheus-yml"><span class="nav-number">3.2.</span> <span class="nav-text">2.修改prometheus.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%96%BCgrafana-%E6%96%B0%E5%A2%9E%E5%9C%96%E8%A1%A8"><span class="nav-number">3.3.</span> <span class="nav-text">3.於grafana 新增圖表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%A3%E6%8E%A7Go%E7%A8%8B%E5%BC%8F%E6%95%88%E8%83%BD"><span class="nav-number">4.</span> <span class="nav-text">監控Go程式效能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9C%A8Go%E7%A8%8B%E5%BC%8F%E4%BB%A3%E7%A2%BC%E4%B8%AD%E5%8A%A0%E5%85%A5%E7%9B%A3%E6%8E%A7%E4%BB%A3%E7%A2%BC"><span class="nav-number">4.1.</span> <span class="nav-text">1.在Go程式代碼中加入監控代碼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%B7%A8%E8%BC%AFprometheus-yml%EF%BC%8C"><span class="nav-number">4.2.</span> <span class="nav-text">2. 編輯prometheus.yml，</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%95%9F%E5%8B%95"><span class="nav-number">4.3.</span> <span class="nav-text">3. 啟動</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-import-Go-Metrics-%E5%9C%96%E8%A1%A8"><span class="nav-number">4.4.</span> <span class="nav-text">4. import Go Metrics 圖表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B6%B2%E8%B7%AF%E5%8F%83%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">5.</span> <span class="nav-text">網路參考文章</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -403,21 +411,21 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">43</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-count">44</span>
+          <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
         <span class="site-state-item-count">31</span>
-        <span class="site-state-item-name">categories</span></a>
+        <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
         <span class="site-state-item-count">61</span>
-        <span class="site-state-item-name">tags</span></a>
+        <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
 </div>
@@ -439,7 +447,7 @@
 <div class="widget-wrap">
     <div id="myCanvasContainer" class="widget tagcloud">
     <canvas width="220" height="250" id="resCanvas" style="width=100%">
-        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Babel/" rel="tag">Babel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CLI/" rel="tag">CLI</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Grafana/" rel="tag">Grafana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDE/" rel="tag">IDE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA/" rel="tag">IDEA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSX/" rel="tag">JSX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kubernetes/" rel="tag">Kubernetes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Material-ui/" rel="tag">Material-ui</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memory/" rel="tag">Memory</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MinIO/" rel="tag">MinIO</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Prometheus/" rel="tag">Prometheus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Promises/" rel="tag">Promises</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aws-s3/" rel="tag">aws-s3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aync-await/" rel="tag">aync/await</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browser/" rel="tag">browser</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call-by-sharing/" rel="tag">call by sharing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/callback/" rel="tag">callback</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cleanCode/" rel="tag">cleanCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloud/" rel="tag">cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cors/" rel="tag">cors</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-in-js/" rel="tag">css-in-js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/" rel="tag">debug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deploy/" rel="tag">deploy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docusaurus/" rel="tag">docusaurus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticSearch/" rel="tag">elasticSearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/file/" rel="tag">file</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google-analytics/" rel="tag">google_analytics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heroku/" rel="tag">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/" rel="tag">http</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hugo/" rel="tag">hugo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ing/" rel="tag">ing</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/" rel="tag">kibana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lint/" rel="tag">lint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/" rel="tag">map</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongo/" rel="tag">mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/monitor/" rel="tag">monitor</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/" rel="tag">note</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ramda/" rel="tag">ramda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/" rel="tag">react</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recharts/" rel="tag">recharts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/storage/" rel="tag">storage</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86%E7%AF%84%E4%BE%8B/" rel="tag">作品集範例</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E6%A7%8B%E8%B3%A6%E5%80%BC/" rel="tag">解構賦值</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%96%89%E5%8C%85/" rel="tag">閉包</a><span class="tag-list-count">1</span></li></ul>
+        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Babel/" rel="tag">Babel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CLI/" rel="tag">CLI</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Grafana/" rel="tag">Grafana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDE/" rel="tag">IDE</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA/" rel="tag">IDEA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSX/" rel="tag">JSX</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kubernetes/" rel="tag">Kubernetes</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Material-ui/" rel="tag">Material-ui</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Memory/" rel="tag">Memory</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MinIO/" rel="tag">MinIO</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Prometheus/" rel="tag">Prometheus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Promises/" rel="tag">Promises</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aws-s3/" rel="tag">aws-s3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aync-await/" rel="tag">aync/await</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browser/" rel="tag">browser</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call-by-sharing/" rel="tag">call by sharing</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/callback/" rel="tag">callback</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cleanCode/" rel="tag">cleanCode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloud/" rel="tag">cloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cors/" rel="tag">cors</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-in-js/" rel="tag">css-in-js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/" rel="tag">debug</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deploy/" rel="tag">deploy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docusaurus/" rel="tag">docusaurus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/elasticSearch/" rel="tag">elasticSearch</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/file/" rel="tag">file</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/" rel="tag">golang</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google-analytics/" rel="tag">google_analytics</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/heroku/" rel="tag">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/" rel="tag">http</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hugo/" rel="tag">hugo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ing/" rel="tag">ing</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kibana/" rel="tag">kibana</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lint/" rel="tag">lint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/" rel="tag">map</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongo/" rel="tag">mongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/monitor/" rel="tag">monitor</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/note/" rel="tag">note</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ramda/" rel="tag">ramda</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/" rel="tag">react</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recharts/" rel="tag">recharts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring/" rel="tag">spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/storage/" rel="tag">storage</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/" rel="tag">test</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/" rel="tag">vscode</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BD%9C%E5%93%81%E9%9B%86%E7%AF%84%E4%BE%8B/" rel="tag">作品集範例</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%A3%E6%A7%8B%E8%B3%A6%E5%80%BC/" rel="tag">解構賦值</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%96%89%E5%8C%85/" rel="tag">閉包</a><span class="tag-list-count">1</span></li></ul>
     </canvas>
     </div>
 </div>
@@ -467,7 +475,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Yuri</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 強力驅動
   </div>
 
         
@@ -477,7 +485,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
       </span>
-      <span class="site-uv" title="Total Visitors">
+      <span class="site-uv" title="訪客總數">
         <span id="busuanzi_value_site_uv"></span>
       </span>
     </span>
@@ -486,7 +494,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-eye"></i>
       </span>
-      <span class="site-pv" title="Total Views">
+      <span class="site-pv" title="總瀏覽次數">
         <span id="busuanzi_value_site_pv"></span>
       </span>
     </span>
