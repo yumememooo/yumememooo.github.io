@@ -1,5 +1,5 @@
 ---
-title: "[BLOG] 使用 Hexo 撰寫部落格 02- 更換主題與個人化設定"
+title: "[Blog] 使用 Hexo 撰寫部落格 02- 更換主題與個人化設定"
 tags:
   - hexo
   - blog
@@ -12,7 +12,6 @@ date: 2021-01-31 10:06:30
 
 > 上一篇已經建立好基本網站架構了，這篇收集本站所有更改主題及更換的個人化設定．
 <!--more-->
-## 更換主題設定
 
 ### 更換主網站設定檔
 
@@ -273,6 +272,11 @@ note:
 {% label info@標示藍色底色 %}
 {% label warning@標示黃色底色 %}
 {% label danger@標示danger底色 %}
+```
+{% label info@標示藍色底色 %}
+{% label warning@標示黃色底色 %}
+{% label danger@標示danger底色 %}
+```
 
 #### 文章中貼上圖片
 
@@ -339,9 +343,9 @@ back2top:
 ```
 
 
-## 個人化設定
+### 個人化設定
 
-### 預設新增文章模板
+#### 預設新增文章模板
 
 修改 /scaffolds/post.md 新增自己預設內容
 
@@ -352,13 +356,14 @@ date: {{ date }}
 tags:
 categories:
 ---
-blabla.....
+blabla..... 前言
 <!--more-->
 ```
 
 意外發現的方法，藉由這樣修改 hexo new post 時就可以把基本的設定加好了
 
-## 參考文章
+
+### 參考文章
 - [NextT 開始使用](https://theme-next.iissnan.com/getting-started.html)
 - [NextT 主题配置](https://theme-next.iissnan.com/theme-settings.html)
 - [NextT 內置標籤](https://theme-next.iissnan.com/tag-plugins.html)

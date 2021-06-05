@@ -49,9 +49,7 @@ mkfile -n 20m 20mb.txt
 
 ---
 
-## 網路參考文章
-{% note warning %} <span style="font-size: 9px;">
-學習路上感謝網路大神們，如果你發現了我，可以查看參考文章了解更多概念👇👇👇
-</span>{% endnote %}
+### 網路參考文章
+
 [Quickly Generate Large Test Files in Windows](https://tweaks.com/windows/62755/quickly-generate-large-test-files-in-windows/)
 [[Mac] 使用 mkfile 指令，快速建立測試用的大檔](https://ephrain.net/mac-%E4%BD%BF%E7%94%A8-mkfile-%E6%8C%87%E4%BB%A4%EF%BC%8C%E5%BF%AB%E9%80%9F%E5%BB%BA%E7%AB%8B%E6%B8%AC%E8%A9%A6%E7%94%A8%E7%9A%84%E5%A4%A7%E6%AA%94/)

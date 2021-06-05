@@ -1,5 +1,5 @@
 ---
-title: "[BLOG] 使用 Hexo 撰寫部落格 03 - 外部資源/插件設定"
+title: "[Blog] 使用 Hexo 撰寫部落格 03 - 外部資源/插件設定"
 tags:
   - hexo
   - blog

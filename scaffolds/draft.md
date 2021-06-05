@@ -42,7 +42,7 @@ categories:
 
 # 貼上圖片
 /yumememooo.github.io/themes/next-reloaded/source/images/post
-<img src="/images/post/grafanaWin.png" width="300px"/>
+<img src="/images/post/grafanaWin.png" width="500px"/>
 
 
 # 網路參考文章

@@ -1,5 +1,5 @@
 ---
-title: "使用Prometheus+Grafana監控效能"
+title: "[監控]使用Prometheus+Grafana監控效能"
 tags:
   - Prometheus
   - Grafana
@@ -15,7 +15,6 @@ date: 2021-04-28 20:20:29
 
 
 
-<!--more-->
 
 ## 介紹
 
@@ -25,6 +24,8 @@ date: 2021-04-28 20:20:29
 ### Grafana
 > Grafana是一個跨平台、開源的資料視覺化網路應用程式平台。使用者組態連接的資料來源之後，Grafana可以在網路瀏覽器里顯示資料圖表和警告。該軟體的企業版本提供更多的擴充功能。擴充功能通過外掛程式的形式提供，終端使用者可以自訂自己的資料面板介面以及資料請求方式。Grafana被廣泛使用，包括維基百科專案。
 
+
+<!--more-->
 
 ## 必備安裝與設定
 
@@ -57,6 +58,7 @@ docker run -d --name=grafana -p 3000:3000 grafana/grafana
 新增Url:http://localhost:9999 Access:Browser，Save & Test確認連接
 目前還沒有設定圖表，僅先設定待用。
 
+--- 
 
 ## 監控windows電腦CPU/Network/Memory
 
@@ -78,24 +80,28 @@ docker run -d --name=grafana -p 3000:3000 grafana/grafana
 ```
 
 ### 3.於grafana 新增圖表
-
-- [windows_exporter for Prometheus Dashboard]https://grafana.com/grafana/dashboards/13466/
-- [Windows Node (fixed for v0.13.0+)][https://grafana.com/grafana/dashboards/12422]
+於[grafana的網站上搜尋做好的圖表](https://grafana.com/grafana/dashboards)，這邊有找到兩種：
+- [windows_exporter for Prometheus Dashboard](https://grafana.com/grafana/dashboards/13466/)
+- [Windows Node (fixed for v0.13.0+)](https://grafana.com/grafana/dashboards/12422)
 就可以監控了
 
-<img src="/images/post/grafanaWin.png" width="300px"/>
+<img src="/images/post/grafanaWin.png" width="500px"/>
+
+---
 
 ## 監控Go程式效能
-### 1.在Go程式代碼中加入
-```
+### 1.在Go程式代碼中加入監控代碼
+
+ex: [GIN的prometheus用法]( https://stackoverflow.com/questions/65608610/how-to-use-gin-as-a-server-to-write-prometheus-exporter-metrics)
+```diff
 import (
 	"log"
 	"net/http"
 	"github.com/gin-gonic/gin"
-	"github.com/prometheus/client_golang/prometheus/promhttp"
++	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 func main() {
-	StartMonitoring("0.0.0.0:8000")
++	StartMonitoring("0.0.0.0:8000")
 	select {}
 }
 func StartMonitoring(port string) {
@@ -107,13 +113,11 @@ func StartMonitoring(port string) {
 	}
 	go func() {
 		log.Println("Listening on", p)
-		http.Handle("/metrics", promhttp.Handler())
-
-		//engine.GET("/metrics", prometheusHandler())  in GIN https://stackoverflow.com/questions/65608610/how-to-use-gin-as-a-server-to-write-prometheus-exporter-metrics
++	http.Handle("/metrics", promhttp.Handler())
 		log.Fatal(http.ListenAndServe(p, nil))
 	}()
 }
-func prometheusHandler() gin.HandlerFunc {
++ func prometheusHandler() gin.HandlerFunc {
 	h := promhttp.Handler()
 
 	return func(c *gin.Context) {
@@ -126,7 +130,7 @@ func prometheusHandler() gin.HandlerFunc {
 
 ### 2. 編輯prometheus.yml，
 把監控的web服務localhost:8000加入，這邊可以編輯多組。
-```
+```yaml
   - job_name: 'prometheus'
 
     # metrics_path defaults to '/metrics'
@@ -146,9 +150,8 @@ metrics available for this monitor [prometheus-go](https://docs.signalfx.com/en/
 
 
 ### 4. import Go Metrics 圖表
-可以於grafana得網站上搜尋做好的圖表
-[搜尋圖表](https://grafana.com/grafana/dashboards)
-[Go Metrics]https://grafana.com/grafana/dashboards/10826
+於[grafana的網站上搜尋做好的圖表](https://grafana.com/grafana/dashboards)
+- 例如可以套入這個[Go Metrics](https://grafana.com/grafana/dashboards/10826) 範例
 
 
 

@@ -1,5 +1,5 @@
 ---
-title: "[BLOG] 五分鐘教你使用 docusaurus 建立筆記部落格"
+title: "[Blog] 五分鐘教你使用 docusaurus 建立筆記部落格"
 tags:
   - blog
   - docusaurus
@@ -19,28 +19,23 @@ date: 2021-05-21 18:39:33
 
 ---
 個人選擇的優點：
-  1. 左側有可以闓盒的側欄，且進入文章後不會不見，可以快速瀏覽，且有搜尋文章的功能．
-  2. 作為文檔保存筆記
+  1. 左側有可以開闔的側欄，且進入文章後不會不見，可以快速瀏覽．
+  2. 單純作為文檔保存筆記而建立
   3. 玩玩Docusaurus ！！
 
-（第一點雖然hexo我有試圖找過有沒有不同主題可以符合這樣的需求，但就當作為了切開而架架另一種風格的部落格，而且也很快速）
+（第一點雖然hexo我有試圖找過有沒有不同主題可以符合這樣的需求，但搜尋上有點困難，就當作為了切開風格而另架一種風格的網站，而且也很快速．）
 
 <!--more-->
 
 ## 建立Docusaurus
-馬上就進入[官網](https://docusaurus.io/docs) 
-
-get started 說明流程只要三個指令：
-
+馬上就進入[官網](https://docusaurus.io/docs) 看 get started 說明流程只要三個指令：
 ```javascript
 npx @docusaurus/init@latest init my-website classic
 cd my-website
 npx docusaurus start
-
 ```
-我的配置流程，我用的命名為my-note：
+Ex 我的配置流程，我用的命名為my-note(你可以使用自訂的命名)：
 ```javascript
-
 blog npx @docusaurus/init@latest init my-note classic
 
 npx: 40 安裝成功，花費 6.139 秒
@@ -76,7 +71,7 @@ http://localhost:3000/my-note/
 ----
 
 ## 上傳到github
-這邊我用的方式是用gh-pages工具的做法，跟[官網deployment介紹](https://docusaurus.io/docs/deployment)的有點不同，（官網寫的覺得有點難懂，但流程可能比較正式）
+這邊我用的方式是用gh-pages工具的做法，跟[官網deployment介紹](https://docusaurus.io/docs/deployment)的有點不同，（個人覺得官網寫的覺得有點難懂，但流程可能比較正式，有興趣的人可以試著做做看）
 
 
 個人使用gh-pages工具流程記錄如下．
@@ -119,7 +114,7 @@ Published
 ```
 5. 成功部署到 Github 上後，會發現多了一個名為 gh-pages 的分支，教學文中說設定頁->GitHub Pages->Source要把頁面指到 gh-pages 這個分支（但我查看預設就是了）
 
-6. 接著打開頁面，結果發現馬上跳錯誤畫面，但有指示要更改docusaurus.config.js檔案內的
+6. 接著打開頁面，結果發現馬上跳[錯誤畫面](https://docusaurus.io/docs/docusaurus.config.js#baseurlissuebanner)，但有指示要更改docusaurus.config.js檔案內的
 ```
 baseUrl: '/my-note/',
 ```
@@ -128,30 +123,43 @@ baseUrl: '/my-note/',
 https://yumememooo.github.io/my-note/
 
 
+（到這邊大約就五分鐘差不多，但為了看懂它的編輯設定還是花了我一點時間．）
+
+---
+
 ## 開始編輯網站
-這邊基本畫面上就有教學了，而且覺得比官網上的分類說明還要清楚，可以直接查看就好，這邊就簡單紀錄使用用法．
+建立完後基本畫面上就有教學了，而且覺得比官網上的說明還要清楚，可以直接查看這邊就好，我也保留了這些教學文件（->[點我](https://yumememooo.github.io/my-note/docs/docusaurus/tutorial-basics/create-a-page)）
+
+---
+
+以下就簡單紀錄使用用法:
 
 ### 更改設定檔 docusaurus.config.js
-這邊可以更改網站標題與logo
+這邊可以更改網站標題與logo，看欄位一一修改應該沒什麼困難,但也有更多可以新增的欄位設定:
+1. 主設定檔說明寫在[這邊](https://docusaurus.io/docs/docusaurus.config.js)
+2. [主題使用設定](https://docusaurus.io/docs/api/themes/configuration)，可以修改導覽列的下拉清單，新增通知訊息等．
 
-
-### 編輯的文件檔案規格
-這邊可以選擇自己用react->js或是Markdown撰寫，前面需要學過react，一般可以用Markdown就好（不知道什麼是Markdown的可以先去玩玩線上編輯工具）
+### 編輯的文件檔案說明
+文件的編輯格式檔案有兩種選擇
+1. 學過react可以用js撰寫
+2. 一般可以使用Markdown(.md)撰寫（不知道什麼是Markdown的可以先去玩玩線上編輯工具),而docusaurus可以輸入前言作為描述顯示相關位置：
+- [相關的markdown前言](https://docusaurus.io/zh-CN/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-frontmatter)
 
 #### 新增頁面 page
 可以新增一個頁面，然後對應的網址就會出現對應內容了，這通常是獨立頁面，需要另外用超連結指到這個位置．
 - 須注意對應的網址會在 baseUrl底下喔
 ```
-ex:
+ex
 /src/pages/foo/index.js → <baseUrl>/foo/
-看看效果：
+```
+- 看看效果：
 my-note/src/pages/markdown-page.md
  →https://yumememooo.github.io/my-note/markdown-page/
-```
-
 
 #### 建立文件 Document
-可以直接把文章放到docs/hello.md，並編輯位置與標題就會出現在側邊欄了．
+可以直接把文章放到docs資料夾裡，並在前言編輯位置與標題就會出現在側邊欄了．
+
+
 
 ```markdown /docs/intro.md
 + ---
@@ -159,28 +167,30 @@ my-note/src/pages/markdown-page.md
 + sidebar_position: 3
 + ---
 
-[相關的markdown前言](https://docusaurus.io/zh-CN/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-frontmatter)
-
 # Hello 這邊就是文章內容
 
 This is my **first Docusaurus document**!
 ```
 
 ### 建立blog
-這邊一樣方法，只是會建立在blog分頁
+這邊一樣方法，只是會建立在blog分頁，裡面已經有基本範本，且說明blog支援tags功能，如果不想要blog頁籤，可以把整個資料夾刪除（/your_repo/blog/2019-05-30-welcome.md）．
 
-
-## 新增插件
+## 新增與修改插件設定
 [插件列表](https://docusaurus.io/zh-CN/docs/api/plugins)
 
 ### plugin-content-docs
 如果是有裝classic主題，就可以不用另外安裝，[plugin-content-docs](https://docusaurus.io/zh-CN/docs/api/plugins/@docusaurus/plugin-content-docs)裡的內容可以像下面修改：
-```diff /docusaurus.config.js
+
+- editUrl：修改進入github編輯的位址
+- showLastUpdateTime：顯示修改日期
+```diff /docusaurus.config.js 
 presets: [
     [
       '@docusaurus/preset-classic',
       {
         docs: {
+           editUrl:
+            'https://github.com/<git_account>/<repo>/edit/master/', 
 +          showLastUpdateTime: true,
         }
 
