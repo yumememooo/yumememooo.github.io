@@ -1,16 +1,18 @@
 ---
 name: 繁體中文
 title:
-  archive: 歸檔
+  archive: 文章
   category: 分類
   tag: 標籤
   schedule: 時間表
 menu:
-  home: 首頁
-  archives: 歸檔
-  categories: 分類
-  tags: 標籤
-  about: 關於
+  home: "home 首頁"
+  archives: "archives (歸檔)"
+  posts: "posts (文章)"
+  categories: categories (分類)
+  tags: tags (標籤)
+  about: about (關於)
+  my-note: My Note (隨筆)
   search: 搜尋
   schedule: 時間表
   sitemap: 網站地圖

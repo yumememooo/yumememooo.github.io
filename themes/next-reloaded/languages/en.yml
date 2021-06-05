@@ -7,11 +7,12 @@ title:
   schedule: Schedule
 
 menu:
-  home: Home
-  archives: Posts
-  categories: Categories
-  tags: Tags 
-  about: About
+  home: "Home 首頁"
+  archives: "archives (歸檔)"
+  posts: "posts 文章"
+  categories: categories 分類
+  tags: tags 標籤
+  about: about 關於
   my-note: My Note (隨筆)
   search: Search
   schedule: Schedule
