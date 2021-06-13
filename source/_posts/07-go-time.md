@@ -1,5 +1,5 @@
 ---
-title: "[Go 08] 認識時間格式與golang的時間轉換寫法"
+title: "[Go 08] 認識時間格式與golang的時區轉換寫法"
 tags:
   - golang
 categories:
@@ -10,8 +10,8 @@ date: 2021-05-30 10:22:20
 ---
 
 
-{% note info %} 認識時間格式與golang的時間轉換寫法{% endnote %}
-
+{% note info %} 
+開發過程中，曾遇過部署到別的平台，時間就變成+0時區了（例如明明下午五點，部署平台顯示早上九點），這時才發現原來你的時間不是他的時間，而資料庫中也常常用時間戳數字來做紀錄，但顯示給使用者時又要轉成格式化顯示，真是好亂啊，因此就來理解一下各種時間格式與go程式對於時間的使用吧！！{% endnote %}
 <!--more-->
 
 
@@ -38,26 +38,24 @@ UNIX時間代表從UTC1970年1月1日0時0分0秒起至現在的總秒數
 ### 時區的轉換
 世界各國位於地球不同位置上，，不同地區的人會有不同的地方時間，可以看[時區轉換器](https://tw.piliapp.com/time-now/converter/)
 
-
+----
 ## golang 時間轉換
 接著說明使用golang實現以上幾種常見的轉換。
 
-四種轉換:
+大致列出四種轉換:
 1. 將時間戳轉換為時間
-2.將時間做格式化輸出，golang語法的時間輸出跟java比較不一樣。
-2-1 2006-01-02 15:04:05-0700 對應到	yyyy-MM-dd HH:mm:ss Z，請見[golang 與java time的對照表](https://programming.guide/go/format-parse-string-time-date-example.html)
-2-2 記憶順序有點像是06代表年，後面則是1,2,3,4,5,7
-3. 時區轉換: FixedZone 可以自訂時區信息，(name,位移的秒數)，loc := time.FixedZone("UTC-8", -8*60*60)第二個參數轉移多少秒，可以改+8時區等等
+2. 將時間做格式化輸出，golang語法的時間輸出跟java比較不一樣。2006-01-02 15:04:05-0700 對應到	yyyy-MM-dd HH:mm:ss Z，請見[golang 與java time的對照表](https://programming.guide/go/format-parse-string-time-date-example.html)， 記憶順序有點像是06代表年，後面則是1,2,3,4,5,7
+3. 時區轉換: FixedZone(name,位移的秒數)，可以自訂時區命名信息，loc := time.FixedZone("UTC-8", -8 * 60 * 60)第二個參數轉移多少秒，可以改+8時區等等
 
-4. 時區轉換by LoadLocation，可以輸入空值，"UTC"，"Local"，或是時區的資料庫EX:Asia/Taipei"，使用的資料庫為[IANA Time Zone database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)，
-會依下列順序去找尋：
+4. 時區轉換: LoadLocation(name)，可以輸入空值，"UTC"，"Local"，或是時區的資料庫 EX: "Asia/Taipei"，命名使用的資料庫為[IANA Time Zone database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)，好處是不用自己輸入到底是＋8還加多久，知道時區命名就好，但是背後的定義還是會依下列順序去找尋對應資料：
 	- ZONEINFO 環境變數所指定的zip文件
 	- Unix系统中已经安装的
 	- $GOROOT/lib/time/zoneinfo.zip，
 
+{% note warning %} 
 因此如果在windows系统上，没有安装go語言環境，time.LoadLocation會失敗，建議用time.FixedZone。
-另外在docker環境裡也要注意使用的image是否已經有包含這些資料，否則會出現unknown time zone XXXX的錯誤。
-解決方法需要加入以下兩句
+{% endnote %} 
+另外在docker環境裡也要注意使用的image是否已經有包含這些資料，否則會出現unknown time zone XXXX的錯誤，解決方法需要加入以下兩句
 ```
 FROM alpine
 ...
@@ -66,10 +64,10 @@ ENV ZONEINFO /opt/zoneinfo.zip
 ...
 ```
 
+---
 
-
-範例程式:
-```
+四種轉換時間格式範例程式:
+```go diff
 package main
 
 import (
@@ -98,7 +96,7 @@ func main() {
 	if err != nil {
 		fmt.Println("err:", err)
 	}
-	fmt.Println("case3: Timezone at Taipei:", t.Format(layout1))
+	fmt.Println("case4: Timezone at Taipei:", t.Format(layout1))
 
 }
 func TimeIn(t time.Time, name string) (time.Time, error) {
@@ -116,7 +114,7 @@ timestamp: 1619083664867
 case1: timestamp to time: 2021-04-22 09:27:44.867 +0000 UTC
 case2: Formatlayout1: 2021-04-22T09:27:44
 case3: Timezone at +0: 2021-04-22T09:27:44
-case3: Timezone at Taipei: 2021-04-22T17:27:44
+case4: Timezone at Taipei: 2021-04-22T17:27:44
 ```
 
 

@@ -13,7 +13,7 @@ date: 2021-04-24 10:06:20
 {% note info %} 本章介紹使用elasticSearch儲存資料與kibana呈現使用 {% endnote %}
 
 
-# 本文內容：
+### 本文內容：
 - 自行建立elasticSearch/kibana [docker]
 - 建立elasticSearch index與傳送資料
 - 使用kibana查詢資料
@@ -23,9 +23,8 @@ date: 2021-04-24 10:06:20
 
 ### 1.啟動docker-elasticSearch/kibana
 - 先備知識:docker & docker-compose
-- 先將網路上找到的docker-compose.yml內容編輯好，
-然後在一樣的目錄下開啟指令docker-compose up -d
-參考
+- 先將網路上找到的[docker-compose.yml](https://github.com/yumememooo/docker-compose-record/tree/master/elastic_kibana)內容編輯好，然後在一樣的目錄下開啟指令docker-compose up -d
+
 ```bash
 $docker-compose up -d
 WARNING: Some services (elasticsearch, kibana) use the 'deploy' key, which will be ignored. Compose does not support 'deploy' configuration - use `docker stack deploy` to deploy to a swarm.
@@ -275,7 +274,7 @@ GET /event/_search
 ```
 
 
-# 網路參考文章
+###  網路參考文章
 {% note warning %} <span style="font-size: 9px;">
 學習路上感謝網路大神們，如果你發現了我，可以查看參考文章了解更多概念👇👇👇
 </span>{% endnote %}

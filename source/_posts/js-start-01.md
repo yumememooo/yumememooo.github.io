@@ -18,21 +18,21 @@ date: 2021-02-20 11:33:18
 
 <!--more-->
 
-### JS歷史
+## JS歷史- ES6 2015
 ECMAScript是一種由Ecma國際定義的手稿語言規範，它往往被稱為JavaScript或JScript (維基)
 - ES6為ECMAScript2015，是大幅度的更新，討論度較高，
 
+---
+## 宣告與各用法概念
 
-### 宣告與各用法概念
-
-#### 命名規則
+### 命名規則
 - 小寫駱駝
 - 大小寫相異(敏感)
 - 有意義的名字
 
 ref:[关于变量命名的规则](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Variables#%E5%85%B3%E4%BA%8E%E5%8F%98%E9%87%8F%E5%91%BD%E5%90%8D%E7%9A%84%E8%A7%84%E5%88%99)
 
-#### 變數
+### 變數
 - var是全域的，更改內容會影響到外面的。
 - let是區域的，更改內容只會影響到內部，外面的不會。（ES6)
 - const 宣告後不改值。（ES6)
@@ -44,10 +44,40 @@ ref:[关于变量命名的规则](https://developer.mozilla.org/zh-CN/docs/Learn
 ref:
 [var 与 let 的区别](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Variables#var_%E4%B8%8E_let_%E7%9A%84%E5%8C%BA%E5%88%AB) | [let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let) | [NaN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/NaN)
 
-##### 比對
-ＴＢＤ
 
-##### 邏輯運算
+
+---
+### 操作
+
+#### 比對
+#####  嚴格相等（===）
+先比較型別
+##### 一般相等（==）
+一般相等會先將比較值轉換成同型別後比較。轉換後（可能一個或兩個都被轉換），接著進行的幾乎和嚴格比較（===）一樣。
+```
+console.log(123 === "123"); false
+console.log(false === 0);false
+console.log(false == 0);true
+console.log(123 == "123");true
+```
+- 部分開發者認為最好別用一般相等。嚴格比較更容易預測，且因為不必轉型，因此效率更好。
+
+##### 同值相等
+ES6 提出同值相等演算法，用來解決這個問題。Object.is就是部署這個演算法的新方法。同值相等解決了最後一個情況：比較兩個值是否功能相同 。
+Object.is 會和嚴格相等做同樣的事，但會將 NaN、-0 和 +0 獨立處理，因此這三個不會相等
+
+
+##### 零值相等
+和同值相等一樣，但將 +0 和 -0 視為相同。
+```
+console.log(-0 == +0); true
+console.log(-0 === +0); true
+```
+
+- 更多比較表可以看 [Equality_comparisons_and_sameness](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Equality_comparisons_and_sameness)
+- 陣列比較more [如何在 JavaScript 中比較兩個陣列](https://www.delftstack.com/zh-tw/howto/javascript/compare-two-arrays-javascript/)
+
+#### 二元邏輯運算子
 JavaScript 中的真假值在判斷會自動作轉型，像是 null、NaN、0、空字串（""、''）、undefined 都會被轉型並判斷為「false」。
 - &&
 a= 條件式 ＆＆“”
@@ -66,7 +96,8 @@ const b = 26900 || 24900;
 
 ```
 
-##### 字符操作
+
+#### 字符操作
 - 一個字符串和一個数字可以直接相加變成字串
 - 把字串當作對象，或許長度或大小寫轉換去處理字符串
 ```
@@ -79,30 +110,48 @@ s:1967 type:string
 ```
 
 
-###### Number()
+#### Number()
 对象将把传递给它的任何东西转换成一个数字
 ```
 let myString = '123';
 let myNum = Number(myString);
 typeof myNum;
 ```
-###### toString()
+#### toString()
 每个数字都有一个名为 toString() 的方法，它将把它转换成等价的字符串。
 
 ref:[JavaScript中的字符串](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/Strings)
 
 
-#### 函式宣告
+#### [樣板字面值](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Template_literals)
+ES6 樣板字面值（Template literals）是允許嵌入運算式的字串字面值（string literals）。
+- 被反引號（back-tick，重音符號` ` )字元封閉，代替了雙或單引號。
+- 可以包含由錢字元及花括號所構成（${expression}）的佔位符（placeholders）
+```
+`string text line 1
+ string text line 2`
+
+`string text ${expression} string text`
+
+tag `string text ${expression} string text`
+
+```
+
+- 標籤樣板字面值是一種更高級的樣板字面值形式，允許你透過{% label warning@自訂命名標籤函數 %}操作樣板字面值的輸出。
+- 巢狀的樣板字面值的應用[Javascript 進階 10-3 巢狀結構](https://ithelp.ithome.com.tw/articles/10231520)
+---
+
+### 函式宣告
   - 可用函式宣告（Function Declaration）（ES5）
   - 函式運算式(表達式)（Function Expressions）（ES5）
     - 宣告一個函數，或匿名函數 (anonymous function / function literal) 當作值指定給一個變數
-  - 箭頭函式運算式（arrow function expression）（ES6）
+  - 箭頭函式運算式（arrow function expression）（{% label success@ES6 %}）
     - 它沒有自己的 this、arguments、super、new.target 等語法。
 
 
 function 建構子說明
 - JavaScript 使用稱為建構子函式（constructor function）的特殊函式，定義物件與功能。
-```
+```JavaScript
 // 自己的一些東西
 function Person(first, last, age, gender, interests) {
   this.name = {
@@ -124,9 +173,10 @@ var person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing']);
 ```
 Ref:[初學者應知道的物件導向 JavaScript](https://developer.mozilla.org/zh-TW/docs/Learn/JavaScript/Objects/Object-oriented_JS)
 - 箭頭函式不可作為建構式使用；若使用於建構式，會在使用 new 時候拋出錯誤。
-```
-
-  //箭頭
+- 沒有 arguments "引數"參數,當需要使用 arguments 請維持使用 function。[->參數引數的概念請先知道]
+- 宣告 ＸＸＸ等於 (參數1, 參數2, …, 參數N) => { return 表示式; }
+```JavaScript
+  //箭頭 宣告 ＸＸＸ等於 (參數1, 參數2, …, 參數N) => { return 表示式; }
   const Pet_Arr = (color) => {
     this.color = color;
   }
@@ -136,9 +186,9 @@ Ref:[初學者應知道的物件導向 JavaScript](https://developer.mozilla.org
 ```
 Ref: [箭頭函式 MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
-##### 宣告練習
-使用及細節可以看下方：(js_func.html)
-```
+#### 宣告練習
+使用及細節可以看下方
+```JavaScript (js_func.html)
     <script>
         // ES5 函式宣告（Function Declaration）
         //function 函式名稱(參數) {
@@ -176,11 +226,11 @@ Ref: [箭頭函式 MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/
         console.log("ES6:" + Add5(1, 2))//3
     </script>
 ```
-##### this的問題與箭頭函數的出現
+#### this的問題與箭頭函數的出現
 箭頭函式有兩個重要的特性：更短的函式寫法與 this 變數的非綁定。
 
-- 使用及細節可以看下方：(js_func_this.html)
-```
+- 使用及細節可以看下方
+```JavaScript (js_func_this.html)
     <script>
         //ES5 函示內this會指向windows而非Person，因此要像PersonSolve寫法
         function Person() {
@@ -241,7 +291,6 @@ Ref: [箭頭函式 MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/
     </script>
 ```
 
-- 箭頭函式不可作為建構式使用；若使用於建構式，會在使用 new 時候拋出錯誤。
 - 箭頭函式並沒有原型（prototype）屬性。
 more ref: [this不分家](https://developer.cdn.mozilla.net/zh-TW/docs/Web/JavaScript/Reference/Functions/Arrow_functions#this_%E4%B8%8D%E5%88%86%E5%AE%B6)
 
@@ -249,15 +298,15 @@ more ref: [this不分家](https://developer.cdn.mozilla.net/zh-TW/docs/Web/JavaS
 no this new
 https://developer.cdn.mozilla.net/zh-TW/docs/Web/JavaScript/Reference/Functions/Arrow_functions#this_%E4%B8%8D%E5%88%86%E5%AE%B6
 
-#### JS的 Hoisting (提升)顶置特性
+### JS的 Hoisting (提升)顶置特性
 - 變數(var hoisting)與函數都可以先使用再宣告
 - 但提升操作不再适用于 let 并引起一个错误(Uncaught ReferenceError)
  ref:[JavaScript Hoisting (提升)](https://shubo.io/javascript-hoisting/#javascript-hoisting-%E6%8F%90%E5%8D%87)
 
 
-#### ES6 - 使用module分檔 (import & export)
+### ES6 - 使用module分檔 (import & export)
 
-#### 閉包（Closure）
+### 閉包（Closure）
 閉包是函式以及該函式被宣告時所在的作用域環境的組合。
 - 閉包的好處能把變數隱藏在裡面讓外部存取不到
 - 閉包在 callback 上的應用尤其常見
@@ -270,11 +319,11 @@ Ref:
 - [你懂 JavaScript 嗎？#15 閉包（Closure）]（https://cythilya.github.io/2018/10/22/closure/）
 
 
-#### ES6 - spread operator
+### ES6 - spread operator
 展開運算子(...) 允許可迭代的陣列或字串展開成０到多個參數
 
 
-#### ES6 - 解構賦值 Destructuring assignment
+### ES6 - 解構賦值 Destructuring assignment
 可以把陣列或物件中的資料解開擷取成為獨立變數
 詳細請見:[MDN-解構賦值](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
@@ -283,7 +332,7 @@ Ref:
   - 變數交換
   - 解析自函式回傳的陣列
 - 物件解構
-```
+```javascript
 const o = {p: 42, q: true};
 const {p, q} = o;
 
@@ -293,7 +342,7 @@ console.log(q); // true
   - 預設值
 當解構物件中對應的值是 undefined 時，變數可以設定預設值。
   - 指派到新的變數名稱
-  ```
+```javascript
 const o = {p: 42, q: true};
 const {p: foo, q: bar} = o;
 
@@ -310,14 +359,14 @@ console.log(bar); // true
 
 
 
-### 探討：JavaScript OOP
+## 探討：JavaScript OOP
 OOP （(Object-oriented programming）物件導向/對象編程，在 JavaScript 中，大多数事物都是对象, 从作为核心功能的字符串和数组。你甚至可以自己创建对象，在调用函数前加一个 new ，它就会返回一个这个函数的实例化对象，. 然后，就可以在这个对象上面添加一些属性．[JavaScript 对象入门](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects)
 
 舉例：
 - 用new func()來建構新的物件，func內部this可以指項新屬性
 - 透過建構子（constructor）所建立出來的物件，我們稱為實例（instance）
 - 如果忘記打new，變數會出現undifined
-```
+```javascript
 //this 指向了代码所在的对象(其实代码运行时所在的对象)。
 function Pet(first,last, age) {
   this.name= {
@@ -345,10 +394,10 @@ console.log(cat1.walk())//对象的方法调用
 
 ref:[[筆記] 談談 JavaScript 中的 function constructor 和關鍵字 new](https://pjchender.blogspot.com/2016/06/javascriptfunction-constructornew.html)
 
-#### Prototype 原型鏈的原理
+### Prototype 原型鏈的原理
 上述的寫法，cat1.walk()與dog1.walk()是兩個不同對象的方法，為解決這問題．
 - walk指定在 Pet.prototype 上面，所有 Pet 的 instance 都可以共享這個方法
-```
+```javascript
 Pet.prototype.walk = function() {
   console.log(this.name.first + " walk...");
 }
@@ -364,7 +413,7 @@ ref:[該來理解 JavaScript 的原型鍊了](https://blog.techbridge.cc/2017/04
 
 
 
-##### JavaScript 中的繼承 (prototypal inheritance)
+#### JavaScript 中的繼承 (prototypal inheritance)
 
 - call()函数。基本上，这个函数允许您调用一个在这个文件里别处定义的函数。
 - 设置 Teacher() 的原型和构造器引用
@@ -407,12 +456,12 @@ TBD:
 https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
 
 
-#### ES6 類別 (class) 
+### ES6 類別 (class) 
 ECMAScript 6 中引入了類別 (class) 作為 JavaScript 現有原型程式(prototype-based)繼承的語法糖。類別語法並不是要引入新的物件導向繼承模型到 JavaScript 中，而是提供一個更簡潔的語法來建立物件和處理繼承。
 
 ref:[Classes](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Classes)
 
-##### 類別宣告 (class declaration)
+#### 類別宣告 (class declaration)
 - 使用關鍵字 class
 ```
 class Polygon {
@@ -427,7 +476,7 @@ class Polygon {
 {% note danger %}  var p = new Polygon(); // ReferenceError
 class Polygon {} {% endnote %}
 
-##### 類別敘述(class expressions)
+#### 類別敘述(class expressions)
 - 類別敘述是定義類別的另一種方法。類別敘述可以有名稱或是無名稱。賦予一個有名稱類別敘述的名稱只在類別主體(class's body)中有作用。（✍ 其實跟之前提到的Function Expressions一樣概念）
 ```
 // unnamed
@@ -448,7 +497,7 @@ var Polygon = class Polygon {
 ```
 
 ---
-#### 使用JSON
+### 使用JSON
 - JSON要求在字符串和属性用雙引號， 但引號無效。
 - 我们使用 . 或 [] 訪問对象内的数据
 - JSON.parse
@@ -467,7 +516,7 @@ console.log(myString)//string:{"name":"Chris","age":"38"}
 
 
 
-### 事件(Event)
+## 事件(Event)
 - 好得寫法是找到(select)button並添加事件，避免汙染HTML。
 - 關於button.onclick vs addEventListener
   - on會覆蓋上一个事件
@@ -477,13 +526,13 @@ ref:[JS裡addEventListener和on的區別](https://codertw.com/%E7%A8%8B%E5%BC%8F
 
 
 
-### 延伸：Lint 工具
+## 延伸：Lint 工具
 在電腦科學中，lint是一種工具程式的名稱，它用來標記原始碼中，某些可疑的、不具結構性（可能造成bug）的段落。它是一種靜態程式分析工具
 
-#### JSLint
+### JSLint
 JSLint 幫你檢查未定義的變數、函數、陳述式結尾有沒有加分號(;)、變數使用之前要先用 var 宣告、使用非數字的變數要用 === 或 !== 讓比對的時候不要自動進行轉型(Casting)、盡量不要使用 eval 函數、... 好多好多
 
-#### ESLint
+### ESLint
 包括格式檢驗及質量效驗（未使用變量、三等號、全局變量聲明等問题）
 自由選擇要使用哪些規則，對 ES6 還有 JSX 的支援度跟其他 linter 相較之下也是最高的
 
@@ -491,14 +540,14 @@ JSLint 幫你檢查未定義的變數、函數、陳述式結尾有沒有加分�
 
 ## 其他練習
 
-### 上述概念練習
+## 上述概念練習
 [simple_js_demo](https://github.com/yumememooo/simple_js_demo)
 
 
-### JS 與 canvas 元素 
+## JS 與 canvas 元素 
 
 
-#### 基礎繪製說明
+### 基礎繪製說明
 Canvas 是H5新出來的標籤
 - 元素需要有闭合标签
 - 基本上現今所有主流的瀏覽器都有支援
@@ -526,11 +575,11 @@ ctx.fillRect(10, 10, 100, 100);//畫矩形 x start,y start,width,height
 
 ref:[Canvas 教學文件](https://developer.mozilla.org/zh-TW/docs/Web/API/Canvas_API/Tutorial)
 
-#### 彈跳彩球範例
+### 彈跳彩球範例
 Ｒef: [物件建構實作](https://developer.mozilla.org/zh-TW/docs/Learn/JavaScript/Objects/Object_building_practice)
 
 
-#### 破撞說明
+### 破撞說明
 ```
 https://developer.mozilla.org/zh-CN/docs/Games/Techniques/2D_collision_detection
 var circle1 = {radius: 20, x: 5, y: 5};//radius半徑及座標
@@ -545,9 +594,9 @@ if (distance < circle1.radius + circle2.radius) { //原形半徑相加=兩圓碰
 }
 ```
 
-#### 動畫操控範例說明
+### 動畫操控範例說明
 https://developer.mozilla.org/zh-TW/docs/Web/API/Canvas_API/Tutorial/Basic_animations
-#### 排程更新
+### 排程更新
 第一種作法是利用window.setInterval()與window.setTimeout()方法。
 
 Note: 針對新版瀏覽器建議採用window.requestAnimationFrame()方法。方法為動畫提供更順暢更有效率的方式來執行,當系統準備好繪製畫面時,藉由呼叫動畫andmation frame()的callback函數。
@@ -560,7 +609,7 @@ https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/260087/)
 [[javascript] requestAnimationFrame 優化動畫效率與資源](https://blog.camel2243.com/2017/01/31/javascript-requestanimationframe-%E5%84%AA%E5%8C%96%E5%8B%95%E7%95%AB%E6%95%88%E7%8E%87%E8%88%87%E8%B3%87%E6%BA%90/)
 
 
-#### Event操控範例說明
+### Event操控範例說明
 https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Advanced_animations
 這邊的話可以看到，Event滑鼠控制只能針對整個畫布做操作，每次更新都是更新畫布，內容物件是不存在的。
 
@@ -570,6 +619,6 @@ Canvas是點陣圖，受解析度影響，SVG是向量圖。
 好處是方便操作dom元素, 可操作元素。
 壞處是渲染效率不高, 在數據量較大時頁面易掉幀, 卡頓，不適合遊戲。
 
-#### D3 操控SVG或是Canvas
+### D3 操控SVG或是Canvas
 http://blog.infographics.tw/2015/07/optimize-d3-with-canvas/
 

@@ -63,3 +63,5 @@ branch - master (only web files)
 {% label warning@標示黃色底色 %}
 {% label danger@標示danger底色 %}
 ```
+
+{% label info@ES6%}
