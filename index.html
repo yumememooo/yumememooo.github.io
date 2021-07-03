@@ -972,7 +972,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/02/27/react03-component-props/" class="post-title-link" itemprop="url">[React 03] React component 與生命週期</a>
+            <a href="/2021/02/27/react03-component-props/" class="post-title-link" itemprop="url">[React 03] React 組件、函式與生命週期</a>
         </h2>
 
         <div class="post-meta">
@@ -989,7 +989,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-06-13 18:05:14" itemprop="dateModified" datetime="2021-06-13T18:05:14+08:00">2021-06-13</time>
+                <time title="Modified: 2021-07-03 12:53:27" itemprop="dateModified" datetime="2021-07-03T12:53:27+08:00">2021-07-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1031,16 +1031,22 @@
 <p>本文內容：</p>
 <ul>
 <li>React component (組件)語法</li>
+<li>props 是什麼<ul>
+<li>ES6箭頭函式組件</li>
+</ul>
+</li>
+<li>State的用法</li>
 <li>生命週期</li>
 </ul>
 <h3 id="React-component-組件-語法"><a href="#React-component-組件-語法" class="headerlink" title="React component (組件)語法"></a>React component (組件)語法</h3><ul>
 <li>component 就像是 JavaScript 的 function</li>
-<li>ReactDOM.render 中{函式名稱}變成了&lt;函式名稱/&gt;</li>
+<li>ReactDOM.render 中{函式名稱}變成了&lt;函式名稱/&gt; see:<a target="_blank" rel="noopener" href="https://zh-hant.reactjs.org/docs/rendering-elements.html">Render Element</a></li>
 <li>Component 命名首字必須大寫，大寫駝峰的方式，否則 React 會把它當作一般的 HTML 元素處理，並跳出Warning提示，看到大寫駝峰命名變數時，可以知道是 React 組件而非一般函式。</li>
 <li>其他 HTML 屬性、CSS 樣式屬性或一般的函式來說，則會遵行 JavaScript 以小寫駝峰來命名變數的慣例，例如在 className、maxLength、backgroundColor 等等。</li>
 </ul>
+<hr>
 <h3 id="props-是什麼"><a href="#props-是什麼" class="headerlink" title="props 是什麼"></a>props 是什麼</h3><ul>
-<li>component 就像是 JavaScript 的 function，它接收任意的參數（稱之為「props」）並且回傳描述畫面的 React element。</li>
+<li>component 就像是 JavaScript 的 function，它接收任意的參數（稱之為「props」）並且回傳畫面的 React element。</li>
 <li>props 通常是不可變的(唯獨Immutable)，不能修改自己的</li>
 </ul>
 <p>Ref:[Components 與 Props] (<a target="_blank" rel="noopener" href="https://zh-hant.reactjs.org/docs/components-and-props.html">https://zh-hant.reactjs.org/docs/components-and-props.html</a>)</p>
