@@ -13,7 +13,7 @@ date: 2020-05-09T00:02:42+08:00
 # 本章介紹：
 
 - 為上一篇 Gin 框架的 User & PostName func.寫個簡單測試
-- 跑測試並瞭解 coverage 覆蓋率，產生測試報告
+- 跑測試並瞭解 coverage 覆蓋率，產生測試報告(20210702 有新增vsocde用法補充)
 
 <!--more-->
 
@@ -99,7 +99,9 @@ ok      command-line-arguments  0.297s  coverage: 57.1% of statements
 ＄go test -v ./…
 ```
 
-#### 產生測試報告
+----
+#### 產生測試覆蓋(coverage)報表-gotest
+
 
 ```bash
 go test -coverprofile=coverage.out ./...
@@ -121,4 +123,16 @@ go tool cover -html=coverage.out
 ---
 
 覺得有疑問嗎？可以再進一步看看參考文章：  
-[基于 golang gin 框架的单元测试](https://studygolang.com/articles/11836 "基于golang gin框架的单元测试")
+- [基于 golang gin 框架的单元测试](https://studygolang.com/articles/11836 "基于golang gin框架的单元测试")
+- [go test 提示 no test files](https://www.sunzhongwei.com/go-test-suggests-no-test-files "go test 提示 no test files")<br>
+- [Go: tests with HTML coverage report](https://medium.com/@kenanbek/go-tests-with-html-coverage-report-f977da09552d "Go: tests with HTML coverage report")<br>
+- [使用 Go 进行单元测试](https://juejin.im/post/5dc37eb8e51d452a066999bf "使用 Go 进行单元测试")<br>
+
+
+---
+
+
+{% note warning %} 20210702 補充 :
+其實後來發現vscode在跑完package test 後，右邊側欄就會跑出覆蓋的條線了，比以上方法更方便呢！！{% endnote %}
+有機會再補上圖片．
+

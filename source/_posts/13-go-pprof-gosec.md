@@ -1,5 +1,5 @@
 ---
-title: "[Go] 性能/品質/測試覆蓋率工具檢測"
+title: "[Go] 性能/品質檢測"
 tags:
   - test
   - golang
@@ -19,7 +19,6 @@ date: 2020-09-18 15:03:37
 本章介紹:
 - 性能分析工具-pprof 查看CPU/memory 等的瓶頸
 - 檢視go的品質與建議-gosec
-- 產生測試覆蓋報表-gotest
 
 
 <!--more-->
@@ -93,37 +92,7 @@ gosec -fmt=html -out=results.html ./...<br>
 
 - 像是以上這條處理檔案位置時，path應該清理處理過以避免輸入異常
 
-----------------------------------
 
-## 產生測試覆蓋(coverage)報表-gotest
-
-事前準備：已撰寫好測試檔案
-
-### 產生整個專案的測試率
-```
-測試整個專案 
-go test -v ./…<br>
-```
-### 產生特定檔案測試率
-```
-go test -v -cover=true myfunc_test.go myfunc.go<br>
-```
-
-### 產生測試報告
-```
-go test -coverprofile=coverage.out ./...<br>
-go tool cover -func=coverage.out<br>
-go tool cover -html=coverage.out<br>
-```
-- 然後打開看到測試分析報告了，綠色是有涵蓋到的測試，紅色是被遺漏的測試地方，超級方便！！
-<img src="/images/post/test_coverage.png" width="500px" />
-
-
-
-參考文章:<br>
-- [go test 提示 no test files](https://www.sunzhongwei.com/go-test-suggests-no-test-files "go test 提示 no test files")<br>
-- [Go: tests with HTML coverage report](https://medium.com/@kenanbek/go-tests-with-html-coverage-report-f977da09552d "Go: tests with HTML coverage report")<br>
-- [使用 Go 进行单元测试](https://juejin.im/post/5dc37eb8e51d452a066999bf "使用 Go 进行单元测试")<br>
 
 
 

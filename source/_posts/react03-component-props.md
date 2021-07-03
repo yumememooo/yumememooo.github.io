@@ -1,5 +1,5 @@
 ---
-title: "[React 03] React component 與生命週期"
+title: "[React 03] React 組件、函式與生命週期"
 tags:
   - react
 categories:
@@ -14,17 +14,22 @@ date: 2021-02-27 20:40:59
 
 本文內容：
 - React component (組件)語法
+- props 是什麼
+  - ES6箭頭函式組件
+- State的用法
 - 生命週期
 
 
 ### React component (組件)語法
 - component 就像是 JavaScript 的 function
-- ReactDOM.render 中{函式名稱}變成了<函式名稱/>
+- ReactDOM.render 中{函式名稱}變成了<函式名稱/> see:[Render Element](https://zh-hant.reactjs.org/docs/rendering-elements.html)
 - Component 命名首字必須大寫，大寫駝峰的方式，否則 React 會把它當作一般的 HTML 元素處理，並跳出Warning提示，看到大寫駝峰命名變數時，可以知道是 React 組件而非一般函式。
 - 其他 HTML 屬性、CSS 樣式屬性或一般的函式來說，則會遵行 JavaScript 以小寫駝峰來命名變數的慣例，例如在 className、maxLength、backgroundColor 等等。
 
+----
+
 ### props 是什麼
-- component 就像是 JavaScript 的 function，它接收任意的參數（稱之為「props」）並且回傳描述畫面的 React element。
+- component 就像是 JavaScript 的 function，它接收任意的參數（稱之為「props」）並且回傳畫面的 React element。
 - props 通常是不可變的(唯獨Immutable)，不能修改自己的
 
 Ref:[Components 與 Props] (https://zh-hant.reactjs.org/docs/components-and-props.html)
@@ -33,7 +38,7 @@ Ref:[Components 與 Props] (https://zh-hant.reactjs.org/docs/components-and-prop
 
 
 #### function component vs class component
-轉換 Function 成 Class ：
+接著看看兩種寫法轉換 Function 成 Class ：
 
 ##### 使用function 來做 component
 - 如果需要向component傳参数，可以使用 props 對象，
@@ -53,8 +58,8 @@ ReactDOM.render(
 );
 ````
 
-##### 使用class來做 component
-- 也可以使用 ES6 class來 來定義 
+##### 使用ES6 class來做 component
+- 也可以使用ES6  class來 來定義 
 - 繼承React.Component且在用render(){}包一層
 - props 要改用 this.props
 - 用render(){return html}
@@ -80,9 +85,12 @@ ReactDOM.render(
 範例練習: [USER info](https://codesandbox.io/s/usercard-vh0e4 "USER info")
 
 
-#### React組件 箭頭函式組件 寫法
+
+#### React組件 ES6箭頭函式組件 寫法
+接著看看`箭頭函式語法`可以簡潔,少打很多字元
 - const App: () => JSX.Element //大寫駱駝命名
 - 縮寫：如果裡面只有return 可以去掉{}與return，但通常會有一些變數存在，個人習慣保留．
+- 箭頭函式不可以使用於建構式，可以見[[JS 01] javascript 新手上路與概念筆記](https://yumememooo.github.io/2021/02/20/js-start-01/)
 - 使用插件快速鍵 rafc - ReactArrowFunctionComponent
 [紀錄](https://github.com/yumememooo/counter-water/commit/aea85efa5f2e4a1f073cd7c89f96a458b00ab24c)
 ```
@@ -91,7 +99,7 @@ const Hello = () => {
 }
 ```
 
-
+------
 
 
 
@@ -196,7 +204,7 @@ ReactDOM.render(
 ```
 
 
-
+----
 
 #### （延伸說明）hooks 與 Function Component
 
@@ -206,7 +214,10 @@ ReactDOM.render(
 
 - 從[精读《Function VS Class 组件》](https://zhuanlan.zhihu.com/p/59558396)
 中可以看的使用class component,會因為使用this問題而需要修復，要follow class結構與巢狀太過雜亂，再者，而function component沒有this,如果希望拿到稳定的 props，使用 Function Component 是更好的選擇。而
-- Function Component + Hooks 可以实现 Class Component 做不到的 capture props、capture value，而且 React 官方也推荐 新的代码使用 Hooks 编写。
+- Function Component + Hooks 可以实现 Class Component 做不到的 capture props、capture value，而且 `React 官方也推荐 新的代码使用 Hooks 编写`。
+
+
+-----
 
 ### 生命週期
 元件被安裝時(Mount)、元件被更新時(Update)、元件被移除時(Unmount)
@@ -231,6 +242,7 @@ Ref:
   - 很多待細讀 ＴＢＤ
   - 我們建議使用 exhaustive-deps 規則作為我們 eslint-plugin-react-hooks package 的一部分。當不正確地指定依賴時，它會發出警告，並提出修改建議。
 
+----
 
 ### 網路參考範例:
 

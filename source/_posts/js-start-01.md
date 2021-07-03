@@ -34,8 +34,8 @@ ref:[关于变量命名的规则](https://developer.mozilla.org/zh-CN/docs/Learn
 
 ### 變數
 - var是全域的，更改內容會影響到外面的。
-- let是區域的，更改內容只會影響到內部，外面的不會。（ES6)
-- const 宣告後不改值。（ES6)
+- let是區域的，更改內容只會影響到內部，外面的不會。（{% label info@ES6%} )
+- const 宣告後不改值。（{% label info@ES6%} )
 - 宣告變數但不賦值=undefined
 - null常見於宣告後面定義成沒有值或找不到
 - 全域屬性 NaN 表示「非數值」（Not-A-Number）的數值
@@ -54,7 +54,7 @@ ref:
 先比較型別
 ##### 一般相等（==）
 一般相等會先將比較值轉換成同型別後比較。轉換後（可能一個或兩個都被轉換），接著進行的幾乎和嚴格比較（===）一樣。
-```
+```js
 console.log(123 === "123"); false
 console.log(false === 0);false
 console.log(false == 0);true
@@ -63,13 +63,13 @@ console.log(123 == "123");true
 - 部分開發者認為最好別用一般相等。嚴格比較更容易預測，且因為不必轉型，因此效率更好。
 
 ##### 同值相等
-ES6 提出同值相等演算法，用來解決這個問題。Object.is就是部署這個演算法的新方法。同值相等解決了最後一個情況：比較兩個值是否功能相同 。
+{% label info@ES6%}  提出同值相等演算法，用來解決這個問題。Object.is就是部署這個演算法的新方法。同值相等解決了最後一個情況：比較兩個值是否功能相同 。
 Object.is 會和嚴格相等做同樣的事，但會將 NaN、-0 和 +0 獨立處理，因此這三個不會相等
 
 
 ##### 零值相等
 和同值相等一樣，但將 +0 和 -0 視為相同。
-```
+```js
 console.log(-0 == +0); true
 console.log(-0 === +0); true
 ```
@@ -81,13 +81,12 @@ console.log(-0 === +0); true
 JavaScript 中的真假值在判斷會自動作轉型，像是 null、NaN、0、空字串（""、''）、undefined 都會被轉型並判斷為「false」。
 - &&
 a= 條件式 ＆＆“”
-```
-
+```js
 a5 = 'Cat' && 'Dog'      // t && t returns "Dog"
 a6 = false && 'Cat'      // f && t returns false
 ```
 - ||
-```
+```js
 const a = 0 || 'hidden';           
 // 因為 0 被轉型後為 false，所以 a 會是 'hidden'
 
@@ -96,11 +95,14 @@ const b = 26900 || 24900;
 
 ```
 
+#### {% label info@ES6%} - 展開語法（spread syntax）& 其餘語法（rest syntax）
+展開運算子(...) 允許可迭代的陣列或字串展開成０到多個參數
+
 
 #### 字符操作
 - 一個字符串和一個数字可以直接相加變成字串
 - 把字串當作對象，或許長度或大小寫轉換去處理字符串
-```
+```js
 <script>
     let s = 19 + '67';
     console.log("s:"+s+" type:"+typeof s);
@@ -112,7 +114,7 @@ s:1967 type:string
 
 #### Number()
 对象将把传递给它的任何东西转换成一个数字
-```
+```js
 let myString = '123';
 let myNum = Number(myString);
 typeof myNum;
@@ -124,10 +126,10 @@ ref:[JavaScript中的字符串](https://developer.mozilla.org/zh-CN/docs/Learn/J
 
 
 #### [樣板字面值](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Template_literals)
-ES6 樣板字面值（Template literals）是允許嵌入運算式的字串字面值（string literals）。
+{% label info@ES6%} 樣板字面值（Template literals）是允許嵌入運算式的字串字面值（string literals）。
 - 被反引號（back-tick，重音符號` ` )字元封閉，代替了雙或單引號。
 - 可以包含由錢字元及花括號所構成（${expression}）的佔位符（placeholders）
-```
+```js
 `string text line 1
  string text line 2`
 
@@ -139,6 +141,34 @@ tag `string text ${expression} string text`
 
 - 標籤樣板字面值是一種更高級的樣板字面值形式，允許你透過{% label warning@自訂命名標籤函數 %}操作樣板字面值的輸出。
 - 巢狀的樣板字面值的應用[Javascript 進階 10-3 巢狀結構](https://ithelp.ithome.com.tw/articles/10231520)
+
+#### 物件屬性名稱縮寫（Shorthand property names）
+- Key 與 Value 名稱相同，可進行縮寫
+- 物件內可直接省略 function 關鍵字進行縮寫
+
+#### {% label info@ES6%}  - 解構賦值 Destructuring assignment
+可以把陣列或物件中的資料解開擷取成為獨立變數
+詳細請見:[MDN-解構賦值](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+
+```js
+const o = {p: 42, q: true};
+const {p, q} = o;
+
+console.log(p); // 42
+console.log(q); // true
+
+///
+const o = {p: 42, q: true};
+const {p: foo, q: bar} = o;
+
+console.log(foo); // 42
+console.log(bar); // true
+  ```
+
+
+
+
+
 ---
 
 ### 函式宣告
@@ -304,14 +334,14 @@ https://developer.cdn.mozilla.net/zh-TW/docs/Web/JavaScript/Reference/Functions/
  ref:[JavaScript Hoisting (提升)](https://shubo.io/javascript-hoisting/#javascript-hoisting-%E6%8F%90%E5%8D%87)
 
 
-### ES6 - 使用module分檔 (import & export)
+### {% label info@ES6%}  - 使用module分檔 (import & export)
 
 ### 閉包（Closure）
 閉包是函式以及該函式被宣告時所在的作用域環境的組合。
 - 閉包的好處能把變數隱藏在裡面讓外部存取不到
 - 閉包在 callback 上的應用尤其常見
 - 在迴圈建立閉包：一個常見錯誤
-在 ECMAScript 2015 (ES6)導入 let 前，迴圈內建立的閉包，常會發生問題。
+在 ECMAScript 2015 ({% label info@ES6%} )導入 let 前，迴圈內建立的閉包，常會發生問題。
 範例請見： [simple_js_demo-closure](https://github.com/yumememooo/simple_js_demo/blob/master/04_js_closure/closure.html)
 
 Ref:
@@ -319,43 +349,6 @@ Ref:
 - [你懂 JavaScript 嗎？#15 閉包（Closure）]（https://cythilya.github.io/2018/10/22/closure/）
 
 
-### ES6 - spread operator
-展開運算子(...) 允許可迭代的陣列或字串展開成０到多個參數
-
-
-### ES6 - 解構賦值 Destructuring assignment
-可以把陣列或物件中的資料解開擷取成為獨立變數
-詳細請見:[MDN-解構賦值](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
-
-
-- 陣列解構
-  - 變數交換
-  - 解析自函式回傳的陣列
-- 物件解構
-```javascript
-const o = {p: 42, q: true};
-const {p, q} = o;
-
-console.log(p); // 42
-console.log(q); // true
-```
-  - 預設值
-當解構物件中對應的值是 undefined 時，變數可以設定預設值。
-  - 指派到新的變數名稱
-```javascript
-const o = {p: 42, q: true};
-const {p: foo, q: bar} = o;
-
-console.log(foo); // 42
-console.log(bar); // true
-  ```
-  - 從作為函式參數的物件中提出某屬性的值
-     userId({id}) ,userId(user)
-  - 巢狀物件或陣列的解構
-  - 循環取出的解構
-  - 以物件演算屬性名稱解構
-  - 在物件解構時使用其餘變數
-  - 混合使用矩陣及物件解構
 
 
 
@@ -456,7 +449,7 @@ TBD:
 https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
 
 
-### ES6 類別 (class) 
+### {% label info@ES6%}  類別 (class) 
 ECMAScript 6 中引入了類別 (class) 作為 JavaScript 現有原型程式(prototype-based)繼承的語法糖。類別語法並不是要引入新的物件導向繼承模型到 JavaScript 中，而是提供一個更簡潔的語法來建立物件和處理繼承。
 
 ref:[Classes](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Classes)
@@ -502,13 +495,13 @@ var Polygon = class Polygon {
 - 我们使用 . 或 [] 訪問对象内的数据
 - JSON.parse
 用於將文字轉成json object
-```
+```js
 request.responseType = 'text';
 var superHeroes = JSON.parse(superHeroesText); 
 ```
 - JSON.stringify
 用於將json object轉成json string
-```
+```js
 var myJSON = { "name": "Chris", "age": "38" }; console.log(myJSON)
 var myString = JSON.stringify(myJSON);
 console.log(myString)//string:{"name":"Chris","age":"38"}
@@ -534,7 +527,7 @@ JSLint 幫你檢查未定義的變數、函數、陳述式結尾有沒有加分�
 
 ### ESLint
 包括格式檢驗及質量效驗（未使用變量、三等號、全局變量聲明等問题）
-自由選擇要使用哪些規則，對 ES6 還有 JSX 的支援度跟其他 linter 相較之下也是最高的
+自由選擇要使用哪些規則，對 {% label info@ES6%}  還有 JSX 的支援度跟其他 linter 相較之下也是最高的
 
 註： prettier 只是格式的檢驗（空格 格式化），不会對代码质量进行校验。但有些檢驗，ESLint沒有，所以可以ESLint＋prettier一起使用，也可以視使用情況不使用 Prettier。
 
